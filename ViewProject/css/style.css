@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+header,
+main,
+footer,
+nav,
+aside,
+section {
+    display: block;
+}
+
+body {
+    width: 100%;
+}
+
+li>a {
+    color: #555555;
+    text-decoration: none;
+}
+
+#navbar2{
+    display: none;
+}
+
+/*---------------------------------------------*/
+/* header */
+
+button {
+    border: 0px;
+}
+
+#headerContainer {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    position: fixed;
+}
+
+nav {
+    height: 80px;
+}
+
+#navContainer {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+#logo {
+    width: 213px;
+}
+
+#shenkarLogoImage {
+    width: 137px;
+    margin-left: 100px;
+}
+
+#rightHeaderLinks {
+    display: flex;
+    position: absolute;
+    right: 23px;
+}
+
+#ranProfile,
+#shenkarLogo,
+#notification,
+#settings,
+#ranProfile {
+    display: flex;
+    align-items: center;
+}
+
+#ranProfile {
+    margin-left: 6px;
+}
+
+#notification {
+    margin-left: 10px;
+}
+
+#notificationImage {
+    width: 35px;
+}
+
+#settingsImage {
+    width: 35px;
+}
+
+#ranProfileImage {
+    width: 35px;
+}
+
+/*---------------------------------------------*/
+/* side */
+
+#sideBar {
+    margin-top: 80px;
+    height: 100vh;
+    width: 209px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: fixed;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #555555;
+    font-size: 14px;
+}
+
+.triangle-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.triangle-list li::before {
+    content: "▶";
+    display: inline-block;
+    width: 0.7em;
+    height: 0.6em;
+    margin-right: 0.5em;
+    font-size: 0.8em;
+    color: #bd362f;
+}
+
+#viewImage,
+#addImage,
+#editImage {
+    width: 15px;
+}
+
+#viewImage {
+    margin-left: 10px;
+}
+
+#addImage {
+    margin-left: 14px;
+}
+
+#editImage {
+    margin-left: 75px;
+}
+
+#favImage {
+    margin-left: 89px;
+    width: 18px;
+}
+
+#recImage {
+    margin-left: 104px;
+    width: 18px;
+}
+
+#underLineChoise {
+    width: 190px;
+    height: 2px;
+    background-color: #555555;
+}
+
+
+
+@media(max-width:767px) {
+    #sideBar{
+        display: none;
+    }
+
+    #projectsBody{
+        background-color: #f8f9fa;
+    }
+
+    #logo{
+        display: none;
+    }
+
+    .navbar-toggler{
+        width: 80px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    #humburger{
+        border:none;
+    }
+
+    .navbar-toggler>.navbar-toggler-icon{
+        width: 100%;
+        height: 100%;
+    }
+
+    #navbar2{
+        display: block;
+        height: 60px;
+        width: 100vw;
+        background-color: #eeeeee;
+    }
+}
