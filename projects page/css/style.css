@@ -22,6 +22,10 @@ li>a {
     text-decoration: none;
 }
 
+#navbar2{
+    display: none;
+}
+
 /*---------------------------------------------*/
 /* header */
 
@@ -71,17 +75,25 @@ nav {
     align-items: center;
 }
 
+.btn.btn-outline-secondary{
+    border-color: #dee2e6;
+}
+
+.btn.btn-outline-secondary:hover{
+    background-color: #bd362f;
+    border:0px
+}
+
+#inputSearch:focus{
+    border-color: #dee2e6;
+    box-shadow: none;
+}
+
 #search {
     width: 15px;
     margin-left: 3px;
 }
 
-#rightSearchBar {
-    width: 40px;
-    height: 32px;
-    background-color: #eeeeee;
-    border-radius: 0px 12px 12px 0px;
-}
 
 #sortIconImage {
     width: 30px;
@@ -89,6 +101,7 @@ nav {
 
 #shenkarLogoImage {
     width: 137px;
+    margin-left: 100px;
 }
 
 #rightHeaderLinks {
@@ -111,7 +124,7 @@ nav {
 }
 
 #notification {
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 #notificationImage {
@@ -133,7 +146,7 @@ nav {
     margin-top: 80px;
     height: 100vh;
     width: 209px;
-    background-color: white;
+    background-color: #f8f9fa;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -256,30 +269,64 @@ span{
 }
 
 @media(max-width:1032px) {
-    #searchBar{
-        margin-left: 20px;
-    }
-
-    #leftSearchBar{
-        width: 200px;
-    }
-
-    #shenkarLogoImage{
-        display: none;
-    }
-
     .projectImages{
         width: 350px;
     }
 
     .col{
         margin-bottom: 50px;
+        
     }
 
+    .projectImages{
+        width: 400px;
+    }
 }
 
 @media(max-width:767px) {
-    #screen{
+    #sideBar{
         display: none;
+    }
+
+    #projectsBody{
+        margin-left: 0px;
+        padding-top: 70px;
+    }
+
+    .projectImages{
+        width: 250px;
+    }
+
+    #projectsBody{
+        background-color: #f8f9fa;
+    }
+
+    #logo{
+        display: none;
+    }
+
+    .navbar-toggler{
+        width: 80px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    #humburger{
+        border:none;
+    }
+
+    .navbar-toggler>.navbar-toggler-icon{
+        width: 100%;
+        height: 100%;
+    }
+
+    #navbar2{
+        display: block;
+        height: 60px;
+        width: 100vw;
+        background-color: #eeeeee;
     }
 }

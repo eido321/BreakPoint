@@ -17,50 +17,53 @@
     <section id="screen">
         <div id="headerContainer">
             <header>
-                <nav>
-                    <div id="navContainer">
-                        <a href="#">
-                            <img src="images/logo.png" alt="logo" id="logo">
-                        </a>
-                        <div id="searchBar">
-                            <div id="leftSearchBar">
-                                <span id="searchText">Search</span>
-                                <button><img src="images/search.png" alt="search" id="search"></button>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+                    <div class="container-fluid">
+                        <a href="#" class="navbar-brand"><img src="images/logo.png" alt="logo" id="logo"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation" id="humburger">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <div id="searchBar" class="input-group">
+                                <input type="text" class="form-control" id="inputSearch" placeholder="Search"
+                                    aria-label="Search for...">
+                                <button class="btn btn-outline-secondary" type="button"><img src="images/search.png"
+                                        alt="search" id="search"></button>
+                                <button class="btn btn-outline-secondary" type="button"><img src="images/sortSearch.png"
+                                        alt="sortSearch" id="sortIconImage"></button>
                             </div>
-                            <div id="rightSearchBar">
-                                <button>
-                                    <div id="sortIcon">
-                                        <img src="images/sortSearch.png" alt="sortSearch" id="sortIconImage">
-                                    </div>
-                                </button>
+                            <div class="navbar-nav ms-auto">
+                                <section id="shenkarLogo" class="nav-item">
+                                    <a href="#" class="nav-link"><img src="images/Shenkar.png" alt="shenkarLogo"
+                                            id="shenkarLogoImage"></a>
+                                </section>
+                                <section id="notification" class="nav-item">
+                                    <a href="#" class="nav-link"><img src="images/notification.png" alt="notification"
+                                            id="notificationImage"></a>
+                                </section>
+                                <section id="settings" class="nav-item">
+                                    <a href="#" class="nav-link"><img src="images/settings.png" alt="settings"
+                                            id="settingsImage"></a>
+                                </section>
+                                <section id="ranProfile" class="nav-item">
+                                    <a href="#" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
+                                            id="ranProfileImage"></a>
+                                </section>
                             </div>
                         </div>
-                        <section id="rightHeaderLinks">
-                            <section id="shenkarLogo">
-                                <a href="#">
-                                    <img src="images/Shenkar.png" alt="shenkarLogo" id="shenkarLogoImage">
-                                </a>
-                            </section>
-                            <section id="notification">
-                                <a href="#">
-                                    <img src="images/notification.png" alt="notification" id="notificationImage">
-                                </a>
-                            </section>
-                            <section id="settings">
-                                <a href="#">
-                                    <img src="images/settings.png" alt="settings" id="settingsImage">
-                                </a>
-                            </section>
-                            <section id="ranProfile">
-                                <a href="#">
-                                    <img src="images/ranProfile.png" alt="ranProfile" id="ranProfileImage">
-                                </a>
-                            </section>
-                        </section>
                     </div>
                 </nav>
+                <section id="navbar2">
+                    <div id="navbarContainer">
+
+                    </div>
+                </section>
             </header>
+
         </div>
+
         <section id="body-con">
             <div id="sideBar">
                 <section id="choiseList">
