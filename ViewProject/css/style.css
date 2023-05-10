@@ -284,6 +284,11 @@ li {
     width: 20px;
     margin-top: 3px;
 }
+#star
+{
+    height:37px;
+    width: 37px;
+}
 #FileLogo2
 {
     position: absolute;
