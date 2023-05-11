@@ -3,7 +3,9 @@
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
-
+#ProjectName{
+    color: #555555;
+}
 header,
 main,
 footer,
@@ -211,7 +213,7 @@ li {
 #Srs
 {
     position: absolute;
-    left: 320px;
+    left: 285px;
     top: 400px;
 
 
@@ -315,6 +317,7 @@ li {
     margin-top: 40px;
     width: 234px;
     height: 66px;
+    color: #555555;
 
 }
 #stars
@@ -353,7 +356,7 @@ li {
 }
 #ProjrctImage
 {
-    width: 230px;
+    width: 250px;
     height: 206px;
     margin-top: 50px;
 
@@ -379,7 +382,34 @@ li {
     height: 10px;
     background-color: #bd362f;
     border-radius: 10px;
+    top: 5px;
 
+}
+#participant1
+{
+    position: absolute;
+    height: 32px;
+    width: 204px;
+    margin-top: 10px;
+    color: #555555;
+    
+
+}
+#participant2
+{
+    position: absolute;
+    height: 32px;
+    width: 204px;
+    margin-top: 30px;
+    color: #555555;
+
+}
+#firstname
+{
+    height: 10px;
+    width: 10px;
+    margin-left: 15px;
+    margin-top: 2.5px;
 }
 @media(max-width:767px) {
     #sideBar{
