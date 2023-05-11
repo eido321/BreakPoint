@@ -15,8 +15,17 @@ section {
     display: block;
 }
 
-body {
+body 
+{
     width: 100%;
+
+}
+#body-con
+{
+    position: absolute;
+    display: flex;
+    flex-flow: row;
+    background-color: #555555;
 }
 
 li>a {
@@ -200,7 +209,7 @@ li {
 {
     width: 521px;
     height: 200px;
-    background-color: #f0e9e9;
+    background-color: white
 
 
 }
