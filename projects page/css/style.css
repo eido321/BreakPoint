@@ -76,7 +76,7 @@ nav {
 }
 
 #searchBar {
-    margin-left: 150px;
+    margin-left: 130px;
     display: flex;
 }
 
@@ -295,7 +295,7 @@ span {
 }
 
 
-@media(max-width:1032px) {
+@media(max-width:990px) {
 
     .projectImages {
         width: 350px;
