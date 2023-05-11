@@ -15,19 +15,23 @@ section {
     display: block;
 }
 
-body 
-{
-    width: 100%;
-
-}
 #body-con
 {
     position: absolute;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-flow: row;
-    background-color: #555555;
+    
 }
+#View-con
+{
+    width: 100vw;
+    margin-left: 209px;
+    margin-top: 80px;
+    background-color:#eeeeee;
 
+}
 li>a {
     color: #555555;
     text-decoration: none;
@@ -253,7 +257,7 @@ li {
 .dots::after
 {
     content: "...........................................";
-    margin-left: 10px;
+    margin-left: 13px;
 }
 #ranProfileImage2
 {
@@ -365,7 +369,7 @@ li {
 }
 #ProjrctImage
 {
-    width: 258px;
+    width: 290px;
     height: 206px;
     margin-top: 50px;
 
