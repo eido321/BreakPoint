@@ -22,12 +22,16 @@ li>a {
     text-decoration: none;
 }
 
-#navbar2{
+#navbar2 {
     display: none;
 }
 
-.mobileHeader{
-    display:none
+.mobileHeader {
+    display: none
+}
+
+#mobileNav {
+    display: none;
 }
 
 /*---------------------------------------------*/
@@ -61,8 +65,14 @@ nav {
     align-items: center;
 }
 
-#logo {
+#logo,
+#logoExpanded {
     width: 213px;
+}
+
+#logoExpanded {
+
+    display: none;
 }
 
 #searchBar {
@@ -79,16 +89,16 @@ nav {
     align-items: center;
 }
 
-.btn.btn-outline-secondary{
+.btn.btn-outline-secondary {
     border-color: #dee2e6;
 }
 
-.btn.btn-outline-secondary:hover{
+.btn.btn-outline-secondary:hover {
     background-color: #bd362f;
-    border:0px
+    border: 0px
 }
 
-#inputSearch:focus{
+#inputSearch:focus {
     border-color: #dee2e6;
     box-shadow: none;
 }
@@ -143,9 +153,16 @@ nav {
     width: 35px;
 }
 
-.projectContainer{
+.projectContainer {
     display: flex;
     flex-flow: column;
+}
+
+#desktopNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 /*---------------------------------------------*/
@@ -236,20 +253,20 @@ li {
     background-color: #eeeeee;
 }
 
-#gridBody{
+#gridBody {
     margin-top: 80px;
 }
 
-.row{
+.row {
     margin-bottom: 70px;
 }
 
-.projectImages{
+.projectImages {
     width: 250px;
     border-radius: 5px;
 }
 
-.projectName{
+.projectName {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -257,134 +274,159 @@ li {
 
 }
 
-span{
+span {
     font-weight: bold;
     color: #555555;
     font-size: 14px;
 }
 
-.col{
+.col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.underlineProject{
+.underlineProject {
     justify-self: center;
     width: 250px;
     height: 2.5px;
     background-color: #555555;
 }
 
+
 @media(max-width:1032px) {
-    .projectImages{
+
+    .projectImages {
         width: 350px;
     }
 
-    .col{
+    .col {
         margin-bottom: 50px;
-        
+
     }
 
-    .projectImages{
+    .projectImages {
         width: 400px;
     }
-}
 
-@media(max-width:767px) {
-    .mobileHeader{
+    .mobileHeader {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
     }
 
-    #searchBar{
+    .navbar-collapse {
+        background-color: #f8f9fa;
+    }
+
+    #searchBar {
         margin: 0;
         width: 50%;
     }
 
-    #navbar{
-        display: flex;
-        width: 100%;
-
-    }
-
-    #sideBar{
+    #desktopNav {
         display: none;
     }
 
-    .row{
+    #mobileNav {
+        display: flex;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    #selectedNav {
+        color: #bd362f;
+        border-bottom: 3px solid #bd362f;
+
+
+    }
+
+    #mobileNavContainer {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    #navbar {
+        display: flex;
+        width: 100%;
+    }
+
+    #sideBar {
+        display: none;
+    }
+
+    .row {
         margin-bottom: 30px;
     }
 
-    #projectsBody{
+    #projectsBody {
         margin-left: 0px;
         padding-top: 50px;
     }
 
-    .projectImages{
+    .projectImages {
         width: 250px;
     }
 
-    #projectsBody{
+    #projectsBody {
         background-color: #f8f9fa;
     }
 
-    #logoContainer{
+    #logoContainer,
+    #logoExpanded {
         display: none;
     }
 
-    .navbar-toggler{
+    .navbar-toggler {
         width: 80px;
         height: 60px;
         display: flex;
-        
+
     }
 
-    #humburger{
-        border:none;
-        padding: 0;
-        width: 55px;
+    #humburger {
+        border: none;
+        padding: 10px;
     }
 
-    .navbar-toggler>.navbar-toggler-icon{
+    .navbar-toggler>.navbar-toggler-icon {
         width: 100%;
         height: 100%;
     }
 
-    #navbar2{
+    #navbar2 {
         display: flex;
         height: 60px;
         width: 100vw;
         background-color: #eeeeee;
         font-size: 20px;
         font-weight: bold;
-    }  
-
-    #navbar2Row{
-        margin-bottom: 0;
-        height: 100%;
-        border-bottom: 2px solid ;
     }
 
-    .projectBox{
+    #navbar2Row {
+        margin-bottom: 0;
+        height: 100%;
+    }
+
+    .projectBox {
         color: #bd362f;
         border-bottom: 4px solid #bd362f;
     }
-    
-    #colNavbar2{
+
+    #colNavbar2 {
         margin-bottom: 0;
     }
 
-    .projectContainer{
+    .projectContainer {
         background-color: #eeeeee;
         padding: 40px 40px 40px 40px;
         border-radius: 12px;
     }
 
-    #ranProfileImage{
+    #ranProfileImage {
         width: 45px;
     }
 
