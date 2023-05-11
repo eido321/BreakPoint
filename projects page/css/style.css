@@ -26,6 +26,10 @@ li>a {
     display: none;
 }
 
+.mobileHeader{
+    display:none
+}
+
 /*---------------------------------------------*/
 /* header */
 
@@ -137,6 +141,11 @@ nav {
 
 #ranProfileImage {
     width: 35px;
+}
+
+.projectContainer{
+    display: flex;
+    flex-flow: column;
 }
 
 /*---------------------------------------------*/
@@ -284,13 +293,35 @@ span{
 }
 
 @media(max-width:767px) {
+    .mobileHeader{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
+    #searchBar{
+        margin: 0;
+        width: 50%;
+    }
+
+    #navbar{
+        display: flex;
+        width: 100%;
+
+    }
+
     #sideBar{
         display: none;
     }
 
+    .row{
+        margin-bottom: 30px;
+    }
+
     #projectsBody{
         margin-left: 0px;
-        padding-top: 70px;
+        padding-top: 50px;
     }
 
     .projectImages{
@@ -301,7 +332,7 @@ span{
         background-color: #f8f9fa;
     }
 
-    #logo{
+    #logoContainer{
         display: none;
     }
 
@@ -309,13 +340,13 @@ span{
         width: 80px;
         height: 60px;
         display: flex;
-        justify-content: center;
-        align-items: center;
         
     }
 
     #humburger{
         border:none;
+        padding: 0;
+        width: 55px;
     }
 
     .navbar-toggler>.navbar-toggler-icon{
@@ -324,9 +355,37 @@ span{
     }
 
     #navbar2{
-        display: block;
+        display: flex;
         height: 60px;
         width: 100vw;
         background-color: #eeeeee;
+        font-size: 20px;
+        font-weight: bold;
+    }  
+
+    #navbar2Row{
+        margin-bottom: 0;
+        height: 100%;
+        border-bottom: 2px solid ;
     }
+
+    .projectBox{
+        color: #bd362f;
+        border-bottom: 4px solid #bd362f;
+    }
+    
+    #colNavbar2{
+        margin-bottom: 0;
+    }
+
+    .projectContainer{
+        background-color: #eeeeee;
+        padding: 40px 40px 40px 40px;
+        border-radius: 12px;
+    }
+
+    #ranProfileImage{
+        width: 45px;
+    }
+
 }

@@ -18,46 +18,72 @@
         <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-                    <div class="container-fluid">
-                        <a href="#" class="navbar-brand"><img src="images/logo.png" alt="logo" id="logo"></a>
+                    <a href="#" class="navbar-brand" id="logoContainer"><img src="images/logo.png" alt="logo"
+                            id="logo"></a>
+                    <div class="mobileHeader">
+                        <div id="ranProfileImageMobile">
+                            <a href="#" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
+                                    id="ranProfileImage"></a>
+                        </div>
+                        <div id="searchBar" class="input-group">
+                            <input type="text" class="form-control" id="inputSearch" placeholder="Search"
+                                aria-label="Search for...">
+                            <button class="btn btn-outline-secondary" type="button"><img src="images/search.png"
+                                    alt="search" id="search"></button>
+                            <button class="btn btn-outline-secondary" type="button"><img src="images/sortSearch.png"
+                                    alt="sortSearch" id="sortIconImage"></button>
+                        </div>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                             aria-label="Toggle navigation" id="humburger">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <div id="searchBar" class="input-group">
-                                <input type="text" class="form-control" id="inputSearch" placeholder="Search"
-                                    aria-label="Search for...">
-                                <button class="btn btn-outline-secondary" type="button"><img src="images/search.png"
-                                        alt="search" id="search"></button>
-                                <button class="btn btn-outline-secondary" type="button"><img src="images/sortSearch.png"
-                                        alt="sortSearch" id="sortIconImage"></button>
-                            </div>
-                            <div class="navbar-nav ms-auto">
-                                <section id="shenkarLogo" class="nav-item">
-                                    <a href="#" class="nav-link"><img src="images/Shenkar.png" alt="shenkarLogo"
-                                            id="shenkarLogoImage"></a>
-                                </section>
-                                <section id="notification" class="nav-item">
-                                    <a href="#" class="nav-link"><img src="images/notification.png" alt="notification"
-                                            id="notificationImage"></a>
-                                </section>
-                                <section id="settings" class="nav-item">
-                                    <a href="#" class="nav-link"><img src="images/settings.png" alt="settings"
-                                            id="settingsImage"></a>
-                                </section>
-                                <section id="ranProfile" class="nav-item">
-                                    <a href="#" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
-                                            id="ranProfileImage"></a>
-                                </section>
-                            </div>
+                    </div>
+
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div id="searchBar" class="input-group">
+                            <input type="text" class="form-control" id="inputSearch" placeholder="Search"
+                                aria-label="Search for...">
+                            <button class="btn btn-outline-secondary" type="button"><img src="images/search.png"
+                                    alt="search" id="search"></button>
+                            <button class="btn btn-outline-secondary" type="button"><img src="images/sortSearch.png"
+                                    alt="sortSearch" id="sortIconImage"></button>
                         </div>
+                        <div class="navbar-nav ms-auto">
+                            <section id="shenkarLogo" class="nav-item">
+                                <a href="#" class="nav-link"><img src="images/Shenkar.png" alt="shenkarLogo"
+                                        id="shenkarLogoImage"></a>
+                            </section>
+                            <section id="notification" class="nav-item">
+                                <a href="#" class="nav-link"><img src="images/notification.png" alt="notification"
+                                        id="notificationImage"></a>
+                            </section>
+                            <section id="settings" class="nav-item">
+                                <a href="#" class="nav-link"><img src="images/settings.png" alt="settings"
+                                        id="settingsImage"></a>
+                            </section>
+                            <section id="ranProfile" class="nav-item">
+                                <a href="#" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
+                                        id="ranProfileImage"></a>
+                            </section>
+                        </div>
+
                     </div>
                 </nav>
                 <section id="navbar2">
-                    <div id="navbarContainer">
-
+                    <div class="container text-center" id="navbarContainer">
+                        <div class="row" id="navbar2Row">
+                            <div class="col projectBox" id="colNavbar2">
+                                Projects
+                            </div>
+                            <div class="col" id="colNavbar2">
+                                Favorites
+                            </div>
+                            <div class="col" id="colNavbar2">
+                                Recent
+                            </div>
+                        </div>
                     </div>
                 </section>
             </header>
@@ -91,79 +117,97 @@
                 <div class="container text-center" id="gridBody">
                     <div class="row" id="row1">
                         <div class="col">
-                            <a href="#"><img src="images/projectsImages/CookieFactory.png" alt="CookieFactory"
-                                    class="projectImages">
-                                <a href="#" class="projectName">Cookie factory</a>
-                                <span id="fromSpan">By Dor Zolochia and Virin Gagon</span>
-                                <div class="underlineProject"></div>
-                            </a>
+                            <div class="projectContainer">
+                                <a href="#"><img src="images/projectsImages/CookieFactory.png" alt="CookieFactory"
+                                        class="projectImages">
+                                    <a href="#" class="projectName">Cookie factory</a>
+                                    <span id="fromSpan">By Dor Zolochia and Virin Gagon</span>
+                                    <div class="underlineProject"></div>
+                                </a>
+                            </div>
                         </div>
                         <div class="col">
-                            <a href="#"><img src="images/projectsImages/DataZoo.png" alt="DataZoo"
-                                    class="projectImages">
-                                <a href="#" class="projectName">Data Zoo</a>
-                                <span id="fromSpan">By Moshe Sabah and Ariel Greenberg</span>
-                                <div class="underlineProject"></div>
-                            </a>
+                            <div class="projectContainer">
+                                <a href="#"><img src="images/projectsImages/DataZoo.png" alt="DataZoo"
+                                        class="projectImages">
+                                    <a href="#" class="projectName">Data Zoo</a>
+                                    <span id="fromSpan">By Moshe Sabah and Ariel Greenberg</span>
+                                    <div class="underlineProject"></div>
+                                </a>
+                            </div>
                         </div>
                         <div class="col">
-                            <a href="#"><img src="images/projectsImages/dogFactory.png" alt="dogFactory"
-                                    class="projectImages">
-                                <a href="#" class="projectName">DogFactory</a>
-                                <span id="fromSpan">By Dani Aharon and Mika Cohen</span>
-                                <div class="underlineProject"></div>
-                            </a>
+                            <div class="projectContainer">
+                                <a href="#"><img src="images/projectsImages/dogFactory.png" alt="dogFactory"
+                                        class="projectImages">
+                                    <a href="#" class="projectName">DogFactory</a>
+                                    <span id="fromSpan">By Dani Aharon and Mika Cohen</span>
+                                    <div class="underlineProject"></div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="row" id="row2">
                         <div class="col">
-                            <a href="#"><img src="images/projectsImages/DoorStory.png" alt="DoorStory"
-                                    class="projectImages"></a>
-                            <a href="#" class="projectName">DoorStory</a>
-                            <span id="fromSpan">By Yossi Aharon and Sivan Cohen</span>
-                            <div class="underlineProject"></div>
+                            <div class="projectContainer">
+                                <a href="#"><img src="images/projectsImages/DoorStory.png" alt="DoorStory"
+                                        class="projectImages"></a>
+                                <a href="#" class="projectName">DoorStory</a>
+                                <span id="fromSpan">By Yossi Aharon and Sivan Cohen</span>
+                                <div class="underlineProject"></div>
+                            </div>
                         </div>
                         <div class="col">
-                            <a href="#"><img src="images/projectsImages/farmDream.png" alt="farmDream"
-                                    class="projectImages">
-                                <a href="#" class="projectName">FarmDream</a>
-                                <span id="fromSpan">By Stav Levy and Dana Maretzky</span>
-                                <div class="underlineProject"></div>
-                            </a>
+                            <div class="projectContainer">
+                                <a href="#"><img src="images/projectsImages/farmDream.png" alt="farmDream"
+                                        class="projectImages">
+                                    <a href="#" class="projectName">FarmDream</a>
+                                    <span id="fromSpan">By Stav Levy and Dana Maretzky</span>
+                                    <div class="underlineProject"></div>
+                                </a>
+                            </div>
                         </div>
                         <div class="col">
-                            <a href="#"><img src="images/projectsImages/LabTool.png" alt="LabTool"
-                                    class="projectImages">
-                                <a href="#" class="projectName">LabTool</a>
-                                <span id="fromSpan">By Daniel Menashe and Ron Ben David</span>
-                                <div class="underlineProject"></div>
-                            </a>
+                            <div class="projectContainer">
+                                <a href="#"><img src="images/projectsImages/LabTool.png" alt="LabTool"
+                                        class="projectImages">
+                                    <a href="#" class="projectName">LabTool</a>
+                                    <span id="fromSpan">By Daniel Menashe and Ron Ben David</span>
+                                    <div class="underlineProject"></div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="row" id="row3">
                         <div class="col">
-                            <a href="#"><img src="images/projectsImages/positiveIntelligence.png"
-                                    alt="positiveIntelligence" class="projectImages">
-                                <a href="#" class="projectName">Positive Intelligence</a>
-                                <span id="fromSpan">By Liron Levi and Yuval Reznik</span>
-                                <div class="underlineProject"></div>
-                            </a>
+                            <div class="projectContainer">
+                                <a href="#"><img src="images/projectsImages/positiveIntelligence.png"
+                                        alt="positiveIntelligence" class="projectImages">
+                                    <a href="#" class="projectName">Positive Intelligence</a>
+                                    <span id="fromSpan">By Liron Levi and Yuval Reznik</span>
+                                    <div class="underlineProject"></div>
+                                </a>
+                            </div>
                         </div>
                         <div class="col">
-                            <a href="#"><img src="images/projectsImages/randomLogo.png" alt="randomLogo"
-                                    class="projectImages">
-                                <a href="#" class="projectName">randomo</a>
-                                <span id="fromSpan">By Ron Noiman and Shalev Goodman</span>
-                                <div class="underlineProject"></div>
-                            </a>
+                            <div class="projectContainer">
+                                <a href="#"><img src="images/projectsImages/randomLogo.png" alt="randomLogo"
+                                        class="projectImages">
+                                    <a href="#" class="projectName">randomo</a>
+                                    <span id="fromSpan">By Ron Noiman and Shalev Goodman</span>
+                                    <div class="underlineProject"></div>
+                                </a>
+                            </div>
                         </div>
                         <div class="col">
-                            <a href="#"><img src="images/projectsImages/TagTool.png" alt="TagTool"
-                                    class="projectImages">
-                                <a href="#" class="projectName">TagTool</a>
-                                <span id="fromSpan">By Menachem Avshalom and John Doe</span>
-                                <div class="underlineProject"></div>
-                            </a>
+                            <div class="projectContainer">
+                                <a href="#"><img src="images/projectsImages/TagTool.png" alt="TagTool"
+                                        class="projectImages">
+                                    <a href="#" class="projectName">TagTool</a>
+                                    <span id="fromSpan">By Menachem Avshalom and John Doe</span>
+                                    <div class="underlineProject"></div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
