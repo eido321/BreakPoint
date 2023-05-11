@@ -133,7 +133,8 @@ li {
 
 #viewImage,
 #addImage,
-#editImage {
+#editImage 
+{
     width: 15px;
 }
 
@@ -164,7 +165,151 @@ li {
     height: 2px;
     background-color: #555555;
 }
+#LeftSide{
+    position: absolute;
+    height: 755px;
+    width: 520px;
+    left: 300px;
+    top: 104px;
 
+}
+#RightSide{
+    position: absolute;
+    height: 755px;
+    width: 520px;
+    left: 900px;
+    top: 120px;
+
+}
+#RedLine{
+    width: 388px;
+    height: 5px;
+    color: #bd362f;
+    background-color:#bd362f ;
+}
+#GreyLine{
+    width: 388px;
+    height: 2px;
+    margin-left: 14px;
+    color:#555555;
+    background-color:#555555 ;
+}
+#WhiteBox
+{
+    width: 521px;
+    height: 200px;
+    background-color: #f0e9e9;
+
+
+}
+#requirements
+{
+    height: 17px;
+    width: 349px;
+
+}
+#Srs
+{
+    position: absolute;
+    left: 320px;
+    top: 400px;
+
+
+}
+#Example
+{
+    width: 500px;
+    height: 200px;
+
+}
+#Eyes {
+    position: absolute;
+    height: 180px;
+    width: 50px;
+    left: 300px;
+}
+
+#Eyes img {
+    margin-top: 8.5px;
+}
+#bottomLefSide{
+    width: 500px;
+    height: 100px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dots::after
+{
+    content: "...........................................";
+    margin-left: 10px;
+}
+#ranProfileImage2
+{
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+
+}
+#SortImage
+{
+    height: 23px;
+    width: 23px;
+    vertical-align: middle;
+
+}
+#Txt{
+    position: absolute;
+    left: 40px;
+    top: 640px;
+    
+}
+#comments{
+    height: 30px;
+    width: 300px;
+    margin-left: 12px;
+}
+
+#PlayBuotunIMage{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 316px;
+    left: 288px;
+}
+#FileLogo
+{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    margin-top: 3px;
+}
+#star
+{
+    height:37px;
+    width: 37px;
+}
+#FileLogo2
+{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    margin-top: 3px;
+}
+#share {
+    position: absolute;
+    width: 70px;
+    height: 35px;
+    left: 400px;
+    top: 23px;
+    background-color: #bd362f;
+    border-radius: 10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+  }
+  
 
 
 @media(max-width:767px) {
