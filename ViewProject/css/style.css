@@ -177,7 +177,7 @@ li {
     position: absolute;
     height: 755px;
     width: 520px;
-    left: 900px;
+    left: 1100px;
     top: 120px;
 
 }
@@ -310,8 +310,77 @@ li {
     color: white; 
   }
   
+#Rating
+{
+    margin-top: 40px;
+    width: 234px;
+    height: 66px;
+
+}
+#stars
+{
+    height:15px;
+    width: 15px;
+
+    
+}
+#StarCn1
+{
+    position: absolute;
+    height: 18px;
+    width: 116px;
+    left: 110px;
+    top: 75px;
+
+}
+#StarCn2
+{
+    position: absolute;
+    height: 18px;
+    width: 116px;
+    left: 110px;
+    top: 100px;
+
+}
+#StarCn3
+{
+    position: absolute;
+    height: 18px;
+    width: 116px;
+    left: 110px;
+    top: 125px;
+
+}
+#ProjrctImage
+{
+    width: 230px;
+    height: 206px;
+    margin-top: 50px;
 
 
+}
+#bottomRightSide
+{
+    position: absolute;
+    height: 100px;
+    width: 397px;
+    margin-top: 65px;
+
+}
+#RedlineRigthSide{
+    height: 5px;
+    width: 290px;
+    background-color: #bd362f;
+}
+#RedDot
+{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #bd362f;
+    border-radius: 10px;
+
+}
 @media(max-width:767px) {
     #sideBar{
         display: none;
