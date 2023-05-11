@@ -3,7 +3,9 @@
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
-
+#ProjectName{
+    color: #555555;
+}
 header,
 main,
 footer,
@@ -13,8 +15,17 @@ section {
     display: block;
 }
 
-body {
+body 
+{
     width: 100%;
+
+}
+#body-con
+{
+    position: absolute;
+    display: flex;
+    flex-flow: row;
+    background-color: #555555;
 }
 
 li>a {
@@ -177,7 +188,7 @@ li {
     position: absolute;
     height: 755px;
     width: 520px;
-    left: 900px;
+    left: 1100px;
     top: 120px;
 
 }
@@ -198,7 +209,7 @@ li {
 {
     width: 521px;
     height: 200px;
-    background-color: #f0e9e9;
+    background-color: white
 
 
 }
@@ -211,7 +222,7 @@ li {
 #Srs
 {
     position: absolute;
-    left: 320px;
+    left: 285px;
     top: 400px;
 
 
@@ -310,8 +321,105 @@ li {
     color: white; 
   }
   
+#Rating
+{
+    margin-top: 40px;
+    width: 234px;
+    height: 66px;
+    color: #555555;
+
+}
+#stars
+{
+    height:15px;
+    width: 15px;
+
+    
+}
+#StarCn1
+{
+    position: absolute;
+    height: 18px;
+    width: 116px;
+    left: 110px;
+    top: 75px;
+
+}
+#StarCn2
+{
+    position: absolute;
+    height: 18px;
+    width: 116px;
+    left: 110px;
+    top: 100px;
+
+}
+#StarCn3
+{
+    position: absolute;
+    height: 18px;
+    width: 116px;
+    left: 110px;
+    top: 125px;
+
+}
+#ProjrctImage
+{
+    width: 258px;
+    height: 206px;
+    margin-top: 50px;
 
 
+}
+#bottomRightSide
+{
+    position: absolute;
+    height: 100px;
+    width: 397px;
+    margin-top: 65px;
+
+}
+#RedlineRigthSide{
+    height: 5px;
+    width: 290px;
+    background-color: #bd362f;
+}
+#RedDot
+{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #bd362f;
+    border-radius: 10px;
+    top: 5px;
+
+}
+#participant1
+{
+    position: absolute;
+    height: 32px;
+    width: 204px;
+    margin-top: 10px;
+    color: #555555;
+    
+
+}
+#participant2
+{
+    position: absolute;
+    height: 32px;
+    width: 204px;
+    margin-top: 30px;
+    color: #555555;
+
+}
+#firstname
+{
+    height: 10px;
+    width: 10px;
+    margin-left: 15px;
+    margin-top: 2.5px;
+}
 @media(max-width:767px) {
     #sideBar{
         display: none;
