@@ -34,6 +34,11 @@ li>a {
     display: none;
 }
 
+#body-con{
+    width: 100vw;
+    height: 100vh;
+}
+
 /*---------------------------------------------*/
 /* header */
 

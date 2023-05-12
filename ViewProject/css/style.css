@@ -3,9 +3,7 @@
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
-#ProjectName{
-    color: #555555;
-}
+
 header,
 main,
 footer,
@@ -15,30 +13,30 @@ section {
     display: block;
 }
 
-#body-con
-{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-flow: row;
-    
+body {
+    width: 100%;
 }
-#View-con
-{
-    width: 100vw;
-    margin-left: 209px;
-    margin-top: 80px;
-    background-color:#eeeeee;
 
-}
 li>a {
     color: #555555;
     text-decoration: none;
 }
 
-#navbar2{
+#navbar2 {
     display: none;
+}
+
+.mobileHeader {
+    display: none
+}
+
+#mobileNav {
+    display: none;
+}
+
+#body-con {
+    width: 100vw;
+    height: 100vh;
 }
 
 /*---------------------------------------------*/
@@ -46,6 +44,13 @@ li>a {
 
 button {
     border: 0px;
+}
+
+#searchText {
+    font-size: 14px;
+    color: #777777;
+    margin-left: 20px;
+    font-weight: 100;
 }
 
 #headerContainer {
@@ -65,8 +70,52 @@ nav {
     align-items: center;
 }
 
-#logo {
+#logo,
+#logoExpanded {
     width: 213px;
+}
+
+#logoExpanded {
+
+    display: none;
+}
+
+#searchBar {
+    margin-left: 130px;
+    display: flex;
+}
+
+#leftSearchBar {
+    width: 294px;
+    height: 32px;
+    background-color: #eeeeee;
+    border-radius: 12px 0px 0px 12px;
+    display: flex;
+    align-items: center;
+}
+
+.btn.btn-outline-secondary {
+    border-color: #dee2e6;
+}
+
+.btn.btn-outline-secondary:hover {
+    background-color: #bd362f;
+    border: 0px
+}
+
+#inputSearch:focus {
+    border-color: #dee2e6;
+    box-shadow: none;
+}
+
+#search {
+    width: 15px;
+    margin-left: 3px;
+}
+
+
+#sortIconImage {
+    width: 30px;
 }
 
 #shenkarLogoImage {
@@ -76,7 +125,6 @@ nav {
 
 #rightHeaderLinks {
     display: flex;
-    position: absolute;
     right: 23px;
 }
 
@@ -107,6 +155,18 @@ nav {
 
 #ranProfileImage {
     width: 35px;
+}
+
+.projectContainer {
+    display: flex;
+    flex-flow: column;
+}
+
+#desktopNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 /*---------------------------------------------*/
@@ -148,8 +208,7 @@ li {
 
 #viewImage,
 #addImage,
-#editImage 
-{
+#editImage {
     width: 15px;
 }
 
@@ -180,65 +239,124 @@ li {
     height: 2px;
     background-color: #555555;
 }
-#LeftSide{
-    position: absolute;
-    height: 755px;
-    width: 520px;
-    left: 300px;
-    top: 104px;
+
+/*---------------------------------------------*/
+/* gridBody */
+
+#body-con {
+    display: flex;
+    flex-flow: row;
+}
+
+#projectsBody {
+    margin-left: 209px;
+    margin-top: 80px;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: #eeeeee;
+}
+
+#gridBody {
+    margin-top: 80px;
+}
+
+.row {
+    margin-bottom: 70px;
+}
+
+.projectImages {
+    width: 250px;
+    border-radius: 5px;
+}
+
+.projectName {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
 
 }
-#RightSide{
-    position: absolute;
+
+span {
+    font-weight: bold;
+    color: #555555;
+    font-size: 14px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.underlineProject {
+    justify-self: center;
+    width: 250px;
+    height: 2.5px;
+    background-color: #555555;
+}
+
+#LeftSide {
     height: 755px;
-    width: 520px;
-    left: 1100px;
-    top: 120px;
+    width: 50%;
+
+    /* left: 300px;
+    top: 104px; */
 
 }
-#RedLine{
+
+#RightSide {
+    height: 755px;
+    width: 50%;
+    margin-left: 200px;
+    /* left: 1100px;
+    top: 120px; */
+
+}
+
+#RedLine {
     width: 388px;
     height: 5px;
     color: #bd362f;
-    background-color:#bd362f ;
+    background-color: #bd362f;
 }
-#GreyLine{
+
+#GreyLine {
     width: 388px;
     height: 2px;
     margin-left: 14px;
-    color:#555555;
-    background-color:#555555 ;
+    color: #555555;
+    background-color: #555555;
 }
-#WhiteBox
-{
+
+#WhiteBox {
     width: 521px;
     height: 200px;
     background-color: white
-
-
 }
-#requirements
-{
+
+#requirements {
     height: 17px;
     width: 349px;
 
 }
-#Srs
-{
-    position: absolute;
+
+#Srs {
     left: 285px;
     top: 400px;
 
 
 }
-#Example
-{
+
+#Example {
     width: 500px;
     height: 200px;
 
 }
+
 #Eyes {
-    position: absolute;
     height: 180px;
     width: 50px;
     left: 300px;
@@ -247,150 +365,142 @@ li {
 #Eyes img {
     margin-top: 8.5px;
 }
-#bottomLefSide{
+
+#bottomLefSide {
     width: 500px;
     height: 100px;
     align-items: center;
     margin-top: 10px;
 }
 
-.dots::after
-{
+.dots::after {
     content: "...........................................";
     margin-left: 13px;
 }
-#ranProfileImage2
-{
+
+#ranProfileImage2 {
     height: 43px;
     width: 43px;
     vertical-align: middle;
 
 }
-#SortImage
-{
+
+#SortImage {
     height: 23px;
     width: 23px;
     vertical-align: middle;
 
 }
-#Txt{
-    position: absolute;
+
+#Txt {
     left: 40px;
     top: 640px;
-    
+
 }
-#comments{
+
+#comments {
     height: 30px;
     width: 300px;
     margin-left: 12px;
 }
 
-#PlayBuotunIMage{
-    position: absolute;
+#PlayBuotunIMage {
     height: 30px;
     width: 30px;
     top: 316px;
     left: 288px;
 }
-#FileLogo
-{
-    position: absolute;
+
+#FileLogo {
     height: 20px;
     width: 20px;
     margin-top: 3px;
 }
-#star
-{
-    height:37px;
+
+#star {
+    height: 37px;
     width: 37px;
 }
-#FileLogo2
-{
-    position: absolute;
+
+#FileLogo2 {
     height: 14px;
     width: 14px;
     margin-top: 3px;
 }
+
 #share {
-    position: absolute;
     width: 70px;
     height: 35px;
-    left: 400px;
-    top: 23px;
+    margin-left: 190px;
     background-color: #bd362f;
     border-radius: 10px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    color: white; 
-  }
-  
-#Rating
-{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#Rating {
     margin-top: 40px;
     width: 234px;
     height: 66px;
     color: #555555;
 
 }
-#stars
-{
-    height:15px;
+
+#stars {
+    height: 15px;
     width: 15px;
 
-    
+
 }
-#StarCn1
-{
-    position: absolute;
+
+#StarCn1 {
     height: 18px;
     width: 116px;
     left: 110px;
     top: 75px;
 
 }
-#StarCn2
-{
-    position: absolute;
+
+#StarCn2 {
     height: 18px;
     width: 116px;
     left: 110px;
     top: 100px;
 
 }
-#StarCn3
-{
-    position: absolute;
+
+#StarCn3 {
     height: 18px;
     width: 116px;
     left: 110px;
     top: 125px;
 
 }
-#ProjrctImage
-{
+
+#ProjrctImage {
     width: 290px;
     height: 206px;
     margin-top: 50px;
 
 
 }
-#bottomRightSide
-{
-    position: absolute;
+
+#bottomRightSide {
     height: 100px;
     width: 397px;
     margin-top: 65px;
 
 }
-#RedlineRigthSide{
+
+#RedlineRigthSide {
     height: 5px;
     width: 290px;
     background-color: #bd362f;
 }
-#RedDot
-{
-    position: absolute;
+
+#RedDot {
     width: 10px;
     height: 10px;
     background-color: #bd362f;
@@ -398,64 +508,80 @@ li {
     top: 5px;
 
 }
-#participant1
-{
-    position: absolute;
+
+#participant1 {
     height: 32px;
     width: 204px;
     margin-top: 10px;
     color: #555555;
-    
+
 
 }
-#participant2
-{
-    position: absolute;
+
+#participant2 {
     height: 32px;
     width: 204px;
     margin-top: 30px;
     color: #555555;
 
 }
-#firstname
-{
+
+#firstname {
     height: 10px;
     width: 10px;
     margin-left: 15px;
     margin-top: 2.5px;
 }
+
+#View-con{
+    display: flex;
+    margin-left: 259px;
+    margin-top: 120px;
+}
+
+#ProjectNameTitle{
+    display: flex;
+    align-items: center;
+}
+
+
+
 @media(max-width:767px) {
-    #sideBar{
+    #sideBar {
         display: none;
     }
 
-    #projectsBody{
+    #body-con {
+        display: none;
+    }
+
+    #projectsBody {
         background-color: #f8f9fa;
     }
 
-    #logo{
+    #logo {
         display: none;
     }
 
-    .navbar-toggler{
+    .navbar-toggler {
         width: 80px;
         height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
     }
 
-    #humburger{
-        border:none;
+    #humburger {
+        border: none;
     }
 
-    .navbar-toggler>.navbar-toggler-icon{
+    .navbar-toggler>.navbar-toggler-icon {
         width: 100%;
         height: 100%;
     }
 
-    #navbar2{
+    #navbar2 {
         display: block;
         height: 60px;
         width: 100vw;
