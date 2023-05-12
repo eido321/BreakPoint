@@ -331,7 +331,7 @@ span {
 }
 
 #RedLine {
-    width: 463px;
+    width: 540px;
     height: 5px;
     color: #bd362f;
     background-color: #bd362f;
@@ -347,7 +347,7 @@ span {
 
 #WhiteBox {
     width: 521px;
-    height: 200px;
+    height: 100px;
     background-color: white
 }
 
@@ -453,12 +453,16 @@ span {
     width: 14px;
     margin-top: 3px;
 }
+#bottns
+{
+    display: flex;
+    flex-flow: row;
+    gap: 5px;
 
-#share {
-    width: 70px;
-    height: 35px;
-    margin-left: 255px;
-    margin-top: 10px;
+}
+#share{
+    width: 80px;
+    height: 40px;
     background-color: #bd362f;
     border-radius: 10px;
     display: flex;
@@ -581,8 +585,10 @@ span {
 
 #ProjectNameTitle
 {
+    justify-content: space-between;
     display: flex;
     margin: 0px;
+    width: 540px;
     color: #555555;
 }
 #body-con {
@@ -604,6 +610,7 @@ span {
 
 #coomnets
 {
+    
     display: none;
         
 }
@@ -614,6 +621,11 @@ span {
 }
 #mobileBody{
     display: none;
+}
+.FontCm
+{
+    color: black;
+
 }
 @media(max-width:767px) 
 {
@@ -668,6 +680,7 @@ span {
         align-items: center;
         background-color: #eeeeee;
         overflow: auto;
+        margin-bottom: 10px;
     }
     #MainTxtMobile
     {
@@ -732,6 +745,7 @@ span {
     }
     #Rating
     {
+        
         margin-left: 140px;
         margin-top: -30px;
     }
@@ -823,6 +837,7 @@ span {
         margin-top: 5px;
         margin-left: 13px;
         width: 238px;
+        color: #555555;
         background-color: white;
     }
     #middle{
@@ -860,6 +875,11 @@ span {
         margin-top: -101px;
         justify-content: center;
         text-align: center;
+
+    }
+    .FontCm
+    {
+        color: black;
 
     }
 }
