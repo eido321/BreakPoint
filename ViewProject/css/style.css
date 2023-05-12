@@ -585,8 +585,13 @@ span {
     width: 100%;
 }
 
-
+#ProjectD p {
+    display: none;
+  }
 @media(max-width:767px) {
+    #ProjectD p {
+       display: flex;
+      }
     
     #sideBar {
         display: none;
