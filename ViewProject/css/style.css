@@ -286,6 +286,11 @@ li {
     color: #555555;
 
 }
+#ProjectRivew2
+{
+   display: none;
+
+}
 
 span {
     font-weight: bold;
@@ -585,11 +590,26 @@ span {
     width: 100%;
 }
 
-#ProjectD p {
+#ProjectD {
     display: none;
   }
-@media(max-width:767px) {
-    #ProjectD p {
+#share2
+{
+    display: none;
+
+}
+#GreyLine2{
+    display: none;
+}
+
+#coomnets
+{
+    display: none;
+        
+}
+@media(max-width:767px) 
+{
+    #ProjectD{
        display: flex;
       }
     
@@ -635,6 +655,7 @@ span {
         justify-content: center;
         align-items: center;
         background-color: #eeeeee;
+        overflow: auto;
     }
     #MainTxtMobile
     {
@@ -646,6 +667,8 @@ span {
     #ProjectD
     {
         background-color:#eeeeee;
+        width: 80%;
+        margin-left: 10%;
 
     }
     #Ad
@@ -653,6 +676,9 @@ span {
         color: #555555;
         border: 1px solid gray;
         width: 50%;
+        margin-left: 5px;
+        margin-top: 10px;
+        border-radius: 5%;
     }
     #share {
         width: 70px;
@@ -672,8 +698,119 @@ span {
     font-size: 18px;
     font-weight: bold;
     color: #555555;
+    }
+
+    #FileLogo2
+    {
+        color: #565555;
+        margin-bottom: 5px;
 
     }
+    #share2{
+        width: 70px;
+        height: 35px;
+        background-color: #bd362f;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #eeeeee;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    #Rating
+    {
+        margin-left: 150px;
+        margin-top: -30px;
+    }
+    #StarCn1 {
+        height: 18px;
+        width: 116px;
+        margin-left: 110px;
+        margin-top: -25px;
+        
+    }
+    #StarCn2 {
+        height: 18px;
+        width: 116px;
+        margin-left: 110px;
+        margin-top: -25px;
+       
     
-   
+    }
+    
+    #StarCn3 {
+        height: 18px;
+        width: 116px;
+        margin-left: 110px;
+        margin-top: -25px;
+    
+    }
+    #graybox
+    {
+        margin-top: 100px;
+        height: 120px;
+        width: 500px;
+        background-color: #eeeeee;
+        justify-content: center;
+
+    }
+    #PlayBuotunIMage
+    {
+        height: 75px;
+        width: 75px;
+        margin-left: 25px;
+
+    }
+    #FileLogo
+    {
+        height: 75px;
+        width: 75px;
+        margin-left: 183px;
+
+    }
+    #ProjectRivew2
+    {
+        display: contents;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555555;
+    }
+    #bottomLefSide{
+
+        background-color: #eeeeee;
+        width: 80%;
+        margin-left: 10%;
+        border-radius: 20px;
+        margin-top: 20px;
+       
+    }
+    #GreyLine2
+    {
+        display: flex;
+        width: 238px;
+        height: 2px;
+        margin-left: 14px;
+        color: #555555;
+        background-color: #555555;
+
+    }
+    #ranProfileImage2 {
+        height: 43px;
+        width: 43px;
+        vertical-align: middle;
+        margin-top:10px;
+        margin-left: 5px;
+    
+    }
+    #coomnets
+    {
+       
+        display: flex;
+        margin-top: 5px;
+        margin-left: 13px;
+        width: 238px;
+        background-color: white;
+    }
 }
