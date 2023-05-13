@@ -23,11 +23,11 @@ li>a {
     text-decoration: none;
 }
 
-#navbar2CSS2 {
+#navbar2 {
     display: none;
 }
 
-.mobileHeaderCSS2 {
+.mobileHeader {
     display: none
 }
 
@@ -36,8 +36,12 @@ li>a {
 }
 
 #body-con {
-    width: 100vw;
-    height: 100vh;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-flow: row;
+    background-color: #eeeeee;
+
 }
 
 /*---------------------------------------------*/
@@ -248,10 +252,7 @@ li {
 /*---------------------------------------------*/
 /* gridBody */
 
-#body-con {
-    display: flex;
-    flex-flow: row;
-}
+
 
 #projectsBody {
     margin-left: 209px;
@@ -404,6 +405,12 @@ span {
 
 }
 
+#formRatingDesktop{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
 #star {
     margin-left: 5px;
     height: 37px;
@@ -533,8 +540,6 @@ span {
 
 #number {
     font-size: 30px;
-    margin-bottom: 5px;
-    position: absolute;
 }
 
 #firstname {
@@ -548,9 +553,6 @@ span {
     display: flex;
     margin-left: 259px;
     margin-top: 120px;
-    height: fit-content;
-    width: 100%;
-    background-color: #eeeeee;
 }
 
 #ProjectNameTitle {
@@ -561,10 +563,7 @@ span {
     color: #555555;
 }
 
-#body-con {
-    background-color: #eeeeee;
-    width: 100%;
-}
+
 
 #ProjectD {
     display: none;
@@ -595,9 +594,7 @@ span {
     display: none;
 }
 
-#star {
-    display: none;
-}
+
 
 .FontCm {
     color: black;
