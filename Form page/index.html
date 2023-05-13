@@ -12,9 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.js"
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
-
 </head>
-
 <body>
     <section id="screen">
         <div id="headerContainer">
@@ -43,8 +41,6 @@
                         </button>
 
                     </div>
-
-
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <div id="desktopNav">
                             <div id="searchBar" class="input-group">
@@ -112,46 +108,45 @@
 
         <section id="body-con">
             <section id="formContainer">
-                <form action="" method="">
-
+                <form action="http://localhost/temp.php" method="get">
                     <div id="leftSide">
                         <!-- <span id="formTitleText"><b>Project Creation</b></span> -->
                         <div id="formInfo1Line1">
                             <div class="mb-3 formInfo">
                                 <label for="ProjectName" class="form-label"><b>Project Name</b></label>
-                                <input type="text" class="form-control inputForm" id="ProjectName">
+                                <input type="text" class="form-control inputForm" name="ProjectName" id="ProjectName">
                             </div>
                             <div class="mb-3 formInfo">
                                 <label for="ProjectType" class="form-label"><b>Project Type</b></label>
-                                <input type="text" class="form-control inputForm" id="ProjectType">
+                                <input type="text" class="form-control inputForm" name="ProjectType" id="ProjectType">
                             </div>
                         </div>
                         <label>&nbsp&nbsp<b>Participant 1</b></label>
                         <div id="formInfo1Line2">
                             <div class="mb-3 formInfo">
-                                <label for="ProjectName" class="form-label"><b>Project Name</b></label>
-                                <input type="text" class="form-control inputForm" id="ProjectName">
+                                <label for="ProjectName" class="form-label"><b>Participant 1 Name</b></label>
+                                <input type="text" class="form-control inputForm" name="Participant1Name" id="ProjectName">
                             </div>
                             <div class="mb-3 formInfo">
-                                <label for="ProjectType" class="form-label"><b>Project Type</b></label>
-                                <input type="text" class="form-control inputForm" id="ProjectType">
+                                <label for="ProjectType" class="form-label"><b>Participant 1 Family Name</b></label>
+                                <input type="text" class="form-control inputForm" name="Participant1NameSecond" id="ProjectType">
                             </div>
                         </div>
                         <label>&nbsp&nbsp<b>Participant 2</b></label>
                         <div id="formInfo1Line3">
                             <div class="mb-3 formInfo">
-                                <label for="ProjectName" class="form-label"><b>Project Name</b></label>
-                                <input type="text" class="form-control inputForm" id="ProjectName">
+                                <label for="ProjectName" class="form-label"><b>Participant 2 Name</b></label>
+                                <input type="text" class="form-control inputForm" name="Participant2Name" id="ProjectName">
                             </div>
                             <div class="mb-3 formInfo">
-                                <label for="ProjectType" class="form-label"><b>Project Type</b></label>
-                                <input type="text" class="form-control inputForm" id="ProjectType">
+                                <label for="ProjectType" class="form-label"><b>Participant 2 Family Name</b></label>
+                                <input type="text" class="form-control inputForm" name="Participant2NameSecond" id="ProjectType">
                             </div>
                         </div>
                         <div id="projectDes">
                             <div class="mb-3">
-                                <label for="ProjectName" class="form-label"><b>Project Name</b></label>
-                                <textarea class="form-control inputForm" id="ProjectDes" rows="5"></textarea>
+                                <label for="ProjectName" class="form-label"><b>Project Description</b></label>
+                                <textarea class="form-control inputForm" name="ProjectDescription" id="ProjectDes" rows="5"></textarea>
                             </div>
                         </div>
                         <div id="formSec">
@@ -181,23 +176,23 @@
                     <div id="rightSide">
                         <div class="mb-3">
                             <label for="ProjectImageForm" class="form-label"><b>Uploading a project image</b></label>
-                            <input type="file" class="form-control fileInput" id="ProjectImageForm">
+                            <input type="file" class="form-control fileInput" name="ProjectIMage" id="ProjectImageForm">
                         </div>
                         <div class="mb-3">
-                            <label for="ProjectImageForm" class="form-label"><b>Uploading a project image</b></label>
-                            <input type="file" class="form-control fileInput" id="ProjectImageForm">
+                            <label for="ProjectImageForm" class="form-label"><b>Uploading a project Srs</b></label>
+                            <input type="file" class="form-control fileInput" name="ProjectSrs" id="ProjectImageForm">
                         </div>
                         <div class="mb-3">
                             <label for="basic-url" class="form-label"><b>Uploading a link to the Moqups page</b></label>
                             <div class="input-group" id="moqupsUrl">
                                 <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-                                <input type="text" class="form-control inputForm" id="basic-url"
+                                <input type="text" class="form-control inputForm" name="linktotheMoqupspage" id="basic-url"
                                     aria-describedby="basic-addon3 basic-addon4">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="ProjectFiles" class="form-label"><b>Uploading a project image</b></label>
-                            <input type="file" class="form-control fileInput" id="ProjectFiles">
+                            <label for="ProjectFiles" class="form-label"><b>Additional files</b></label>
+                            <input type="file" class="form-control fileInput" name="AdditionalFiles" id="ProjectFiles">
                             <div id="ProjectFilesRules">
                                 <span><b>Possible file types:</b></span><br>
                                 <span><b>Document files doc .docx .epub .gdoc .odt .oth .ott .pdf .rtf .cpp
