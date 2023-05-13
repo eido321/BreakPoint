@@ -15,6 +15,7 @@ section {
 
 body {
     width: 100%;
+   
 }
 
 li>a {
@@ -277,6 +278,19 @@ li {
     color: #555555;
 
 }
+#ProjectRivew
+{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
+
+}
+#ProjectRivew2
+{
+   display: none;
+
+}
 
 span {
     font-weight: bold;
@@ -317,7 +331,7 @@ span {
 }
 
 #RedLine {
-    width: 388px;
+    width: 540px;
     height: 5px;
     color: #bd362f;
     background-color: #bd362f;
@@ -333,33 +347,42 @@ span {
 
 #WhiteBox {
     width: 521px;
-    height: 200px;
+    height: 100px;
     background-color: white
 }
 
-#requirements {
-    height: 17px;
-    width: 349px;
-
+#requirements 
+{
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    max-height: fit-content;
+    margin-top: 10px;
+    gap: 10px;
 }
 
-#Srs {
-    left: 285px;
-    top: 400px;
 
-
-}
 
 #Example {
-    width: 500px;
-    height: 200px;
+    display: flex;
+    flex-flow: row;
 
+}
+#Example>ul
+{
+    padding: 0px;
+    margin: 0px;
+    
+}
+#Example>ul>li 
+{
+    display: flex;
+    flex-flow: row;
 }
 
 #Eyes {
     height: 180px;
     width: 50px;
-    left: 300px;
 }
 
 #Eyes img {
@@ -392,16 +415,18 @@ span {
 
 }
 
-#Txt {
-    left: 40px;
-    top: 640px;
+#Txt 
+{
+    display: flex;
+    flex-flow: column;
 
 }
 
 #comments {
     height: 30px;
     width: 300px;
-    margin-left: 12px;
+    margin-left: 50px;
+    margin-top: -40px;
 }
 
 #PlayBuotunIMage {
@@ -414,10 +439,11 @@ span {
 #FileLogo {
     height: 20px;
     width: 20px;
-    margin-top: 3px;
+
 }
 
 #star {
+    margin-left: 5px;
     height: 37px;
     width: 37px;
 }
@@ -427,11 +453,16 @@ span {
     width: 14px;
     margin-top: 3px;
 }
+#bottns
+{
+    display: flex;
+    flex-flow: row;
+    gap: 5px;
 
-#share {
-    width: 70px;
-    height: 35px;
-    margin-left: 190px;
+}
+#share{
+    width: 80px;
+    height: 40px;
     background-color: #bd362f;
     border-radius: 10px;
     display: flex;
@@ -441,7 +472,6 @@ span {
 }
 
 #Rating {
-    margin-top: 40px;
     width: 234px;
     height: 66px;
     color: #555555;
@@ -458,31 +488,32 @@ span {
 #StarCn1 {
     height: 18px;
     width: 116px;
-    left: 110px;
-    top: 75px;
-
+    margin-bottom: 10px;
+    margin-top: -5px;
+    
 }
 
 #StarCn2 {
     height: 18px;
     width: 116px;
-    left: 110px;
-    top: 100px;
+    margin-bottom: 10px;
+    margin-top: -5px;
+   
 
 }
 
 #StarCn3 {
     height: 18px;
     width: 116px;
-    left: 110px;
-    top: 125px;
+    margin-bottom: 10px;
+    margin-top: -5px;
 
 }
 
 #ProjrctImage {
     width: 290px;
     height: 206px;
-    margin-top: 50px;
+    margin-top: 65px;
 
 
 }
@@ -505,7 +536,7 @@ span {
     height: 10px;
     background-color: #bd362f;
     border-radius: 10px;
-    top: 5px;
+    margin-top: 5px;
 
 }
 
@@ -514,16 +545,26 @@ span {
     width: 204px;
     margin-top: 10px;
     color: #555555;
-
-
+    display: flex;
+    flex-flow: row;
+    
 }
 
 #participant2 {
     height: 32px;
     width: 204px;
-    margin-top: 30px;
+    margin-top: 5px;
     color: #555555;
+    display: flex;
+    flex-flow: row;
+    
 
+}
+#number
+{
+    font-size: 30px;
+    margin-bottom: 5px;
+    position: absolute;
 }
 
 #firstname {
@@ -537,25 +578,75 @@ span {
     display: flex;
     margin-left: 259px;
     margin-top: 120px;
+    height:fit-content;
+    width: 100%;
+    background-color:#eeeeee;
 }
 
-#ProjectNameTitle{
+#ProjectNameTitle
+{
+    justify-content: space-between;
     display: flex;
-    align-items: center;
+    margin: 0px;
+    width: 540px;
+    color: #555555;
+}
+#body-con {
+    background-color: #eeeeee;
+    width: 100%;
 }
 
+#ProjectD {
+    display: none;
+  }
+#share2
+{
+    display: none;
 
+}
+#GreyLine2{
+    display: none;
+}
 
-@media(max-width:767px) {
-    #sideBar {
+#coomnets
+{
+    
+    display: none;
+        
+}
+#middle{
+    margin-left: 10%;
+    align-items: center;
+    justify-content: center;
+}
+#mobileBody{
+    display: none;
+}
+.FontCm
+{
+    color: black;
+
+}
+@media(max-width:767px) 
+{
+    #mobileBody{
+        display: contents;
+    }
+    #ProjectD
+    {
+       display: flex;
+    }
+    #sideBar 
+    {
         display: none;
     }
 
     #body-con {
-        display: none;
+        display:none;
     }
 
-    #projectsBody {
+    #projectsBody 
+    {
         background-color: #f8f9fa;
     }
 
@@ -582,9 +673,213 @@ span {
     }
 
     #navbar2 {
-        display: block;
+        display: flex;
         height: 60px;
         width: 100vw;
+        justify-content: center;
+        align-items: center;
         background-color: #eeeeee;
+        overflow: auto;
+        margin-bottom: 10px;
+    }
+    #MainTxtMobile
+    {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        color: #555555;    
+    }
+    #ProjectD
+    {
+        background-color:#eeeeee;
+        width: 80%;
+        margin-left: 10%;
+
+    }
+    #Ad
+    {
+        color: #555555;
+        border: 1px solid gray;
+        width: 50%;
+        margin-left: 5px;
+        margin-top: 10px;
+        border-radius: 5%;
+    }
+    #share {
+        width: 70px;
+        height: 35px;
+        margin-left: 255px;
+        margin-top: 10px;
+        background-color: #bd362f;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    #ProjectRivew
+    {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
+    }
+
+    #FileLogo2
+    {
+        color: #565555;
+        margin-bottom: 5px;
+
+    }
+    #share2{
+        width: 80px;
+        height: 35px;
+        background-color: #bd362f;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #eeeeee;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    #Rating
+    {
+        
+        margin-left: 140px;
+        margin-top: -30px;
+    }
+    #StarCn1 {
+        height: 18px;
+        width: 116px;
+        margin-left: 110px;
+        margin-top: -25px;
+        
+    }
+    #StarCn2 {
+        height: 18px;
+        width: 116px;
+        margin-left: 110px;
+        margin-top: -25px;
+       
+    
+    }
+    
+    #StarCn3 {
+        height: 18px;
+        width: 116px;
+        margin-left: 110px;
+        margin-top: -25px;
+    
+    }
+    #graybox
+    {
+        margin-top: 100px;
+        height: 120px;
+        width: 500px;
+        background-color: #eeeeee;
+        justify-content: center;
+
+    }
+    #PlayBuotunIMage
+    {
+        height: 75px;
+        width: 75px;
+        margin-left: 25px;
+
+    }
+    #FileLogo
+    {
+        height: 75px;
+        width: 75px;
+        
+
+    }
+    #ProjectRivew2
+    {
+        display: contents;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555555;
+    }
+    #bottomLefSide{
+
+        background-color: #eeeeee;
+        width: 80%;
+        margin-left: 10%;
+        border-radius: 20px;
+        margin-top: 20px;
+       
+    }
+    #GreyLine2
+    {
+        display: flex;
+        width: 238px;
+        height: 2px;
+        margin-left: 14px;
+        color: #555555;
+        background-color: #555555;
+
+    }
+    #ranProfileImage2 {
+        height: 43px;
+        width: 43px;
+        vertical-align: middle;
+        margin-top:10px;
+        margin-left: 5px;
+    
+    }
+    #coomnets
+    {
+       
+        display: flex;
+        margin-top: 5px;
+        margin-left: 13px;
+        width: 238px;
+        color: #555555;
+        background-color: white;
+    }
+    #middle{
+        display: contents;
+        margin-left: 10%;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    #middleRight
+    {
+        margin-left:18%;
+
+    }
+    #middleLeft
+    {
+        margin-left:9%;
+
+    }
+    #left
+    {
+       
+        width: 250px;
+        margin-left: 10px;
+        justify-content: center;
+        text-align: center;
+        
+        
+    } 
+    #right
+    {
+        
+        width: 250px;
+        margin-left: 220px;
+        margin-top: -101px;
+        justify-content: center;
+        text-align: center;
+
+    }
+    .FontCm
+    {
+        color: black;
+
     }
 }
