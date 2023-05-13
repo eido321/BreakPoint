@@ -302,13 +302,6 @@ span {
     font-size: 14px;
 }
 
-.col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .underlineProject {
     justify-self: center;
     width: 250px;
@@ -602,7 +595,7 @@ span {
     display: none;
 }
 
-#star{
+#star {
     display: none;
 }
 
@@ -612,6 +605,139 @@ span {
 }
 
 @media(max-width:767px) {
+
+
+    .col {
+        margin-bottom: 50px;
+
+    }
+
+    .mobileHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-collapse {
+        background-color: #f8f9fa;
+    }
+
+    #searchBar {
+        margin: 0;
+        width: 50%;
+    }
+
+    #desktopNav {
+        display: none;
+    }
+
+    #mobileNav {
+        display: flex;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    #selectedNav {
+        color: #bd362f;
+        border-bottom: 3px solid #bd362f;
+
+
+    }
+
+    #mobileNavContainer {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    #navbar {
+        display: flex;
+        width: 100%;
+    }
+
+    #sideBar {
+        display: none;
+    }
+
+    .row {
+        margin-bottom: 30px;
+    }
+
+    #projectsBody {
+        margin-left: 0px;
+        padding-top: 50px;
+        background-color: #f8f9fa;
+    }
+
+    .projectImages {
+        width: 250px;
+    }
+
+    #logoContainer,
+    #logoExpanded {
+        display: none;
+    }
+
+    .navbar-toggler {
+        width: 80px;
+        height: 60px;
+        display: flex;
+
+    }
+
+    #humburger {
+        border: none;
+        padding: 10px;
+    }
+
+    .navbar-toggler>.navbar-toggler-icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    #navbar2 {
+        display: flex;
+        height: 60px;
+        width: 100vw;
+        background-color: #eeeeee;
+        font-size: 20px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #navbar2Row {
+        margin-bottom: 0;
+        height: 100%;
+    }
+
+    .projectBox {
+        color: #bd362f;
+        border-bottom: 4px solid #bd362f;
+    }
+
+    #colNavbar2 {
+        margin-bottom: 0;
+    }
+
+    .projectContainer {
+        background-color: #eeeeee;
+        padding: 40px 40px 40px 40px;
+        border-radius: 12px;
+    }
+
+    #ranProfileImage {
+        width: 45px;
+    }
+
+    .mobileHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
     #mobileBody {
         display: flex;
         height: 100vh;
@@ -621,7 +747,7 @@ span {
         background-color: #f8f9fa;
     }
 
-    #projectDText{
+    #projectDText {
         margin: 10px 10px 10px 10px;
     }
 
@@ -636,10 +762,6 @@ span {
 
     #body-con {
         display: none;
-    }
-
-    #projectsBody {
-        background-color: #f8f9fa;
     }
 
     #logo {
@@ -664,18 +786,6 @@ span {
         height: 100%;
     }
 
-    #navbar2 {
-        font-size: 14px;
-        display: flex;
-        height: 60px;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        background-color: #eeeeee;
-        overflow: auto;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
 
     #MainTxtMobile {
         text-decoration: none;
@@ -691,7 +801,7 @@ span {
 
     }
 
-    span{
+    span {
         font-size: 16px;
     }
 
@@ -821,7 +931,7 @@ span {
         margin: 0;
         margin-top: 20px;
         margin-left: 10px;
-        margin-right: 10px ;
+        margin-right: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -860,11 +970,11 @@ span {
 
     }
 
-    #redStar{
+    #redStar {
         width: 37px;
     }
 
-    .stars{
+    .stars {
         width: 15px;
     }
 }

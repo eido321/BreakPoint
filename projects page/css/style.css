@@ -302,17 +302,11 @@ span {
 
 @media(max-width:990px) {
 
-    .projectImages {
-        width: 350px;
-    }
+
 
     .col {
         margin-bottom: 50px;
 
-    }
-
-    .projectImages {
-        width: 400px;
     }
 
     .mobileHeader {
