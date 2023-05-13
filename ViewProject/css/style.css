@@ -15,7 +15,7 @@ section {
 
 body {
     width: 100%;
-   
+
 }
 
 li>a {
@@ -42,6 +42,10 @@ li>a {
 
 /*---------------------------------------------*/
 /* header */
+
+header {
+    height: 100%;
+}
 
 button {
     border: 0px;
@@ -278,17 +282,17 @@ li {
     color: #555555;
 
 }
-#ProjectRivew
-{
+
+#ProjectRivew {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
     color: #555555;
 
 }
-#ProjectRivew2
-{
-   display: none;
+
+#ProjectRivew2 {
+    display: none;
 
 }
 
@@ -351,8 +355,7 @@ span {
     background-color: white
 }
 
-#requirements 
-{
+#requirements {
     display: flex;
     align-items: center;
     flex-flow: row;
@@ -368,14 +371,14 @@ span {
     flex-flow: row;
 
 }
-#Example>ul
-{
+
+#Example>ul {
     padding: 0px;
     margin: 0px;
-    
+
 }
-#Example>ul>li 
-{
+
+#Example>ul>li {
     display: flex;
     flex-flow: row;
 }
@@ -408,6 +411,12 @@ span {
 
 }
 
+#star {
+    margin-left: 5px;
+    height: 37px;
+    width: 37px;
+}
+
 #SortImage {
     height: 23px;
     width: 23px;
@@ -415,8 +424,7 @@ span {
 
 }
 
-#Txt 
-{
+#Txt {
     display: flex;
     flex-flow: column;
 
@@ -442,25 +450,26 @@ span {
 
 }
 
-#star {
-    margin-left: 5px;
-    height: 37px;
-    width: 37px;
+#stars {
+    height: 15px;
+    width: 15px;
 }
+
 
 #FileLogo2 {
     height: 14px;
     width: 14px;
     margin-top: 3px;
 }
-#bottns
-{
+
+#bottns {
     display: flex;
     flex-flow: row;
     gap: 5px;
 
 }
-#share{
+
+#share {
     width: 80px;
     height: 40px;
     background-color: #bd362f;
@@ -475,38 +484,6 @@ span {
     width: 234px;
     height: 66px;
     color: #555555;
-
-}
-
-#stars {
-    height: 15px;
-    width: 15px;
-
-
-}
-
-#StarCn1 {
-    height: 18px;
-    width: 116px;
-    margin-bottom: 10px;
-    margin-top: -5px;
-    
-}
-
-#StarCn2 {
-    height: 18px;
-    width: 116px;
-    margin-bottom: 10px;
-    margin-top: -5px;
-   
-
-}
-
-#StarCn3 {
-    height: 18px;
-    width: 116px;
-    margin-bottom: 10px;
-    margin-top: -5px;
 
 }
 
@@ -547,7 +524,7 @@ span {
     color: #555555;
     display: flex;
     flex-flow: row;
-    
+
 }
 
 #participant2 {
@@ -557,11 +534,11 @@ span {
     color: #555555;
     display: flex;
     flex-flow: row;
-    
+
 
 }
-#number
-{
+
+#number {
     font-size: 30px;
     margin-bottom: 5px;
     position: absolute;
@@ -574,23 +551,23 @@ span {
     margin-top: 2.5px;
 }
 
-#View-con{
+#View-con {
     display: flex;
     margin-left: 259px;
     margin-top: 120px;
-    height:fit-content;
+    height: fit-content;
     width: 100%;
-    background-color:#eeeeee;
+    background-color: #eeeeee;
 }
 
-#ProjectNameTitle
-{
+#ProjectNameTitle {
     justify-content: space-between;
     display: flex;
     margin: 0px;
     width: 540px;
     color: #555555;
 }
+
 #body-con {
     background-color: #eeeeee;
     width: 100%;
@@ -598,55 +575,70 @@ span {
 
 #ProjectD {
     display: none;
-  }
-#share2
-{
+}
+
+#share2 {
     display: none;
 
 }
-#GreyLine2{
+
+#GreyLine2 {
     display: none;
 }
 
-#coomnets
-{
-    
+#coomnets {
+
     display: none;
-        
+
 }
-#middle{
+
+#middle {
     margin-left: 10%;
     align-items: center;
     justify-content: center;
 }
-#mobileBody{
+
+#mobileBody {
     display: none;
 }
-.FontCm
-{
+
+#star{
+    display: none;
+}
+
+.FontCm {
     color: black;
 
 }
-@media(max-width:767px) 
-{
-    #mobileBody{
-        display: contents;
+
+@media(max-width:767px) {
+    #mobileBody {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        padding-top: 80px;
+        flex-flow: column;
+        background-color: #f8f9fa;
     }
-    #ProjectD
-    {
-       display: flex;
+
+    #projectDText{
+        margin: 10px 10px 10px 10px;
     }
-    #sideBar 
-    {
+
+    #ProjectD {
+        display: flex;
+        border-radius: 10px;
+    }
+
+    #sideBar {
         display: none;
     }
 
     #body-con {
-        display:none;
+        display: none;
     }
 
-    #projectsBody 
-    {
+    #projectsBody {
         background-color: #f8f9fa;
     }
 
@@ -673,38 +665,44 @@ span {
     }
 
     #navbar2 {
+        font-size: 14px;
         display: flex;
         height: 60px;
-        width: 100vw;
+        width: 100%;
         justify-content: center;
         align-items: center;
         background-color: #eeeeee;
         overflow: auto;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
-    #MainTxtMobile
-    {
+
+    #MainTxtMobile {
         text-decoration: none;
         font-size: 15px;
         font-weight: bold;
-        color: #555555;    
+        color: #555555;
     }
-    #ProjectD
-    {
-        background-color:#eeeeee;
+
+    #ProjectD {
+        background-color: #eeeeee;
         width: 80%;
         margin-left: 10%;
 
     }
-    #Ad
-    {
+
+    span{
+        font-size: 16px;
+    }
+
+    #Ad {
         color: #555555;
         border: 1px solid gray;
-        width: 50%;
-        margin-left: 5px;
+        width: 90%;
         margin-top: 10px;
         border-radius: 5%;
     }
+
     #share {
         width: 70px;
         height: 35px;
@@ -717,21 +715,21 @@ span {
         align-items: center;
         color: white;
     }
-    #ProjectRivew
-    {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    color: #555555;
+
+    #ProjectRivew {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555555;
     }
 
-    #FileLogo2
-    {
+    #FileLogo2 {
         color: #565555;
         margin-bottom: 5px;
 
     }
-    #share2{
+
+    #share2 {
         width: 80px;
         height: 35px;
         background-color: #bd362f;
@@ -743,77 +741,54 @@ span {
         margin-top: 5px;
         margin-left: 5px;
     }
-    #Rating
-    {
-        
-        margin-left: 140px;
-        margin-top: -30px;
+
+    #Rating {
+        height: 100%;
+        width: 100%;
     }
-    #StarCn1 {
-        height: 18px;
-        width: 116px;
-        margin-left: 110px;
-        margin-top: -25px;
-        
-    }
-    #StarCn2 {
-        height: 18px;
-        width: 116px;
-        margin-left: 110px;
-        margin-top: -25px;
-       
-    
-    }
-    
-    #StarCn3 {
-        height: 18px;
-        width: 116px;
-        margin-left: 110px;
-        margin-top: -25px;
-    
-    }
-    #graybox
-    {
-        margin-top: 100px;
+
+    #graybox {
+        margin-top: 40px;
         height: 120px;
-        width: 500px;
+        width: 100vw;
         background-color: #eeeeee;
         justify-content: center;
 
     }
-    #PlayBuotunIMage
-    {
+
+    #PlayBuotunIMage {
         height: 75px;
         width: 75px;
-        margin-left: 25px;
 
     }
-    #FileLogo
-    {
+
+    #FileLogo {
         height: 75px;
         width: 75px;
-        
+
 
     }
-    #ProjectRivew2
-    {
-        display: contents;
+
+    #ProjectRivew2 {
+        display: flex;
+        width: 100%;
         text-decoration: none;
         font-size: 18px;
         font-weight: bold;
         color: #555555;
     }
-    #bottomLefSide{
+
+    #bottomLefSide {
 
         background-color: #eeeeee;
         width: 80%;
         margin-left: 10%;
-        border-radius: 20px;
+        border-radius: 10px;
         margin-top: 20px;
-       
+
     }
-    #GreyLine2
-    {
+
+    #GreyLine2 {
         display: flex;
         width: 238px;
         height: 2px;
@@ -822,17 +797,18 @@ span {
         background-color: #555555;
 
     }
+
     #ranProfileImage2 {
         height: 43px;
         width: 43px;
         vertical-align: middle;
-        margin-top:10px;
+        margin-top: 10px;
         margin-left: 5px;
-    
+
     }
-    #coomnets
-    {
-       
+
+    #coomnets {
+
         display: flex;
         margin-top: 5px;
         margin-left: 13px;
@@ -840,46 +816,55 @@ span {
         color: #555555;
         background-color: white;
     }
-    #middle{
-        display: contents;
-        margin-left: 10%;
+
+    #middle {
+        margin: 0;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px ;
+        display: flex;
         align-items: center;
         justify-content: center;
-        
-    }
-    #middleRight
-    {
-        margin-left:18%;
 
     }
-    #middleLeft
-    {
-        margin-left:9%;
+
+    #middleRight {
+        width: 50%;
 
     }
-    #left
-    {
-       
-        width: 250px;
-        margin-left: 10px;
+
+    #middleLeft {
+        width: 50%;
+
+    }
+
+    #left {
+
+        width: 50%;
         justify-content: center;
         text-align: center;
-        
-        
-    } 
-    #right
-    {
-        
-        width: 250px;
-        margin-left: 220px;
-        margin-top: -101px;
+
+
+    }
+
+    #right {
+
+        width: 50%;
         justify-content: center;
         text-align: center;
 
     }
-    .FontCm
-    {
+
+    .FontCm {
         color: black;
 
+    }
+
+    #redStar{
+        width: 37px;
+    }
+
+    .stars{
+        width: 15px;
     }
 }
