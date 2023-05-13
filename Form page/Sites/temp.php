@@ -9,40 +9,19 @@
 </head>
 
 <body>
-    <section >
-        <h1> Welcome to my shop :</h1>
-        <br>
-        <br>
-        <?php
-        $ShirtColor = $_GET['ShirtColor'];
-        $ShirtSize = $_GET['ShirtSize'];
-        $ShirtLogo = $_GET['ShirtLogo'];
-        $count = 0;
-        $colors = array("red", "green", "blue", "yellow", "orange", "Red", "Green", "Blue", "Yellow", "Orange");
-        $Logo = array("Nike", "nike", "Adidas", "adidas", "Poma", "poma");
-        for ($i = 0; $i < 10; $i++) 
-        {
-            if ($ShirtColor == $colors[$i]) {
-                $count = $count + 1;
-            }
-        }
-        for ($i = 0; $i < 6; $i++) 
-        {
-            if ($ShirtLogo == $Logo[$i]) {
-                $count = $count + 1;
-            }
-        }
-        if ($count > 1) 
-        {
-            echo "We have it in stock " . "<br>";
-            echo "Shirt Logo: " . $ShirtLogo . "<br>";
-            echo "Shirt Color: " . $ShirtColor . "<br>";
-            echo "ShirtSize: " . $ShirtSize . "<br>";
-        } else {
-            echo "We dont have it in stock ): " . "<br>";
-        }
-        ?>
+    <header>
+    </header>
+    <section>
+
+        <h1>BrakePoint Project Details:</h1>
+        <p><label>Project Name:</label><?php echo $_GET['ProjectName']; ?></p>
+        <p><label>Project Type:</label><?php echo $_GET['ProjectType']; ?></p>
+        <p><label>Participant 1:</label><?php echo $_GET['Participant1Name'] . ' ' . $_GET['Participant1NameSecond']; ?></p>
+        <p><label>Participant 2:</label><?php echo $_GET['Participant2Name'] . ' ' . $_GET['Participant2NameSecond']; ?></p>
+        <p><label>Project Description:</label><?php echo $_GET['ProjectDescription']; ?></p>
+        <p><label>Project Image:</label><?php echo $_GET['ProjectIMage']; ?></p>
+        <p><label>Project SRS:</label><?php echo $_GET['ProjectSrs']; ?></p>
+        <p><label>Link to the Moqups Page:</label><?php echo $_GET['linktotheMoqupspage']; ?></p>
     </section>
 </body>
-
 </html>
