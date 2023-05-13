@@ -22,19 +22,15 @@ li>a {
     text-decoration: none;
 }
 
-#navbar2 {
-    display: none;
-}
-
-.mobileHeader {
+.mobileHeaderCSS3 {
     display: none
 }
 
-#mobileNav {
+#mobileNavCSS3 {
     display: none;
 }
 
-#body-con {
+#body-conCSS3 {
     width: 100vw;
     height: 100vh;
 }
@@ -46,21 +42,14 @@ button {
     border: 0px;
 }
 
-#searchText {
-    font-size: 14px;
-    color: #777777;
-    margin-left: 20px;
-    font-weight: 100;
-}
-
-#headerContainer {
+#headerContainerCSS3 {
     width: 100%;
     height: 80px;
     background-color: white;
     position: fixed;
 }
 
-nav {
+#navbar {
     height: 80px;
 }
 
@@ -173,7 +162,7 @@ nav {
 /*---------------------------------------------*/
 /* gridBody */
 
-#body-con {
+#body-conCSS3 {
     display: flex;
     background-color: #eeeeee;
     justify-content: center;
