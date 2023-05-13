@@ -10,9 +10,9 @@
 
 <body>
     <header>
+        <img src="/Logo/logo.png" >
     </header>
     <section>
-
         <h1>BrakePoint Project Details:</h1>
         <p><label>Project Name:</label><?php echo $_GET['ProjectName']; ?></p>
         <p><label>Project Type:</label><?php echo $_GET['ProjectType']; ?></p>
