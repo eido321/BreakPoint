@@ -35,3 +35,5 @@ hamburgerButton.click(function () {
 $("#cancel").on("click", function () {
     history.back();
 });
+
+$('.file-upload').file_upload();

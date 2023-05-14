@@ -74,6 +74,7 @@ button {
     height: 80px;
     background-color: white;
     position: fixed;
+    z-index: 1;
 }
 
 nav {
@@ -195,13 +196,14 @@ nav {
 
 #sideBar {
     margin-top: 80px;
-    height: 100vh;
+    height: 100%;
     width: 209px;
     background-color: #f8f9fa;
     display: flex;
     flex-flow: column;
     align-items: center;
     position: fixed;
+    left: 0;
 }
 
 li {
@@ -267,6 +269,7 @@ li {
 #body-con {
     display: flex;
     flex-flow: row;
+    justify-content: center;
 }
 
 #projectsBody {
@@ -335,24 +338,34 @@ span {
 /*---------------------------------------------*/
 /* gridBody */
 
+
+
+#checkText {
+    color: black;
+}
+
+#pForm {
+    width: 400px;
+}
+
 #LeftSide {
     height: 755px;
     width: 50%;
     margin-left: 100px;
     margin-top: 50px;
+    margin-right: 25px;
 
 }
 
 #RightSide {
     height: 755px;
     width: 50%;
-    margin-left: 150px;
     margin-top: 50px;
-
+    margin-left: 25px;
 }
 
 #RedLine {
-    width: 540px;
+    width: 400px;
     height: 5px;
     color: #bd362f;
     background-color: #bd362f;
@@ -367,8 +380,8 @@ span {
 }
 
 #WhiteBox {
-    width: 521px;
-    height: 100px;
+    width: 400px;
+    height: 150px;
     background-color: white
 }
 
@@ -572,9 +585,7 @@ span {
     margin-top: 2.5px;
 }
 
-#View-con 
-{
-    width: 100vw;
+#View-con {
     height: fit-content;
     min-height: 100vh;
     display: flex;
@@ -589,7 +600,7 @@ span {
     justify-content: space-between;
     display: flex;
     margin: 0px;
-    width: 540px;
+    width: 400px;
     color: #555555;
 }
 
@@ -640,7 +651,7 @@ span {
 
 #formContainer {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     padding: 10px 60px 60px 60px;
 }
 
@@ -682,9 +693,64 @@ form {
     border: 2px dashed #777777;
 }
 
-#ProjectFiles {
-    height: 205px;
+/* 
+.file-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border: 2px dashed black;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    border-radius:var(--bs-border-radius);
+    background-color: white;
+
 }
+
+.file-input-container:hover {
+    border-color: #aaa;
+}
+
+.file-input-container input[type="file"] {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-input-container label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.file-input-container label i {
+    font-size: 48px;
+}
+
+.file-input-container span {
+    margin-top: 20px;
+    width: 90%;
+}
+
+.file-input-rules {
+    margin-top: 10px;
+} */
+
+.form-control-file {
+    height: 200px;
+    /* Set the height of the file input field */
+    overflow-y: auto;
+    /* Add a vertical scrollbar if the content overflows */
+}
+
 
 #ProjectDes {
     resize: none;
@@ -697,10 +763,10 @@ form {
 #moqupsUrl,
 #basic-url {
     position: unset;
+    z-index: 0;
 }
 
-#ProjectType,
-#ProjectName {}
+
 
 #Srs {
     margin-left: 10px;
@@ -760,6 +826,8 @@ form {
 
 @media(max-width:990px) {
 
+
+
     form {
         display: block;
     }
@@ -783,8 +851,7 @@ form {
     }
 
     #rightSide {
-        margin-left: 0;
-        width: 100%;
+        display: none;
     }
 
     .projectImages {
@@ -1173,231 +1240,267 @@ form {
         flex-flow: column;
         justify-content: center;
         align-items: center;
-       
+
     }
 
 
-#graybox {
-    margin-top: 40px;
-    height: 120px;
-    width: 100vw;
-    background-color: #eeeeee;
-    justify-content: center;
+    #graybox {
+        margin-top: 40px;
+        height: 120px;
+        width: 100vw;
+        background-color: #eeeeee;
+        justify-content: center;
+
+    }
+
+    #PlayBuotunIMage {
+        height: 75px;
+        width: 75px;
+
+    }
+
+    #FileLogo {
+        height: 75px;
+        width: 75px;
+
+
+    }
+
+    #ProjectRivew2 {
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555555;
+    }
+
+    #bottomLefSide {
+
+        background-color: #eeeeee;
+        width: 80%;
+        margin-left: 10%;
+        border-radius: 10px;
+        margin-top: 20px;
+
+    }
+
+    #GreyLine2 {
+        display: flex;
+        width: 238px;
+        height: 2px;
+        margin-left: 14px;
+        color: #555555;
+        background-color: #555555;
+
+    }
+
+    #ranProfileImage2 {
+        height: 43px;
+        width: 43px;
+        vertical-align: middle;
+        margin-top: 10px;
+        margin-left: 5px;
+
+    }
+
+    #coomnets {
+
+        display: flex;
+        margin-top: 5px;
+        margin-left: 13px;
+        width: 238px;
+        color: #555555;
+        background-color: white;
+    }
+
+    #middle {
+        margin: 0;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #middleRight {
+        width: 50%;
+
+    }
+
+    #middleLeft {
+        width: 50%;
+        width: 50%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+    }
+
+    #left {
+
+        width: 50%;
+        justify-content: center;
+        text-align: center;
+
+
+    }
+
+    #right {
+
+        width: 50%;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .FontCm {
+        color: black;
+
+    }
+
+    #redStar {
+        width: 37px;
+    }
+
+    .stars {
+        width: 15px;
+    }
+
+    #body-con {
+        display: flex;
+    }
 
 }
 
-#PlayBuotunIMage {
-    height: 75px;
-    width: 75px;
-
-}
-
-#FileLogo {
-    height: 75px;
-    width: 75px;
-
-
-}
-
-#ProjectRivew2 {
+li {
     display: flex;
-    width: 100%;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    color: #555555;
 }
 
-#bottomLefSide {
-
-    background-color: #eeeeee;
-    width: 80%;
-    margin-left: 10%;
-    border-radius: 10px;
-    margin-top: 20px;
-
-}
-
-#GreyLine2 {
-    display: flex;
-    width: 238px;
-    height: 2px;
-    margin-left: 14px;
-    color: #555555;
-    background-color: #555555;
-
-}
-
-#ranProfileImage2 {
-    height: 43px;
-    width: 43px;
-    vertical-align: middle;
-    margin-top: 10px;
-    margin-left: 5px;
-
-}
-
-#coomnets {
-
-    display: flex;
-    margin-top: 5px;
-    margin-left: 13px;
-    width: 238px;
-    color: #555555;
-    background-color: white;
-}
-
-#middle {
-    margin: 0;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+li>a {
     display: flex;
     align-items: center;
-    justify-content: center;
-
 }
 
-#middleRight {
-    width: 50%;
-
+#logo,
+#logoExpanded {
+    background: url(/images/logo.png);
+    width: 213px;
+    height: 49px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-#middleLeft {
-    width: 50%;
-    width: 50%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-
+#shenkarLogoImage {
+    background: url(/images/Shenkar.png);
+    width: 137px;
+    height: 51px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-#left {
-
-    width: 50%;
-    justify-content: center;
-    text-align: center;
-
-
+#notificationImage {
+    background: url(/images/notification.png);
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-#right {
-
-    width: 50%;
-    justify-content: center;
-    text-align: center;
-
+#settingsImage {
+    background: url(/images/settings.png);
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.FontCm {
-    color: black;
+#viewImage {
+    background: url(/images/eye.png);
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
+#addImage {
+    background: url(/images/plus.png);
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#editImage {
+    background: url(/images/edit.png);
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#favImage {
+    background: url(/images/star.png);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#recImage {
+    background: url(/images/recent.png);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#search {
+    background: url(/images/Search.png);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#sortIconImage {
+    background: url(/images/sortSearch.png);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#FileLogo2 {
+    background: url(/images/RedArrow.png);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #redStar {
+    background: url(/images/Red_star.png);
     width: 37px;
+    height: 37px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .stars {
+    background: url(/images/Red_star.png);
     width: 15px;
-}
-
-}
-/* Images  */
-#logo
-{
-    background-image: url('../images/logo.png');
-    width: 213px;
-    height: 34px;
-    
-
-}
-#CookieFactory
-{
-    background-image: url('../images/projectsImages/CookieFactory.png');
-    width: 280px;
-    height: 200px;
-    border-radius: 5px;
-
-}
-#DataZoo
-{
-    background-image: url('../images/projectsImages/DataZoo.png');
-    width: 280px;
-    height: 200px;
-    border-radius: 5px;
-
-}
-#dogFactory
-{
-    background-image: url('../images/projectsImages/dogFactory.png');
-    width: 280px;
-    height: 200px;
-    border-radius: 5px;
-
-}
-#DoorStory
-{
-    background-image: url('../images/projectsImages/DoorStory.png');
-    width: 280px;
-    height: 200px;
-    border-radius: 5px;
-
-}
-#FarmDream
-{
-    background-image: url('../images/projectsImages/farmDream.png');
-    width: 280px;
-    height: 200px;
-    border-radius: 5px;
-
-}
-#LabTool
-{
-    background-image: url('../images/projectsImages/LabTool.png');
-    width: 280px;
-    height: 200px;
-    border-radius: 5px;
-
-}
-#positiveIntelligence
-{
-    background-image: url('../images/projectsImages/positiveIntelligence.png');
-    width: 280px;
-    height: 200px;
-    border-radius: 5px;
-
-}
-#randomLogo
-{
-    background-image: url('../images/projectsImages/randomLogo.png');
-    width: 280px;
-    height: 200px;
-    border-radius: 5px;
-
-}
-#TagTool
-{
-    background-image: url('../images/projectsImages/TagTool.png');
-    width: 280px;
-    height: 200px;
-    border-radius: 5px;
-
-}
-#Projectseye
-{
-    background-image: url('../images/eye.png');
-   width: 15px;
-   height: 15px;
-
-
-}
-#shenkarLogoImage2
-{
-    background-image: url('../images/Shenkar.png');
+    height: 15px;
+    background-size: contain;
     background-repeat: no-repeat;
-    width: 130px;
-    height: 55px;
+}
 
-
+.stars2 {
+    background: url(/images/star.png);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
