@@ -583,7 +583,6 @@ span {
     justify-content: center;
     align-items: center;
     background-color: #eeeeee;
-    overflow-x: auto;
 }
 
 #ProjectNameTitle {
@@ -1302,5 +1301,103 @@ form {
 .stars {
     width: 15px;
 }
+
+}
+/* Images  */
+#logo
+{
+    background-image: url('../images/logo.png');
+    width: 213px;
+    height: 34px;
+    
+
+}
+#CookieFactory
+{
+    background-image: url('../images/projectsImages/CookieFactory.png');
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+#DataZoo
+{
+    background-image: url('../images/projectsImages/DataZoo.png');
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+#dogFactory
+{
+    background-image: url('../images/projectsImages/dogFactory.png');
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+#DoorStory
+{
+    background-image: url('../images/projectsImages/DoorStory.png');
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+#FarmDream
+{
+    background-image: url('../images/projectsImages/farmDream.png');
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+#LabTool
+{
+    background-image: url('../images/projectsImages/LabTool.png');
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+#positiveIntelligence
+{
+    background-image: url('../images/projectsImages/positiveIntelligence.png');
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+#randomLogo
+{
+    background-image: url('../images/projectsImages/randomLogo.png');
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+#TagTool
+{
+    background-image: url('../images/projectsImages/TagTool.png');
+    width: 280px;
+    height: 200px;
+    border-radius: 5px;
+
+}
+#Projectseye
+{
+    background-image: url('../images/eye.png');
+   width: 15px;
+   height: 15px;
+
+
+}
+#shenkarLogoImage2
+{
+    background-image: url('../images/Shenkar.png');
+    background-repeat: no-repeat;
+    width: 130px;
+    height: 55px;
+
 
 }
