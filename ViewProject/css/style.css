@@ -27,7 +27,7 @@ li>a {
     display: none;
 }
 
-.mobileHeader {
+.mobileHeaderCSS1 {
     display: none
 }
 
@@ -35,7 +35,9 @@ li>a {
     display: none;
 }
 
-#body-con {
+#body-con 
+
+{
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -162,7 +164,7 @@ nav {
     width: 35px;
 }
 
-#ranProfileImage {
+#ranProfileImageCSS1 {
     width: 35px;
 }
 
@@ -252,9 +254,8 @@ li {
 /*---------------------------------------------*/
 /* gridBody */
 
-
-
-#projectsBody {
+#projectsBodyCSS1 
+{
     margin-left: 209px;
     margin-top: 80px;
     min-height: 100vh;
@@ -263,7 +264,7 @@ li {
     background-color: #eeeeee;
 }
 
-#gridBody {
+#gridBodyCSS1 {
     margin-top: 80px;
 }
 
@@ -271,7 +272,7 @@ li {
     margin-bottom: 70px;
 }
 
-.projectImages {
+.projectImagesCSS1 {
     width: 250px;
     border-radius: 5px;
 }
@@ -284,7 +285,7 @@ li {
 
 }
 
-#ProjectRivew {
+#ProjectRivewCSS1 {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -310,32 +311,31 @@ span {
     background-color: #555555;
 }
 
-#LeftSide {
+#LeftSideCSS1 {
     height: 755px;
     width: 50%;
-
-    /* left: 300px;
-    top: 104px; */
+    margin-left: 100px;
+    margin-top: 50px;
 
 }
 
-#RightSide {
+#RightSideCSS1 {
     height: 755px;
     width: 50%;
     margin-left: 200px;
-    /* left: 1100px;
-    top: 120px; */
+    margin-top: 50px;
 
 }
 
-#RedLine {
+#RedLineCSS1 
+{
     width: 540px;
     height: 5px;
     color: #bd362f;
     background-color: #bd362f;
 }
 
-#GreyLine {
+#GreyLineCSS1 {
     width: 388px;
     height: 2px;
     margin-left: 14px;
@@ -343,13 +343,15 @@ span {
     background-color: #555555;
 }
 
-#WhiteBox {
+#WhiteBoxCSS1 
+{
     width: 521px;
     height: 100px;
     background-color: white
 }
 
-#requirements {
+#requirementsCSS1 
+{
     display: flex;
     align-items: center;
     flex-flow: row;
@@ -360,33 +362,33 @@ span {
 
 
 
-#Example {
+#ExampleCSS1 {
     display: flex;
     flex-flow: row;
 
 }
 
-#Example>ul {
+#ExampleCSS1>ul {
     padding: 0px;
     margin: 0px;
 
 }
 
-#Example>ul>li {
+#ExampleCSS1>ul>li {
     display: flex;
     flex-flow: row;
 }
 
-#Eyes {
+#EyesCSS1 {
     height: 180px;
     width: 50px;
 }
 
-#Eyes img {
+#EyesCSS1 img {
     margin-top: 8.5px;
 }
 
-#bottomLefSide {
+#bottomLefSideCSS1 {
     width: 500px;
     height: 100px;
     align-items: center;
@@ -398,78 +400,82 @@ span {
     margin-left: 13px;
 }
 
-#ranProfileImage2 {
+#ranProfileImage2CSS1 {
     height: 43px;
     width: 43px;
     vertical-align: middle;
 
 }
 
-#formRatingDesktop{
+#formRatingDesktopCSS1{
     display: flex;
     align-items: center;
     font-size: 16px;
 }
 
-#star {
+#starCSS1 {
     margin-left: 5px;
     height: 37px;
     width: 37px;
 }
 
-#SortImage {
+#SortImageCSS1 {
     height: 23px;
     width: 23px;
     vertical-align: middle;
 
 }
 
-#Txt {
+#TxtCSS1 
+{
     display: flex;
     flex-flow: column;
 
 }
 
-#comments {
+#commentsCSS1 
+{
     height: 30px;
     width: 300px;
     margin-left: 50px;
     margin-top: -40px;
 }
 
-#PlayBuotunIMage {
+#PlayBuotunIMageCSS1 
+{
     height: 30px;
     width: 30px;
     top: 316px;
     left: 288px;
 }
 
-#FileLogo {
+#FileLogoCSS1 {
     height: 20px;
     width: 20px;
 
 }
 
-#stars {
+#starsCSS1 {
     height: 15px;
     width: 15px;
 }
 
 
-#FileLogo2 {
+#FileLogo2CSS1 {
     height: 14px;
     width: 14px;
     margin-top: 3px;
 }
 
-#bottns {
+#bottnsCSS1 {
     display: flex;
     flex-flow: row;
     gap: 5px;
 
 }
 
-#share {
+#shareCSS1 
+{
     width: 80px;
     height: 40px;
     background-color: #bd362f;
@@ -480,14 +486,15 @@ span {
     color: white;
 }
 
-#Rating {
+#RatingCSS1 
+{
     width: 234px;
     height: 66px;
     color: #555555;
 
 }
 
-#ProjrctImage {
+#ProjrctImageCSS1 {
     width: 290px;
     height: 206px;
     margin-top: 65px;
@@ -495,20 +502,22 @@ span {
 
 }
 
-#bottomRightSide {
+#bottomRightSideCSS1 
+{
     height: 100px;
     width: 397px;
     margin-top: 65px;
 
 }
 
-#RedlineRigthSide {
+#RedlineRigthSideCSS1 {
     height: 5px;
     width: 290px;
     background-color: #bd362f;
 }
 
-#RedDot {
+#RedDotCSS1 
+{
     width: 10px;
     height: 10px;
     background-color: #bd362f;
@@ -517,7 +526,7 @@ span {
 
 }
 
-#participant1 {
+#participant1CSS1 {
     height: 32px;
     width: 204px;
     margin-top: 10px;
@@ -527,7 +536,8 @@ span {
 
 }
 
-#participant2 {
+#participant2CSS1 
+{
     height: 32px;
     width: 204px;
     margin-top: 5px;
@@ -538,24 +548,32 @@ span {
 
 }
 
-#number {
+#numberCSS1 
+{
     font-size: 30px;
 }
 
-#firstname {
+#firstnameCSS1 {
     height: 10px;
     width: 10px;
     margin-left: 15px;
     margin-top: 2.5px;
 }
 
-#View-con {
+#View-conCSS1 
+{
+    width: 100%;
+    height: 100%;
     display: flex;
-    margin-left: 259px;
-    margin-top: 120px;
+    position: fixed;
+    margin-left: 209px;
+    margin-top: 81px;
+    background-color: #eeeeee;
+    
 }
 
-#ProjectNameTitle {
+#ProjectNameTitleCSS1 
+{
     justify-content: space-between;
     display: flex;
     margin: 0px;
@@ -565,11 +583,13 @@ span {
 
 
 
-#ProjectD {
+#ProjectDCSS1 
+{
     display: none;
 }
 
-#share2 {
+#share2CSS1 
+{
     display: none;
 
 }
@@ -578,38 +598,41 @@ span {
     display: none;
 }
 
-#coomnets {
+#coomnetsCSS1 
+{
 
     display: none;
 
 }
 
-#middle {
+#middleCSS1 {
     margin-left: 10%;
     align-items: center;
     justify-content: center;
 }
 
-#mobileBody {
+#mobileBodyCSS1 {
     display: none;
 }
 
 
 
-.FontCm {
+.FontCmCSS1 {
     color: black;
 
 }
 
+
 @media(max-width:767px) {
 
 
-    .col {
+    .col 
+    {
         margin-bottom: 50px;
 
     }
 
-    .mobileHeader {
+    .mobileHeaderCSS1 {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -661,13 +684,13 @@ span {
         margin-bottom: 30px;
     }
 
-    #projectsBody {
+    #projectsBodyCSS1 {
         margin-left: 0px;
         padding-top: 50px;
         background-color: #f8f9fa;
     }
 
-    .projectImages {
+    .projectImagesCSS1 {
         width: 250px;
     }
 
@@ -683,7 +706,8 @@ span {
 
     }
 
-    #humburger {
+    #humburger 
+    {
         border: none;
         padding: 10px;
     }
@@ -718,13 +742,14 @@ span {
         margin-bottom: 0;
     }
 
-    .projectContainer {
+    .projectContainerCSS1 {
         background-color: #eeeeee;
         padding: 40px 40px 40px 40px;
         border-radius: 12px;
     }
 
-    #ranProfileImage {
+    #ranProfileImageCSS1 
+    {
         width: 45px;
     }
 
@@ -735,7 +760,7 @@ span {
         width: 100%;
     }
 
-    #mobileBody {
+    #mobileBodyCSS1 {
         display: flex;
         height: 100vh;
         width: 100vw;
@@ -748,7 +773,7 @@ span {
         margin: 10px 10px 10px 10px;
     }
 
-    #ProjectD {
+    #ProjectDCSS1 {
         display: flex;
         border-radius: 10px;
     }
@@ -791,7 +816,7 @@ span {
         color: #555555;
     }
 
-    #ProjectD {
+    #ProjectDCSS1 {
         background-color: #eeeeee;
         width: 80%;
         margin-left: 10%;
@@ -810,7 +835,7 @@ span {
         border-radius: 5%;
     }
 
-    #share {
+    #shareCSS1 {
         width: 70px;
         height: 35px;
         margin-left: 255px;
@@ -823,20 +848,20 @@ span {
         color: white;
     }
 
-    #ProjectRivew {
+    #ProjectRivewCSS1 {
         text-decoration: none;
         font-size: 18px;
         font-weight: bold;
         color: #555555;
     }
 
-    #FileLogo2 {
+    #FileLogo2CSS1 {
         color: #565555;
         margin-bottom: 5px;
 
     }
 
-    #share2 {
+    #share2CSS1 {
         width: 80px;
         height: 35px;
         background-color: #bd362f;
@@ -849,7 +874,7 @@ span {
         margin-left: 5px;
     }
 
-    #Rating {
+    #RatingCSS1 {
         height: 100%;
         width: 100%;
     }
@@ -863,13 +888,14 @@ span {
 
     }
 
-    #PlayBuotunIMage {
+    #PlayBuotunIMageCSS1 {
         height: 75px;
         width: 75px;
 
     }
 
-    #FileLogo {
+    #FileLogoCSS1
+    {
         height: 75px;
         width: 75px;
 
@@ -885,7 +911,7 @@ span {
         color: #555555;
     }
 
-    #bottomLefSide {
+    #bottomLefSideCSS1 {
 
         background-color: #eeeeee;
         width: 80%;
@@ -905,7 +931,7 @@ span {
 
     }
 
-    #ranProfileImage2 {
+    #ranProfileImage2CSS1 {
         height: 43px;
         width: 43px;
         vertical-align: middle;
@@ -914,7 +940,7 @@ span {
 
     }
 
-    #coomnets {
+    #coomnetsCSS1 {
 
         display: flex;
         margin-top: 5px;
@@ -924,7 +950,7 @@ span {
         background-color: white;
     }
 
-    #middle {
+    #middleCSS1 {
         margin: 0;
         margin-top: 20px;
         margin-left: 10px;
@@ -935,43 +961,44 @@ span {
 
     }
 
-    #middleRight {
+    #middleRightCSS1 {
         width: 50%;
 
     }
 
-    #middleLeft {
+    #middleLeftCSS1 {
         width: 50%;
 
     }
 
-    #left {
+    #leftCSS1
+    {
+        width: 50%;
+        justify-content: center;
+        text-align: center;
+
+
+    }
+
+    #rightCSS1 {
 
         width: 50%;
         justify-content: center;
         text-align: center;
 
-
     }
 
-    #right {
-
-        width: 50%;
-        justify-content: center;
-        text-align: center;
-
-    }
-
-    .FontCm {
+    .FontCmCSS1 {
         color: black;
 
     }
 
-    #redStar {
+    #redStar 
+    {
         width: 37px;
     }
 
-    .stars {
+    .starsCSS1 {
         width: 15px;
     }
 }
