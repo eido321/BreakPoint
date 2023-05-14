@@ -22,19 +22,19 @@ li>a {
     text-decoration: none;
 }
 
-#navbar2CSS1 {
+#navbar2 {
     display: none;
 }
 
-.mobileHeaderCSS1 {
+.mobileHeader {
     display: none
 }
 
-#mobileNavCSS1 {
+#mobileNav {
     display: none;
 }
 
-#body-conCSS1{
+#body-con{
     width: 100vw;
     height: 100vh;
 }
@@ -245,7 +245,7 @@ li {
 /*---------------------------------------------*/
 /* gridBody */
 
-#body-conCSS1 {
+#body-con {
     display: flex;
     flex-flow: row;
 }
@@ -310,7 +310,7 @@ span {
 
     }
 
-    .mobileHeaderCSS1 {
+    .mobileHeader {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -330,13 +330,13 @@ span {
         display: none;
     }
 
-    #mobileNavCSS1 {
+    #mobileNav {
         display: flex;
         margin-left: 20px;
         font-size: 20px;
     }
 
-    #selectedNavCSS1 
+    #selectedNav 
     {
         color: #bd362f;
         border-bottom: 3px solid #bd362f;
@@ -398,7 +398,7 @@ span {
         height: 100%;
     }
 
-    #navbar2CSS1 {
+    #navbar2 {
         display: flex;
         height: 60px;
         width: 100vw;

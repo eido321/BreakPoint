@@ -15,12 +15,12 @@
 </head>
 <body>
     <section id="screen">
-        <div id="headerContainerCSS3">
+        <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
                     <a href="#" class="navbar-brand" id="logoContainer"><img src="images/logo.png" alt="logo"
                             id="logo"></a>
-                    <div class="mobileHeaderCSS3">
+                    <div class="mobileHeader">
                         <a href="#"><img src="images/logo.png" alt="logo" id="logoExpanded"></a>
                         <div id="ranProfileImageMobile">
                             <a href="#" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
@@ -70,7 +70,7 @@
                                 </section>
                             </div>
                         </div>
-                        <div id="mobileNavCSS3">
+                        <div id="mobileNav">
                             <div class="navbar-nav " id="mobileNavContainer">
                                 <section class="nav-item">
                                     <a href="#" class="nav-link"><b>Home Page</b></a>
@@ -102,9 +102,12 @@
 
             </header>
         </div>
-        <section id="body-conCSS3">
+        <section id="body-con">
+            <section id="formTitle">
+                <span>&nbsp;Project Creation</span>
+            </section>
             <section id="formContainer">
-                <form action="http://localhost/temp.php" method="get">
+                <form action="http://localhost/temp.php" method="get" class="needs-validation" novalidate>
                     <div id="leftSide">
                         <div id="formInfo1Line1">
                             <div class="mb-3 formInfo">
@@ -119,22 +122,22 @@
                         <label>&nbsp&nbsp<b>Participant 1</b></label>
                         <div id="formInfo1Line2">
                             <div class="mb-3 formInfo">
-                                <label for="ProjectName" for="validationServer03" class="form-label"><b>Participant 1 Name</b></label>
+                                <label for="ProjectName" for="validationServer03" class="form-label"><b>First Name</b></label>
                                 <input type="text" class="form-control inputForm" name="Participant1Name" id="ProjectName"required>
                             </div>
                             <div class="mb-3 formInfo">
-                                <label for="ProjectType" for="validationServer04" class="form-label"><b>Participant 1 Family Name</b></label>
+                                <label for="ProjectType" for="validationServer04" class="form-label"><b>Family Name</b></label>
                                 <input type="text" class="form-control inputForm" name="Participant1NameSecond" id="ProjectType" required>
                             </div>
                         </div>
                         <label>&nbsp&nbsp<b>Participant 2</b></label>
                         <div id="formInfo1Line3">
                             <div class="mb-3 formInfo">
-                                <label for="ProjectName" class="form-label" for="validationServer05" ><b>Participant 2 Name</b></label>
+                                <label for="ProjectName" class="form-label" for="validationServer05" ><b>First Name</b></label>
                                 <input type="text" class="form-control inputForm" name="Participant2Name" id="ProjectName" required>
                             </div>
                             <div class="mb-3 formInfo">
-                                <label for="ProjectType" class="form-label" for="validationServer05"><b>Participant 2 Family Name</b></label>
+                                <label for="ProjectType" class="form-label" for="validationServer05"><b>Family Name</b></label>
                                 <input type="text" class="form-control inputForm" name="Participant2NameSecond" id="ProjectType" required>
                             </div>
                         </div>
