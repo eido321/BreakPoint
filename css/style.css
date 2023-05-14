@@ -346,7 +346,7 @@ span {
 #RightSide {
     height: 755px;
     width: 50%;
-    margin-left: 200px;
+    margin-left: 150px;
     margin-top: 50px;
 
 }
@@ -584,7 +584,6 @@ span {
     align-items: center;
     background-color: #eeeeee;
     overflow-x: auto;
-
 }
 
 #ProjectNameTitle {
