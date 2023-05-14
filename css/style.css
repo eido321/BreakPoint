@@ -36,9 +36,7 @@ li>a {
     display: none;
 }
 
-#body-con 
-
-{
+#body-con {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -430,7 +428,7 @@ span {
 
 }
 
-#formRatingDesktop{
+#formRatingDesktop {
     display: flex;
     align-items: center;
     font-size: 16px;
@@ -574,8 +572,7 @@ span {
     margin-top: 2.5px;
 }
 
-#View-con 
-{
+#View-con {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -583,7 +580,7 @@ span {
     margin-left: 209px;
     margin-top: 81px;
     background-color: #eeeeee;
-    
+
 }
 
 #ProjectNameTitle {
@@ -919,5 +916,376 @@ form {
         width: 45px;
     }
 
-    
+
+    .col {
+        margin-bottom: 50px;
+
+    }
+
+    .mobileHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-collapse {
+        background-color: #f8f9fa;
+    }
+
+    #searchBar {
+        margin: 0;
+        width: 50%;
+    }
+
+    #desktopNav {
+        display: none;
+    }
+
+    #mobileNav {
+        display: flex;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    #selectedNav {
+        color: #bd362f;
+        border-bottom: 3px solid #bd362f;
+
+
+    }
+
+    #mobileNavContainer {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    #navbar {
+        display: flex;
+        width: 100%;
+    }
+
+    #sideBar {
+        display: none;
+    }
+
+    .row {
+        margin-bottom: 30px;
+    }
+
+    #projectsBody {
+        margin-left: 0px;
+        padding-top: 50px;
+        background-color: #f8f9fa;
+    }
+
+    .projectImages {
+        width: 250px;
+    }
+
+    #logoContainer,
+    #logoExpanded {
+        display: none;
+    }
+
+    .navbar-toggler {
+        width: 80px;
+        height: 60px;
+        display: flex;
+
+    }
+
+    #humburger {
+        border: none;
+        padding: 10px;
+    }
+
+    .navbar-toggler>.navbar-toggler-icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    #navbar2 {
+        display: flex;
+        height: 60px;
+        width: 100vw;
+        background-color: #eeeeee;
+        font-size: 20px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #navbar2Row {
+        margin-bottom: 0;
+        height: 100%;
+    }
+
+    .projectBox {
+        color: #bd362f;
+        border-bottom: 4px solid #bd362f;
+    }
+
+    #colNavbar2 {
+        margin-bottom: 0;
+    }
+
+    .projectContainer {
+        background-color: #eeeeee;
+        padding: 40px 40px 40px 40px;
+        border-radius: 12px;
+    }
+
+    #ranProfileImage {
+        width: 45px;
+    }
+
+    .mobileHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    #mobileBody {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        padding-top: 80px;
+        flex-flow: column;
+        background-color: #f8f9fa;
+    }
+
+    #projectDText {
+        margin: 10px 10px 10px 10px;
+    }
+
+    #ProjectD {
+        display: flex;
+        border-radius: 10px;
+    }
+
+    #sideBar {
+        display: none;
+    }
+
+    #body-con {
+        display: none;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    .navbar-toggler {
+        width: 80px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #humburger {
+        border: none;
+    }
+
+    .navbar-toggler>.navbar-toggler-icon {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    #MainTxtMobile {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        color: #555555;
+    }
+
+    #ProjectD {
+        background-color: #eeeeee;
+        width: 80%;
+        margin-left: 10%;
+
+    }
+
+    span {
+        font-size: 16px;
+    }
+
+    #Ad {
+        color: #555555;
+        border: 1px solid gray;
+        width: 90%;
+        margin-top: 10px;
+        border-radius: 5%;
+    }
+
+    #share {
+        width: 70px;
+        height: 35px;
+        margin-left: 255px;
+        margin-top: 10px;
+        background-color: #bd362f;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    #ProjectRivew {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555555;
+    }
+
+    #FileLogo2 {
+        color: #565555;
+        margin-bottom: 5px;
+
+    }
+
+    #share2 {
+        width: 80px;
+        height: 35px;
+        background-color: #bd362f;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #eeeeee;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+    #Rating {
+        height: 100%;
+        width: 100%;
+    }
+
+    #graybox {
+        margin-top: 40px;
+        height: 120px;
+        width: 100vw;
+        background-color: #eeeeee;
+        justify-content: center;
+
+    }
+
+    #PlayBuotunIMage {
+        height: 75px;
+        width: 75px;
+
+    }
+
+    #FileLogo {
+        height: 75px;
+        width: 75px;
+
+
+    }
+
+    #ProjectRivew2 {
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555555;
+    }
+
+    #bottomLefSide {
+
+        background-color: #eeeeee;
+        width: 80%;
+        margin-left: 10%;
+        border-radius: 10px;
+        margin-top: 20px;
+
+    }
+
+    #GreyLine2 {
+        display: flex;
+        width: 238px;
+        height: 2px;
+        margin-left: 14px;
+        color: #555555;
+        background-color: #555555;
+
+    }
+
+    #ranProfileImage2 {
+        height: 43px;
+        width: 43px;
+        vertical-align: middle;
+        margin-top: 10px;
+        margin-left: 5px;
+
+    }
+
+    #coomnets {
+
+        display: flex;
+        margin-top: 5px;
+        margin-left: 13px;
+        width: 238px;
+        color: #555555;
+        background-color: white;
+    }
+
+    #middle {
+        margin: 0;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #middleRight {
+        width: 50%;
+
+    }
+
+    #middleLeft {
+        width: 50%;
+
+    }
+
+    #left {
+
+        width: 50%;
+        justify-content: center;
+        text-align: center;
+
+
+    }
+
+    #right {
+
+        width: 50%;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .FontCm {
+        color: black;
+
+    }
+
+    #redStar {
+        width: 37px;
+    }
+
+    .stars {
+        width: 15px;
+    }
+
 }
