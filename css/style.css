@@ -1,0 +1,923 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+header,
+main,
+footer,
+nav,
+aside,
+section {
+    display: block;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+li>a {
+    color: #555555;
+    text-decoration: none;
+}
+
+#navbar2 {
+    display: none;
+}
+
+.mobileHeader {
+    display: none
+}
+
+#mobileNav {
+    display: none;
+}
+
+#body-con 
+
+{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-flow: row;
+    background-color: #eeeeee;
+
+}
+
+/*---------------------------------------------*/
+/* header */
+
+header {
+    height: 100%;
+}
+
+#formTitle {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 60px 60px 0px 60px;
+}
+
+button {
+    border: 0px;
+}
+
+#searchText {
+    font-size: 14px;
+    color: #777777;
+    margin-left: 20px;
+    font-weight: 100;
+}
+
+#headerContainer {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    position: fixed;
+}
+
+nav {
+    height: 80px;
+}
+
+#navbar {
+    height: 80px;
+
+}
+
+#navContainer {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+#logo,
+#logoExpanded {
+    width: 213px;
+}
+
+#logoExpanded {
+
+    display: none;
+}
+
+#searchBar {
+    margin-left: 130px;
+    display: flex;
+}
+
+#leftSearchBar {
+    width: 294px;
+    height: 32px;
+    background-color: #eeeeee;
+    border-radius: 12px 0px 0px 12px;
+    display: flex;
+    align-items: center;
+}
+
+.btn.btn-outline-secondary {
+    border-color: #dee2e6;
+}
+
+.btn.btn-outline-secondary:hover {
+    background-color: #bd362f;
+    border: 0px
+}
+
+#inputSearch:focus {
+    border-color: #dee2e6;
+    box-shadow: none;
+}
+
+#search {
+    width: 15px;
+    margin-left: 3px;
+}
+
+
+#sortIconImage {
+    width: 30px;
+}
+
+#shenkarLogoImage {
+    width: 137px;
+    margin-left: 100px;
+}
+
+#rightHeaderLinks {
+    display: flex;
+    position: absolute;
+    right: 23px;
+}
+
+#ranProfile,
+#shenkarLogo,
+#notification,
+#settings,
+#ranProfile {
+    display: flex;
+    align-items: center;
+}
+
+#ranProfile {
+    margin-left: 6px;
+}
+
+#notification {
+    margin-left: 10px;
+}
+
+#notificationImage {
+    width: 35px;
+}
+
+#settingsImage {
+    width: 35px;
+}
+
+#ranProfileImage {
+    width: 35px;
+}
+
+.projectContainer {
+    display: flex;
+    flex-flow: column;
+}
+
+#desktopNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* side */
+
+#sideBar {
+    margin-top: 80px;
+    height: 100vh;
+    width: 209px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: fixed;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #555555;
+    font-size: 14px;
+}
+
+.triangle-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.triangle-list li::before {
+    content: "▶";
+    display: inline-block;
+    width: 0.7em;
+    height: 0.6em;
+    margin-right: 0.5em;
+    font-size: 0.8em;
+    color: #bd362f;
+}
+
+#viewImage,
+#addImage,
+#editImage {
+    width: 15px;
+}
+
+#viewImage {
+    margin-left: 10px;
+}
+
+#addImage {
+    margin-left: 14px;
+}
+
+#editImage {
+    margin-left: 75px;
+}
+
+#favImage {
+    margin-left: 89px;
+    width: 18px;
+}
+
+#recImage {
+    margin-left: 104px;
+    width: 18px;
+}
+
+#underLineChoise {
+    width: 190px;
+    height: 2px;
+    background-color: #555555;
+}
+
+/*---------------------------------------------*/
+/* gridBody */
+
+#body-con {
+    display: flex;
+    flex-flow: row;
+}
+
+#projectsBody {
+    margin-left: 209px;
+    margin-top: 80px;
+    min-height: 100vh;
+    height: fit-content;
+    width: 100%;
+    background-color: #eeeeee;
+}
+
+#gridBody {
+    margin-top: 80px;
+}
+
+.row {
+    margin-bottom: 70px;
+}
+
+.projectImages {
+    width: 250px;
+    border-radius: 5px;
+}
+
+.projectName {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
+
+}
+
+#ProjectRivew {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
+
+}
+
+#ProjectRivew2 {
+    display: none;
+
+}
+
+span {
+    font-weight: bold;
+    color: #555555;
+    font-size: 14px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.underlineProject {
+    justify-self: center;
+    width: 250px;
+    height: 2.5px;
+    background-color: #555555;
+}
+
+/*---------------------------------------------*/
+/* gridBody */
+
+#LeftSide {
+    height: 755px;
+    width: 50%;
+    margin-left: 100px;
+    margin-top: 50px;
+
+}
+
+#RightSide {
+    height: 755px;
+    width: 50%;
+    margin-left: 200px;
+    margin-top: 50px;
+
+}
+
+#RedLine {
+    width: 540px;
+    height: 5px;
+    color: #bd362f;
+    background-color: #bd362f;
+}
+
+#GreyLine {
+    width: 388px;
+    height: 2px;
+    margin-left: 14px;
+    color: #555555;
+    background-color: #555555;
+}
+
+#WhiteBox {
+    width: 521px;
+    height: 100px;
+    background-color: white
+}
+
+#requirements {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    max-height: fit-content;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+
+
+#Example {
+    display: flex;
+    flex-flow: row;
+
+}
+
+#Example>ul {
+    padding: 0px;
+    margin: 0px;
+
+}
+
+#Example>ul>li {
+    display: flex;
+    flex-flow: row;
+}
+
+#Eyes {
+    height: 180px;
+    width: 50px;
+}
+
+#Eyes img {
+    margin-top: 8.5px;
+}
+
+#bottomLefSide {
+    width: 500px;
+    height: 100px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dots::after {
+    content: "...........................................";
+    margin-left: 13px;
+}
+
+#ranProfileImage2 {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+
+}
+
+#formRatingDesktop{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+#star {
+    margin-left: 5px;
+    height: 37px;
+    width: 37px;
+}
+
+#SortImage {
+    height: 23px;
+    width: 23px;
+    vertical-align: middle;
+
+}
+
+#Txt {
+    display: flex;
+    flex-flow: column;
+
+}
+
+#comments {
+    height: 30px;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+#PlayBuotunIMage {
+    height: 30px;
+    width: 30px;
+    top: 316px;
+    left: 288px;
+}
+
+#FileLogo {
+    height: 20px;
+    width: 20px;
+
+}
+
+#stars {
+    height: 15px;
+    width: 15px;
+}
+
+
+#FileLogo2 {
+    height: 14px;
+    width: 14px;
+    margin-top: 3px;
+}
+
+#bottns {
+    display: flex;
+    flex-flow: row;
+    gap: 5px;
+
+}
+
+#share {
+    width: 80px;
+    height: 40px;
+    background-color: #bd362f;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#Rating {
+    width: 234px;
+    height: 66px;
+    color: #555555;
+
+}
+
+#ProjrctImage {
+    width: 290px;
+    height: 206px;
+    margin-top: 65px;
+
+
+}
+
+#bottomRightSide {
+    height: 100px;
+    width: 397px;
+    margin-top: 65px;
+
+}
+
+#RedlineRigthSide {
+    height: 5px;
+    width: 290px;
+    background-color: #bd362f;
+}
+
+#RedDot {
+    width: 10px;
+    height: 10px;
+    background-color: #bd362f;
+    border-radius: 10px;
+    margin-top: 5px;
+
+}
+
+#participant1 {
+    height: 32px;
+    width: 204px;
+    margin-top: 10px;
+    color: #555555;
+    display: flex;
+    flex-flow: row;
+
+}
+
+#participant2 {
+    height: 32px;
+    width: 204px;
+    margin-top: 5px;
+    color: #555555;
+    display: flex;
+    flex-flow: row;
+
+
+}
+
+#number {
+    font-size: 30px;
+}
+
+#firstname {
+    height: 10px;
+    width: 10px;
+    margin-left: 15px;
+    margin-top: 2.5px;
+}
+
+#View-con 
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    margin-left: 209px;
+    margin-top: 81px;
+    background-color: #eeeeee;
+    
+}
+
+#ProjectNameTitle {
+    justify-content: space-between;
+    display: flex;
+    margin: 0px;
+    width: 540px;
+    color: #555555;
+}
+
+
+
+#ProjectD {
+    display: none;
+}
+
+#share2 {
+    display: none;
+
+}
+
+#GreyLine2 {
+    display: none;
+}
+
+#coomnets {
+
+    display: none;
+
+}
+
+#middle {
+    margin-left: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+#mobileBody {
+    display: none;
+}
+
+
+
+.FontCm {
+    color: black;
+
+}
+
+#body-conForm {
+    background-color: #eeeeee;
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+}
+
+#formContainer {
+    width: 100%;
+    height: 100%;
+    padding: 10px 60px 60px 60px;
+}
+
+form {
+    display: flex;
+}
+
+#leftSide {
+    width: 50%;
+    margin-right: 25px;
+}
+
+#rightSide {
+    width: 50%;
+    margin-left: 25px;
+}
+
+#formInfo1 {
+    width: 100vw;
+}
+
+#formInfo1Line1,
+#formInfo1Line2,
+#formInfo1Line3 {
+    width: 100%;
+    display: flex;
+}
+
+.mb-3.formInfo {
+    width: 50%;
+}
+
+.mb-3 {
+    margin-bottom: 0px;
+    margin: 10px;
+}
+
+.form-control.fileInput {
+    border: 2px dashed #777777;
+}
+
+#ProjectFiles {
+    height: 205px;
+}
+
+#ProjectDes {
+    resize: none;
+}
+
+#ProjectFilesRules {
+    font-size: 14px;
+}
+
+#moqupsUrl,
+#basic-url {
+    position: unset;
+}
+
+#ProjectType,
+#ProjectName {
+    width: 100%;
+}
+
+.form-control.inputForm:focus {
+    border-color: #bd362f;
+    box-shadow: 1px 0 5px rgba(189, 54, 47, 1);
+}
+
+#submit {
+    margin-right: 15px;
+}
+
+.btn.btn-primary.formButton {
+    font-weight: bold;
+    border: 0;
+    background-color: #bd362f;
+}
+
+.btn.btn-primary.formButton:hover {
+    border: 0;
+    background-color: white;
+    color: #bd362f;
+}
+
+.form-check-input.formCheck:checked {
+    background-color: #bd362f;
+}
+
+.form-check-input.formCheck:focus {
+    box-shadow: none;
+    border: 0px;
+}
+
+#rights {
+    font-size: 14px;
+}
+
+#formSec {
+    margin-left: 10px;
+}
+
+#navbar2Row {
+    display: none;
+}
+
+#navbar2Row {
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.projectBox {
+    color: #bd362f;
+    border-bottom: 4px solid #bd362f;
+}
+
+@media(max-width:990px) {
+
+    form {
+        display: block;
+    }
+
+    #navbar2Row {
+        display: flex;
+    }
+
+    #formTitle {
+        padding: 0;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    #formContainer {
+        padding: 10px 10px 10px 10px;
+    }
+
+    #leftSide {
+        width: 100%;
+    }
+
+    #rightSide {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .projectImages {
+        width: 350px;
+    }
+
+    .col {
+        margin-bottom: 50px;
+
+    }
+
+    .projectImages {
+        width: 400px;
+    }
+
+    .mobileHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-collapse {
+        background-color: #f8f9fa;
+    }
+
+    #searchBar {
+        margin: 0px;
+        width: 50%;
+    }
+
+    #desktopNav {
+        display: none;
+    }
+
+    #mobileNav {
+        display: flex;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    #selectedNav {
+        color: #bd362f;
+        border-bottom: 3px solid #bd362f;
+
+
+    }
+
+    #mobileNavContainer {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    #navbar {
+        display: flex;
+        width: 100%;
+    }
+
+    #sideBar {
+        display: none;
+    }
+
+    .row {
+        margin-bottom: 30px;
+    }
+
+    #projectsBody {
+        margin-left: 0px;
+        padding-top: 50px;
+    }
+
+    .projectImages {
+        width: 250px;
+    }
+
+    #projectsBody {
+        background-color: #f8f9fa;
+    }
+
+    #logoContainer,
+    #logoExpanded {
+        display: none;
+    }
+
+    .navbar-toggler {
+        width: 80px;
+        height: 60px;
+        display: flex;
+
+    }
+
+    #humburger {
+        border: none;
+        padding: 10px;
+    }
+
+    .navbar-toggler>.navbar-toggler-icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    #navbar2 {
+        display: flex;
+        height: 60px;
+        width: 100vw;
+        background-color: #eeeeee;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #navbar2Row {
+        margin-bottom: 0;
+        height: 100%;
+    }
+
+    .projectBox {
+        color: #bd362f;
+        border-bottom: 4px solid #bd362f;
+    }
+
+    #colNavbar2 {
+        margin-bottom: 0;
+    }
+
+    .projectContainer {
+        background-color: #eeeeee;
+        padding: 40px 40px 40px 40px;
+        border-radius: 12px;
+    }
+
+    #ranProfileImage {
+        width: 45px;
+    }
+
+    
+}
