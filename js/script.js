@@ -58,26 +58,26 @@ let showComments = function () {
 };
 
 
-const likes = document.querySelectorAll('.ClappImage');
+const $likes = $('.ClappImage');
 
-likes.forEach((like) => {
-  like.addEventListener('click', () => {
-    const isActive = Boolean(like.getAttribute('data-is-active') === 'true');
+$likes.on('click', function () {
+    const $like = $(this);
+    const isActive = Boolean($like.attr('data-is-active') === 'true');
     if (isActive) {
-      like.style.backgroundImage = 'url(../images/clapping-hands-red.png)';
-      const span = like.querySelector('span');
-      let count = parseInt(span.innerText);
-      span.innerText = count + 1;
-      like.setAttribute('data-is-active', 'false');
+        $like.css('background-image', 'url(images/clapping-hands-red.png)');
+        const $span = $like.find('span');
+        let count = parseInt($span.text());
+        $span.text(count + 1);
+        $like.attr('data-is-active', 'false');
     } else {
-      like.style.backgroundImage = 'url(../images/clapping-hands.png)';
-      const span = like.querySelector('span');
-      let count = parseInt(span.innerText);
-      span.innerText = count - 1;
-      like.setAttribute('data-is-active', 'true');
+        $like.css('background-image', 'url(images/clapping-hands.png)');
+        const $span = $like.find('span');
+        let count = parseInt($span.text());
+        $span.text(count - 1);
+        $like.attr('data-is-active', 'true');
     }
-  });
 });
+
 
 
 
