@@ -135,50 +135,50 @@
                             <div class="mb-3 formInfo">
                                 <label for="ProjectName" for="validationServer01" class="form-label"><b>Project
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm" class="validationServer01"
+                                <input type="text" class="form-control inputForm validationServer01"
                                     name="ProjectName" placeholder="* Microsoft" required>
                             </div>
                             <div class="mb-3 formInfo">
                                 <label for="ProjectType" for="validationServer02" class="form-label"><b>Project
                                         Type</b></label>
-                                <input type="text" class="form-control inputForm" name="ProjectType" class="ProjectType"
+                                <input type="text" class="form-control inputForm ProjectType" name="ProjectType"
                                     placeholder="* Social" required>
                             </div>
                         </div>
-                        <label>&nbsp&nbsp<b>Participant 1</b></label>
+                        <label>&nbsp;&nbsp;<b>Participant 1</b></label>
                         <div class="formInfo1Line2">
                             <div class="mb-3 formInfo">
                                 <label for="ProjectName" for="validationServer03" class="form-label"><b>First
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm" name="Participant1Name"
-                                    class="ProjectName" placeholder="* Bill" required>
+                                <input type="text" class="form-control inputForm ProjectName" name="Participant1Name"
+                                     placeholder="* Bill" required>
                             </div>
                             <div class="mb-3 formInfo">
                                 <label for="ProjectType" for="validationServer04" class="form-label"><b>Family
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm" name="Participant1NameSecond"
-                                    class="ProjectType" placeholder="* Gates" required>
+                                <input type="text" class="form-control inputForm ProjectType" name="Participant1NameSecond"
+                                     placeholder="* Gates" required>
                             </div>
                         </div>
-                        <label>&nbsp&nbsp<b>Participant 2</b></label>
+                        <label>&nbsp;&nbsp;<b>Participant 2</b></label>
                         <div class="formInfo1Line3">
                             <div class="mb-3 formInfo">
                                 <label for="ProjectName" class="form-label" for="validationServer05"><b>First
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm" name="Participant2Name"
-                                    class="ProjectName" placeholder="* John" required>
+                                <input type="text" class="form-control inputForm ProjectName" name="Participant2Name"
+                                     placeholder="* John" required>
                             </div>
                             <div class="mb-3 formInfo">
                                 <label for="ProjectType" class="form-label" for="validationServer05"><b>Family
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm" name="Participant2NameSecond"
-                                    class="ProjectType" placeholder="* Doe" required>
+                                <input type="text" class="form-control inputForm ProjectType" name="Participant2NameSecond"
+                                     placeholder="* Doe" required>
                             </div>
                         </div>
                         <div class="projectDes">
                             <div class="mb-3">
                                 <label for="ProjectName" class="form-label"><b>Project Description</b></label>
-                                <textarea class="form-control inputForm" name="ProjectDescription" class="ProjectDes"
+                                <textarea class="form-control inputForm ProjectDes" name="ProjectDescription"
                                     rows="5"></textarea>
                             </div>
                         </div>
@@ -197,8 +197,8 @@
                                     for this.</b></label>
                             <div class="rights">
                                 <div class="form-check">
-                                    <input class="form-check-input formCheck" type="checkbox" value=""
-                                        class="flexCheckDefault" required>
+                                    <input class="form-check-input formCheck flexCheckDefault" type="checkbox" value=""
+                                         required>
                                     <label class="form-check-label" for="flexCheckDefault">
                                         <b class="checkText">I am aware and agree that this assignment will be
                                             checked
@@ -211,7 +211,7 @@
                                     </label>
                                 </div>
                             </div><br>
-                            <button type="submit" class="btn btn-primary formButton" class="submit">Submit</button>
+                            <button type="submit" class="btn btn-primary formButton submit" >Submit</button>
                             <button class="btn btn-primary formButton was-validated" id="cancel"
                                 onclick="goBack()">Cancel</button>
                         </div>
@@ -219,20 +219,20 @@
                     <div class="rightSide">
                         <div class="mb-3">
                             <label for="ProjectImageForm" class="form-label"><b>Project Image</b></label>
-                            <input type="file" class="form-control fileInput" name="ProjectIMage"
-                                class="ProjectImageForm" accept=".png,.jpeg,.SVG">
+                            <input type="file" class="form-control fileInput ProjectImageForm" name="ProjectIMage"
+                                 accept=".png,.jpeg,.SVG">
                         </div>
                         <div class="mb-3">
                             <label for="ProjectImageForm" class="form-label"><b>Project Srs</b></label>
-                            <input type="file" class="form-control fileInput" name="ProjectSrs" class="ProjectImageForm"
+                            <input type="file" class="form-control fileInput ProjectImageForm" name="ProjectSrs"
                                 accept=".pdf">
                         </div>
                         <div class="mb-3">
                             <label for="basic-url" class="form-label"><b>Link To Moqups Page</b></label>
-                            <div class="input-group" class="moqupsUrl">
-                                <span class="input-group-text" class="basic-addon3">https://app.moqups.com/</span>
-                                <input type="text" class="form-control inputForm" name="linktotheMoqupspage"
-                                    class="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                            <div class="input-group moqupsUrl">
+                                <span class="input-group-text basic-addon3">https://app.moqups.com/</span>
+                                <input type="text" class="form-control inputForm basic-url" name="linktotheMoqupspage"
+                                     aria-describedby="basic-addon3 basic-addon4">
                             </div>
                         </div>
                         <label for="basic-url" class="form-label"><b>&nbsp;&nbsp;&nbsp;Upload additional
@@ -252,16 +252,12 @@
 
                         <span>Possible file types:</span>
                         <span>Document files doc .docx .epub .gdoc .odt .oth .ott .pdf .rtf .cpp .hpp</span>
-
-
                     </div>
-
                 </form>
             </section>
         </section>
     </section>
     <div id="formFunc"></div>
-
     <script src="js/script.js"></script>
 </body>
 
