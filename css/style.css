@@ -235,8 +235,20 @@ li {
     width: 15px;
 }
 
-#viewImage {
+#viewImageList {
     margin-left: 10px;
+}
+
+#viewImage{
+    margin-left: 175px;
+}
+
+.starsListSec{
+    margin-bottom: 5px;
+}
+
+#StarCn1,#StarCn2,#StarCn3{
+    display: flex;
 }
 
 #addImage {
@@ -431,7 +443,7 @@ span {
 
 .dots::after {
     content: "...........................................";
-    margin-left: 13px;
+    margin-left: 17px;
 }
 
 #ranProfileImage2 {
@@ -476,8 +488,6 @@ span {
 #PlayBuotunIMage {
     height: 30px;
     width: 30px;
-    top: 316px;
-    left: 288px;
 }
 
 #FileLogo {
@@ -1187,6 +1197,9 @@ form {
     }
 
     #Ad {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: #555555;
         border: 1px solid gray;
         width: 90%;
@@ -1253,17 +1266,14 @@ form {
 
     }
 
+
+
     #PlayBuotunIMage {
+        background: url(/images/Play-Button-PNG-Transparent-Image.png);
         height: 75px;
         width: 75px;
-
-    }
-
-    #FileLogo {
-        height: 75px;
-        width: 75px;
-
-
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     #ProjectRivew2 {
@@ -1340,19 +1350,18 @@ form {
     }
 
     #left {
-
         width: 50%;
-        justify-content: center;
-        text-align: center;
-
-
+        display: flex;
+        align-items: center;
+        flex-flow: column;
     }
 
     #right {
 
         width: 50%;
-        justify-content: center;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-flow: column;
 
     }
 
@@ -1373,6 +1382,29 @@ form {
         display: flex;
     }
 
+    #View-con {
+        display: none;
+    }
+
+    #ratingTitle {
+        display: flex;
+        align-items: center;
+    }
+
+    .starsList {
+        display: flex;
+        align-items: center;
+    }
+
+    #commentSec {
+        display: flex;
+        align-items: center;
+    }
+
+    #FileLogo {
+        height: 75px;
+        width: 75px;
+    }
 }
 
 li {
@@ -1417,7 +1449,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#viewImage {
+#viewImage,#viewImageList {
     background: url(/images/eye.png);
     width: 17px;
     height: 17px;
@@ -1501,6 +1533,26 @@ li>a {
     background: url(/images/star.png);
     width: 15px;
     height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#PlayBuotunIMage {
+    background: url(/images/Play-Button-PNG-Transparent-Image.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#FileLogo {
+    background: url(/images/REEDfile.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#SortImage {
+    background: url(/images/sortSearch.png);
+    height: 23px;
+    width: 23px;
     background-size: contain;
     background-repeat: no-repeat;
 }
