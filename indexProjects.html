@@ -26,18 +26,18 @@
                         <a href="indexProjects.html">
                             <div id="logoExpanded"></div>
                         </a>
-                        <div id="ranProfileImageMobile">
+                        <div >
                             <a href="" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
-                                    id="ranProfileImage"></a>
+                                    id="ranProfileImageDesktop"></a>
                         </div>
-                        <div id="searchBar" class="input-group">
-                            <input type="text" class="form-control" id="inputSearch" placeholder="Search"
+                        <div id="searchBar1" class="input-group">
+                            <input type="text" class="form-control" id="inputSearch1" placeholder="Search"
                                 aria-label="Search for...">
                             <button class="btn btn-outline-secondary" type="button">
-                                <div id="search"></div>
+                                <span id="search1"></span>
                             </button>
                             <button class="btn btn-outline-secondary" type="button">
-                                <div id="sortIconImage"></div>
+                                <span id="sortIconImageMobile"></span>
                             </button>
                         </div>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -51,14 +51,14 @@
 
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <div id="desktopNav">
-                            <div id="searchBar" class="input-group">
-                                <input type="text" class="form-control" id="inputSearch" placeholder="Search"
+                            <div id="searchBar2" class="input-group">
+                                <input type="text" class="form-control" id="inputSearch2" placeholder="Search"
                                     aria-label="Search for...">
                                 <button class="btn btn-outline-secondary" type="button">
-                                    <div id="search"></div>
+                                    <span id="search2"></span>
                                 </button>
                                 <button class="btn btn-outline-secondary" type="button">
-                                    <div id="sortIconImage"></div>
+                                    <span id="sortIconImageDesktop"></span>
                                 </button>
                             </div>
                             <div class="navbar-nav ms-auto">
@@ -79,7 +79,7 @@
                                 </section>
                                 <section id="ranProfile" class="nav-item">
                                     <a href="" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
-                                            id="ranProfileImage"></a>
+                                            id="ranProfileImageMobile"></a>
                                 </section>
                             </div>
 
@@ -98,7 +98,8 @@
                                     <a href="" class="nav-link"><b>Contests</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="index.html" class="nav-link" id="selectedNav"><b>View Personal Project</b></a>
+                                    <a href="index.html" class="nav-link" id="selectedNav"><b>View Personal
+                                            Project</b></a>
                                 </section>
                                 <section class="nav-item">
                                     <a href="indexForm.html" class="nav-link"><b>Add Personal Project</b></a>
@@ -114,15 +115,30 @@
                         </div>
                     </div>
                 </nav>
+                <section id="navbar2">
+                    <div class="container text-center" id="navbarContainer">
+                        <div class="row" id="navbar2Row">
+                            <div class="col projectBox" id="colNavbar1">
+                                Projects
+                            </div>
+                            <div class="col" id="colNavbar2">
+                                Favorites
+                            </div>
+                            <div class="col" id="colNavbar3">
+                                Recent
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
             </header>
 
         </div>
 
-        </div>
         <section class="body-con">
             <div class="breadCrumbs">
-                <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="indexProjects.html" class="breadCrumbsLinks">Projects</a></span>
+                <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="indexProjects.html"
+                        class="breadCrumbsLinks">Projects</a></span>
             </div>
             <div class="sideBar">
                 <section class="choiseList">
@@ -145,101 +161,102 @@
                     </ul>
                 </section>
                 <div class="underLineChoise"></div>
+                
             </div>
             <div class="projectsBody">
-                <div class="container text-center" class="gridBody">
-                    <div class="row" class="row1">
+                <div class="container text-center gridBody">
+                    <div class="row row1">
                         <div class="col">
                             <div class="projectContainer">
-                                <a href="index.html?projId=1"><img src="images/projectsImages/CookieFactory.png" alt="CookieFactory"
-                                        class="projectImages">
+                                <a href="index.html?projId=1"><img src="images/projectsImages/CookieFactory.png"
+                                        alt="CookieFactory" class="projectImages"></a>
                                     <a href="index.html?projId=1" class="projectName">Cookie factory</a>
                                     <span class="fromSpan">By Dor Zolochia and Virin Gagon</span>
-                                    <div class="underlineProject"></div>
-                                </a>
+                                    <section class="underlineProject"></section>
+                                
                             </div>
                         </div>
                         <div class="col">
                             <div class="projectContainer">
                                 <a href="index.html?projId=2"><img src="images/projectsImages/DataZoo.png" alt="DataZoo"
-                                        class="projectImages">
+                                        class="projectImages"></a>
                                     <a href="index.html?projId=2" class="projectName">Data Zoo</a>
                                     <span class="fromSpan">By Moshe Sabah and Ariel Greenberg</span>
-                                    <div class="underlineProject"></div>
-                                </a>
+                                    <section class="underlineProject"></section>
+                                
                             </div>
                         </div>
                         <div class="col">
                             <div class="projectContainer">
-                                <a href="index.html?projId=3"><img src="images/projectsImages/dogFactory.png" alt="dogFactory"
-                                        class="projectImages">
+                                <a href="index.html?projId=3"><img src="images/projectsImages/dogFactory.png"
+                                        alt="dogFactory" class="projectImages"></a>
                                     <a href="index.html?projId=3" class="projectName">DogFactory</a>
                                     <span class="fromSpan">By Dani Aharon and Mika Cohen</span>
-                                    <div class="underlineProject"></div>
-                                </a>
+                                    <section class="underlineProject"></section>
+                               
                             </div>
                         </div>
                     </div>
-                    <div class="row" class="row2">
+                    <div class="row row2">
                         <div class="col">
                             <div class="projectContainer">
-                                <a href="index.html?projId=4"><img src="images/projectsImages/DoorStory.png" alt="DoorStory"
-                                        class="projectImages"></a>
+                                <a href="index.html?projId=4"><img src="images/projectsImages/DoorStory.png"
+                                        alt="DoorStory" class="projectImages"></a>
                                 <a href="index.html?projId=4" class="projectName">DoorStory</a>
                                 <span class="fromSpan">By Yossi Aharon and Sivan Cohen</span>
-                                <div class="underlineProject"></div>
+                                <section class="underlineProject"></section>
                             </div>
                         </div>
                         <div class="col">
                             <div class="projectContainer">
-                                <a href="index.html?projId=5"><img src="images/projectsImages/farmDream.png" alt="farmDream"
-                                        class="projectImages">
+                                <a href="index.html?projId=5"><img src="images/projectsImages/farmDream.png"
+                                        alt="farmDream" class="projectImages"></a>
                                     <a href="index.html?projId=5" class="projectName">FarmDream</a>
                                     <span class="fromSpan">By Stav Levy and Dana Maretzky</span>
-                                    <div class="underlineProject"></div>
-                                </a>
+                                    <section class="underlineProject"></section>
+                                
                             </div>
                         </div>
                         <div class="col">
                             <div class="projectContainer">
                                 <a href="index.html?projId=6"><img src="images/projectsImages/LabTool.png" alt="LabTool"
-                                        class="projectImages">
+                                        class="projectImages"></a>
                                     <a href="index.html?projId=6" class="projectName">LabTool</a>
                                     <span class="fromSpan">By Daniel Menashe and Ron Ben David</span>
-                                    <div class="underlineProject"></div>
-                                </a>
+                                    <section class="underlineProject"></section>
+                                
                             </div>
                         </div>
                     </div>
-                    <div class="row" class="row3">
+                    <div class="row row3">
                         <div class="col">
                             <div class="projectContainer">
                                 <a href="index.html?projId=7"><img src="images/projectsImages/positiveIntelligence.png"
-                                        alt="positiveIntelligence" class="projectImages">
+                                        alt="positiveIntelligence" class="projectImages"></a>
                                     <a href="index.html?projId=7" class="projectName">Positive Intelligence</a>
                                     <span class="fromSpan">By Liron Levi and Yuval Reznik</span>
-                                    <div class="underlineProject"></div>
-                                </a>
+                                    <section class="underlineProject"></section>
+                                
                             </div>
                         </div>
                         <div class="col">
                             <div class="projectContainer">
-                                <a href="index.html?projId=8"><img src="images/projectsImages/randomLogo.png" alt="randomLogo"
-                                        class="projectImages">
+                                <a href="index.html?projId=8"><img src="images/projectsImages/randomLogo.png"
+                                        alt="randomLogo" class="projectImages"></a>
                                     <a href="index.html?projId=8" class="projectName">randomo</a>
                                     <span class="fromSpan">By Ron Noiman and Shalev Goodman</span>
-                                    <div class="underlineProject"></div>
-                                </a>
+                                    <section class="underlineProject"></section>
+                                
                             </div>
                         </div>
                         <div class="col">
                             <div class="projectContainer">
                                 <a href="index.html?projId=9"><img src="images/projectsImages/TagTool.png" alt="TagTool"
-                                        class="projectImages">
+                                        class="projectImages"></a>
                                     <a href="index.html?projId=9" class="projectName">TagTool</a>
                                     <span class="fromSpan">By Menachem Avshalom and John Doe</span>
-                                    <div class="underlineProject"></div>
-                                </a>
+                                    <section class="underlineProject"></section>
+                                
                             </div>
                         </div>
                     </div>

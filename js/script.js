@@ -1,6 +1,6 @@
 var hamburgerButton = $('#humburger');
-var ranProfileImage = $('#ranProfileImage');
-var searchBar = $('#searchBar');
+var ranProfileImage = $('#ranProfileImageMobile');
+var searchBar = $('#searchBar1');
 var logo = $('#logoExpanded');
 
 hamburgerButton.click(function () {
