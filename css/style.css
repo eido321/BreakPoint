@@ -42,7 +42,25 @@ li>a {
     display: flex;
     flex-flow: row;
     background-color: #eeeeee;
+}
 
+.breadCrumbsLinks{
+    text-decoration: none;
+    color: #555555;
+}
+
+#breadCrumbs{
+    position: absolute;
+    font-size: 12px;
+    top: 100px;
+    left: 258px;
+}
+
+#breadCrumbsNoneSideBar{
+    position: absolute;
+    font-size: 12px;
+    top: 100px;
+    left: 65px;
 }
 
 /*---------------------------------------------*/
@@ -822,11 +840,18 @@ form {
     height: 100%;
 }
 
+/* @media(max-width:1032px) {
+    .projectImages{
+        width: 400px;
+    }
+
+    .col{
+        margin-bottom: 50px;
+    }
+} */
 
 
 @media(max-width:990px) {
-
-
 
     form {
         display: block;
@@ -1388,9 +1413,6 @@ form {
         width: 75px;
     }
 
-    #navbarContainer{
-        display: none;
-    }
 }
 
 li {
