@@ -878,7 +878,7 @@ form {
 }
 
 
-@media(max-width:990px) {
+@media(max-width:737px) {
 
     .breadCrumbsNoneSideBar,
     .breadCrumbs {
@@ -1102,11 +1102,11 @@ form {
 
 
     .fromSpan {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .projectName {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     #logoContainer,
