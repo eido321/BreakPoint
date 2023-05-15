@@ -32,6 +32,7 @@ hamburgerButton.click(function () {
     })
 })()
 
+
 const cancelButton = document.getElementById('cancel');
 
 if (cancelButton) {
@@ -57,7 +58,7 @@ let showComments = function () {
 };
 
 
-const likes = document.querySelectorAll('#ClappImage');
+const likes = document.querySelectorAll('.ClappImage');
 
 likes.forEach((like) => {
   like.addEventListener('click', () => {

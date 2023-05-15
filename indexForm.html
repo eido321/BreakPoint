@@ -17,14 +17,12 @@
 </head>
 
 <body>
-    <section id="screen">
+    <section class="screen">
         <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
                     <a href="indexProjects.html" class="navbar-brand" id="logoContainer">
-                        <a href="indexProjects.html">
-                            <div id="logo"></div>
-                        </a>
+                        <div id="logo"></div>
                     </a>
                     <div class="mobileHeader">
                         <a href="indexProjects.html">
@@ -51,6 +49,8 @@
                         </button>
 
                     </div>
+
+
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <div id="desktopNav">
                             <div id="searchBar" class="input-group">
@@ -84,6 +84,8 @@
                                             id="ranProfileImage"></a>
                                 </section>
                             </div>
+
+
                         </div>
                         <div id="mobileNav">
                             <div class="navbar-nav " id="mobileNavContainer">
@@ -98,11 +100,11 @@
                                     <a href="" class="nav-link"><b>Contests</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="index.html" class="nav-link"><b>View Personal Project</b></a>
+                                    <a href="index.html" class="nav-link" id="selectedNav"><b>View Personal
+                                            Project</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="indexForm.html" class="nav-link" id="selectedNav"><b>Add Personal
-                                            Project</b></a>
+                                    <a href="indexForm.html" class="nav-link"><b>Add Personal Project</b></a>
                                 </section>
                                 <section class="nav-item">
                                     <a href="" class="nav-link"><b>Edit Project</b></a>
@@ -117,122 +119,125 @@
                 </nav>
 
             </header>
+
         </div>
-        <section id="body-conForm">
-            <div id="breadCrumbsNoneSideBar">
+        <section class="body-conForm">
+            <div class="breadCrumbsNoneSideBar">
                 <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a class="breadCrumbsLinks"
                         href="indexProjects.html">Projects</a> > <a class="breadCrumbsLinks"
                         href="indexForm.html">Project Creation</a></span>
             </div>
-            <section id="formTitle">
+            <section class="formTitle">
                 <p>&nbsp;Project Creation</p>
             </section>
-            <section id="formContainer">
+            <section class="formContainer">
                 <form action="http://localhost/temp.php" method="get" class="needs-validation" novalidate>
-                    <div id="leftSide">
-                        <div id="formInfo1Line1">
+                    <div class="leftSide">
+                        <div class="formInfo1Line1">
                             <div class="mb-3 formInfo">
                                 <label for="ProjectName" for="validationServer01" class="form-label"><b>Project
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm" id="validationServer01"
+                                <input type="text" class="form-control inputForm" class="validationServer01"
                                     name="ProjectName" placeholder="* Microsoft" required>
                             </div>
                             <div class="mb-3 formInfo">
                                 <label for="ProjectType" for="validationServer02" class="form-label"><b>Project
                                         Type</b></label>
-                                <input type="text" class="form-control inputForm" name="ProjectType" id="ProjectType"
+                                <input type="text" class="form-control inputForm" name="ProjectType" class="ProjectType"
                                     placeholder="* Social" required>
                             </div>
                         </div>
                         <label>&nbsp&nbsp<b>Participant 1</b></label>
-                        <div id="formInfo1Line2">
+                        <div class="formInfo1Line2">
                             <div class="mb-3 formInfo">
                                 <label for="ProjectName" for="validationServer03" class="form-label"><b>First
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm" name="Participant1Name"
-                                    id="ProjectName" placeholder="* Bill" required>
+                                    class="ProjectName" placeholder="* Bill" required>
                             </div>
                             <div class="mb-3 formInfo">
                                 <label for="ProjectType" for="validationServer04" class="form-label"><b>Family
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm" name="Participant1NameSecond"
-                                    id="ProjectType" placeholder="* Gates" required>
+                                    class="ProjectType" placeholder="* Gates" required>
                             </div>
                         </div>
                         <label>&nbsp&nbsp<b>Participant 2</b></label>
-                        <div id="formInfo1Line3">
+                        <div class="formInfo1Line3">
                             <div class="mb-3 formInfo">
                                 <label for="ProjectName" class="form-label" for="validationServer05"><b>First
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm" name="Participant2Name"
-                                    id="ProjectName" placeholder="* John" required>
+                                    class="ProjectName" placeholder="* John" required>
                             </div>
                             <div class="mb-3 formInfo">
                                 <label for="ProjectType" class="form-label" for="validationServer05"><b>Family
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm" name="Participant2NameSecond"
-                                    id="ProjectType" placeholder="* Doe" required>
+                                    class="ProjectType" placeholder="* Doe" required>
                             </div>
                         </div>
-                        <div id="projectDes">
+                        <div class="projectDes">
                             <div class="mb-3">
                                 <label for="ProjectName" class="form-label"><b>Project Description</b></label>
-                                <textarea class="form-control inputForm" name="ProjectDescription" id="ProjectDes"
+                                <textarea class="form-control inputForm" name="ProjectDescription" class="ProjectDes"
                                     rows="5"></textarea>
                             </div>
                         </div>
-                        <div id="formSec">
-                            <label id="rights"><b>This submission is original, belongs to me, was prepared by me and in
+                        <div class="formSec">
+                            <label class="rights"><b>This submission is original, belongs to me, was prepared by me and
+                                    in
                                     this
                                     submission I take responsibility for the originality of what is written in it.<br>
 
                                     With the exception of the places where I have indicated that the work was done by
                                     others and a suitable link is found in the bibliography or in the necessary place
                                     for this.</b></label>
-                            <div id="rights">
+                            <div class="rights">
                                 <div class="form-check">
                                     <input class="form-check-input formCheck" type="checkbox" value=""
-                                        id="flexCheckDefault" required>
+                                        class="flexCheckDefault" required>
                                     <label class="form-check-label" for="flexCheckDefault">
-                                        <b id="checkText">I am aware and agree that this assignment will be checked for
+                                        <b class="checkText">I am aware and agree that this assignment will be checked
+                                            for
                                             plagiarism by
                                             an originality rating group and I agree to the <a
-                                                href="https://www.originality.co.il/termsOfUse.html" id="terms">terms
+                                                href="https://www.originality.co.il/termsOfUse.html" class="terms">terms
                                                 of use.</a></b>
 
                                     </label>
                                 </div>
                             </div><br>
-                            <button type="submit" class="btn btn-primary formButton" id="submit">Submit</button>
+                            <button type="submit" class="btn btn-primary formButton" class="submit">Submit</button>
                             <button class="btn btn-primary formButton was-validated" id="cancel"
                                 onclick="goBack()">Cancel</button>
                         </div>
                     </div>
-                    <div id="rightSide">
+                    <div class="rightSide">
                         <div class="mb-3">
                             <label for="ProjectImageForm" class="form-label"><b>Project Image</b></label>
-                            <input type="file" class="form-control fileInput" name="ProjectIMage" id="ProjectImageForm"
-                                accept=".png,.jpeg,.SVG">
+                            <input type="file" class="form-control fileInput" name="ProjectIMage"
+                                class="ProjectImageForm" accept=".png,.jpeg,.SVG">
                         </div>
                         <div class="mb-3">
                             <label for="ProjectImageForm" class="form-label"><b>Project Srs</b></label>
-                            <input type="file" class="form-control fileInput" name="ProjectSrs" id="ProjectImageForm"
+                            <input type="file" class="form-control fileInput" name="ProjectSrs" class="ProjectImageForm"
                                 accept=".pdf">
                         </div>
                         <div class="mb-3">
                             <label for="basic-url" class="form-label"><b>Link To Moqups Page</b></label>
-                            <div class="input-group" id="moqupsUrl">
-                                <span class="input-group-text" id="basic-addon3">https://app.moqups.com/</span>
+                            <div class="input-group" class="moqupsUrl">
+                                <span class="input-group-text" class="basic-addon3">https://app.moqups.com/</span>
                                 <input type="text" class="form-control inputForm" name="linktotheMoqupspage"
-                                    id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                                    class="basic-url" aria-describedby="basic-addon3 basic-addon4">
                             </div>
                         </div>
                         <label for="basic-url" class="form-label"><b>&nbsp;&nbsp;&nbsp;Upload additional
                                 files</b></label>
-                        <section id="fileContainer">
-                            <span id="fileInputText">Files can be copied from the PC to the component below, by
+                        <section class="fileContainer">
+                            <span class="fileInputText">Files can be copied from the PC to the component below, by
                                 dragging and dropping.</span>
-                            <div class="input-group mb-3" id="fileInputContainer">
+                            <div class="input-group mb-3 " id="fileInputContainer">
 
                                 <input type="file" class="form-control" name="fileList[]" id="inputGroupFile01" multiple
                                     accept=".docx,.epub,.gdoc,.odt,.oth,.ott,.pdf,.rtf,.cpp,.hpp,.png">

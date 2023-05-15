@@ -24,7 +24,7 @@ li>a {
     text-decoration: none;
 }
 
-#navbar2 {
+.navbar2 {
     display: none;
 }
 
@@ -36,7 +36,7 @@ li>a {
     display: none;
 }
 
-#body-con {
+.body-con {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -44,19 +44,19 @@ li>a {
     background-color: #eeeeee;
 }
 
-.breadCrumbsLinks{
+.breadCrumbsLinks {
     text-decoration: none;
     color: #555555;
 }
 
-#breadCrumbs{
+.breadCrumbs {
     position: absolute;
     font-size: 12px;
     top: 100px;
     left: 258px;
 }
 
-#breadCrumbsNoneSideBar{
+.breadCrumbsNoneSideBar {
     position: absolute;
     font-size: 12px;
     top: 100px;
@@ -70,7 +70,7 @@ header {
     height: 100%;
 }
 
-#formTitle {
+.formTitle {
     font-size: 24px;
     font-weight: bold;
     padding: 60px 60px 0px 60px;
@@ -80,7 +80,7 @@ button {
     border: 0px;
 }
 
-#searchText {
+.searchText {
     font-size: 14px;
     color: #777777;
     margin-left: 20px;
@@ -104,7 +104,7 @@ nav {
 
 }
 
-#navContainer {
+.navContainer {
     display: flex;
     height: 100%;
     align-items: center;
@@ -125,7 +125,7 @@ nav {
     display: flex;
 }
 
-#leftSearchBar {
+.leftSearchBar {
     width: 294px;
     height: 32px;
     background-color: #eeeeee;
@@ -163,7 +163,7 @@ nav {
     margin-left: 100px;
 }
 
-#rightHeaderLinks {
+.rightHeaderLinks {
     display: flex;
     position: absolute;
     right: 23px;
@@ -172,8 +172,7 @@ nav {
 #ranProfile,
 #shenkarLogo,
 #notification,
-#settings,
-#ranProfile {
+#settings {
     display: flex;
     align-items: center;
 }
@@ -212,7 +211,7 @@ nav {
 
 /* side */
 
-#sideBar {
+.sideBar {
     margin-top: 80px;
     height: 100%;
     width: 209px;
@@ -221,7 +220,6 @@ nav {
     flex-flow: column;
     align-items: center;
     position: fixed;
-    left: 0;
 }
 
 li {
@@ -247,17 +245,17 @@ li {
     color: #bd362f;
 }
 
-#viewImage,
-#addImage,
-#editImage {
+.viewImage,
+.addImage,
+.editImage {
     width: 15px;
 }
 
-#viewImageList {
+.viewImageList {
     margin-left: 10px;
 }
 
-#viewImage {
+.viewImage {
     margin-left: 175px;
 }
 
@@ -265,31 +263,31 @@ li {
     margin-bottom: 5px;
 }
 
-#StarCn1,
-#StarCn2,
-#StarCn3 {
+.StarCn1,
+.StarCn2,
+.StarCn3 {
     display: flex;
 }
 
-#addImage {
+.addImage {
     margin-left: 14px;
 }
 
-#editImage {
+.editImage {
     margin-left: 75px;
 }
 
-#favImage {
+.favImage {
     margin-left: 89px;
     width: 18px;
 }
 
-#recImage {
+.recImage {
     margin-left: 104px;
     width: 18px;
 }
 
-#underLineChoise {
+.underLineChoise {
     width: 190px;
     height: 2px;
     background-color: #555555;
@@ -298,12 +296,12 @@ li {
 /*---------------------------------------------*/
 /* gridBody */
 
-#body-con {
+.body-con {
     display: flex;
     flex-flow: row;
 }
 
-#projectsBody {
+.projectsBody {
     margin-left: 209px;
     margin-top: 80px;
     min-height: 100vh;
@@ -312,7 +310,7 @@ li {
     background-color: #eeeeee;
 }
 
-#gridBody {
+.gridBody {
     margin-top: 80px;
 }
 
@@ -333,7 +331,7 @@ li {
 
 }
 
-#ProjectRivew {
+.ProjectRivew {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -342,7 +340,7 @@ li {
 
 }
 
-#ProjectRivew2 {
+.ProjectRivew2 {
     display: none;
 
 }
@@ -371,15 +369,15 @@ span {
 
 
 
-#checkText {
+.checkText {
     color: black;
 }
 
-#pForm {
+.pForm {
     margin: 5px;
 }
 
-#LeftSide {
+.LeftSide {
     height: 100%;
     width: 50%;
     margin-left: 100px;
@@ -388,35 +386,35 @@ span {
 
 }
 
-#RightSide {
+.RightSide {
     height: 100%;
     width: 50%;
     margin-top: 100px;
     margin-left: 25px;
 }
 
-#RedLine {
+.RedLine {
     width: 400px;
     height: 5px;
     color: #bd362f;
     background-color: #bd362f;
 }
 
-#GreyLine {
+.GreyLine {
     width: 388px;
     height: 2px;
     margin-left: 65px;
-    color: #555555;
+    color: .555555;
     background-color: #555555;
 }
 
-#WhiteBox {
+.WhiteBox {
     width: 400px;
     height: 150px;
     background-color: white
 }
 
-#requirements {
+.requirements {
     display: flex;
     align-items: center;
     flex-flow: row;
@@ -427,33 +425,33 @@ span {
 
 
 
-#Example {
+.Example {
     display: flex;
     flex-flow: row;
 
 }
 
-#Example>ul {
+.Example>ul {
     padding: 0px;
     margin: 0px;
 
 }
 
-#Example>ul>li {
+.Example>ul>li {
     display: flex;
     flex-flow: row;
 }
 
-#Eyes {
+.Eyes {
     height: 180px;
     width: 50px;
 }
 
-#Eyes img {
+.Eyes img {
     margin-top: 8.5px;
 }
 
-#bottomLefSide {
+.bottomLefSide {
     width: 500px;
     height: 100px;
     align-items: center;
@@ -465,76 +463,76 @@ span {
     margin-left: 17px;
 }
 
-#ranProfileImage2 {
+.ranProfileImage2 {
     height: 43px;
     width: 43px;
     vertical-align: middle;
 }
 
-#formRatingDesktop {
+.formRatingDesktop {
     display: flex;
     align-items: center;
     font-size: 16px;
 }
 
-#star {
+.star {
     margin-left: 5px;
     height: 37px;
     width: 37px;
 }
 
-#SortImage {
+.SortImage {
     height: 23px;
     width: 23px;
     vertical-align: middle;
 
 }
 
-#Txt {
+.Txt {
     display: flex;
     flex-flow: column;
 
 }
 
-#comments {
+.comments {
     height: 30px;
     width: 300px;
     margin-left: 50px;
     margin-top: -40px;
 }
 
-#PlayButtonImage {
+.PlayButtonImage {
     height: 30px;
     width: 30px;
     margin-left: 10px;
 }
 
-#FileLogo {
+.FileLogo {
     height: 20px;
     width: 20px;
 
 }
 
-#stars {
+.stars {
     height: 15px;
     width: 15px;
 }
 
 
-#FileLogo2 {
+.FileLogo2 {
     height: 14px;
     width: 14px;
     margin-top: 3px;
 }
 
-#bottns {
+.bottns {
     display: flex;
     flex-flow: row;
     gap: 5px;
 
 }
 
-#share {
+.share {
     width: 80px;
     height: 40px;
     background-color: #bd362f;
@@ -545,13 +543,13 @@ span {
     color: white;
 }
 
-#Rating {
+.Rating {
     width: 100%;
     color: #555555;
 
 }
 
-#ProjrctImage {
+.ProjrctImage {
     width: 290px;
     height: 206px;
     margin-top: 20px;
@@ -559,18 +557,18 @@ span {
 
 }
 
-#bottomRightSide {
+.bottomRightSide {
     width: 100%;
     margin-top: 65px;
 
 }
 
-#RedlineRigthSide {
+.RedlineRigthSide {
     height: 3px;
     background-color: #bd362f;
 }
 
-#RedDot {
+.RedDot {
     width: 10px;
     height: 10px;
     background-color: #bd362f;
@@ -579,7 +577,7 @@ span {
 
 }
 
-#participant1 {
+.participant1 {
     height: 32px;
     width: 204px;
     margin-top: 10px;
@@ -589,7 +587,7 @@ span {
 
 }
 
-#participant2 {
+.participant2 {
     height: 32px;
     width: 204px;
     margin-top: 5px;
@@ -600,30 +598,30 @@ span {
 
 }
 
-#number {
+.number {
     font-size: 30px;
 }
 
-#firstname {
+.firstname {
     height: 10px;
     width: 10px;
     margin-left: 15px;
     margin-top: 2.5px;
 }
 
-#comments{
-display: flex;
-}
-
-#sortText{
+.comments {
     display: flex;
 }
 
-#inputGroupFile01{
+.sortText {
+    display: flex;
+}
+
+#inputGroupFile01 {
     z-index: 0;
 }
 
-#View-con {
+.View-con {
     height: fit-content;
     min-height: 100vh;
     display: flex;
@@ -633,7 +631,7 @@ display: flex;
     background-color: #eeeeee;
 }
 
-#ProjectNameTitle {
+.ProjectNameTitle {
     justify-content: space-between;
     display: flex;
     margin: 0px;
@@ -643,32 +641,32 @@ display: flex;
 
 
 
-#ProjectD {
+.ProjectD {
     display: none;
 }
 
-#share2 {
-    display: none;
-
-}
-
-#GreyLine2 {
-    display: none;
-}
-
-#coomnets {
-
+.share2 {
     display: none;
 
 }
 
-#middle {
+.GreyLine2 {
+    display: none;
+}
+
+.coomnets {
+
+    display: none;
+
+}
+
+.middle {
     margin-left: 10%;
     align-items: center;
     justify-content: center;
 }
 
-#mobileBody {
+.mobileBody {
     display: none;
 }
 
@@ -676,17 +674,17 @@ display: flex;
 
 .FontCm {
     color: black;
-
+    display: flex;
 }
 
-#body-conForm {
+.body-conForm {
     background-color: #eeeeee;
     width: 100%;
     height: 100%;
     padding-top: 80px;
 }
 
-#formContainer {
+.formContainer {
     width: 100%;
     min-height: 100vh;
     padding: 10px 60px 60px 60px;
@@ -700,7 +698,7 @@ form {
     width: 95%;
 }
 
-#fileContainer {
+.fileContainer {
     display: flex;
     flex-flow: column;
     margin-bottom: 0;
@@ -709,6 +707,10 @@ form {
     border: 2px dashed #777777;
     border-radius: var(--bs-border-radius);
     ;
+}
+
+.input-group{
+    width: 95%;
 }
 
 #fileListContainer {
@@ -729,23 +731,23 @@ form {
 }
 
 
-#leftSide {
+.leftSide {
     width: 50%;
     margin-right: 25px;
 }
 
-#rightSide {
+.rightSide {
     width: 50%;
     margin-left: 25px;
 }
 
-#formInfo1 {
+.formInfo1 {
     width: 100vw;
 }
 
-#formInfo1Line1,
-#formInfo1Line2,
-#formInfo1Line3 {
+.formInfo1Line1,
+.formInfo1Line2,
+.formInfo1Line3 {
     width: 100%;
     display: flex;
 }
@@ -760,20 +762,20 @@ form {
 }
 
 .form-control.fileInput {
-    border: 2px dashed #777777;
+    border: 2px dashed .777777;
 }
 
 
-#ProjectDes {
+.ProjectDes {
     resize: none;
 }
 
-#ProjectFilesRules {
+.ProjectFilesRules {
     font-size: 14px;
 }
 
-#moqupsUrl,
-#basic-url {
+.moqupsUrl,
+.basic-url {
     position: unset;
     z-index: 0;
 }
@@ -783,14 +785,14 @@ form {
     box-shadow: 1px 0 5px rgba(189, 54, 47, 1);
 }
 
-#fileInputText{
+.fileInputText {
     font-size: 12px;
-    text-align:center;
+    text-align: center;
     margin-top: 5px;
     width: 95%;
 }
 
-#Srs {
+.Srs {
     margin-left: 10px;
 }
 
@@ -799,7 +801,7 @@ form {
     box-shadow: 1px 0 5px rgba(189, 54, 47, 1);
 }
 
-#submit {
+.submit {
     margin-right: 15px;
 }
 
@@ -824,37 +826,37 @@ form {
     border: 0px;
 }
 
-#rights {
+.rights {
     font-size: 14px;
 }
 
-#formSec {
+.formSec {
     margin-left: 10px;
 }
 
-.commentsText{
+.commentsText {
     margin: 5px;
 }
 
-#navbar2Row {
+.navbar2Row {
     display: none;
 }
 
-#navbar2Row {
+.navbar2Row {
     margin-bottom: 0;
     height: 100%;
 }
 
-#desktopRedStar{
+.desktopRedStar {
     margin-bottom: 10px;
 }
 
 @media(max-width:1032px) {
-    .projectImages{
+    .projectImages {
         width: 400px;
     }
 
-    .col{
+    .col {
         margin-bottom: 50px;
     }
 
@@ -862,7 +864,9 @@ form {
 
 
 @media(max-width:990px) {
-    #breadCrumbsNoneSideBar,#breadCrumbs{
+
+    .breadCrumbsNoneSideBar,
+    .breadCrumbs {
         display: none;
     }
 
@@ -872,25 +876,25 @@ form {
         display: block;
     }
 
-    #navbar2Row {
+    .navbar2Row {
         display: flex;
     }
 
-    #formTitle {
+    .formTitle {
         padding: 0;
         margin-left: 10px;
         margin-top: 20px;
     }
 
-    #formContainer {
+    .formContainer {
         padding: 10px 10px 10px 10px;
     }
 
-    #leftSide {
+    .leftSide {
         width: 100%;
     }
 
-    #rightSide {
+    .rightSide {
         display: none;
     }
 
@@ -949,7 +953,7 @@ form {
         width: 100%;
     }
 
-    #sideBar {
+    .sideBar {
         display: none;
     }
 
@@ -957,14 +961,14 @@ form {
         margin-bottom: 30px;
     }
 
-    #projectsBody {
+    .projectsBody {
         margin-left: 0px;
         padding-top: 50px;
     }
 
 
 
-    #projectsBody {
+    .projectsBody {
         background-color: #f8f9fa;
     }
 
@@ -990,7 +994,7 @@ form {
         height: 100%;
     }
 
-    #navbar2Row {
+    .navbar2Row {
         margin-bottom: 0;
         height: 100%;
     }
@@ -1000,7 +1004,7 @@ form {
         border-bottom: 4px solid #bd362f;
     }
 
-    #colNavbar2 {
+    .colNavbar2 {
         margin-bottom: 0;
     }
 
@@ -1040,7 +1044,7 @@ form {
         font-size: 20px;
     }
 
-    #selectedNav {
+    .selectedNav {
         color: #bd362f;
         border-bottom: 3px solid #bd362f;
 
@@ -1058,7 +1062,7 @@ form {
         width: 100%;
     }
 
-    #sideBar {
+    .sideBar {
         display: none;
     }
 
@@ -1066,14 +1070,14 @@ form {
         margin-bottom: 30px;
     }
 
-    #projectsBody {
+    .projectsBody {
         margin-left: 0px;
         padding-top: 50px;
         background-color: #f8f9fa;
     }
 
 
-    #fromSpan {
+    .fromSpan {
         font-size: 20px;
     }
 
@@ -1103,7 +1107,7 @@ form {
         height: 100%;
     }
 
-    #navbar2 {
+    .navbar2 {
         display: flex;
         height: 60px;
         width: 100vw;
@@ -1114,29 +1118,29 @@ form {
         align-items: center;
     }
 
-#threeContainer{
-    display: flex;
-}
+    .threeContainer {
+        display: flex;
+    }
 
-    #threeText{
+    .threeText {
         font-size: 24px;
     }
 
-    #navbarContainer {
+    .navbarContainer {
         margin: 0;
         padding: 0;
         height: 100%;
         width: 100%;
     }
 
-    #navbar2Row {
+    .navbar2Row {
         margin-bottom: 0;
         height: 100%;
     }
 
 
 
-    #colNavbar2 {
+    .colNavbar2 {
         margin-bottom: 0;
     }
 
@@ -1159,7 +1163,7 @@ form {
         width: 100%;
     }
 
-    #mobileBody {
+    .mobileBody {
         display: flex;
         height: 100vh;
         width: 100vw;
@@ -1168,20 +1172,20 @@ form {
         background-color: #f8f9fa;
     }
 
-    #projectDText {
+    .projectDText {
         margin: 10px 10px 10px 10px;
     }
 
-    #ProjectD {
+    .ProjectD {
         display: flex;
         border-radius: 10px;
     }
 
-    #sideBar {
+    .sideBar {
         display: none;
     }
 
-    #body-con {
+    .body-con {
         display: none;
     }
 
@@ -1208,7 +1212,7 @@ form {
     }
 
 
-    #MainTxtMobile {
+    .MainTxtMobile {
         text-decoration: none;
         font-size: 24px;
         font-weight: bold;
@@ -1218,7 +1222,7 @@ form {
         color: #555555;
     }
 
-    #ProjectD {
+    .ProjectD {
         background-color: #eeeeee;
         width: 80%;
         margin-left: 10%;
@@ -1229,7 +1233,7 @@ form {
         font-size: 16px;
     }
 
-    #Ad {
+    .Ad {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1240,7 +1244,7 @@ form {
         border-radius: 5%;
     }
 
-    #share {
+    .share {
         width: 70px;
         height: 35px;
         margin-left: 255px;
@@ -1253,20 +1257,20 @@ form {
         color: white;
     }
 
-    #ProjectRivew {
+    .ProjectRivew {
         text-decoration: none;
         font-size: 18px;
         font-weight: bold;
         color: #555555;
     }
 
-    #FileLogo2 {
-        color: #565555;
+    .FileLogo2 {
+        color: #555555;
         margin-bottom: 5px;
 
     }
 
-    #share2 {
+    .share2 {
         width: 80px;
         height: 35px;
         background-color: #bd362f;
@@ -1279,7 +1283,7 @@ form {
         margin-left: 5px;
     }
 
-    #Rating {
+    .Rating {
         height: 100%;
         width: 100%;
         display: flex;
@@ -1290,7 +1294,7 @@ form {
     }
 
 
-    #graybox {
+    .graybox {
         margin-top: 40px;
         height: 120px;
         width: 100vw;
@@ -1301,7 +1305,7 @@ form {
 
 
 
-    #PlayButtonImage {
+    .PlayButtonImage {
         background: url(/images/Play-Button-PNG-Transparent-Image.png);
         height: 75px;
         width: 75px;
@@ -1310,7 +1314,7 @@ form {
         margin-left: 0;
     }
 
-    #ProjectRivew2 {
+    .ProjectRivew2 {
         display: flex;
         width: 100%;
         text-decoration: none;
@@ -1319,7 +1323,7 @@ form {
         color: #555555;
     }
 
-    #bottomLefSide {
+    .bottomLefSide {
 
         background-color: #eeeeee;
         width: 80%;
@@ -1329,7 +1333,7 @@ form {
 
     }
 
-    #GreyLine2 {
+    .GreyLine2 {
         display: flex;
         width: 238px;
         height: 2px;
@@ -1339,7 +1343,7 @@ form {
 
     }
 
-    #ranProfileImage2 {
+    .ranProfileImage2 {
         height: 43px;
         width: 43px;
         vertical-align: middle;
@@ -1348,7 +1352,7 @@ form {
 
     }
 
-    #coomnets {
+    .coomnets {
 
         display: flex;
         margin-top: 5px;
@@ -1358,7 +1362,7 @@ form {
         background-color: white;
     }
 
-    #middle {
+    .middle {
         margin: 0;
         margin-top: 20px;
         margin-left: 10px;
@@ -1369,12 +1373,12 @@ form {
 
     }
 
-    #middleRight {
+    .middleRight {
         width: 50%;
 
     }
 
-    #middleLeft {
+    .middleLeft {
         width: 50%;
         width: 50%;
         display: flex;
@@ -1383,14 +1387,14 @@ form {
 
     }
 
-    #left {
+    .left {
         width: 50%;
         display: flex;
         align-items: center;
         flex-flow: column;
     }
 
-    #right {
+    .right {
 
         width: 50%;
         display: flex;
@@ -1404,7 +1408,7 @@ form {
 
     }
 
-    #redStar {
+    .redStar {
         width: 37px;
         margin-bottom: 10px;
     }
@@ -1413,15 +1417,15 @@ form {
         width: 15px;
     }
 
-    #body-con {
+    .body-con {
         display: flex;
     }
 
-    #View-con {
+    .View-con {
         display: none;
     }
 
-    #ratingTitle {
+    .ratingTitle {
         display: flex;
         align-items: center;
     }
@@ -1431,16 +1435,16 @@ form {
         align-items: center;
     }
 
-    #comments{
+    .comments {
         display: inline;
     }
 
-    #commentSec {
+    .commentSec {
         display: flex;
         align-items: center;
     }
 
-    #FileLogo {
+    .FileLogo {
         height: 75px;
         width: 75px;
     }
@@ -1489,8 +1493,8 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#viewImage,
-#viewImageList {
+.viewImage,
+.viewImageList {
     background: url(/images/eye.png);
     width: 17px;
     height: 17px;
@@ -1498,7 +1502,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#addImage {
+.addImage {
     background: url(/images/plus.png);
     width: 17px;
     height: 17px;
@@ -1506,7 +1510,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#editImage {
+.editImage {
     background: url(/images/edit.png);
     width: 17px;
     height: 17px;
@@ -1514,7 +1518,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#favImage {
+.favImage {
     background: url(/images/star.png);
     width: 20px;
     height: 20px;
@@ -1522,7 +1526,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#recImage {
+.recImage {
     background: url(/images/recent.png);
     width: 20px;
     height: 20px;
@@ -1546,7 +1550,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#FileLogo2 {
+.FileLogo2 {
     background: url(/images/RedArrow.png);
     width: 15px;
     height: 15px;
@@ -1554,7 +1558,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#redStar {
+.redStar {
     background: url(/images/Red_star.png);
     width: 37px;
     height: 37px;
@@ -1578,19 +1582,19 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#PlayButtonImage {
+.PlayButtonImage {
     background: url(/images/Play-Button-PNG-Transparent-Image.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-#FileLogo {
+.FileLogo {
     background: url(/images/REEDfile.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-#SortImage {
+.SortImage {
     background: url(/images/sortSearch.png);
     height: 23px;
     width: 23px;
@@ -1599,7 +1603,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#ClappImage {
+.ClappImage {
     background: url(/images/clapping-hands.png);
     height: 23px;
     width: 23px;
@@ -1608,8 +1612,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#GrayArrow
-{
+#GrayArrow {
     background: url(/images/GrayArrow.png);
     height: 23px;
     width: 23px;
@@ -1618,22 +1621,22 @@ li>a {
     background-repeat: no-repeat;
 
 }
-#coomentSection
-{
+
+#coomentSection {
     width: 501px;
     height: 100%;
     background-color: #eeeeee;
     display: none;
 }
-#CommentName
-{
+
+.CommentName {
     display: flex;
-   flex-flow: column;
-   align-items: center;
+    flex-flow: column;
+    align-items: center;
 
 }
-.comment 
-{
+
+.comment {
     width: 501px;
     height: 97px;
     display: flex;
@@ -1641,11 +1644,12 @@ li>a {
     margin-bottom: 10px;
     flex-flow: row;
 }
-#coomentWhiteBox
-{
+
+.coomentWhiteBox {
     background-color: white;
     width: 351px;
-    height: 75px;;
+    height: 75px;
+    ;
     margin-left: 10px;
 
 }
