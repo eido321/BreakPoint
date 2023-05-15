@@ -21,6 +21,13 @@
         <p><label>Project Image: </label><?php echo $_GET['ProjectIMage']; ?></p>
         <p><label>Project SRS: </label><?php echo $_GET['ProjectSrs']; ?></p>
         <p><label>Link to the Moqups Page: </label><?php echo $_GET['linktotheMoqupspage']; ?></p>
-    </section><p><label>Additional files: </label><?php echo $_GET['AdditionalFiles']; ?></p>
+        <p><label>Additonal: </label>
+        <?php
+            foreach($_GET['fileList'] as $value)
+            {
+                echo "<p>-" . $value . '' . ".</p>";
+            }
+         ?>
+
 </body>
 </html>

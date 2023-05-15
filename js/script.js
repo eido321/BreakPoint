@@ -43,6 +43,22 @@ let goBack = function () {
     history.back();
 };
 
+let showComments=function()
+{
+let GrayArrow=document.getElementById('GrayArrow');
+let Commnets=document.getElementById('coomentSection');
+GrayArrow.style.transform='rotate(180deg)'
+    if(Commnets.style.display=='none')
+    {
+        Commnets.style.display='inline';
+    }else
+    {
+        GrayArrow.style.transform='rotate(360deg)'
+        Commnets.style.display='none';
+    }
+
+};
+
 
 
 if (document.getElementById("formFunc")) {

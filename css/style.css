@@ -380,7 +380,7 @@ span {
 }
 
 #LeftSide {
-    height: 755px;
+    height: 100%;
     width: 50%;
     margin-left: 100px;
     margin-top: 50px;
@@ -1569,4 +1569,53 @@ li>a {
     margin-left: 10px;
     background-size: contain;
     background-repeat: no-repeat;
+}
+#ClappImage {
+    background: url(/images/clapping-hands.png);
+    height: 23px;
+    width: 23px;
+    margin-left: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#GrayArrow
+{
+    background: url(/images/GrayArrow.png);
+    height: 23px;
+    width: 23px;
+    margin-left: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+#coomentSection
+{
+    width: 501px;
+    height: 100%;
+    background-color: #eeeeee;
+    display: none;
+}
+#CommentName
+{
+    display: flex;
+   flex-flow: column;
+   align-items: center;
+
+}
+.comment 
+{
+    width: 501px;
+    height: 97px;
+    display: flex;
+    background-color: #eeeeee;
+    margin-bottom: 10px;
+    flex-flow: row;
+}
+#coomentWhiteBox
+{
+    background-color: white;
+    width: 351px;
+    height: 75px;;
+    margin-left: 10px;
+
 }
