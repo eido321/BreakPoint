@@ -1,5 +1,5 @@
 var hamburgerButton = $('#humburger');
-var ranProfileImage = $('#ranProfileImageMobile');
+var ranProfileImage = $('.ranProfileImage');
 var searchBar = $('#searchBar1');
 var logo = $('#logoExpanded');
 

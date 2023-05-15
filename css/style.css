@@ -24,6 +24,12 @@ li>a {
     text-decoration: none;
 }
 
+#addCommentDesktop{
+    margin-top: 5px;
+    border: none;
+    width: 100%;
+}
+
 #navbar2 {
     display: none;
 }
@@ -202,7 +208,7 @@ nav {
     width: 35px;
 }
 
-#ranProfileImageMobile,#ranProfileImagedesktop {
+.ranProfileImage {
     width: 35px;
 }
 
@@ -413,7 +419,7 @@ span {
     width: 388px;
     height: 2px;
     margin-left: 65px;
-    color: .555555;
+    color: #555555;
     background-color: #555555;
 }
 
@@ -469,7 +475,7 @@ span {
 
 .dots::after {
     content: "...........................................";
-    margin-left: 17px;
+    margin-left: 22px;
 }
 
 .ranProfileImage2 {
@@ -945,6 +951,10 @@ form {
         font-size: 20px;
     }
 
+    #addCommentDesktop{
+        border: 0;
+    }
+
     #selectedNav {
         color: #bd362f;
         border-bottom: 3px solid #bd362f;
@@ -1018,7 +1028,7 @@ form {
         margin-bottom: 0;
     }
 
-    #ranProfileImageMobile,#ranProfileImageDesktop {
+    .ranProfileImage {
         width: 45px;
     }
 
@@ -1026,6 +1036,10 @@ form {
     .col {
         margin-bottom: 50px;
 
+    }
+
+    #addCommentMobile{
+        border: none;
     }
 
     .mobileHeader {
@@ -1162,7 +1176,7 @@ form {
         align-items: center;
     }
 
-    #ranProfileImageMobile,#ranProfileImageDesktop {
+    .ranProfileImage{
         width: 45px;
     }
 
@@ -1212,10 +1226,6 @@ form {
 
     }
 
-    #humburger {
-        border: none;
-    }
-
     .navbar-toggler>.navbar-toggler-icon {
         width: 100%;
         height: 100%;
@@ -1223,6 +1233,7 @@ form {
 
 
     .MainTxtMobile {
+        justify-content: center;
         text-decoration: none;
         font-size: 24px;
         font-weight: bold;
@@ -1272,6 +1283,7 @@ form {
         font-size: 18px;
         font-weight: bold;
         color: #555555;
+        justify-content: center;
     }
 
     .FileLogo2 {
@@ -1305,6 +1317,7 @@ form {
 
 
     .graybox {
+        display: flex;
         margin-top: 40px;
         height: 120px;
         width: 100vw;
@@ -1324,14 +1337,7 @@ form {
         margin-left: 0;
     }
 
-    .ProjectRivew2 {
-        display: flex;
-        width: 100%;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        color: #555555;
-    }
+
 
     .bottomLefSide {
 
