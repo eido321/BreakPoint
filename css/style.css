@@ -239,15 +239,17 @@ li {
     margin-left: 10px;
 }
 
-#viewImage{
+#viewImage {
     margin-left: 175px;
 }
 
-.starsListSec{
+.starsListSec {
     margin-bottom: 5px;
 }
 
-#StarCn1,#StarCn2,#StarCn3{
+#StarCn1,
+#StarCn2,
+#StarCn3 {
     display: flex;
 }
 
@@ -341,8 +343,7 @@ span {
 }
 
 .underlineProject {
-    justify-self: center;
-    width: 250px;
+    width: 100%;
     height: 2.5px;
     background-color: #555555;
 }
@@ -669,6 +670,39 @@ form {
     display: flex;
 }
 
+#fileInputContainer {
+    width: 95%;
+}
+
+#fileContainer {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 0;
+    align-items: center;
+    background-color: white;
+    border: 2px dashed #777777;
+    border-radius: var(--bs-border-radius);
+    ;
+}
+
+#fileListContainer {
+    margin-left: 12px;
+    background-color: white;
+    width: 95%;
+}
+
+.remove-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 25px;
+    background-image: url('/images/remove-icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+
 #leftSide {
     width: 50%;
     margin-right: 25px;
@@ -703,64 +737,6 @@ form {
     border: 2px dashed #777777;
 }
 
-/* 
-.file-input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-    border: 2px dashed black;
-    padding: 12px;
-    text-align: center;
-    font-size: 16px;
-    color: #666;
-    cursor: pointer;
-    border-radius:var(--bs-border-radius);
-    background-color: white;
-
-}
-
-.file-input-container:hover {
-    border-color: #aaa;
-}
-
-.file-input-container input[type="file"] {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.file-input-container label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.file-input-container label i {
-    font-size: 48px;
-}
-
-.file-input-container span {
-    margin-top: 20px;
-    width: 90%;
-}
-
-.file-input-rules {
-    margin-top: 10px;
-} */
-
-.form-control-file {
-    height: 200px;
-    /* Set the height of the file input field */
-    overflow-y: auto;
-    /* Add a vertical scrollbar if the content overflows */
-}
-
 
 #ProjectDes {
     resize: none;
@@ -776,7 +752,17 @@ form {
     z-index: 0;
 }
 
+#inputGroupFile01:focus {
+    border-color: #bd362f;
+    box-shadow: 1px 0 5px rgba(189, 54, 47, 1);
+}
 
+#fileInputText{
+    font-size: 12px;
+    text-align:center;
+    margin-top: 5px;
+    width: 95%;
+}
 
 #Srs {
     margin-left: 10px;
@@ -829,10 +815,7 @@ form {
     height: 100%;
 }
 
-.projectBox {
-    color: #bd362f;
-    border-bottom: 4px solid #bd362f;
-}
+
 
 @media(max-width:990px) {
 
@@ -864,9 +847,7 @@ form {
         display: none;
     }
 
-    .projectImages {
-        width: 350px;
-    }
+
 
     .col {
         margin-bottom: 50px;
@@ -934,9 +915,7 @@ form {
         padding-top: 50px;
     }
 
-    .projectImages {
-        width: 250px;
-    }
+
 
     #projectsBody {
         background-color: #f8f9fa;
@@ -964,15 +943,6 @@ form {
         height: 100%;
     }
 
-    #navbar2 {
-        display: flex;
-        height: 60px;
-        width: 100vw;
-        background-color: #eeeeee;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
     #navbar2Row {
         margin-bottom: 0;
         height: 100%;
@@ -985,12 +955,6 @@ form {
 
     #colNavbar2 {
         margin-bottom: 0;
-    }
-
-    .projectContainer {
-        background-color: #eeeeee;
-        padding: 40px 40px 40px 40px;
-        border-radius: 12px;
     }
 
     #ranProfileImage {
@@ -1061,8 +1025,13 @@ form {
         background-color: #f8f9fa;
     }
 
-    .projectImages {
-        width: 250px;
+
+    #fromSpan {
+        font-size: 20px;
+    }
+
+    .projectName {
+        font-size: 28px;
     }
 
     #logoContainer,
@@ -1098,15 +1067,19 @@ form {
         align-items: center;
     }
 
+    #navbarContainer {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
     #navbar2Row {
         margin-bottom: 0;
         height: 100%;
     }
 
-    .projectBox {
-        color: #bd362f;
-        border-bottom: 4px solid #bd362f;
-    }
+
 
     #colNavbar2 {
         margin-bottom: 0;
@@ -1116,6 +1089,8 @@ form {
         background-color: #eeeeee;
         padding: 40px 40px 40px 40px;
         border-radius: 12px;
+        display: flex;
+        align-items: center;
     }
 
     #ranProfileImage {
@@ -1405,6 +1380,10 @@ form {
         height: 75px;
         width: 75px;
     }
+
+    #navbarContainer{
+        display: none;
+    }
 }
 
 li {
@@ -1449,7 +1428,8 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#viewImage,#viewImageList {
+#viewImage,
+#viewImageList {
     background: url(/images/eye.png);
     width: 17px;
     height: 17px;
