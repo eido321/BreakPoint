@@ -13,21 +13,37 @@
     </header>
     <section>
         <h1>BrakePoint Project Details:</h1>
-        <p><label>Project Name: </label><?php echo $_GET['ProjectName']; ?></p>
-        <p><label>Project Type: </label><?php echo $_GET['ProjectType']; ?></p>
-        <p><label>Participant 1: </label><?php echo $_GET['Participant1Name'] . ' ' . $_GET['Participant1NameSecond']; ?></p>
-        <p><label>Participant 2: </label><?php echo $_GET['Participant2Name'] . ' ' . $_GET['Participant2NameSecond']; ?></p>
-        <p><label>Project Description: </label><br><br><?php echo $_GET['ProjectDescription']; ?></p>
-        <p><label>Project Image: </label><?php echo $_GET['ProjectIMage']; ?></p>
-        <p><label>Project SRS: </label><?php echo $_GET['ProjectSrs']; ?></p>
-        <p><label>Link to the Moqups Page: </label><?php echo $_GET['linktotheMoqupspage']; ?></p>
+        <p><label>Project Name: </label>
+            <?php echo $_GET['ProjectName']; ?>
+        </p>
+        <p><label>Project Type: </label>
+            <?php echo $_GET['ProjectType']; ?>
+        </p>
+        <p><label>Participant 1: </label>
+            <?php echo $_GET['Participant1Name'] . ' ' . $_GET['Participant1NameSecond']; ?>
+        </p>
+        <p><label>Participant 2: </label>
+            <?php echo $_GET['Participant2Name'] . ' ' . $_GET['Participant2NameSecond']; ?>
+        </p>
+        <p><label>Project Description: </label><br><br>
+            <?php echo $_GET['ProjectDescription']; ?>
+        </p>
+        <p><label>Project Image: </label>
+            <?php echo $_GET['ProjectIMage']; ?>
+        </p>
+        <p><label>Project SRS: </label>
+            <?php echo $_GET['ProjectSrs']; ?>
+        </p>
+        <p><label>Link to the Moqups Page: </label>
+            <?php echo $_GET['linktotheMoqupspage']; ?>
+        </p>
         <p><label>Additonal: </label>
-        <?php
-            foreach($_GET['fileList'] as $value)
-            {
+            <?php
+            foreach ($_GET['fileList'] as $value) {
                 echo "<p>-" . $value . '' . ".</p>";
             }
-         ?>
+            ?>
 
 </body>
+
 </html>
