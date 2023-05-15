@@ -64,13 +64,13 @@ likes.forEach((like) => {
   like.addEventListener('click', () => {
     const isActive = Boolean(like.getAttribute('data-is-active') === 'true');
     if (isActive) {
-      like.style.backgroundImage = 'url(/images/clapping-hands-red.png)';
+      like.style.backgroundImage = 'url(../images/clapping-hands-red.png)';
       const span = like.querySelector('span');
       let count = parseInt(span.innerText);
       span.innerText = count + 1;
       like.setAttribute('data-is-active', 'false');
     } else {
-      like.style.backgroundImage = 'url(/images/clapping-hands.png)';
+      like.style.backgroundImage = 'url(../images/clapping-hands.png)';
       const span = like.querySelector('span');
       let count = parseInt(span.innerText);
       span.innerText = count - 1;
