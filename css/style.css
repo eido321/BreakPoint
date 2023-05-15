@@ -840,7 +840,7 @@ form {
     height: 100%;
 }
 
-/* @media(max-width:1032px) {
+@media(max-width:1032px) {
     .projectImages{
         width: 400px;
     }
@@ -848,10 +848,14 @@ form {
     .col{
         margin-bottom: 50px;
     }
-} */
+
+}
 
 
 @media(max-width:990px) {
+    #breadCrumbsNoneSideBar{
+        display: none;
+    }
 
     form {
         display: block;
