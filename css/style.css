@@ -742,7 +742,7 @@ form {
     width: 24px;
     height: 24px;
     margin-left: 25px;
-    background-image: url('/images/remove-icon.png');
+    background-image: url('images/remove-icon.png');
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
@@ -1337,7 +1337,7 @@ form {
 
 
     .PlayButtonImage {
-        background: url('/images/Play-Button-PNG-Transparent-Image.png');
+        background: url('images/Play-Button-PNG-Transparent-Image.png');
         height: 75px;
         width: 75px;
         background-size: contain;
@@ -1486,7 +1486,7 @@ li>a {
 
 #logo,
 #logoExpanded {
-    background: url('/images/logo.png');
+    background: url('images/logo.png');
     width: 213px;
     height: 49px;
     background-size: contain;
@@ -1494,7 +1494,7 @@ li>a {
 }
 
 #shenkarLogoImage {
-    background: url('/images/Shenkar.png');
+    background: url('images/Shenkar.png');
     width: 137px;
     height: 51px;
     background-size: contain;
@@ -1502,7 +1502,7 @@ li>a {
 }
 
 #notificationImage {
-    background: url('/images/notification.png');
+    background: url('images/notification.png');
     width: 35px;
     height: 35px;
     background-size: contain;
@@ -1510,7 +1510,7 @@ li>a {
 }
 
 #settingsImage {
-    background: url('/images/settings.png');
+    background: url('images/settings.png');
     width: 35px;
     height: 35px;
     background-size: contain;
@@ -1519,7 +1519,7 @@ li>a {
 
 .viewImage,
 .viewImageList {
-    background: url('/images/eye.png');
+    background: url('images/eye.png');
     width: 17px;
     height: 17px;
     background-size: contain;
@@ -1527,7 +1527,7 @@ li>a {
 }
 
 .addImage {
-    background: url('/images/plus.png');
+    background: url('images/plus.png');
     width: 17px;
     height: 17px;
     background-size: contain;
@@ -1535,7 +1535,7 @@ li>a {
 }
 
 .editImage {
-    background: url('/images/edit.png');
+    background: url('images/edit.png');
     width: 17px;
     height: 17px;
     background-size: contain;
@@ -1543,7 +1543,7 @@ li>a {
 }
 
 .favImage {
-    background: url('/images/star.png');
+    background: url('images/star.png');
     width: 20px;
     height: 20px;
     background-size: contain;
@@ -1551,7 +1551,7 @@ li>a {
 }
 
 .recImage {
-    background: url('/images/recent.png');
+    background: url('images/recent.png');
     width: 20px;
     height: 20px;
     background-size: contain;
@@ -1560,7 +1560,7 @@ li>a {
 
 #search1,
 #search2 {
-    background: url('/images/Search.png');
+    background: url('images/Search.png');
     width: 15px;
     height: 15px;
     background-size: contain;
@@ -1569,7 +1569,7 @@ li>a {
 
 #sortIconImageMobile,
 #sortIconImageDesktop {
-    background: url('/images/sortSearch.png');
+    background: url('images/sortSearch.png');
     width: 30px;
     height: 30px;
     background-size: contain;
@@ -1577,7 +1577,7 @@ li>a {
 }
 
 .FileLogo2 {
-    background: url('/images/RedArrow.png');
+    background: url('images/RedArrow.png');
     width: 15px;
     height: 15px;
     background-size: contain;
@@ -1585,7 +1585,7 @@ li>a {
 }
 
 .redStar {
-    background: url('/images/Red_star.png');
+    background: url('images/Red_star.png');
     width: 37px;
     height: 37px;
     background-size: contain;
@@ -1593,7 +1593,7 @@ li>a {
 }
 
 .stars {
-    background: url('/images/Red_star.png');
+    background: url('images/Red_star.png');
     width: 15px;
     height: 15px;
     background-size: contain;
@@ -1601,7 +1601,7 @@ li>a {
 }
 
 .stars2 {
-    background: url('/images/star.png');
+    background: url('images/star.png');
     width: 15px;
     height: 15px;
     background-size: contain;
@@ -1609,19 +1609,19 @@ li>a {
 }
 
 .PlayButtonImage {
-    background: url('/images/Play-Button-PNG-Transparent-Image.png');
+    background: url('images/Play-Button-PNG-Transparent-Image.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .FileLogo {
-    background: url('/images/REEDfile.png');
+    background: url('images/REEDfile.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .SortImage {
-    background: url('/images/sortSearch.png');
+    background: url('images/sortSearch.png');
     height: 23px;
     width: 23px;
     margin-left: 10px;
@@ -1630,7 +1630,7 @@ li>a {
 }
 
 .ClappImage {
-    background: url('/images/clapping-hands.png');
+    background: url('images/clapping-hands.png');
     height: 23px;
     width: 23px;
     margin-left: 10px;
@@ -1639,7 +1639,7 @@ li>a {
 }
 
 #GrayArrow {
-    background: url('/images/GrayArrow.png');
+    background: url('images/GrayArrow.png');
     height: 23px;
     width: 23px;
     margin-left: 10px;
