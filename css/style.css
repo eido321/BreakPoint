@@ -301,7 +301,6 @@ li {
 #body-con {
     display: flex;
     flex-flow: row;
-    justify-content: center;
 }
 
 #projectsBody {
@@ -339,6 +338,7 @@ li {
     font-size: 18px;
     font-weight: bold;
     color: #555555;
+    display: flex;
 
 }
 
@@ -376,7 +376,7 @@ span {
 }
 
 #pForm {
-    width: 400px;
+    margin: 5px;
 }
 
 #LeftSide {
@@ -389,9 +389,9 @@ span {
 }
 
 #RightSide {
-    height: 755px;
+    height: 100%;
     width: 50%;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-left: 25px;
 }
 
@@ -503,9 +503,10 @@ span {
     margin-top: -40px;
 }
 
-#PlayBuotunIMage {
+#PlayButtonImage {
     height: 30px;
     width: 30px;
+    margin-left: 10px;
 }
 
 #FileLogo {
@@ -545,8 +546,7 @@ span {
 }
 
 #Rating {
-    width: 234px;
-    height: 66px;
+    width: 100%;
     color: #555555;
 
 }
@@ -554,21 +554,19 @@ span {
 #ProjrctImage {
     width: 290px;
     height: 206px;
-    margin-top: 65px;
+    margin-top: 20px;
 
 
 }
 
 #bottomRightSide {
-    height: 100px;
-    width: 397px;
+    width: 100%;
     margin-top: 65px;
 
 }
 
 #RedlineRigthSide {
-    height: 5px;
-    width: 290px;
+    height: 3px;
     background-color: #bd362f;
 }
 
@@ -621,6 +619,10 @@ display: flex;
     display: flex;
 }
 
+#inputGroupFile01{
+    z-index: 0;
+}
+
 #View-con {
     height: fit-content;
     min-height: 100vh;
@@ -628,7 +630,6 @@ display: flex;
     margin-left: 209px;
     margin-top: 81px;
     justify-content: center;
-    align-items: center;
     background-color: #eeeeee;
 }
 
@@ -831,6 +832,10 @@ form {
     margin-left: 10px;
 }
 
+.commentsText{
+    margin: 5px;
+}
+
 #navbar2Row {
     display: none;
 }
@@ -838,6 +843,10 @@ form {
 #navbar2Row {
     margin-bottom: 0;
     height: 100%;
+}
+
+#desktopRedStar{
+    margin-bottom: 10px;
 }
 
 @media(max-width:1032px) {
@@ -853,9 +862,11 @@ form {
 
 
 @media(max-width:990px) {
-    #breadCrumbsNoneSideBar{
+    #breadCrumbsNoneSideBar,#breadCrumbs{
         display: none;
     }
+
+
 
     form {
         display: block;
@@ -891,7 +902,7 @@ form {
     }
 
     .projectImages {
-        width: 400px;
+        width: 250px;
     }
 
     .mobileHeader {
@@ -1103,6 +1114,14 @@ form {
         align-items: center;
     }
 
+#threeContainer{
+    display: flex;
+}
+
+    #threeText{
+        font-size: 24px;
+    }
+
     #navbarContainer {
         margin: 0;
         padding: 0;
@@ -1191,8 +1210,11 @@ form {
 
     #MainTxtMobile {
         text-decoration: none;
-        font-size: 15px;
+        font-size: 24px;
         font-weight: bold;
+        height: 60px;
+        display: flex;
+        align-items: center;
         color: #555555;
     }
 
@@ -1279,12 +1301,13 @@ form {
 
 
 
-    #PlayBuotunIMage {
+    #PlayButtonImage {
         background: url(/images/Play-Button-PNG-Transparent-Image.png);
         height: 75px;
         width: 75px;
         background-size: contain;
         background-repeat: no-repeat;
+        margin-left: 0;
     }
 
     #ProjectRivew2 {
@@ -1383,6 +1406,7 @@ form {
 
     #redStar {
         width: 37px;
+        margin-bottom: 10px;
     }
 
     .stars {
@@ -1405,6 +1429,10 @@ form {
     .starsList {
         display: flex;
         align-items: center;
+    }
+
+    #comments{
+        display: inline;
     }
 
     #commentSec {
@@ -1550,7 +1578,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-#PlayBuotunIMage {
+#PlayButtonImage {
     background: url(/images/Play-Button-PNG-Transparent-Image.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -1570,6 +1598,7 @@ li>a {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 #ClappImage {
     background: url(/images/clapping-hands.png);
     height: 23px;
@@ -1578,6 +1607,7 @@ li>a {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 #GrayArrow
 {
     background: url(/images/GrayArrow.png);

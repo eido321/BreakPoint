@@ -43,21 +43,46 @@ let goBack = function () {
     history.back();
 };
 
-let showComments=function()
-{
-let GrayArrow=document.getElementById('GrayArrow');
-let Commnets=document.getElementById('coomentSection');
-GrayArrow.style.transform='rotate(180deg)'
-    if(Commnets.style.display=='none')
-    {
-        Commnets.style.display='inline';
-    }else
-    {
-        GrayArrow.style.transform='rotate(360deg)'
-        Commnets.style.display='none';
+let showComments = function () {
+    let GrayArrow = document.getElementById('GrayArrow');
+    let Commnets = document.getElementById('coomentSection');
+    GrayArrow.style.transform = 'rotate(180deg)'
+    if (Commnets.style.display == 'none') {
+        Commnets.style.display = 'inline';
+    } else {
+        GrayArrow.style.transform = 'rotate(360deg)'
+        Commnets.style.display = 'none';
     }
 
 };
+
+
+const likes = document.querySelectorAll('#ClappImage');
+
+likes.forEach((like) => {
+  like.addEventListener('click', () => {
+    const isActive = Boolean(like.getAttribute('data-is-active') === 'true');
+    if (isActive) {
+      like.style.backgroundImage = 'url(/images/clapping-hands-red.png)';
+      const span = like.querySelector('span');
+      let count = parseInt(span.innerText);
+      span.innerText = count + 1;
+      like.setAttribute('data-is-active', 'false');
+    } else {
+      like.style.backgroundImage = 'url(/images/clapping-hands.png)';
+      const span = like.querySelector('span');
+      let count = parseInt(span.innerText);
+      span.innerText = count - 1;
+      like.setAttribute('data-is-active', 'true');
+    }
+  });
+});
+
+
+
+
+
+
 
 
 
