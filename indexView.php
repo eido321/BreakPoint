@@ -1,3 +1,35 @@
+<?php
+//create a mySQL DB connection:
+include "config.php";
+
+session_start();
+if (!$_SESSION["user_type"]) {
+    header('Location: ' . URL . 'login.php');
+}
+
+$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+//testing connection success
+if (mysqli_connect_errno()) {
+    die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
+    );
+}
+?>
+<?php
+//get data from DB
+$projId = $_GET["projId"];
+$query = "SELECT * FROM tbl_214_test where id=" . $projId;
+// echo $query;
+$result = mysqli_query($connection, $query);
+if ($result) {
+    $row = mysqli_fetch_assoc($result); //there is only 1 with id=X
+} else
+    die("DB query failed.");
+$img = $row["img_url"];
+if (!$img)
+    $img = 'images/projectsImages/default.png';
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,11 +50,11 @@
         <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-                    <a href="index.html" class="navbar-brand" id="logoContainer">
+                    <a href="index.php" class="navbar-brand" id="logoContainer">
                         <div id="logo"></div>
                     </a>
                     <div class="mobileHeader">
-                        <a href="index.html">
+                        <a href="index.php">
                             <div id="logoExpanded"></div>
                         </a>
                         <div>
@@ -86,18 +118,18 @@
                                     <a href="" class="nav-link"><b>Home Page</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="index.html" class="nav-link"><b>Projects</b></a>
+                                    <a href="index.php" class="nav-link"><b>Projects</b></a>
                                     <div></div>
                                 </section>
                                 <section class="nav-item">
                                     <a href="" class="nav-link"><b>Contests</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="indexView.html" class="nav-link" id="selectedNav"><b>View Personal
+                                    <a href="indexView.php" class="nav-link" id="selectedNav"><b>View Personal
                                             Project</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="indexForm.html" class="nav-link"><b>Add Personal Project</b></a>
+                                    <a href="indexForm.php" class="nav-link"><b>Add Personal Project</b></a>
                                 </section>
                                 <section class="nav-item">
                                     <a href="" class="nav-link"><b>Edit Project</b></a>
@@ -121,9 +153,7 @@
             <span class="ProjectRivew">Description:</span>
             <section class="ProjectD">
                 <p class="projectDText">
-                    But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was
-                    born and I will give you a complete account of the system, and expound the actual teachings of the
-                    great explorer of the truth, the master-builder of human happiness. No
+                    <?php echo $row["des_txt"]; ?>
                 </p>
             </section>
             <div class="middle">
@@ -189,36 +219,23 @@
             </div>
             <section class="bottomLefSide">
                 <img src="images/ranProfile.png" alt="ranProfile" class="ranProfileImage2">
-                <section class="Txt">
-                    <section class="comments">
-                        <section class="commentSec">
-                            <span class="FontCm">&nbsp;&nbsp;&nbsp;Comments</span>&nbsp;&nbsp;&nbsp;<span
-                                class="FontCm">Sort&nbsp;</span>
-                            <div class="SortImage"></div>
-                        </section>
-                        <section class="GreyLine2">
-                        </section>
-                        <section class="coomnets">
-                            <input type="text" placeholder="Add a Comment..." id="addCommentMobile">
-                        </section>
-                    </section>
-                </section>
                 <br>
                 <span>&nbsp;&nbsp;Menachem Avshalom</span>
             </section>
         </div>
         <section class="body-con">
             <div class="breadCrumbs">
-                <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="index.html"
-                        class="breadCrumbsLinks">Projects</a> > <a href="indexView.html" class="breadCrumbsLinks">Project View</a></span>
+                <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="index.php"
+                        class="breadCrumbsLinks">Projects</a> > <a href="indexView.php" class="breadCrumbsLinks">Project
+                        View</a></span>
             </div>
             <div class="sideBar">
                 <section class="choiseList">
                     <ul class="triangle-list">
-                        <li><a href="indexView.html"><b>View Personal Project</b>
+                        <li><a href="indexView.php"><b>View Personal Project</b>
                                 <div class="viewImageList"></div>
                             </a></li>
-                        <li><a href="indexForm.html"><b>Add Personal Project</b>
+                        <li><a href="indexForm.php"><b>Add Personal Project</b>
                                 <div class="addImage"></div>
                             </a></li>
                         <li><a href=""><b>Edit Project</b>
@@ -230,14 +247,19 @@
                         <li><a href=""><b>Recent</b>
                                 <div class="recImage"></div>
                             </a></li>
+                        <li><a href="logout.php"><b>Log Out</b>
+                                <div class="logout"></div>
+                            </a></li>
                     </ul>
                 </section>
                 <div class="underLineChoise"></div>
             </div>
             <div class="View-con">
                 <div class="LeftSide">
-                    <section class="ProjectNameTitle">
-                        <h1 class="ProjectName">TagTool</h1>
+                    <section class="projectNameTitleView">
+                        <h1 class="projectNameView">
+                            <?php echo $row["title"] ?>
+                        </h1>
                         <section class="bottns">
                             <section class="share">
                                 Share
@@ -251,9 +273,7 @@
                     <span class="ProjectRivew">Project review</span>
                     <section class="WhiteBox">
                         <p class="pForm">
-                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising
-                            pain was born and I will give you a complete account of the system, and expound the actual
-                            teachings of the great explorer of the truth, the master-builder of human happiness. No
+                            <?php echo $row["des_txt"]; ?>
                         </p>
                     </section>
                     <br>
@@ -261,13 +281,13 @@
                         <span class="PlayButtonImage"></span>
                     </span>
                     <section class="requirements">
-                        <span class="ProjectName">The project's software requirements specification </span>
+                        <span>The project's software requirements specification </span>
                         <section class="Srs">
                             srs<div class="FileLogo"></div>
                         </section>
                     </section>
                     <br>
-                    <span class="ProjectName">Additional project files</span>
+                    <span>Additional project files</span>
                     <section class="Example">
                         <ul>
                             <li>Example.zip&nbsp;<div class="FileLogo dots"></div>
@@ -290,21 +310,27 @@
                             </li>
                         </ul>
                     </section>
-                    <section class="bottomLefSide">
-                        <section class="Txt">
-                            <img src="images/ranProfile.png" alt="ranProfile" class="ranProfileImage2">
-                            <section class="commnetSec">
-                                <section class="comments">
-                                    &nbsp;&nbsp;&nbsp;<span class="FontCm">comments</span>&nbsp;&nbsp;&nbsp;<span
-                                        class="FontCm sortText">sort <span class="SortImage"></span> <button
-                                            id="GrayArrow" onclick="showComments()"></button></span></section>
-                                <section class="GreyLine">
-                                    <input id="addCommentDesktop" type="text" placeholder="Add a Comment...">
+                    <section class="commentSection ">
+                        <section class="rightCommentSection">
+                            <span>8</span>
+                            <img src="images/Dan.png" alt="ranImage" class="ranProfileImage2">
+                            <span>Menachem Avshalom</span>
+                        </section>
+                        <section class="leftCommentSection">
+                            <section class="leftCommentSectionLine">
+                                <section>
+                                    <span class="leftCommentSectionText1">Comments</span>
+                                    <button class="leftCommentSectionText1Icon"></button>
+                                </section>
+                                <section>
+                                    <span class="leftCommentSectionText2">Sort</span>
+                                    <span class="leftCommentSectionText2Icon" id="sortIconImageDesktop"></span>
                                 </section>
                             </section>
+                            <section class="leftCommentSectionDown">
+                                <span>Add a comment...</span>
+                            </section>
                         </section>
-                        <br>
-                        <span>Menachem Avshalom</span>
                     </section>
                     <br>
                     <br>
@@ -389,19 +415,24 @@
                             </section>
                         </section>
                     </div>
-                    <div class="ProjrctImage">
-                        <img src="images/projectsImages/TagTool.png" alt="Project" class="ProjrctImage">
-                    </div>
+                    <br><br>
+                    <img src="<?php echo $img ?>" alt="Project" class="projectImages">
                     <section class="bottomRightSide">
                         <span>Project participants</span>
                         <section class="RedlineRigthSide"></section>
                         <section class="participant1">
                             <div class="RedDot"></div>
-                            <span class="firstname">Menachem&nbsp;Avshalom</span>
+                            <span class="firstname">
+                                <?php echo $row["p1_first_name"] ?>&nbsp;
+                                <?php echo $row["p1_last_name"] ?>
+                            </span>
                         </section>
                         <section class="participant2">
                             <div class="RedDot"></div>
-                            <span class="firstname">John&nbsp;Doe</span>
+                            <span class="firstname">
+                                <?php echo $row["p2_first_name"] ?>&nbsp;
+                                <?php echo $row["p2_last_name"] ?>
+                            </span>
                         </section>
                     </section>
                 </div>
@@ -412,3 +443,7 @@
 </body>
 
 </html>
+
+<?php
+mysqli_close($connection);
+?>
