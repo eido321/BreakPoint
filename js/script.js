@@ -44,21 +44,18 @@ let goBack = function () {
     history.back();
 };
 
-$(document).ready(function() {
-    $('.leftCommentSectionText1Icon').click(function() {
-      var grayArrow = $('.leftCommentSectionText1Icon');
-      var comments = $('#coomentSection');
-      
-      grayArrow.css('transform', 'rotate(180deg)');
-      
-      if (comments.css('display') === 'none') {
-        comments.css('display', 'inline');
-      } else {
-        grayArrow.css('transform', 'rotate(360deg)');
-        comments.css('display', 'none');
-      }
-    });
-  });
+let showComments = function () {
+    let GrayArrow = document.getElementById('GrayArrow');
+    let Commnets = document.getElementById('coomentSection');
+    GrayArrow.style.transform = 'rotate(180deg)'
+    if (Commnets.style.display == 'none') {
+        Commnets.style.display = 'inline';
+    } else {
+        GrayArrow.style.transform = 'rotate(360deg)'
+        Commnets.style.display = 'none';
+    }
+
+};
 
 
 const $likes = $('.ClappImage');

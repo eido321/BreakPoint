@@ -1,75 +1,3 @@
-<?php
-//create a mySQL DB connection:
-include "config.php";
-
-session_start();
-
-if (!$_SESSION["user_type"]) {
-    header('Location: ' . URL . 'login.php');
-}
-
-$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-//testing connection success
-if (mysqli_connect_errno()) {
-    die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-    );
-}
-?>
-<?php
-$queryProj = "SELECT * FROM tbl_214_test WHERE u_id='"
-. $_SESSION["u_id"]
-. "'";
-
-$resultProj =  mysqli_query($connection, $queryProj);
-if (!$resultProj) {
-    die("DB query failed.");
-}
-
-?>
-<?php
-//get data from DB
-$queryAll = "SELECT * FROM tbl_214_test order by id";
-$resultAll = mysqli_query($connection, $queryAll);
-if (!$resultAll) {
-    die("DB query failed.");
-}
-?>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Process the form data and perform necessary actions
-    // ...
-    $ProjectName = isset($_POST['ProjectName']) ? mysqli_real_escape_string($connection, $_POST['ProjectName']) : null;
-    $Participant1Name = isset($_POST['Participant1Name']) ? mysqli_real_escape_string($connection, $_POST['Participant1Name']) : null;
-    $Participant1NameSecond = isset($_POST['Participant1NameSecond']) ? mysqli_real_escape_string($connection, $_POST['Participant1NameSecond']) : null;
-    $Participant2Name = isset($_POST['Participant2Name']) ? mysqli_real_escape_string($connection, $_POST['Participant1Name']) : null;
-    $Participant2NameSecond = isset($_POST['Participant2NameSecond']) ? mysqli_real_escape_string($connection, $_POST['Participant2NameSecond']) : null;
-    $ProjectType = isset($_POST['ProjectType']) ? mysqli_real_escape_string($connection, $_POST['ProjectType']) : null;
-    $state = isset($_POST['state']) ? $_POST['state'] : null;
-    $projId = isset($_POST['projId']) ? $_POST['projId'] : null;
-
-    if ($ProjectName !== null && $Participant1Name !== null && $Participant1NameSecond !== null && $Participant2Name !== null && $Participant2NameSecond !== null && $ProjectType !== null && $state !== null) {
-        // Set: Insert/update data in DB
-        if ($state == "insert") {
-            $queryAll = "INSERT INTO tbl_214_test (title, p1_first_name, p1_last_name,p2_first_name,p2_last_name) VALUES ('$ProjectName', '$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond')";
-        } else {
-            $queryAll = "UPDATE tbl_214_test SET title='$ProjectName', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projId'";
-        }
-    }
-    $resultIns = mysqli_query($connection, $queryAll);
-
-    if (!$resultIns) {
-        die("DB query failed.");
-    }
-
-    // Redirect the user to a new page
-    header("Location: index.php");
-}
-// Get data from query string and escape variables for security
-
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -91,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-                    <a href="index.php" class="navbar-brand" id="logoContainer">
+                    <a href="index.html" class="navbar-brand" id="logoContainer">
                         <div id="logo"></div>
                     </a>
                     <div class="mobileHeader">
-                        <a href="index.php">
+                        <a href="index.html">
                             <div id="logoExpanded"></div>
                         </a>
                         <div>
@@ -158,18 +86,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     <a href="" class="nav-link"><b>Home Page</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="index.php" class="nav-link" id="selectedNav"><b>Projects</b></a>
+                                    <a href="index.html" class="nav-link"  id="selectedNav"><b>Projects</b></a>
                                     <div></div>
                                 </section>
                                 <section class="nav-item">
                                     <a href="" class="nav-link"><b>Contests</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="indexView.php" class="nav-link"><b>View Personal
+                                    <a href="indexView.html" class="nav-link"><b>View Personal
                                             Project</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="indexForm.php" class="nav-link"><b>Add Personal Project</b></a>
+                                    <a href="indexForm.html" class="nav-link"><b>Add Personal Project</b></a>
                                 </section>
                                 <section class="nav-item">
                                     <a href="" class="nav-link"><b>Edit Project</b></a>
@@ -200,16 +128,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         <section class="body-con">
             <div class="breadCrumbs">
-                <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="index.php"
+                <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="index.html"
                         class="breadCrumbsLinks">Projects</a></span>
             </div>
             <div class="sideBar">
                 <section class="choiseList">
                     <ul class="triangle-list">
-                        <li><a href="indexView.php?projId=<?php echo mysqli_fetch_assoc($resultProj)["id"];?>"><b>View Personal Project</b>
+                        <li><a href="indexView.html"><b>View Personal Project</b>
                                 <div class="viewImageList"></div>
                             </a></li>
-                        <li><a href="indexForm.php" class="aLinks"><b>Add Personal Project</b>
+                        <li><a href="indexForm.html" class="aLinks"><b>Add Personal Project</b>
                                 <div class="addImage"></div>
                             </a></li>
                         <li><a href="" class="aLinks"><b>Edit Project</b>
@@ -221,43 +149,99 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <li><a href="" class="aLinks"><b>Recent</b>
                                 <div class="recImage"></div>
                             </a></li>
-                        <li><a href="logout.php"><b>Log Out</b>
-                                <div class="logout"></div>
-                            </a></li>
                     </ul>
                 </section>
                 <div class="underLineChoise"></div>
             </div>
             <div class="projectsBody">
                 <div class="container text-center gridBody">
-                    <?php
-                    $count = 0;
-                    echo '<div class="row">';
-                    while ($row = mysqli_fetch_assoc($resultAll)) {
-                        $img = $row["img_url"];
-                        if (!$img)
-                            $img = 'images/projectsImages/default.png';
-                        echo '
-            <div class="col">
-                <div class="projectContainer">
-                    <a href="indexView.php?projId=' . $row["id"] . '"><img src="' . $img . '" alt="projectImg" class="projectImages"></a>
-                    <a href="indexView.php?projId=' . $row["id"] . '" class="projectName">' . $row["title"] . '</a>
-                    <span class="fromSpan">By ' . $row["p1_first_name"] . ' ' . $row["p1_last_name"] . ' and ' . $row["p2_first_name"] . ' ' . $row["p2_last_name"] . '</span>
-                    <section class="underlineProject"></section>
-                </div>
-            </div>
-            ';
-                        $count++;
-                        if ($count % 3 == 0) {
-                            echo '</div><div class="row">';
-                        }
-                    }
-                    while ($count % 3 != 0) {
-                        echo '<div class="col"></div>';
-                        $count++;
-                    }
-                    echo '</div>';
-                    ?>
+                    <div class="row row1">
+                        <div class="col">
+                            <div class="projectContainer">
+                                <a href="indexView.html?projId=1"><img src="images/projectsImages/CookieFactory.png"
+                                        alt="CookieFactory" class="projectImages"></a>
+                                <a href="indexView.html?projId=1" class="projectName">Cookie factory</a>
+                                <span class="fromSpan">By Dor Zolochia and Virin Gagon</span>
+                                <section class="underlineProject"></section>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="projectContainer">
+                                <a href="indexView.html?projId=2"><img src="images/projectsImages/DataZoo.png" alt="DataZoo"
+                                        class="projectImages"></a>
+                                <a href="indexView.html?projId=2" class="projectName">Data Zoo</a>
+                                <span class="fromSpan">By Moshe Sabah and Ariel Greenberg</span>
+                                <section class="underlineProject"></section>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="projectContainer">
+                                <a href="indexView.html?projId=3"><img src="images/projectsImages/dogFactory.png"
+                                        alt="dogFactory" class="projectImages"></a>
+                                <a href="indexView.html?projId=3" class="projectName">DogFactory</a>
+                                <span class="fromSpan">By Dani Aharon and Mika Cohen</span>
+                                <section class="underlineProject"></section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row2">
+                        <div class="col">
+                            <div class="projectContainer">
+                                <a href="indexView.html?projId=4"><img src="images/projectsImages/DoorStory.png"
+                                        alt="DoorStory" class="projectImages"></a>
+                                <a href="indexView.html?projId=4" class="projectName">DoorStory</a>
+                                <span class="fromSpan">By Yossi Aharon and Sivan Cohen</span>
+                                <section class="underlineProject"></section>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="projectContainer">
+                                <a href="indexView.html?projId=5"><img src="images/projectsImages/farmDream.png"
+                                        alt="farmDream" class="projectImages"></a>
+                                <a href="indexView.html?projId=5" class="projectName">FarmDream</a>
+                                <span class="fromSpan">By Stav Levy and Dana Maretzky</span>
+                                <section class="underlineProject"></section>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="projectContainer">
+                                <a href="indexView.html?projId=6"><img src="images/projectsImages/LabTool.png" alt="LabTool"
+                                        class="projectImages"></a>
+                                <a href="indexView.html?projId=6" class="projectName">LabTool</a>
+                                <span class="fromSpan">By Daniel Menashe and Ron Ben David</span>
+                                <section class="underlineProject"></section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row3">
+                        <div class="col">
+                            <div class="projectContainer">
+                                <a href="indexView.html?projId=7"><img src="images/projectsImages/positiveIntelligence.png"
+                                        alt="positiveIntelligence" class="projectImages"></a>
+                                <a href="indexView.html?projId=7" class="projectName">Positive Intelligence</a>
+                                <span class="fromSpan">By Liron Levi and Yuval Reznik</span>
+                                <section class="underlineProject"></section>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="projectContainer">
+                                <a href="indexView.html?projId=8"><img src="images/projectsImages/randomLogo.png"
+                                        alt="randomLogo" class="projectImages"></a>
+                                <a href="indexView.html?projId=8" class="projectName">randomo</a>
+                                <span class="fromSpan">By Ron Noiman and Shalev Goodman</span>
+                                <section class="underlineProject"></section>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="projectContainer">
+                                <a href="indexView.html?projId=9"><img src="images/projectsImages/TagTool.png" alt="TagTool"
+                                        class="projectImages"></a>
+                                <a href="indexView.html?projId=9" class="projectName">TagTool</a>
+                                <span class="fromSpan">By Menachem Avshalom and John Doe</span>
+                                <section class="underlineProject"></section>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -266,7 +250,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </body>
 
 </html>
-
-<?php
-mysqli_close($connection);
-?>
