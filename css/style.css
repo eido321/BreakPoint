@@ -30,6 +30,72 @@ li>a {
     width: 100%;
 }
 
+.rightCommentSection {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.commentSection {
+    display: flex;
+    margin-top: 30px;
+}
+
+.leftCommentSectionLine {
+    align-items: center;
+    display: flex;
+}
+
+.leftCommentSectionLine section {
+    align-items: center;
+    display: flex;
+}
+
+.leftCommentSection {
+    width: 100%;
+}
+
+.leftCommentSection .leftCommentSectionLine {
+    border-bottom: 2px solid #555555;
+    width: 100%;
+    height: 30%;
+}
+
+.leftCommentSectionText1Icon {
+    margin-left: 3px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #bd362f;
+}
+
+.leftCommentSectionDown {
+    display: flex;
+    margin: 10px 0px 20px 0px;
+    height: 40%;
+    background-color: white;
+    align-items: center;
+}
+
+.leftCommentSectionDown span {
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.leftCommentSectionText2Icon {
+    margin-left: 8px;
+}
+
+.leftCommentSectionText2 {
+    margin-left: 10px;
+}
+
+.rightCommentSection span {
+    text-align: center;
+}
+
+
 #navbar2 {
     display: none;
 }
@@ -107,7 +173,11 @@ nav {
 
 #navbar {
     height: 80px;
+}
 
+#navbarLogin {
+    display: flex;
+    justify-content: space-between;
 }
 
 .navContainer {
@@ -254,7 +324,7 @@ li {
 }
 
 .triangle-list li::before {
-    content: "▶";
+    content: "\25B6";
     display: inline-block;
     width: 0.7em;
     height: 0.6em;
@@ -338,7 +408,10 @@ li {
 
 .projectImages {
     width: 250px;
+    height: 200px;
     border-radius: 5px;
+    background-color: white;
+    object-fit: contain;
 }
 
 .projectName {
@@ -347,6 +420,11 @@ li {
     font-weight: bold;
     color: #555555;
 
+}
+
+.projectNameView {
+    font-size: 42px;
+    margin: 0;
 }
 
 .ProjectRivew {
@@ -545,7 +623,7 @@ span {
 
 .bottns {
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     gap: 5px;
 
 }
@@ -567,14 +645,6 @@ span {
 
 }
 
-.ProjrctImage {
-    width: 290px;
-    height: 206px;
-    margin-top: 20px;
-
-
-}
-
 .bottomRightSide {
     width: 100%;
     margin-top: 65px;
@@ -583,6 +653,7 @@ span {
 
 .RedlineRigthSide {
     height: 3px;
+    width: 250px;
     background-color: #bd362f;
 }
 
@@ -622,7 +693,7 @@ span {
 
 .firstname {
     height: 10px;
-    width: 10px;
+    width: 100%;
     margin-left: 15px;
     margin-top: 2.5px;
 }
@@ -641,6 +712,7 @@ span {
 
 .View-con {
     height: fit-content;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     margin-left: 209px;
@@ -649,13 +721,17 @@ span {
     background-color: #eeeeee;
 }
 
-.ProjectNameTitle {
+.projectNameTitleView {
     justify-content: space-between;
+    align-items: center;
     display: flex;
+    font-weight: normal;
     margin: 0px;
+    margin-bottom: 10px;
     width: 400px;
     color: #555555;
 }
+
 
 
 
@@ -699,7 +775,13 @@ span {
     background-color: #eeeeee;
     width: 100%;
     height: 100%;
+    min-height: 100vh;
     padding-top: 80px;
+}
+
+.body-conForm.login{
+    display: flex;
+    justify-content: center;
 }
 
 .formContainer {
@@ -761,6 +843,7 @@ form {
 .formInfo1 {
     width: 100vw;
 }
+
 
 .formInfo1Line1,
 .formInfo1Line2,
@@ -868,6 +951,76 @@ form {
     margin-bottom: 10px;
 }
 
+/*---------------------------------*/
+/*   login */
+
+#loginFormContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+#loginFormContainer>section {
+    width: 400px;
+    height: 350px;
+    background: #f8f9fa;
+    padding: 50px;
+    border-radius: 15px;
+}
+
+#loginFormContainer>section>h1 {
+    text-align: center;
+}
+
+.btn.btn-primary.login {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #bd362f;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+}
+
+.btn.btn-primary.login::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #ed1c24 0%, #ed1c24 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.btn.btn-primary.login:hover::before {
+    width: 100%;
+}
+
+#loginForm {
+    flex-flow: column;
+    align-items: center;
+}
+
+#loginForm>.form-group {
+    width: 80%;
+}
+
+#loginForm>.form-group:first-child{
+    margin-bottom: 10px;
+}
+
+
+
 @media(max-width:1032px) {
     .projectImages {
         width: 400px;
@@ -879,15 +1032,12 @@ form {
 
 }
 
-
 @media(max-width:737px) {
 
     .breadCrumbsNoneSideBar,
     .breadCrumbs {
         display: none;
     }
-
-
 
     form {
         display: block;
@@ -1109,10 +1259,6 @@ form {
 
     .fromSpan {
         font-size: 16px;
-    }
-
-    .projectName {
-        font-size: 24px;
     }
 
     #logoContainer,
@@ -1485,13 +1631,19 @@ li>a {
 }
 
 #logo,
-#logoExpanded {
+#logoExpanded,
+#login {
     background: url(../images/logo.png);
     width: 213px;
     height: 49px;
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+#login {
+    display: block;
+}
+
 
 #shenkarLogoImage {
     background: url(../images/Shenkar.png);
@@ -1556,6 +1708,15 @@ li>a {
     height: 20px;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.logout {
+    background: url(../images/logout.png);
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 100px;
 }
 
 #search1,

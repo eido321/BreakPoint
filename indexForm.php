@@ -1,3 +1,41 @@
+<?php
+//create a mySQL DB connection:
+include "config.php";
+session_start();
+
+if (!$_SESSION["user_type"]) {
+    header('Location: ' . URL . 'login.php');
+}
+
+$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+//testing connection success
+if (mysqli_connect_errno()) {
+    die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
+    );
+}
+?>
+<?php
+//get data from DB
+if (isset($_POST["projId"])) {
+    $projId = $_POST["projId"];
+    $query = "SELECT * FROM tbl_214_test WHERE id=" . $projId;
+    $result = mysqli_query($connection, $query);
+    $state = "insert";
+
+    if ($result) {
+        $row = mysqli_fetch_assoc($result); //there is only 1 with id=X
+        $state = "edit";
+    }
+} else {
+    $projId = null;
+    $state = "insert";
+}
+// else die("DB query failed.");//i dont want it to fail. i want it to cont.
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,11 +56,11 @@
         <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-                    <a href="index.html" class="navbar-brand" id="logoContainer">
+                    <a href="index.php" class="navbar-brand" id="logoContainer">
                         <div id="logo"></div>
                     </a>
                     <div class="mobileHeader">
-                        <a href="index.html">
+                        <a href="index.php">
                             <div id="logoExpanded"></div>
                         </a>
                         <div>
@@ -85,18 +123,19 @@
                                     <a href="" class="nav-link"><b>Home Page</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="index.html" class="nav-link"><b>Projects</b></a>
+                                    <a href="index.php" class="nav-link"><b>Projects</b></a>
                                     <div></div>
                                 </section>
                                 <section class="nav-item">
                                     <a href="" class="nav-link"><b>Contests</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="indexView.html" class="nav-link"><b>View Personal
+                                    <a href="indexView.php" class="nav-link"><b>View Personal
                                             Project</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="indexForm.html" class="nav-link" id="selectedNav"><b>Add Personal Project</b></a>
+                                    <a href="indexForm.php" class="nav-link" id="selectedNav"><b>Add Personal
+                                            Project</b></a>
                                 </section>
                                 <section class="nav-item">
                                     <a href="" class="nav-link"><b>Edit Project</b></a>
@@ -113,14 +152,14 @@
         <section class="body-conForm">
             <div class="breadCrumbsNoneSideBar">
                 <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a class="breadCrumbsLinks"
-                        href="index.html">Projects</a> > <a class="breadCrumbsLinks"
-                        href="indexForm.html">Project Creation</a></span>
+                        href="index.php">Projects</a> > <a class="breadCrumbsLinks" href="indexForm.php">Project
+                        Creation</a></span>
             </div>
             <section class="formTitle">
                 <p>&nbsp;Project Creation</p>
             </section>
             <section class="formContainer">
-                <form action="Sites/temp.php" method="get" class="needs-validation" novalidate>
+                <form action="index.php" method="post" class="needs-validation" novalidate>
                     <div class="leftSide">
                         <div class="formInfo1Line1">
                             <div class="mb-3 formInfo">
@@ -240,6 +279,8 @@
                         <span>Possible file types:</span>
                         <span>Document files doc .docx .epub .gdoc .odt .oth .ott .pdf .rtf .cpp .hpp</span>
                     </div>
+                    <input type="hidden" name="state" value="<?php echo $state; ?>">
+                    <input type="hidden" name="projId" value="<?php echo $projId; ?>">
                 </form>
             </section>
         </section>
@@ -249,3 +290,7 @@
 </body>
 
 </html>
+
+<?php
+mysqli_close($connection);
+?>
