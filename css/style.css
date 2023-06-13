@@ -24,6 +24,11 @@ li>a {
     text-decoration: none;
 }
 
+#editButton{
+    color: #555555;
+    background-color: #f8f9fa;
+}
+
 #addCommentDesktop {
     margin-top: 5px;
     border: none;

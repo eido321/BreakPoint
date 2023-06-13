@@ -44,21 +44,21 @@ let goBack = function () {
     history.back();
 };
 
-$(document).ready(function() {
-    $('.leftCommentSectionText1Icon').click(function() {
-      var grayArrow = $('.leftCommentSectionText1Icon');
-      var comments = $('#coomentSection');
-      
-      grayArrow.css('transform', 'rotate(180deg)');
-      
-      if (comments.css('display') === 'none') {
-        comments.css('display', 'inline');
-      } else {
-        grayArrow.css('transform', 'rotate(360deg)');
-        comments.css('display', 'none');
-      }
+$(document).ready(function () {
+    $('.leftCommentSectionText1Icon').click(function () {
+        var grayArrow = $('.leftCommentSectionText1Icon');
+        var comments = $('#coomentSection');
+
+        grayArrow.css('transform', 'rotate(180deg)');
+
+        if (comments.css('display') === 'none') {
+            comments.css('display', 'inline');
+        } else {
+            grayArrow.css('transform', 'rotate(360deg)');
+            comments.css('display', 'none');
+        }
     });
-  });
+});
 
 
 const $likes = $('.ClappImage');
@@ -123,3 +123,78 @@ if (document.getElementById("formFunc")) {
         fileCountElement.textContent = `${files.length} file${files.length !== 1 ? 's' : ''}`;
     }
 }
+
+
+let gridOragnize = function () {
+    let screenWidth = window.innerWidth;
+    let colElements = Array.from(document.getElementsByClassName("col"));
+    let rowElements = Array.from(document.getElementsByClassName("row"));
+
+    if (screenWidth <= 1032) {
+        colElements.forEach(function (colElement) {
+            if (!colElement.hasChildNodes()) {
+                colElement.style.display = "none";
+            }
+        });
+        rowElements.forEach(function (rowElement) {
+            rowElement.style.marginBottom = "0";
+        });
+    } else {
+        colElements.forEach(function (colElement) {
+            if (!colElement.hasChildNodes()) {
+                colElement.style.display = "initial";
+            }
+        });
+        rowElements.forEach(function (rowElement) {
+            rowElement.style.marginBottom = "70px";
+        });
+    }
+};
+
+window.onload = function () {
+    gridOragnize();
+};
+
+window.addEventListener("resize", function () {
+    gridOragnize();
+});
+
+(() => {
+    let indexViewButton = document.getElementById("indexViewButton");
+    indexViewButton.addEventListener("click", function (event) {
+
+        let projId = document.getElementById("projIdElement").getAttribute("data-projId");
+        if (projId == 0) {
+            let modal = new bootstrap.Modal(document.getElementById("exampleModal1"));
+            modal.show();
+            event.preventDefault();
+        }
+    });
+})();
+
+
+(() => {
+    let editButton = document.getElementById("editButton");
+    editButton.addEventListener("click", function (event) {
+
+        let projId = document.getElementById("projIdElement").getAttribute("data-projId");
+        if (projId == 0) {
+            let modal = new bootstrap.Modal(document.getElementById("exampleModal1"));
+            modal.show();
+            event.preventDefault();
+        }
+    });
+})();
+
+(() => {
+    let addProjectButton = document.getElementById("addProjectButton");
+    addProjectButton.addEventListener("click", function (event) {
+
+        let projId = document.getElementById("projIdElement").getAttribute("data-projId");
+        if (projId != 0) {
+            let modal = new bootstrap.Modal(document.getElementById("exampleModal2"));
+            modal.show();
+            event.preventDefault();
+        }
+    });
+})();

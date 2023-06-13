@@ -25,6 +25,7 @@ if (isset($_POST["projId"])) {
 
     if ($result) {
         $row = mysqli_fetch_assoc($result); //there is only 1 with id=X
+        $title = $row["title"];
         $state = "edit";
     }
 } else {
@@ -156,7 +157,15 @@ if (isset($_POST["projId"])) {
                         Creation</a></span>
             </div>
             <section class="formTitle">
-                <p>&nbsp;Project Creation</p>
+                <p>&nbsp;
+                    <?php
+                    if ($state == 'insert') {
+                        echo "Project Creation";
+                    } else {
+                        echo "Edit Project";
+                    }
+                    ?>
+                </p>
             </section>
             <section class="formContainer">
                 <form action="index.php" method="post" class="needs-validation" novalidate>
@@ -164,9 +173,12 @@ if (isset($_POST["projId"])) {
                         <div class="formInfo1Line1">
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>Project
-                                        Name</b></label>
+                                        Name
+                                    </b></label>
                                 <input type="text" class="form-control inputForm validationServer01" name="ProjectName"
-                                    placeholder="* Microsoft" required>
+                                    placeholder="* Microsoft" required <?php if ($state == 'edit') {
+                                        echo "value='" . htmlspecialchars($title, ENT_QUOTES) . "'";
+                                    }?>>
                             </div>
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>Project
@@ -181,13 +193,17 @@ if (isset($_POST["projId"])) {
                                 <label class="form-label"><b>First
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm ProjectName" name="Participant1Name"
-                                    placeholder="* Bill" required>
+                                    placeholder="* Bill" required <?php if ($state == 'edit') {
+                                        echo "value=" . $row["p1_first_name"] . "";
+                                    } ?>>
                             </div>
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>Family
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm ProjectType"
-                                    name="Participant1NameSecond" placeholder="* Gates" required>
+                                    name="Participant1NameSecond" placeholder="* Gates" required <?php if ($state == 'edit') {
+                                        echo "value=" . $row["p1_last_name"] . "";
+                                    } ?>>
                             </div>
                         </div>
                         <label>&nbsp;&nbsp;<b>Participant 2</b></label>
@@ -196,13 +212,17 @@ if (isset($_POST["projId"])) {
                                 <label class="form-label"><b>First
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm ProjectName" name="Participant2Name"
-                                    placeholder="* John" required>
+                                    placeholder="* John" required <?php if ($state == 'edit') {
+                                        echo "value=" . $row["p2_first_name"] . "";
+                                    } ?>>
                             </div>
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>Family
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm ProjectType"
-                                    name="Participant2NameSecond" placeholder="* Doe" required>
+                                    name="Participant2NameSecond" placeholder="* Doe" required <?php if ($state == 'edit') {
+                                        echo "value=" . $row["p2_last_name"] . "";
+                                    } ?>>
                             </div>
                         </div>
                         <div class="projectDes">

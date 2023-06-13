@@ -17,16 +17,22 @@ if (mysqli_connect_errno()) {
 }
 ?>
 <?php
-$queryProj = "SELECT * FROM tbl_214_test WHERE u_id='"
-. $_SESSION["u_id"]
-. "'";
+$queryProj = "SELECT * FROM tbl_214_test_and_users WHERE u_id='"
+    . $_SESSION["u_id"]
+    . "'";
 
-$resultProj =  mysqli_query($connection, $queryProj);
+$resultProj = mysqli_query($connection, $queryProj);
 if (!$resultProj) {
     die("DB query failed.");
 }
-
+$tmp = mysqli_fetch_assoc($resultProj);
+if ($tmp) {
+    $projId = $tmp["id"];
+} else {
+    $projId = 0;
+}
 ?>
+
 <?php
 //get data from DB
 $queryAll = "SELECT * FROM tbl_214_test order by id";
@@ -43,18 +49,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $ProjectName = isset($_POST['ProjectName']) ? mysqli_real_escape_string($connection, $_POST['ProjectName']) : null;
     $Participant1Name = isset($_POST['Participant1Name']) ? mysqli_real_escape_string($connection, $_POST['Participant1Name']) : null;
     $Participant1NameSecond = isset($_POST['Participant1NameSecond']) ? mysqli_real_escape_string($connection, $_POST['Participant1NameSecond']) : null;
-    $Participant2Name = isset($_POST['Participant2Name']) ? mysqli_real_escape_string($connection, $_POST['Participant1Name']) : null;
+    $Participant2Name = isset($_POST['Participant2Name']) ? mysqli_real_escape_string($connection, $_POST['Participant2Name']) : null;
     $Participant2NameSecond = isset($_POST['Participant2NameSecond']) ? mysqli_real_escape_string($connection, $_POST['Participant2NameSecond']) : null;
     $ProjectType = isset($_POST['ProjectType']) ? mysqli_real_escape_string($connection, $_POST['ProjectType']) : null;
     $state = isset($_POST['state']) ? $_POST['state'] : null;
-    $projId = isset($_POST['projId']) ? $_POST['projId'] : null;
+    $projIdQ = isset($_POST['projId']) ? $_POST['projId'] : null;
 
     if ($ProjectName !== null && $Participant1Name !== null && $Participant1NameSecond !== null && $Participant2Name !== null && $Participant2NameSecond !== null && $ProjectType !== null && $state !== null) {
         // Set: Insert/update data in DB
         if ($state == "insert") {
             $queryAll = "INSERT INTO tbl_214_test (title, p1_first_name, p1_last_name,p2_first_name,p2_last_name) VALUES ('$ProjectName', '$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond')";
         } else {
-            $queryAll = "UPDATE tbl_214_test SET title='$ProjectName', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projId'";
+            $queryAll = "UPDATE tbl_214_test SET title='$ProjectName', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
+
         }
     }
     $resultIns = mysqli_query($connection, $queryAll);
@@ -87,6 +94,42 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"><b>Pay Attention</b></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    A personal project file does not exists, To create or edit a project click the
+                    Add Project button to add a project.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Pay Attention</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    A personal project file aleardy exists To create a new project, delete the old one or click the
+                    edit project button to make changes.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="screen">
         <div id="headerContainer">
             <header>
@@ -206,15 +249,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="sideBar">
                 <section class="choiseList">
                     <ul class="triangle-list">
-                        <li><a href="indexView.php?projId=<?php echo mysqli_fetch_assoc($resultProj)["id"];?>"><b>View Personal Project</b>
-                                <div class="viewImageList"></div>
-                            </a></li>
-                        <li><a href="indexForm.php" class="aLinks"><b>Add Personal Project</b>
-                                <div class="addImage"></div>
-                            </a></li>
-                        <li><a href="" class="aLinks"><b>Edit Project</b>
-                                <div class="editImage"></div>
-                            </a></li>
+                        <?php if ($_SESSION["user_type"] != "Guest") {
+                            echo '
+<li>
+    <a id="indexViewButton" href="indexView.php?projId=' . $projId . '">
+        <b>View Personal Project</b>
+        <div class="viewImageList"></div>
+    </a>
+</li>
+<li>
+    <a href="indexForm.php" class="aLinks" id="addProjectButton">
+        <b>Add Personal Project</b>
+        <div class="addImage"></div>
+    </a>
+</li>
+<li>
+    <form method="POST" action="indexForm.php">
+        <input type="hidden" name="projId" value="' . $projId . '">
+        <button type="submit" id="editButton">
+            <b>Edit Project</b>
+        </button>
+        <div class="editImage"></div>
+    </form>
+</li>';
+                        }
+                        ?>
+
                         <li><a href="" class="aLinks"><b>Favorites</b>
                                 <div class="favImage"></div>
                             </a></li>
@@ -224,6 +284,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <li><a href="logout.php"><b>Log Out</b>
                                 <div class="logout"></div>
                             </a></li>
+
                     </ul>
                 </section>
                 <div class="underLineChoise"></div>
@@ -262,6 +323,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         </section>
     </section>
+
+    <div id="projIdElement" data-projId="<?php echo $projId; ?>"></div>
     <script src="js/script.js"></script>
 </body>
 
