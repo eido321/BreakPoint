@@ -158,43 +158,64 @@ window.onload = function () {
 window.addEventListener("resize", function () {
     gridOragnize();
 });
-
 (() => {
-    let indexViewButton = document.getElementById("indexViewButton");
-    indexViewButton.addEventListener("click", function (event) {
-
-        let projId = document.getElementById("projIdElement").getAttribute("data-projId");
-        if (projId == 0) {
-            let modal = new bootstrap.Modal(document.getElementById("exampleModal1"));
-            modal.show();
-            event.preventDefault();
-        }
-    });
-})();
-
-
-(() => {
-    let editButton = document.getElementById("editButton");
-    editButton.addEventListener("click", function (event) {
-
-        let projId = document.getElementById("projIdElement").getAttribute("data-projId");
-        if (projId == 0) {
-            let modal = new bootstrap.Modal(document.getElementById("exampleModal1"));
-            modal.show();
-            event.preventDefault();
-        }
+    let indexViewButtons = document.getElementsByClassName("indexViewButton");
+    Array.from(indexViewButtons).forEach((button) => {
+        button.addEventListener("click", function (event) {
+            let projId = document.getElementById("projIdElement").getAttribute("data-projId");
+            if (projId == 0) {
+                let modal = new bootstrap.Modal(document.getElementById("exampleModal1"));
+                modal.show();
+                event.preventDefault();
+            }
+        });
     });
 })();
 
 (() => {
-    let addProjectButton = document.getElementById("addProjectButton");
-    addProjectButton.addEventListener("click", function (event) {
-
-        let projId = document.getElementById("projIdElement").getAttribute("data-projId");
-        if (projId != 0) {
-            let modal = new bootstrap.Modal(document.getElementById("exampleModal2"));
-            modal.show();
-            event.preventDefault();
-        }
+    let editButtons = document.getElementsByClassName("editButton");
+    Array.from(editButtons).forEach((button) => {
+        button.addEventListener("click", function (event) {
+            let projId = document.getElementById("projIdElement").getAttribute("data-projId");
+            if (projId == 0) {
+                let modal = new bootstrap.Modal(document.getElementById("exampleModal1"));
+                modal.show();
+                event.preventDefault();
+            }
+        });
     });
 })();
+
+(() => {
+    let addProjectButtons = document.getElementsByClassName("addProjectButton");
+    Array.from(addProjectButtons).forEach((button) => {
+        button.addEventListener("click", function (event) {
+            let projId = document.getElementById("projIdElement").getAttribute("data-projId");
+            if (projId != 0) {
+                let modal = new bootstrap.Modal(document.getElementById("exampleModal2"));
+                modal.show();
+                event.preventDefault();
+            }
+        });
+    });
+})();
+
+
+let creativityElements = document.getElementsByClassName("StarCn");
+
+Array.from(creativityElements).forEach((element) => {
+    let creativityRating = element.getAttribute("data-rating");
+
+    for (let i = 0; i < creativityRating; i++) {
+        const div = document.createElement('div');
+        div.classList.add('stars');
+        element.appendChild(div);
+    }
+
+    for (let i = 0; i < 5 - creativityRating; i++) {
+        const div = document.createElement('div');
+        div.classList.add('stars2');
+        element.appendChild(div);
+    }
+});
+

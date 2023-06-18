@@ -26,6 +26,7 @@ if ($result) {
 } else
     die("DB query failed.");
 $img = $row["img_url"];
+$creativity = $row["creativity"];
 if (!$img)
     $img = 'images/projectsImages/default.png';
 
@@ -162,18 +163,33 @@ if (!$img)
                                 <section class="nav-item">
                                     <a href="" class="nav-link"><b>Contests</b></a>
                                 </section>
-                                <section class="nav-item">
-                                    <a href="indexView.php" class="nav-link" id="selectedNav"><b>View Personal
-                                            Project</b></a>
-                                </section>
-                                <section class="nav-item">
-                                    <a href="indexForm.php" class="nav-link"><b>Add Personal Project</b></a>
-                                </section>
-                                <section class="nav-item">
-                                    <a href="" class="nav-link"><b>Edit Project</b></a>
-                                </section>
+                                <?php if ($_SESSION["user_type"] != "Guest") {
+                                    echo '
+<section>
+    <a class="indexViewButton" id="selectedNav" href="indexView.php?projId=' . $projId . ' ">
+        <b>View Personal Project</b>
+    </a>
+</section>
+<section>
+    <a href="indexForm.php" class="addProjectButton">
+        <b>Add Personal Project</b>
+    </a>
+</section>
+<section>
+    <form method="POST" action="indexForm.php">
+        <input type="hidden" name="projId" value="' . $projId . '">
+        <button type="submit" class="editButton">
+            <b>Edit Project</b>
+        </button>
+    </form>
+</section>';
+                                }
+                                ?>
                                 <section class="nav-item">
                                     <a href="" class="nav-link"><b>Settings</b></a>
+                                </section>
+                                <section class="nav-item">
+                                    <a href="logout.php" class="nav-link"><b>Log Out</b></a>
                                 </section>
 
                             </div>
@@ -273,13 +289,13 @@ if (!$img)
                         <?php if ($_SESSION["user_type"] != "Guest") {
                             echo '
 <li>
-    <a id="indexViewButton" href="indexView.php?projId=' . $projId . '">
+    <a class="indexViewButton" href="indexView.php?projId=' . $projId . '">
         <b>View Personal Project</b>
         <div class="viewImageList"></div>
     </a>
 </li>
 <li>
-    <a href="indexForm.php" class="aLinks" id="addProjectButton">
+    <a href="indexForm.php" class="addProjectButton" >
         <b>Add Personal Project</b>
         <div class="addImage"></div>
     </a>
@@ -287,7 +303,7 @@ if (!$img)
 <li>
     <form method="POST" action="indexForm.php">
         <input type="hidden" name="projId" value="' . $projId . '">
-        <button type="submit" id="editButton">
+        <button type="submit" class="editButton">
             <b>Edit Project</b>
         </button>
         <div class="editImage"></div>
@@ -295,15 +311,17 @@ if (!$img)
 </li>';
                         }
                         ?>
-                        <li><a href=""><b>Favorites</b>
+
+                        <li><a href="" class="aLinks"><b>Favorites</b>
                                 <div class="favImage"></div>
                             </a></li>
-                        <li><a href=""><b>Recent</b>
+                        <li><a href="" class="aLinks"><b>Recent</b>
                                 <div class="recImage"></div>
                             </a></li>
                         <li><a href="logout.php"><b>Log Out</b>
                                 <div class="logout"></div>
                             </a></li>
+
                     </ul>
                 </section>
                 <div class="underLineChoise"></div>
@@ -435,37 +453,31 @@ if (!$img)
                     </div>
                 </div>
                 <div class="RightSide">
-                    <span class="formRatingDesktop"> General Rating:&nbsp;<span class="number">3</span>
+                    <span class="formRatingDesktop"> General Rating:&nbsp;<span class="number">
+                            <?php
+                            $avgRate = ($row["creativity"] + $row["refined"] + $row["stylish"]) / 3;
+                            $avgRateRounded = number_format($avgRate, 1);
+                            echo $avgRateRounded;
+
+                            ?>
+                        </span>
                         &nbsp;&nbsp;<span class="redStar desktopRedStar"></span></span>
                     <div class="Rating">
                         <section class="starsListSec">
                             <span>creativity:</span>
-                            <section class="StarCn1">
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars2"></div>
-                                <div class="stars2"></div>
+                            <section class="StarCn" <?php echo 'data-rating="' . $creativity . '"'; ?>>
                             </section>
                         </section>
                         <section class="starsListSec">
-                            <span>refined:</span>
-                            <section class="StarCn2">
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars2"></div>
-                                <div class="stars2"></div>
+                            <span>Refined:</span>
+                            <section class="StarCn" <?php echo 'data-rating="' . $row["refined"] . '"'; ?>>
+
                             </section>
                         </section>
                         <section class="starsListSec">
                             <span>Stylish:</span>
-                            <section class="StarCn3">
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars2"></div>
-                                <div class="stars2"></div>
+                            <section class="StarCn" <?php echo 'data-rating="' . $row["stylish"] . '"'; ?>>
+
                             </section>
                         </section>
                     </div>

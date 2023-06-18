@@ -24,7 +24,7 @@ li>a {
     text-decoration: none;
 }
 
-#editButton{
+#editButton {
     color: #555555;
     background-color: #f8f9fa;
 }
@@ -315,6 +315,23 @@ nav {
     position: fixed;
 }
 
+.indexViewButton,
+.addProjectButton,
+.editButton {
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: var(--bs-nav-link-color);
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.editButton {
+    background-color: #f8f9fa;
+}
+
 li {
     margin-bottom: 10px;
     color: #555555;
@@ -356,9 +373,7 @@ li {
     margin-bottom: 5px;
 }
 
-.StarCn1,
-.StarCn2,
-.StarCn3 {
+.StarCn{
     display: flex;
 }
 
@@ -784,7 +799,7 @@ span {
     padding-top: 80px;
 }
 
-.body-conForm.login{
+.body-conForm.login {
     display: flex;
     justify-content: center;
 }
@@ -1020,9 +1035,11 @@ form {
     width: 80%;
 }
 
-#loginForm>.form-group:first-child{
+#loginForm>.form-group:first-child {
     margin-bottom: 10px;
 }
+
+
 
 
 
@@ -1042,6 +1059,12 @@ form {
     .breadCrumbsNoneSideBar,
     .breadCrumbs {
         display: none;
+    }
+
+    .indexViewButton,
+    .addProjectButton,
+    .editButton {
+        display: block;
     }
 
     form {
