@@ -6,30 +6,15 @@ $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 session_start();
 //testing connection success
 if (mysqli_connect_errno()) {
-  die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-  );
+    die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
+    );
 }
 
 if (!empty($_POST["loginMail"])) {
-  $query = "SELECT * FROM tbl_214_users WHERE email='"
-    . $_POST["loginMail"]
-    . "' and password = '"
-    . $_POST["loginPass"]
-    . "'";
-
-  // echo $query;
-
-  $result = mysqli_query($connection, $query);
-  $row = mysqli_fetch_array($result);
-
-
-  if (is_array($row)) {
-    $_SESSION["u_id"] = $row['u_id'];
-    $_SESSION["user_type"] = $row['user_type'];
-    header('Location: ' . URL . 'index.php');
-  } else {
-    $message = "Invalid Username or Password";
-  }
+    $query = "INSERT INTO `tbl_214_users` (`name`, `email`, `password`) VALUES ('".$_POST["firstName"]." " .$_POST["lastName"]."', '".$_POST["loginMail"]."', '".$_POST["loginPass"]."');";
+    
+    $result = mysqli_query($connection, $query);
+    header('Location: ' . URL . 'login.php');
 }
 
 
@@ -71,9 +56,19 @@ if (!empty($_POST["loginMail"])) {
         </div>
         <section class="body-conForm login">
             <section id="loginFormContainer">
-                <section id="loginFormContainerBox">
-                    <h1><b>Login</b></h1>
+                <section id="signFormContainerBox">
+                    <h1><b>SignUp</b></h1>
                     <form action="#" method="post" class="needs-validation" novalidate id="loginForm">
+                        <div class="rowS">
+                            <div class="colS" id="leftColS">
+                                <input type="text" class="form-control" name="firstName" placeholder="First name"
+                                    aria-label="First name" required>
+                            </div>
+                            <div class="colS" id="rightColS">
+                                <input type="text" class="form-control" name="lastName" placeholder="Last name"
+                                    aria-label="Last name" required>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="loginMail"><b>Email: </b></label>
                             <input type="email" class="form-control" name="loginMail" id="loginMail"
@@ -85,15 +80,11 @@ if (!empty($_POST["loginMail"])) {
                                 placeholder="Enter Password" required>
                         </div>
                         <div class="form-group">
-                            <button id="submitLoginSign" type="submit" class="btn btn-primary login"><b>Log Me In</b></button>
-                        </div>
-                        <div class="error-message">
-                            <?php if (isset($message)) {
-                                echo $message;
-                            } ?>
+                            <button id="submitLoginSign" type="submit" class="btn btn-primary login"><b>Sign Me
+                                    Up</b></button>
                         </div>
                         <div class="form-group" id="loginLink">
-                            <a href="signUp.php">Sign Up</a>
+                            <a href="login.php">Log In</a>
                         </div>
                     </form>
                 </section>

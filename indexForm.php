@@ -15,6 +15,19 @@ if (mysqli_connect_errno()) {
     );
 }
 ?>
+
+<?php
+$queryUser = "SELECT * FROM tbl_214_users WHERE u_id='"
+    . $_SESSION["u_id"]
+    . "'";
+
+$resultUser = mysqli_query($connection, $queryUser);
+if (!$resultUser) {
+    die("DB query failed.");
+}
+$tmpUser = mysqli_fetch_assoc($resultUser);
+?>
+
 <?php
 //get data from DB
 if (isset($_POST["projId"])) {
@@ -65,7 +78,7 @@ if (isset($_POST["projId"])) {
                             <div id="logoExpanded"></div>
                         </a>
                         <div>
-                            <a href="" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
+                            <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
                                     class="ranProfileImage"></a>
                         </div>
                         <div id="searchBar1" class="input-group">
@@ -113,7 +126,7 @@ if (isset($_POST["projId"])) {
                                     </a>
                                 </section>
                                 <section id="ranProfile" class="nav-item">
-                                    <a href="" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
+                                    <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
                                             class="ranProfileImage"></a>
                                 </section>
                             </div>

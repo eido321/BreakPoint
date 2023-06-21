@@ -373,7 +373,7 @@ li {
     margin-bottom: 5px;
 }
 
-.StarCn{
+.StarCn {
     display: flex;
 }
 
@@ -422,6 +422,17 @@ li {
     margin-top: 80px;
 }
 
+.rowS{
+    width: 100%;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
 .row {
     margin-bottom: 70px;
 }
@@ -467,11 +478,21 @@ span {
     font-size: 14px;
 }
 
-.col {
+.col,
+.colS {
     display: flex;
+    flex: 1 0 0%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#leftColS{
+    margin-right: 5px;
+}
+
+#rightColS{
+    margin-left: 5px;
 }
 
 .underlineProject {
@@ -526,9 +547,18 @@ span {
 
 .WhiteBox {
     width: 400px;
-    height: 150px;
-    background-color: white
+    background-color: white;
+    overflow: auto;
+    min-height: 150px;
+    max-height: 200px;
 }
+
+.ScrollableContent {
+    padding: 10px;
+    height: 100%;
+}
+
+
 
 .requirements {
     display: flex;
@@ -981,12 +1011,19 @@ form {
     flex-flow: column;
 }
 
-#loginFormContainer>section {
+#loginFormContainerBox,#signFormContainerBox{
     width: 400px;
-    height: 350px;
     background: #f8f9fa;
     padding: 50px;
     border-radius: 15px;
+}
+
+#loginFormContainerBox{
+    height: 350px;
+}
+
+#signFormContainerBox{
+    height: 375px;
 }
 
 #loginFormContainer>section>h1 {
@@ -1032,15 +1069,32 @@ form {
 }
 
 #loginForm>.form-group {
-    width: 80%;
+    width: 100%;
 }
 
 #loginForm>.form-group:first-child {
     margin-bottom: 10px;
 }
 
+#loginLink{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
 
+#loginLink > a{
+    color: #bd362f;
+    text-decoration: none;
+}
 
+#loginLink > a:hover{
+    color: #ed1c24;
+}
+
+/* --searchBar-- */
+#searchForm{
+    width: 100%;
+}
 
 
 @media(max-width:1032px) {
@@ -1091,13 +1145,6 @@ form {
 
     .rightSide {
         display: none;
-    }
-
-
-
-    .col {
-        margin-bottom: 50px;
-
     }
 
     .projectImages {
@@ -1216,11 +1263,6 @@ form {
     }
 
 
-    .col {
-        margin-bottom: 50px;
-
-    }
-
     #addCommentMobile {
         border: none;
     }
@@ -1324,6 +1366,15 @@ form {
 
     .threeContainer {
         display: flex;
+        align-items: center;
+    }
+
+    #starRow2 {
+        margin-left: 12px;
+    }
+
+    #starRow3 {
+        margin-left: 18px;
     }
 
     .threeText {
@@ -1378,13 +1429,22 @@ form {
         background-color: #f8f9fa;
     }
 
-    .projectDText {
-        margin: 10px 10px 10px 10px;
-    }
-
     .ProjectD {
         display: flex;
         border-radius: 10px;
+        overflow: auto;
+        min-height: 150px;
+        max-height: 200px;
+    }
+
+    .projectDText {
+        margin: 10px;
+        height: 100%;
+    }
+
+    .starsListSec {
+        display: flex;
+        align-items: center;
     }
 
     .sideBar {
@@ -1864,7 +1924,6 @@ li>a {
     background-color: white;
     width: 351px;
     height: 75px;
-    ;
     margin-left: 10px;
 
 }

@@ -15,6 +15,19 @@ if (mysqli_connect_errno()) {
     );
 }
 ?>
+
+<?php
+$queryUser = "SELECT * FROM tbl_214_users WHERE u_id='"
+    . $_SESSION["u_id"]
+    . "'";
+
+$resultUser = mysqli_query($connection, $queryUser);
+if (!$resultUser) {
+    die("DB query failed.");
+}
+$tmpUser = mysqli_fetch_assoc($resultUser);
+?>
+
 <?php
 //get data from DB
 $projId = $_GET["projId"];
@@ -97,7 +110,7 @@ if (!$img)
                             <div id="logoExpanded"></div>
                         </a>
                         <div>
-                            <a href="" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
+                            <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
                                     class="ranProfileImage"></a>
                         </div>
                         <div id="searchBar1" class="input-group">
@@ -146,8 +159,8 @@ if (!$img)
                                     </a>
                                 </section>
                                 <section id="ranProfile" class="nav-item">
-                                    <a href="" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
-                                            class="ranProfileImage"></a>
+                                    <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                            alt="ranProfile" class="ranProfileImage"></a>
                                 </section>
                             </div>
                         </div>
@@ -201,7 +214,7 @@ if (!$img)
         <div class="mobileBody">
             <section id="navbar2">
                 <div class="MainTxtMobile">
-                    <span>TagTool - By Menachem Avshalom and Jhon Doe</span>
+                    <span><?php echo ''.$row["title"].' - by '.$row["p1_first_name"].' '.$row["p1_last_name"].' and '.$row["p2_first_name"].' '.$row["p2_last_name"].'' ?></span>
                 </div>
             </section>
             <span class="ProjectRivew">Description:</span>
@@ -210,6 +223,7 @@ if (!$img)
                     <?php echo $row["des_txt"]; ?>
                 </p>
             </section>
+
             <div class="middle">
                 <div class="middleLeft">
                     <div class="Ad">
@@ -228,33 +242,33 @@ if (!$img)
                 <div class="middleRight">
                     <div class="Rating">
                         <div class="ratingTitle">
-                            <span class="threeContainer"> General Rating:<span class="threeText">3</span></span>
+                            <span class="threeContainer"> General Rating:&nbsp;<span class="threeText">
+                                    <?php
+                                    $avgRate = ($row["creativity"] + $row["refined"] + $row["stylish"]) / 3;
+                                    $avgRateRounded = number_format($avgRate, 1);
+                                    echo $avgRateRounded;
+
+                                    ?>
+                                </span></span>
                             <div class="redStar"></div>
                         </div>
                         <div class="starRating">
-                            <section class="starsList">
-                                <span>creativity:&nbsp;</span>
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars2"></div>
-                                <div class="stars2"></div>
+                            <section class="starsListSec">
+                                <span>creativity:</span>
+                                <section class="StarCn" <?php echo 'data-rating="' . $creativity . '"'; ?>>
+                                </section>
                             </section>
-                            <section class="starsList">
-                                <span>refined:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars2"></div>
-                                <div class="stars2"></div>
+                            <section class="starsListSec">
+                                <span>Refined:</span>
+                                <section id="starRow2" class="StarCn" <?php echo 'data-rating="' . $row["refined"] . '"'; ?>>
+
+                                </section>
                             </section>
-                            <section class="starsList">
-                                <span>Stylish:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars"></div>
-                                <div class="stars2"></div>
-                                <div class="stars2"></div>
+                            <section class="starsListSec">
+                                <span>Stylish:</span>
+                                <section id="starRow3" class="StarCn" <?php echo 'data-rating="' . $row["stylish"] . '"'; ?>>
+
+                                </section>
                             </section>
                         </div>
                     </div>
@@ -272,7 +286,7 @@ if (!$img)
                 </section>
             </div>
             <section class="bottomLefSide">
-                <img src="images/ranProfile.png" alt="ranProfile" class="ranProfileImage2">
+                <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile" class="ranProfileImage2">
                 <br>
                 <span>&nbsp;&nbsp;Menachem Avshalom</span>
             </section>
@@ -344,10 +358,15 @@ if (!$img)
                     <section class="RedLine"></section>
                     <span class="ProjectRivew">Project review</span>
                     <section class="WhiteBox">
-                        <p class="pForm">
-                            <?php echo $row["des_txt"]; ?>
-                        </p>
+                        <div class="ScrollableContent">
+                            <p class="pForm">
+                                <?php echo $row["des_txt"]; ?>
+                            </p>
+                        </div>
                     </section>
+
+
+
                     <br>
                     <span class="ProjectRivew">Want to know more
                         <span class="PlayButtonImage"></span>
@@ -385,7 +404,7 @@ if (!$img)
                     <section class="commentSection ">
                         <section class="rightCommentSection">
                             <span>8</span>
-                            <img src="images/Dan.png" alt="ranImage" class="ranProfileImage2">
+                            <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranImage" class="ranProfileImage2">
                             <span>Menachem Avshalom</span>
                         </section>
                         <section class="leftCommentSection">
@@ -409,7 +428,7 @@ if (!$img)
                     <div id="coomentSection">
                         <div class="comment">
                             <section class="CommentName">
-                                <img src="images/Dan.png" alt="ranProfile" class="ranProfileImage2">Dan Moalem
+                                <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile" class="ranProfileImage2">Dan Moalem
                             </section>
                             <section class="coomentWhiteBox">
                                 <p class="commentsText">

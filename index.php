@@ -34,11 +34,33 @@ if ($tmp) {
 ?>
 
 <?php
+$queryUser = "SELECT * FROM tbl_214_users WHERE u_id='"
+    . $_SESSION["u_id"]
+    . "'";
+
+$resultUser = mysqli_query($connection, $queryUser);
+if (!$resultUser) {
+    die("DB query failed.");
+}
+$tmpUser = mysqli_fetch_assoc($resultUser);
+?>
+
+<?php
 //get data from DB
 $queryAll = "SELECT * FROM tbl_214_test order by id";
 $resultAll = mysqli_query($connection, $queryAll);
 if (!$resultAll) {
     die("DB query failed.");
+}
+?>
+
+<?php
+if (!empty($_GET) && $_GET["query"] != '') {
+    $queryAll = "SELECT * FROM tbl_214_test WHERE title='" . $_GET["query"] . "'";
+    $resultAll = mysqli_query($connection, $queryAll);
+    if (!$resultAll) {
+        die("DB query failed.");
+    }
 }
 ?>
 
@@ -58,17 +80,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($ProjectName !== null && $Participant1Name !== null && $Participant1NameSecond !== null && $Participant2Name !== null && $Participant2NameSecond !== null && $ProjectType !== null && $state !== null) {
         // Set: Insert/update data in DB
         if ($state == "insert") {
-            $queryAll = "INSERT INTO tbl_214_test (title, p1_first_name, p1_last_name,p2_first_name,p2_last_name) VALUES ('$ProjectName', '$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond')";
-        } else {
-            $queryAll = "UPDATE tbl_214_test SET title='$ProjectName', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
+            $queryAdd = "INSERT INTO tbl_214_test (title, p1_first_name, p1_last_name,p2_first_name,p2_last_name) VALUES ('$ProjectName', '$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond')";
+            $resultIns = mysqli_query($connection, $queryAdd);
 
+            if (!$resultIns) { 
+                die("DB query failed insert.");
+            }
+            $queryProj = "SELECT * FROM tbl_214_test WHERE title='" . $ProjectName . "'";
+            $resultIns = mysqli_query($connection, $queryProj);
+
+            if (!$resultIns) {
+                die("DB query failed find proj.");
+            }
+
+            $tmpProj = mysqli_fetch_assoc($resultIns);
+            $queryAddProj = "INSERT INTO tbl_214_test_and_users (id, u_id) VALUES ('".$tmpProj["id"]."', '".$_SESSION["u_id"]."')";
+            $resultIns = mysqli_query($connection, $queryAddProj);
+
+            if (!$resultIns) {
+                die("DB query failed insert proj user.");
+            }
+
+
+        } else {
+            $queryAdd = "UPDATE tbl_214_test SET title='$ProjectName', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
+            $resultIns = mysqli_query($connection, $queryAdd);
+
+            if (!$resultIns) {
+                die("DB query failed.");
+            }
         }
     }
-    $resultIns = mysqli_query($connection, $queryAll);
 
-    if (!$resultIns) {
-        die("DB query failed.");
-    }
 
     // Redirect the user to a new page
     header("Location: index.php");
@@ -142,7 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <div id="logoExpanded"></div>
                         </a>
                         <div>
-                            <a href="" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
+                            <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
                                     class="ranProfileImage"></a>
                         </div>
                         <div id="searchBar1" class="input-group">
@@ -163,16 +206,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </div>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <div id="desktopNav">
-                            <div id="searchBar2" class="input-group">
-                                <input type="text" class="form-control" id="inputSearch2" placeholder="Search"
-                                    aria-label="Search for...">
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <span id="search2"></span>
-                                </button>
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <span id="sortIconImageDesktop"></span>
-                                </button>
-                            </div>
+                            <form action="" id="searchForm" method="GET">
+                                <div id="searchBar2" class="input-group">
+                                    <input type="text" class="form-control" id="inputSearch2" name="query"
+                                        placeholder="Search" aria-label="Search for...">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <span id="search2"></span>
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <span id="sortIconImageDesktop"></span>
+                                    </button>
+                                </div>
+                            </form>
+
                             <div class="navbar-nav ms-auto">
                                 <section id="shenkarLogo" class="nav-item">
                                     <a href="" class="nav-link">
@@ -190,8 +236,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     </a>
                                 </section>
                                 <section id="ranProfile" class="nav-item">
-                                    <a href="" class="nav-link"><img src="images/ranProfile.png" alt="ranProfile"
-                                            class="ranProfileImage"></a>
+                                    <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                            alt="ranProfile" class="ranProfileImage"></a>
                                 </section>
                             </div>
                         </div>
