@@ -73,7 +73,7 @@ if (!empty($_POST["loginMail"])) {
             <section id="loginFormContainer">
                 <section id="loginFormContainerBox">
                     <h1><b>Login</b></h1>
-                    <form action="#" method="post" class="needs-validation" novalidate id="loginForm">
+                    <form action="#" method="post" id="loginForm">
                         <div class="form-group">
                             <label for="loginMail"><b>Email: </b></label>
                             <input type="email" class="form-control" name="loginMail" id="loginMail"

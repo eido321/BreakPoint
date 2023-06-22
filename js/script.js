@@ -200,6 +200,23 @@ window.addEventListener("resize", function () {
     });
 })();
 
+(() => {
+    let deleteProjectButtons = document.getElementsByClassName("deleteProjectButton");
+    Array.from(deleteProjectButtons).forEach((button) => {
+        button.addEventListener("click", function (event) {
+            let projId = document.getElementById("projIdElement").getAttribute("data-projId");
+            if (projId != 0) {
+                let modal = new bootstrap.Modal(document.getElementById("exampleModal3"));
+                modal.show();
+                event.preventDefault();
+            } else {
+                let modal = new bootstrap.Modal(document.getElementById("exampleModal1"));
+                modal.show();
+                event.preventDefault();
+            }
+        });
+    });
+})();
 
 let creativityElements = document.getElementsByClassName("StarCn");
 
@@ -219,3 +236,9 @@ Array.from(creativityElements).forEach((element) => {
     }
 });
 
+(() => {
+    let successModal = new bootstrap.Modal(document.getElementById("successModal"));
+    if (successModal != null) { 
+        successModal.show();
+    }
+})();

@@ -56,7 +56,7 @@ if (!$resultAll) {
 
 <?php
 $searchValue = '';
-if (!empty($_GET) && $_GET["query"] != '') {
+if (isset($_GET["query"]) && $_GET["query"] != '') {
     $searchValue = $_GET["query"];
     $queryAll = "SELECT * FROM tbl_214_test WHERE title='" . $_GET["query"] . "'";
     $resultAll = mysqli_query($connection, $queryAll);
@@ -64,6 +64,27 @@ if (!empty($_GET) && $_GET["query"] != '') {
     if (!$resultAll) {
         die("DB query failed.");
     }
+
+}
+?>
+
+<?php
+if (isset($_POST['deleteProject'])) {
+    $queryDel = "DELETE FROM `tbl_214_test` WHERE (`id` = '" . $projId . "');";
+    $resultDel = mysqli_query($connection, $queryDel);
+
+    if (!$resultDel) {
+        die("DB query failed.");
+    }
+    $queryDel = "    DELETE FROM `tbl_214_test_and_users` WHERE (`id` = '" . $projId . "');";
+    $resultDel = mysqli_query($connection, $queryDel);
+
+    if (!$resultDel) {
+        die("DB query failed.");
+    }
+    header("Location: index.php?success");
+
+
 }
 ?>
 
@@ -111,11 +132,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 die("DB query failed.");
             }
         }
+
     }
 
 
     // Redirect the user to a new page
-    header("Location: index.php");
+    header("Location: index.php?success");
 }
 // Get data from query string and escape variables for security
 
@@ -138,6 +160,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['success'])) {
+        echo '
+        <div class="modal" tabindex="-1" id="successModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Success</h5>
+                        <div class="successImage"></div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    }
+
+
+    ?>
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -147,7 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    A personal project file does not exists, To create or edit a project click the
+                    A personal project file does not exists, To create, edit or delete a project click the
                     Add Project button to add a project.
                 </div>
                 <div class="modal-footer">
@@ -174,6 +218,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Pay Attention</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your personal project.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <form method="post">
+                        <input type="submit" class="btn btn-secondary" id="deletePostButton" name="deleteProject"
+                            value="Delete">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="screen">
         <div id="headerContainer">
             <header>
@@ -190,17 +256,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     class="ranProfileImage"></a>
                         </div>
                         <form action="" id="searchFormMobile" method="GET">
-                                <div id="searchBar1" class="input-group">
-                                    <input type="text" class="form-control" id="inputSearch1" name="query"
-                                        placeholder="Search" value="<?php echo $searchValue; ?>">
-                                    <button class="btn btn-outline-secondary" type="submit">
-                                        <span id="search1"></span>
-                                    </button>
-                                    <button class="btn btn-outline-secondary" type="button">
-                                        <span id="sortIconImageMobile"></span>
-                                    </button>
-                                </div>
-                            </form>
+                            <div id="searchBar1" class="input-group">
+                                <input type="text" class="form-control" id="inputSearch1" name="query"
+                                    placeholder="Search" value="<?php echo $searchValue; ?>">
+                                <button class="btn btn-outline-secondary" type="submit">
+                                    <span id="search1"></span>
+                                </button>
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <span id="sortIconImageMobile"></span>
+                                </button>
+                            </div>
+                        </form>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                             aria-label="Toggle navigation" id="humburger">
@@ -335,10 +401,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </button>
         <div class="editImage"></div>
     </form>
-</li>';
+</li>
+<li>
+<a href="" class="deleteProjectButton"><b>Delete Project</b>
+                                <div class="deleteImage"></div>
+                            </a></li>';
                         }
                         ?>
-
                         <li><a href="" class="aLinks"><b>Favorites</b>
                                 <div class="favImage"></div>
                             </a></li>
