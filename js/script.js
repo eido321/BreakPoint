@@ -52,7 +52,7 @@ $(document).ready(function () {
         grayArrow.css('transform', 'rotate(180deg)');
 
         if (comments.css('display') === 'none') {
-            comments.css('display', 'inline');
+            comments.css('display', 'block');
         } else {
             grayArrow.css('transform', 'rotate(360deg)');
             comments.css('display', 'none');

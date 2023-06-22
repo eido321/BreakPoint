@@ -81,16 +81,18 @@ if (isset($_POST["projId"])) {
                             <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
                                     class="ranProfileImage"></a>
                         </div>
-                        <div id="searchBar1" class="input-group">
-                            <input type="text" class="form-control" id="inputSearch1" placeholder="Search"
-                                aria-label="Search for...">
-                            <button class="btn btn-outline-secondary" type="button">
-                                <span id="search1"></span>
-                            </button>
-                            <button class="btn btn-outline-secondary" type="button">
-                                <span id="sortIconImageMobile"></span>
-                            </button>
-                        </div>
+                        <form action="index.php" id="searchFormMobile" method="GET">
+                                <div id="searchBar1" class="input-group">
+                                    <input type="text" class="form-control" id="inputSearch1" name="query"
+                                        placeholder="Search" aria-label="Search for...">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <span id="search1"></span>
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <span id="sortIconImageMobile"></span>
+                                    </button>
+                                </div>
+                            </form>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                             aria-label="Toggle navigation" id="humburger">
@@ -99,16 +101,18 @@ if (isset($_POST["projId"])) {
                     </div>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <div id="desktopNav">
-                            <div id="searchBar2" class="input-group">
-                                <input type="text" class="form-control" id="inputSearch2" placeholder="Search"
-                                    aria-label="Search for...">
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <span id="search2"></span>
-                                </button>
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <span id="sortIconImageDesktop"></span>
-                                </button>
-                            </div>
+                        <form action="index.php" id="searchForm" method="GET">
+                                <div id="searchBar2" class="input-group">
+                                    <input type="text" class="form-control" id="inputSearch2" name="query"
+                                        placeholder="Search" aria-label="Search for...">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <span id="search2"></span>
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <span id="sortIconImageDesktop"></span>
+                                    </button>
+                                </div>
+                            </form>
                             <div class="navbar-nav ms-auto">
                                 <section id="shenkarLogo" class="nav-item">
                                     <a href="" class="nav-link">
@@ -197,7 +201,7 @@ if (isset($_POST["projId"])) {
         <section class="body-conForm">
             <div class="breadCrumbsNoneSideBar">
                 <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a class="breadCrumbsLinks"
-                        href="index.php">Projects</a> > <a class="breadCrumbsLinks" href="indexForm.php">Project
+                        href="index.php">Projects</a> > <a class="breadCrumbsLinks selectedBreadCrumbs" href="indexForm.php">Project
                         Creation</a></span>
             </div>
             <section class="formTitle">
@@ -228,7 +232,9 @@ if (isset($_POST["projId"])) {
                                 <label class="form-label"><b>Project
                                         Type</b></label>
                                 <input type="text" class="form-control inputForm ProjectType" name="ProjectType"
-                                    placeholder="* Social" required>
+                                    placeholder="* Social" required <?php if ($state == 'edit') {
+                                        echo "value=" . $row["proj_type"] . "";
+                                    } ?>>
                             </div>
                         </div>
                         <label>&nbsp;&nbsp;<b>Participant 1</b></label>

@@ -126,6 +126,10 @@ li>a {
     color: #555555;
 }
 
+.breadCrumbsLinks.selectedBreadCrumbs{
+    color: #bd362f;
+}
+
 .breadCrumbs {
     position: absolute;
     font-size: 12px;
@@ -203,7 +207,6 @@ nav {
 
 #searchBar1,
 #searchBar2 {
-    margin-left: 130px;
     display: flex;
 }
 
@@ -422,7 +425,7 @@ li {
     margin-top: 80px;
 }
 
-.rowS{
+.rowS {
     width: 100%;
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -487,11 +490,11 @@ span {
     align-items: center;
 }
 
-#leftColS{
+#leftColS {
     margin-right: 5px;
 }
 
-#rightColS{
+#rightColS {
     margin-left: 5px;
 }
 
@@ -678,15 +681,18 @@ span {
 
 }
 
-.share {
-    width: 80px;
-    height: 40px;
+section .btn.btn-primary.indecViewTitleButton,
+.btn.btn-primary.shareButton {
+    width: 100px;
     background-color: #bd362f;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    border: none;
+}
+
+section .btn.btn-primary.indecViewTitleButton.active,
+.btn.btn-primary.shareButton:focus{
+    background-color: #ed1c24;
+    box-shadow: none;
+    outline: none;
 }
 
 .Rating {
@@ -1011,18 +1017,19 @@ form {
     flex-flow: column;
 }
 
-#loginFormContainerBox,#signFormContainerBox{
+#loginFormContainerBox,
+#signFormContainerBox {
     width: 400px;
     background: #f8f9fa;
     padding: 50px;
     border-radius: 15px;
 }
 
-#loginFormContainerBox{
+#loginFormContainerBox {
     height: 350px;
 }
 
-#signFormContainerBox{
+#signFormContainerBox {
     height: 375px;
 }
 
@@ -1076,24 +1083,25 @@ form {
     margin-bottom: 10px;
 }
 
-#loginLink{
+#loginLink {
     display: flex;
     justify-content: center;
     margin-top: 5px;
 }
 
-#loginLink > a{
+#loginLink>a {
     color: #bd362f;
     text-decoration: none;
 }
 
-#loginLink > a:hover{
+#loginLink>a:hover {
     color: #ed1c24;
 }
 
 /* --searchBar-- */
-#searchForm{
+#searchForm {
     width: 100%;
+    margin-left: 50px;
 }
 
 
@@ -1108,7 +1116,8 @@ form {
 
 }
 
-@media(max-width:737px) {
+@media(max-width:992px) {
+    
 
     .breadCrumbsNoneSideBar,
     .breadCrumbs {
@@ -1162,10 +1171,14 @@ form {
         background-color: #f8f9fa;
     }
 
+    #searchFormMobile{
+        display: flex;
+        justify-content: center;
+    }
+
     #searchBar1,
     #searchBar2 {
-        margin: 0px;
-        width: 50%;
+        width: 80%;
     }
 
 
@@ -1205,8 +1218,8 @@ form {
         display: none;
     }
 
-    .row {
-        margin-bottom: 30px;
+    .row.rowM {
+        display: block;
     }
 
     .projectsBody {
@@ -1260,6 +1273,9 @@ form {
 
     .ranProfileImage {
         width: 45px;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 100%;
     }
 
 
@@ -1280,8 +1296,7 @@ form {
 
     #searchBar1,
     #searchBar2 {
-        margin: 0;
-        width: 50%;
+        width: 90%;
     }
 
     #desktopNav {
@@ -1314,10 +1329,6 @@ form {
 
     .sideBar {
         display: none;
-    }
-
-    .row {
-        margin-bottom: 30px;
     }
 
     .projectsBody {
@@ -1507,18 +1518,7 @@ form {
         border-radius: 5%;
     }
 
-    .share {
-        width: 70px;
-        height: 35px;
-        margin-left: 255px;
-        margin-top: 10px;
-        background-color: #bd362f;
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-    }
+
 
     .ProjectRivew {
         text-decoration: none;
@@ -1898,7 +1898,6 @@ li>a {
 }
 
 #coomentSection {
-    width: 501px;
     height: 100%;
     background-color: #eeeeee;
     display: none;
@@ -1908,12 +1907,13 @@ li>a {
     display: flex;
     flex-flow: column;
     align-items: center;
-
+    text-align: center;
+    width: 15%;
 }
 
 .comment {
-    width: 501px;
     height: 97px;
+    width: 100%;
     display: flex;
     background-color: #eeeeee;
     margin-bottom: 10px;
@@ -1922,8 +1922,8 @@ li>a {
 
 .coomentWhiteBox {
     background-color: white;
-    width: 351px;
     height: 75px;
+    width: 85%;
     margin-left: 10px;
 
 }

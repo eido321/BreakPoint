@@ -113,16 +113,18 @@ if (!$img)
                             <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
                                     class="ranProfileImage"></a>
                         </div>
-                        <div id="searchBar1" class="input-group">
-                            <input type="text" class="form-control" id="inputSearch1" placeholder="Search"
-                                aria-label="Search for...">
-                            <button class="btn btn-outline-secondary" type="button">
-                                <span id="search1"></span>
-                            </button>
-                            <button class="btn btn-outline-secondary" type="button">
-                                <span id="sortIconImageMobile"></span>
-                            </button>
-                        </div>
+                        <form action="index.php" id="searchFormMobile" method="GET">
+                            <div id="searchBar1" class="input-group">
+                                <input type="text" class="form-control" id="inputSearch1" name="query"
+                                    placeholder="Search" aria-label="Search for...">
+                                <button class="btn btn-outline-secondary" type="submit">
+                                    <span id="search1"></span>
+                                </button>
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <span id="sortIconImageMobile"></span>
+                                </button>
+                            </div>
+                        </form>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                             aria-label="Toggle navigation" id="humburger">
@@ -132,16 +134,18 @@ if (!$img)
                     </div>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <div id="desktopNav">
-                            <div id="searchBar2" class="input-group">
-                                <input type="text" class="form-control" id="inputSearch2" placeholder="Search"
-                                    aria-label="Search for...">
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <span id="search2"></span>
-                                </button>
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <span id="sortIconImageDesktop"></span>
-                                </button>
-                            </div>
+                            <form action="index.php" id="searchForm" method="GET">
+                                <div id="searchBar2" class="input-group">
+                                    <input type="text" class="form-control" id="inputSearch2" name="query"
+                                        placeholder="Search" aria-label="Search for...">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <span id="search2"></span>
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <span id="sortIconImageDesktop"></span>
+                                    </button>
+                                </div>
+                            </form>
                             <div class="navbar-nav ms-auto">
                                 <section id="shenkarLogo" class="nav-item">
                                     <a href="" class="nav-link">
@@ -214,7 +218,9 @@ if (!$img)
         <div class="mobileBody">
             <section id="navbar2">
                 <div class="MainTxtMobile">
-                    <span><?php echo ''.$row["title"].' - by '.$row["p1_first_name"].' '.$row["p1_last_name"].' and '.$row["p2_first_name"].' '.$row["p2_last_name"].'' ?></span>
+                    <span>
+                        <?php echo '' . $row["title"] . ' - by ' . $row["p1_first_name"] . ' ' . $row["p1_last_name"] . ' and ' . $row["p2_first_name"] . ' ' . $row["p2_last_name"] . '' ?>
+                    </span>
                 </div>
             </section>
             <span class="ProjectRivew">Description:</span>
@@ -294,7 +300,7 @@ if (!$img)
         <section class="body-con">
             <div class="breadCrumbs">
                 <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="index.php"
-                        class="breadCrumbsLinks">Projects</a> > <a href="indexView.php" class="breadCrumbsLinks">Project
+                        class="breadCrumbsLinks">Projects</a> > <a href="indexView.php" class="breadCrumbsLinks selectedBreadCrumbs">Project
                         View</a></span>
             </div>
             <div class="sideBar">
@@ -347,11 +353,12 @@ if (!$img)
                             <?php echo $row["title"] ?>
                         </h1>
                         <section class="bottns">
-                            <section class="share">
-                                Share
+                            <section>
+                                <a class="btn btn-primary shareButton" href="" role="button">Share</a>
                             </section>
-                            <section class="share">
-                                Bookmark
+                            <section>
+                                <button type="button" class="btn btn-primary indecViewTitleButton"
+                                    data-bs-toggle="button">Bookmark</button>
                             </section>
                         </section>
                     </section>
@@ -428,7 +435,8 @@ if (!$img)
                     <div id="coomentSection">
                         <div class="comment">
                             <section class="CommentName">
-                                <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile" class="ranProfileImage2">Dan Moalem
+                                <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
+                                    class="ranProfileImage2"><b>Dan Moalem</b>
                             </section>
                             <section class="coomentWhiteBox">
                                 <p class="commentsText">
@@ -442,7 +450,7 @@ if (!$img)
                         </div>
                         <div class="comment">
                             <section class="CommentName">
-                                <img src="images/Dana.png" alt="ranProfile" class="ranProfileImage2">Dana Asayag
+                                <img src="images/Dana.png" alt="ranProfile" class="ranProfileImage2"><b>Dana Asayag</b>
                             </section>
                             <section class="coomentWhiteBox">
                                 <p class="commentsText">
@@ -457,7 +465,7 @@ if (!$img)
                         </div>
                         <div class="comment">
                             <section class="CommentName">
-                                <img src="images/Amir.png" alt="ranProfile" class="ranProfileImage2">Dana Asayag
+                                <img src="images/Amir.png" alt="ranProfile" class="ranProfileImage2"><b>Dana Asayag</b>
                             </section>
                             <section class="coomentWhiteBox">
                                 <p class="commentsText">

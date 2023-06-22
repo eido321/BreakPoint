@@ -55,9 +55,12 @@ if (!$resultAll) {
 ?>
 
 <?php
+$searchValue = '';
 if (!empty($_GET) && $_GET["query"] != '') {
+    $searchValue = $_GET["query"];
     $queryAll = "SELECT * FROM tbl_214_test WHERE title='" . $_GET["query"] . "'";
     $resultAll = mysqli_query($connection, $queryAll);
+
     if (!$resultAll) {
         die("DB query failed.");
     }
@@ -66,9 +69,8 @@ if (!empty($_GET) && $_GET["query"] != '') {
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Process the form data and perform necessary actions
-    // ...
     $ProjectName = isset($_POST['ProjectName']) ? mysqli_real_escape_string($connection, $_POST['ProjectName']) : null;
+    $ProjectType = isset($_POST['ProjectType']) ? mysqli_real_escape_string($connection, $_POST['ProjectType']) : null;
     $Participant1Name = isset($_POST['Participant1Name']) ? mysqli_real_escape_string($connection, $_POST['Participant1Name']) : null;
     $Participant1NameSecond = isset($_POST['Participant1NameSecond']) ? mysqli_real_escape_string($connection, $_POST['Participant1NameSecond']) : null;
     $Participant2Name = isset($_POST['Participant2Name']) ? mysqli_real_escape_string($connection, $_POST['Participant2Name']) : null;
@@ -77,13 +79,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $state = isset($_POST['state']) ? $_POST['state'] : null;
     $projIdQ = isset($_POST['projId']) ? $_POST['projId'] : null;
 
-    if ($ProjectName !== null && $Participant1Name !== null && $Participant1NameSecond !== null && $Participant2Name !== null && $Participant2NameSecond !== null && $ProjectType !== null && $state !== null) {
-        // Set: Insert/update data in DB
+    if ($ProjectName !== null && $ProjectType !== null && $Participant1Name !== null && $Participant1NameSecond !== null && $Participant2Name !== null && $Participant2NameSecond !== null && $ProjectType !== null && $state !== null) {
         if ($state == "insert") {
-            $queryAdd = "INSERT INTO tbl_214_test (title, p1_first_name, p1_last_name,p2_first_name,p2_last_name) VALUES ('$ProjectName', '$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond')";
+            $queryAdd = "INSERT INTO tbl_214_test (title,proj_type, p1_first_name, p1_last_name,p2_first_name,p2_last_name) VALUES ('$ProjectName', '$ProjectType' ,'$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond')";
             $resultIns = mysqli_query($connection, $queryAdd);
 
-            if (!$resultIns) { 
+            if (!$resultIns) {
                 die("DB query failed insert.");
             }
             $queryProj = "SELECT * FROM tbl_214_test WHERE title='" . $ProjectName . "'";
@@ -94,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
 
             $tmpProj = mysqli_fetch_assoc($resultIns);
-            $queryAddProj = "INSERT INTO tbl_214_test_and_users (id, u_id) VALUES ('".$tmpProj["id"]."', '".$_SESSION["u_id"]."')";
+            $queryAddProj = "INSERT INTO tbl_214_test_and_users (id, u_id) VALUES ('" . $tmpProj["id"] . "', '" . $_SESSION["u_id"] . "')";
             $resultIns = mysqli_query($connection, $queryAddProj);
 
             if (!$resultIns) {
@@ -103,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
         } else {
-            $queryAdd = "UPDATE tbl_214_test SET title='$ProjectName', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
+            $queryAdd = "UPDATE tbl_214_test SET title='$ProjectName',proj_type='$ProjectType', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
             $resultIns = mysqli_query($connection, $queryAdd);
 
             if (!$resultIns) {
@@ -188,16 +189,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
                                     class="ranProfileImage"></a>
                         </div>
-                        <div id="searchBar1" class="input-group">
-                            <input type="text" class="form-control" id="inputSearch1" placeholder="Search"
-                                aria-label="Search for...">
-                            <button class="btn btn-outline-secondary" type="button">
-                                <span id="search1"></span>
-                            </button>
-                            <button class="btn btn-outline-secondary" type="button">
-                                <span id="sortIconImageMobile"></span>
-                            </button>
-                        </div>
+                        <form action="" id="searchFormMobile" method="GET">
+                                <div id="searchBar1" class="input-group">
+                                    <input type="text" class="form-control" id="inputSearch1" name="query"
+                                        placeholder="Search" value="<?php echo $searchValue; ?>">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <span id="search1"></span>
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <span id="sortIconImageMobile"></span>
+                                    </button>
+                                </div>
+                            </form>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                             aria-label="Toggle navigation" id="humburger">
@@ -209,7 +212,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <form action="" id="searchForm" method="GET">
                                 <div id="searchBar2" class="input-group">
                                     <input type="text" class="form-control" id="inputSearch2" name="query"
-                                        placeholder="Search" aria-label="Search for...">
+                                        placeholder="Search" value="<?php echo $searchValue; ?>">
                                     <button class="btn btn-outline-secondary" type="submit">
                                         <span id="search2"></span>
                                     </button>
@@ -305,7 +308,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <section class="body-con">
             <div class="breadCrumbs">
                 <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="index.php"
-                        class="breadCrumbsLinks">Projects</a></span>
+                        class="breadCrumbsLinks selectedBreadCrumbs">Projects</a></span>
             </div>
             <div class="sideBar">
                 <section class="choiseList">
@@ -354,7 +357,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="container text-center gridBody">
                     <?php
                     $count = 0;
-                    echo '<div class="row">';
+                    echo '<div class="row rowM">';
                     while ($row = mysqli_fetch_assoc($resultAll)) {
                         $img = $row["img_url"];
                         if (!$img)
@@ -371,7 +374,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ';
                         $count++;
                         if ($count % 3 == 0) {
-                            echo '</div><div class="row">';
+                            echo '</div><div class="row rowM">';
                         }
                     }
                     while ($count % 3 != 0) {
