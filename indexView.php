@@ -42,9 +42,24 @@ $img = $row["img_url"];
 $creativity = $row["creativity"];
 if (!$img)
     $img = 'images/projectsImages/default.png';
-
-
 ?>
+<?php
+$queryProj = "SELECT * FROM tbl_214_test_and_users WHERE u_id='"
+    . $_SESSION["u_id"]
+    . "'";
+
+$resultProj = mysqli_query($connection, $queryProj);
+if (!$resultProj) {
+    die("DB query failed.");
+}
+$tmp = mysqli_fetch_assoc($resultProj);
+if ($tmp) {
+    $projIdUser = $tmp["id"];
+} else {
+    $projIdUser = 0;
+}
+?>
+
 
 <!doctype html>
 <html lang="en">
@@ -71,7 +86,7 @@ if (!$img)
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    A personal project file does not exists, To create or edit a project click the
+                    A personal project file does not exists, To create, edit or delete a project click the
                     Add Project button to add a project.
                 </div>
                 <div class="modal-footer">
@@ -205,7 +220,7 @@ if (!$img)
                                 <?php if ($_SESSION["user_type"] != "Guest") {
                                     echo '
 <section>
-    <a class="indexViewButton sideLinks" id="selectedNav" href="indexView.php?projId=' . $projId . ' ">
+    <a class="indexViewButton sideLinks" id="selectedNav" href="indexView.php?projId=' . $projIdUser . ' ">
         <b>View Personal Project</b>
     </a>
 </section>
@@ -216,7 +231,7 @@ if (!$img)
 </section>
 <section>
     <form method="POST" action="indexForm.php">
-        <input type="hidden" name="projId" value="' . $projId . '">
+        <input type="hidden" name="projId" value="' . $projIdUser . '">
         <button type="submit" class="editButton sideLinks">
             <b>Edit Project</b>
         </button>
@@ -370,7 +385,7 @@ if (!$img)
                         <?php if ($_SESSION["user_type"] != "Guest") {
                             echo '
 <li>
-    <a class="indexViewButton sideLinks" href="indexView.php?projId=' . $projId . '">
+    <a class="indexViewButton sideLinks" href="indexView.php?projId=' . $projIdUser . '">
         <b>View Personal Project</b>
         <div class="viewImageList"></div>
     </a>
@@ -383,7 +398,7 @@ if (!$img)
 </li>
 <li>
     <form method="POST" action="indexForm.php">
-        <input type="hidden" name="projId" value="' . $projId . '">
+        <input type="hidden" name="projId" value="' . $projIdUser . '">
         <button type="submit" class="editButton sideLinks">
             <b>Edit Project</b>
         </button>
@@ -597,7 +612,7 @@ if (!$img)
             </div>
         </section>
     </section>
-    <div id="projIdElement" data-projId="<?php echo $projId; ?>"></div>
+    <div id="projIdElement" data-projId="<?php echo $projIdUser; ?>"></div>
     <script src="js/script.js"></script>
 </body>
 

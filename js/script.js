@@ -81,15 +81,6 @@ $likes.on('click', function () {
     }
 });
 
-
-
-
-
-
-
-
-
-
 if (document.getElementById("formFunc")) {
 
     const inputElement = document.getElementById("inputGroupFile01");
@@ -218,6 +209,17 @@ window.addEventListener("resize", function () {
     });
 })();
 
+
+let=
+(() => {
+    if (window.location.href.endsWith("?success")) {
+        let successModal = new bootstrap.Modal(document.getElementById("successModal"));
+        if (successModal != null) {
+            successModal.show();
+        }
+    }
+})();
+
 let creativityElements = document.getElementsByClassName("StarCn");
 
 Array.from(creativityElements).forEach((element) => {
@@ -235,10 +237,3 @@ Array.from(creativityElements).forEach((element) => {
         element.appendChild(div);
     }
 });
-
-(() => {
-    let successModal = new bootstrap.Modal(document.getElementById("successModal"));
-    if (successModal != null) { 
-        successModal.show();
-    }
-})();
