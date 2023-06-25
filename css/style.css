@@ -75,6 +75,15 @@ li>a {
     border-top: 7px solid #bd362f;
 }
 
+.commentMobileExpandButton{
+    margin-left: 3px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 14px solid #bd362f;
+}
+
 .leftCommentSectionDown {
     display: flex;
     margin: 10px 0px 20px 0px;
@@ -121,12 +130,16 @@ li>a {
     background-color: #eeeeee;
 }
 
+.sideLinks:hover{
+color: #bd362f;
+}
+
 .breadCrumbsLinks {
     text-decoration: none;
     color: #555555;
 }
 
-.breadCrumbsLinks.selectedBreadCrumbs{
+.breadCrumbsLinks.selectedBreadCrumbs {
     color: #bd362f;
 }
 
@@ -320,7 +333,8 @@ nav {
 
 .indexViewButton,
 .addProjectButton,
-.editButton {
+.editButton,
+.deleteProjectButton {
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
     font-size: var(--bs-nav-link-font-size);
     font-weight: var(--bs-nav-link-font-weight);
@@ -388,7 +402,7 @@ li {
     margin-left: 78px;
 }
 
-.deleteImage{
+.deleteImage {
     margin-left: 60px;
 }
 
@@ -408,12 +422,13 @@ li {
     background-color: #555555;
 }
 
-#deletePostButton{
+#deletePostButton {
     border: none;
     background-color: #bd362f;
 }
 
-#deletePostButton:hover,#deletePostButton:focus{
+#deletePostButton:hover,
+#deletePostButton:focus {
     background-color: #ed1c24;
 }
 
@@ -672,8 +687,13 @@ span {
 .FileLogo {
     height: 20px;
     width: 20px;
-
 }
+
+.FileLogoSmall{
+    height: 18px;
+    width: 18px;
+    margin-left: 40px;
+} 
 
 .stars {
     height: 15px;
@@ -702,7 +722,7 @@ section .btn.btn-primary.indecViewTitleButton,
 }
 
 section .btn.btn-primary.indecViewTitleButton.active,
-.btn.btn-primary.shareButton:focus{
+.btn.btn-primary.shareButton:hover {
     background-color: #ed1c24;
     box-shadow: none;
     outline: none;
@@ -782,7 +802,7 @@ section .btn.btn-primary.indecViewTitleButton.active,
 .View-con {
     height: fit-content;
     width: 100%;
-    min-height: 100vh;
+    min-height: 110vh;
     display: flex;
     margin-left: 209px;
     margin-top: 81px;
@@ -806,11 +826,6 @@ section .btn.btn-primary.indecViewTitleButton.active,
 
 .ProjectD {
     display: none;
-}
-
-.share2 {
-    display: none;
-
 }
 
 .GreyLine2 {
@@ -1130,7 +1145,7 @@ form {
 }
 
 @media(max-width:992px) {
-    
+
 
     .breadCrumbsNoneSideBar,
     .breadCrumbs {
@@ -1139,7 +1154,8 @@ form {
 
     .indexViewButton,
     .addProjectButton,
-    .editButton {
+    .editButton,
+    .deleteProjectButton {
         display: block;
     }
 
@@ -1184,7 +1200,7 @@ form {
         background-color: #f8f9fa;
     }
 
-    #searchFormMobile{
+    #searchFormMobile {
         display: flex;
         justify-content: center;
     }
@@ -1522,16 +1538,18 @@ form {
 
     .Ad {
         display: flex;
-        align-items: center;
         justify-content: center;
-        color: #555555;
-        border: 1px solid gray;
-        width: 90%;
-        margin-top: 10px;
-        border-radius: 5%;
+        align-items: center;
+        height: 40%;
     }
 
-
+    #AdSection {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 60%;
+    }
 
     .ProjectRivew {
         text-decoration: none;
@@ -1541,24 +1559,32 @@ form {
         justify-content: center;
     }
 
+    .dropdown.filesDropDown {
+        width: 80%;
+    }
+
+    .btn.btn-secondary.dropdown-toggle.filesDropDown {
+        background-color: #bd362f;
+        border: none;
+        width: 100%;
+    }
+
+    .dropdown-menu > li >a{
+        display: flex;
+        align-items: center;
+    }
+
+    .FileLogo{
+        width: 75px;
+        height: 75px;
+    }
+
     .FileLogo2 {
         color: #555555;
         margin-bottom: 5px;
-
     }
 
-    .share2 {
-        width: 80px;
-        height: 35px;
-        background-color: #bd362f;
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #eeeeee;
-        margin-top: 5px;
-        margin-left: 5px;
-    }
+
 
     .Rating {
         height: 100%;
@@ -1578,7 +1604,7 @@ form {
         width: 100vw;
         background-color: #eeeeee;
         justify-content: center;
-
+        align-items: center;
     }
 
 
@@ -1594,14 +1620,43 @@ form {
 
 
 
-    .bottomLefSide {
-
+    .mobileComments{
+        display: flex;
         background-color: #eeeeee;
-        width: 80%;
-        margin-left: 10%;
-        border-radius: 10px;
-        margin-top: 20px;
+margin: 20px;
+padding: 10px;
+    }
 
+    #mobileCommentsLeft{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        text-align: center;
+    }
+
+
+
+    #mobileCommentsRight{
+        width: 80%;
+        display: flex;
+        align-items: center;
+    }
+
+    #mobileCommentsRight > section{
+        display: flex;
+        width: 90%;
+    }
+
+    #mobileCommentsRight > section >section{
+        display: flex;
+        align-items: center;
+    }
+
+
+    .form-control.commentInput{
+        height: 50px;
     }
 
     .GreyLine2 {
@@ -1651,7 +1706,7 @@ form {
 
     .middleLeft {
         width: 50%;
-        width: 50%;
+        height: 100%;
         display: flex;
         flex-flow: column;
         justify-content: center;
@@ -1713,11 +1768,6 @@ form {
     .commentSec {
         display: flex;
         align-items: center;
-    }
-
-    .FileLogo {
-        height: 75px;
-        width: 75px;
     }
 
 }
@@ -1803,7 +1853,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-.deleteImage{
+.deleteImage {
     background: url(../images/trash.png);
     width: 20px;
     height: 20px;
@@ -1811,7 +1861,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-.successImage{
+.successImage {
     background: url(../images/check.png);
     width: 32px;
     height: 32px;
@@ -1893,7 +1943,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-.FileLogo {
+.FileLogo,.FileLogoSmall {
     background: url(../images/REEDfile.png);
     background-size: contain;
     background-repeat: no-repeat;

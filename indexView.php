@@ -98,6 +98,28 @@ if (!$img)
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Pay Attention</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your personal project.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <form method="post">
+                        <input type="submit" class="btn btn-secondary" id="deletePostButton" name="deleteProject"
+                            value="Delete">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="screen">
         <div id="headerContainer">
             <header>
@@ -183,30 +205,35 @@ if (!$img)
                                 <?php if ($_SESSION["user_type"] != "Guest") {
                                     echo '
 <section>
-    <a class="indexViewButton" id="selectedNav" href="indexView.php?projId=' . $projId . ' ">
+    <a class="indexViewButton sideLinks" id="selectedNav" href="indexView.php?projId=' . $projId . ' ">
         <b>View Personal Project</b>
     </a>
 </section>
 <section>
-    <a href="indexForm.php" class="addProjectButton">
+    <a href="indexForm.php" class="addProjectButton sideLinks">
         <b>Add Personal Project</b>
     </a>
 </section>
 <section>
     <form method="POST" action="indexForm.php">
         <input type="hidden" name="projId" value="' . $projId . '">
-        <button type="submit" class="editButton">
+        <button type="submit" class="editButton sideLinks">
             <b>Edit Project</b>
         </button>
     </form>
+</section>
+<section class="nav-item sideLinks">
+        <a href="" class="deleteProjectButton nav-item">
+    <b>Delete Project</b>
+    </a>
 </section>';
                                 }
                                 ?>
                                 <section class="nav-item">
-                                    <a href="" class="nav-link"><b>Settings</b></a>
+                                    <a href="" class="nav-link sideLinks"><b>Settings</b></a>
                                 </section>
                                 <section class="nav-item">
-                                    <a href="logout.php" class="nav-link"><b>Log Out</b></a>
+                                    <a href="logout.php" class="nav-link sideLinks"><b>Log Out</b></a>
                                 </section>
 
                             </div>
@@ -233,15 +260,34 @@ if (!$img)
             <div class="middle">
                 <div class="middleLeft">
                     <div class="Ad">
-                        Additnal Project files <div class="FileLogo2"></div>
+
+                        <div class="dropdown filesDropDown">
+                            <button class="btn btn-secondary dropdown-toggle filesDropDown" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Project files
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">example.zip<div class="FileLogoSmall"></div></a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">example.zip<div class="FileLogoSmall"></div></a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">example.zip<div class="FileLogoSmall"></div></a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">example.zip<div class="FileLogoSmall"></div></a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">example.zip<div class="FileLogoSmall"></div></a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">example.zip<div class="FileLogoSmall"></div></a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">example.zip<div class="FileLogoSmall"></div></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <section class="share2">
-                            Share
-                        </section>
-                        <section class="share2">
-                            Bookmark
-                        </section>
+                    <div id="AdSection">
+                        <a class="btn btn-primary shareButton" href="" role="button">Share</a>
+                        <button type="button" class="btn btn-primary indecViewTitleButton"
+                            data-bs-toggle="button">Bookmark</button>
                     </div>
 
                 </div>
@@ -291,16 +337,31 @@ if (!$img)
                     <div class="FileLogo"></div>
                 </section>
             </div>
-            <section class="bottomLefSide">
-                <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile" class="ranProfileImage2">
-                <br>
-                <span>&nbsp;&nbsp;Menachem Avshalom</span>
+            <section class="mobileComments">
+                <section id="mobileCommentsLeft">
+                    <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile" class="ranProfileImage2">
+                    <span>
+                        <?php echo $tmpUser["name"]; ?>
+                    </span>
+                </section>
+                <section id="mobileCommentsRight">
+                    <section>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control commentInput" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default" placeholder="Add a comment...">
+                        </div>
+                        <section>
+                            <button class="commentMobileExpandButton"></button>
+                        </section>
+                    </section>
+                </section>
             </section>
         </div>
         <section class="body-con">
             <div class="breadCrumbs">
                 <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="index.php"
-                        class="breadCrumbsLinks">Projects</a> > <a href="indexView.php" class="breadCrumbsLinks selectedBreadCrumbs">Project
+                        class="breadCrumbsLinks">Projects</a> > <a href="indexView.php"
+                        class="breadCrumbsLinks selectedBreadCrumbs">Project
                         View</a></span>
             </div>
             <div class="sideBar">
@@ -309,13 +370,13 @@ if (!$img)
                         <?php if ($_SESSION["user_type"] != "Guest") {
                             echo '
 <li>
-    <a class="indexViewButton" href="indexView.php?projId=' . $projId . '">
+    <a class="indexViewButton sideLinks" href="indexView.php?projId=' . $projId . '">
         <b>View Personal Project</b>
         <div class="viewImageList"></div>
     </a>
 </li>
 <li>
-    <a href="indexForm.php" class="addProjectButton" >
+    <a href="indexForm.php" class="addProjectButton sideLinks" >
         <b>Add Personal Project</b>
         <div class="addImage"></div>
     </a>
@@ -323,22 +384,26 @@ if (!$img)
 <li>
     <form method="POST" action="indexForm.php">
         <input type="hidden" name="projId" value="' . $projId . '">
-        <button type="submit" class="editButton">
+        <button type="submit" class="editButton sideLinks">
             <b>Edit Project</b>
         </button>
         <div class="editImage"></div>
     </form>
-</li>';
+</li>
+<li>
+<a href="" class="deleteProjectButton sideLinks"><b>Delete Project</b>
+                                <div class="deleteImage"></div>
+                            </a></li>';
                         }
                         ?>
 
-                        <li><a href="" class="aLinks"><b>Favorites</b>
+                        <li><a href="" class="aLinks sideLinks"><b>Favorites</b>
                                 <div class="favImage"></div>
                             </a></li>
-                        <li><a href="" class="aLinks"><b>Recent</b>
+                        <li><a href="" class="aLinks sideLinks"><b>Recent</b>
                                 <div class="recImage"></div>
                             </a></li>
-                        <li><a href="logout.php"><b>Log Out</b>
+                        <li><a href="logout.php" class="sideLinks"><b>Log Out</b>
                                 <div class="logout"></div>
                             </a></li>
 

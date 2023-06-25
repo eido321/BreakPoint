@@ -325,29 +325,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <?php if ($_SESSION["user_type"] != "Guest") {
                                     echo '
 <section class="nav-item">
-    <a class="indexViewButton nav-item" href="indexView.php?projId=' . $projId . '">
+    <a class="indexViewButton nav-item sideLinks" href="indexView.php?projId=' . $projId . '">
         <b>View Personal Project</b>
     </a>
 </section>
-<section class="nav-item">
+<section class="nav-item sideLinks">
     <a href="indexForm.php" class="addProjectButton nav-item">
         <b>Add Personal Project</b>
     </a>
 </section>
-<section class="nav-item">
+<section class="nav-item sideLinks">
     <form method="POST" action="indexForm.php">
         <input type="hidden" name="projId" value="' . $projId . '">
         <button type="submit" class="editButton nav-item">
             <b>Edit Project</b>
         </button>
     </form>
+</section>
+    <section class="nav-item sideLinks">
+        <a href="" class="deleteProjectButton nav-item">
+    <b>Delete Project</b>
+    </a>
 </section>';
                                 }
                                 ?>
-                                <section class="nav-item">
+                                <section class="nav-item sideLinks">
                                     <a href="" class="nav-link"><b>Settings</b></a>
                                 </section>
-                                <section class="nav-item">
+                                <section class="nav-item sideLinks">
                                     <a href="logout.php" class="nav-link"><b>Log Out</b></a>
                                 </section>
                             </div>
@@ -382,13 +387,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <?php if ($_SESSION["user_type"] != "Guest") {
                             echo '
 <li>
-    <a class="indexViewButton" href="indexView.php?projId=' . $projId . '">
+    <a class="indexViewButton sideLinks" href="indexView.php?projId=' . $projId . '">
         <b>View Personal Project</b>
         <div class="viewImageList"></div>
     </a>
 </li>
 <li>
-    <a href="indexForm.php" class="addProjectButton" >
+    <a href="indexForm.php" class="addProjectButton sideLinks" >
         <b>Add Personal Project</b>
         <div class="addImage"></div>
     </a>
@@ -396,25 +401,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <li>
     <form method="POST" action="indexForm.php">
         <input type="hidden" name="projId" value="' . $projId . '">
-        <button type="submit" class="editButton">
+        <button type="submit" class="editButton sideLinks">
             <b>Edit Project</b>
         </button>
         <div class="editImage"></div>
     </form>
 </li>
 <li>
-<a href="" class="deleteProjectButton"><b>Delete Project</b>
+<a href="" class="deleteProjectButton sideLinks"><b>Delete Project</b>
                                 <div class="deleteImage"></div>
                             </a></li>';
                         }
                         ?>
-                        <li><a href="" class="aLinks"><b>Favorites</b>
+                        <li><a href="" class="aLinks sideLinks"><b>Favorites</b>
                                 <div class="favImage"></div>
                             </a></li>
-                        <li><a href="" class="aLinks"><b>Recent</b>
+                        <li><a href="" class="aLinks sideLinks"><b>Recent</b>
                                 <div class="recImage"></div>
                             </a></li>
-                        <li><a href="logout.php"><b>Log Out</b>
+                        <li><a href="logout.php" class="sideLinks"><b>Log Out</b>
                                 <div class="logout"></div>
                             </a></li>
 
