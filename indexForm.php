@@ -34,16 +34,16 @@ if (isset($_POST["projId"])) {
     $projId = $_POST["projId"];
     $query = "SELECT * FROM tbl_214_test WHERE id=" . $projId;
     $result = mysqli_query($connection, $query);
-    $state = "insert";
+    $state = "Creation";
 
     if ($result) {
         $row = mysqli_fetch_assoc($result); //there is only 1 with id=X
         $title = $row["title"];
-        $state = "edit";
+        $state = "Edit";
     }
 } else {
     $projId = null;
-    $state = "insert";
+    $state = "Creation";
 }
 // else die("DB query failed.");//i dont want it to fail. i want it to cont.
 
@@ -86,15 +86,15 @@ if (isset($_POST["projId"])) {
         </div>
         <section class="body-conForm">
             <div class="breadCrumbsNoneSideBar">
-                <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a class="breadCrumbsLinks"
-                        href="index.php">Projects</a> > <a class="breadCrumbsLinks selectedBreadCrumbs"
+                <span><a class="breadCrumbsLinks"
+                        href="index.php">All Projects</a> > <a class="breadCrumbsLinks selectedBreadCrumbs"
                         href="indexForm.php">Project
-                        Creation</a></span>
+                        <?php echo $state; ?></a></span>
             </div>
             <section class="formTitle">
                 <p>&nbsp;
                     <?php
-                    if ($state == 'insert') {
+                    if ($state == 'insert') {   
                         echo "Project Creation";
                     } else {
                         echo "Edit Project";
@@ -111,7 +111,7 @@ if (isset($_POST["projId"])) {
                                         Name
                                     </b></label>
                                 <input type="text" class="form-control inputForm validationServer01" name="ProjectName"
-                                    placeholder="* Microsoft" required <?php if ($state == 'edit') {
+                                    placeholder="* Microsoft" required <?php if ($state == 'Edit') {
                                         echo "value='" . htmlspecialchars($title, ENT_QUOTES) . "'";
                                     } ?>>
                             </div>
@@ -119,7 +119,7 @@ if (isset($_POST["projId"])) {
                                 <label class="form-label"><b>Project
                                         Type</b></label>
                                 <input type="text" class="form-control inputForm ProjectType" name="ProjectType"
-                                    placeholder="* Social" required <?php if ($state == 'edit') {
+                                    placeholder="* Social" required <?php if ($state == 'Edit') {
                                         echo "value=" . $row["proj_type"] . "";
                                     } ?>>
                             </div>
@@ -130,15 +130,15 @@ if (isset($_POST["projId"])) {
                                 <label class="form-label"><b>First
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm ProjectName" name="Participant1Name"
-                                    placeholder="* Bill" required <?php if ($state == 'edit') {
+                                    placeholder="* Bill" required <?php if ($state == 'Edit') {
                                         echo "value=" . $row["p1_first_name"] . "";
                                     } ?>>
                             </div>
                             <div class="mb-3 formInfo">
-                                <label class="form-label"><b>Family
+                                <label class="form-label"><b>Last
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm ProjectType"
-                                    name="Participant1NameSecond" placeholder="* Gates" required <?php if ($state == 'edit') {
+                                    name="Participant1NameSecond" placeholder="* Gates" required <?php if ($state == 'Edit') {
                                         echo "value=" . $row["p1_last_name"] . "";
                                     } ?>>
                             </div>
@@ -149,15 +149,15 @@ if (isset($_POST["projId"])) {
                                 <label class="form-label"><b>First
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm ProjectName" name="Participant2Name"
-                                    placeholder="* John" required <?php if ($state == 'edit') {
+                                    placeholder="* John" required <?php if ($state == 'Edit') {
                                         echo "value=" . $row["p2_first_name"] . "";
                                     } ?>>
                             </div>
                             <div class="mb-3 formInfo">
-                                <label class="form-label"><b>Family
+                                <label class="form-label"><b>Last
                                         Name</b></label>
                                 <input type="text" class="form-control inputForm ProjectType"
-                                    name="Participant2NameSecond" placeholder="* Doe" required <?php if ($state == 'edit') {
+                                    name="Participant2NameSecond" placeholder="* Doe" required <?php if ($state == 'Edit') {
                                         echo "value=" . $row["p2_last_name"] . "";
                                     } ?>>
                             </div>

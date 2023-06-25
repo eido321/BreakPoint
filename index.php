@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $projIdQ = isset($_POST['projId']) ? $_POST['projId'] : null;
 
     if ($ProjectName !== null && $ProjectType !== null && $Participant1Name !== null && $Participant1NameSecond !== null && $Participant2Name !== null && $Participant2NameSecond !== null && $ProjectType !== null && $state !== null) {
-        if ($state == "insert") {
+        if ($state == "Creation") {
             $queryAdd = "INSERT INTO tbl_214_test (title,proj_type, p1_first_name, p1_last_name,p2_first_name,p2_last_name) VALUES ('$ProjectName', '$ProjectType' ,'$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond')";
             $resultIns = mysqli_query($connection, $queryAdd);
 
@@ -312,26 +312,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </div>
                         <div id="mobileNav">
                             <div class="navbar-nav " id="mobileNavContainer">
-                                <section class="nav-item">
-                                    <a href="" class="nav-link"><b>Home Page</b></a>
-                                </section>
-                                <section class="nav-item">
-                                    <a href="index.php" class="nav-link" id="selectedNav"><b>Projects</b></a>
-                                    <div></div>
-                                </section>
-                                <section class="nav-item">
-                                    <a href="" class="nav-link"><b>Contests</b></a>
-                                </section>
                                 <?php if ($_SESSION["user_type"] != "Guest") {
                                     echo '
+                                    <section class="nav-item" >
+    <a class="nav-item sideLinks allProjectButton" id="selectedNav" href="index.php">
+        <b>All Projects</b>
+    </a>
+</section>
 <section class="nav-item">
     <a class="indexViewButton nav-item sideLinks" href="indexView.php?projId=' . $projId . '">
-        <b>View Personal Project</b>
+        <b>My Project</b>
     </a>
 </section>
 <section class="nav-item sideLinks">
     <a href="indexForm.php" class="addProjectButton nav-item">
-        <b>Add Personal Project</b>
+        <b>Add Project</b>
     </a>
 </section>
 <section class="nav-item sideLinks">
@@ -378,23 +373,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         <section class="body-con">
             <div class="breadCrumbs">
-                <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="index.php"
-                        class="breadCrumbsLinks selectedBreadCrumbs">Projects</a></span>
+                <span><a href="index.php" class="breadCrumbsLinks selectedBreadCrumbs">All Projects</a></span>
             </div>
             <div class="sideBar">
                 <section class="choiseList">
                     <ul class="triangle-list">
                         <?php if ($_SESSION["user_type"] != "Guest") {
-                            echo '
+                            echo '<li>
+                            <a class="sideLinks" href="index.php">
+                                <b>All Projects</b>
+                                <div class="allProjects"></div>
+                            </a>
+                        </li>
 <li>
     <a class="indexViewButton sideLinks" href="indexView.php?projId=' . $projId . '">
-        <b>View Personal Project</b>
+        <b>My Project</b>
         <div class="viewImageList"></div>
     </a>
 </li>
 <li>
     <a href="indexForm.php" class="addProjectButton sideLinks" >
-        <b>Add Personal Project</b>
+        <b>Add Project</b>
         <div class="addImage"></div>
     </a>
 </li>

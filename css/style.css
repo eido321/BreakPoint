@@ -75,7 +75,7 @@ li>a {
     border-top: 7px solid #bd362f;
 }
 
-.commentMobileExpandButton{
+.commentMobileExpandButton {
     margin-left: 3px;
     width: 0;
     height: 0;
@@ -130,8 +130,8 @@ li>a {
     background-color: #eeeeee;
 }
 
-.sideLinks:hover{
-color: #bd362f;
+.sideLinks:hover {
+    color: #bd362f;
 }
 
 .breadCrumbsLinks {
@@ -334,7 +334,8 @@ nav {
 .indexViewButton,
 .addProjectButton,
 .editButton,
-.deleteProjectButton {
+.deleteProjectButton,
+.allProjectButton {
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
     font-size: var(--bs-nav-link-font-size);
     font-weight: var(--bs-nav-link-font-weight);
@@ -363,12 +364,12 @@ li {
 }
 
 .triangle-list li::before {
-    content: "\25B6";
+    content: "●";
     display: inline-block;
     width: 0.7em;
     height: 0.6em;
     margin-right: 0.5em;
-    font-size: 0.8em;
+    font-size: 1em;
     color: #bd362f;
 }
 
@@ -379,7 +380,7 @@ li {
 }
 
 .viewImageList {
-    margin-left: 10px;
+    margin-left: 83px;
 }
 
 .viewImage {
@@ -395,7 +396,7 @@ li {
 }
 
 .addImage {
-    margin-left: 14px;
+    margin-left: 76px;
 }
 
 .editImage {
@@ -689,11 +690,11 @@ span {
     width: 20px;
 }
 
-.FileLogoSmall{
+.FileLogoSmall {
     height: 18px;
     width: 18px;
     margin-left: 40px;
-} 
+}
 
 .stars {
     height: 15px;
@@ -716,7 +717,12 @@ span {
 
 section .btn.btn-primary.indecViewTitleButton,
 .btn.btn-primary.shareButton {
-    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    width: 50px;
+    height: 36px;
     background-color: #bd362f;
     border: none;
 }
@@ -724,9 +730,22 @@ section .btn.btn-primary.indecViewTitleButton,
 section .btn.btn-primary.indecViewTitleButton.active,
 .btn.btn-primary.shareButton:hover {
     background-color: #ed1c24;
+    animation: glowing 3s infinite;
     box-shadow: none;
     outline: none;
 }
+
+@keyframes glowing {
+    0% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+  }
 
 .Rating {
     width: 100%;
@@ -1132,6 +1151,10 @@ form {
     margin-left: 50px;
 }
 
+.selectedNavDesktop {
+    color: #bd362f;
+}
+
 
 @media(max-width:1032px) {
     .projectImages {
@@ -1155,7 +1178,8 @@ form {
     .indexViewButton,
     .addProjectButton,
     .editButton,
-    .deleteProjectButton {
+    .deleteProjectButton,
+    .allProjectButton {
         display: block;
     }
 
@@ -1228,8 +1252,6 @@ form {
     #selectedNav {
         color: #bd362f;
         border-bottom: 3px solid #bd362f;
-
-
     }
 
     #mobileNavContainer {
@@ -1569,12 +1591,12 @@ form {
         width: 100%;
     }
 
-    .dropdown-menu > li >a{
+    .dropdown-menu>li>a {
         display: flex;
         align-items: center;
     }
 
-    .FileLogo{
+    .FileLogo {
         width: 75px;
         height: 75px;
     }
@@ -1620,14 +1642,14 @@ form {
 
 
 
-    .mobileComments{
+    .mobileComments {
         display: flex;
         background-color: #eeeeee;
-margin: 20px;
-padding: 10px;
+        margin: 20px;
+        padding: 10px;
     }
 
-    #mobileCommentsLeft{
+    #mobileCommentsLeft {
         display: flex;
         flex-flow: column;
         justify-content: center;
@@ -1638,24 +1660,24 @@ padding: 10px;
 
 
 
-    #mobileCommentsRight{
+    #mobileCommentsRight {
         width: 80%;
         display: flex;
         align-items: center;
     }
 
-    #mobileCommentsRight > section{
+    #mobileCommentsRight>section {
         display: flex;
         width: 90%;
     }
 
-    #mobileCommentsRight > section >section{
+    #mobileCommentsRight>section>section {
         display: flex;
         align-items: center;
     }
 
 
-    .form-control.commentInput{
+    .form-control.commentInput {
         height: 50px;
     }
 
@@ -1823,10 +1845,19 @@ li>a {
 .viewImage,
 .viewImageList {
     background: url(../images/eye.png);
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.allProjects {
+    background: url(../images/allProjects.png);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 77px;
 }
 
 .addImage {
@@ -1890,8 +1921,8 @@ li>a {
 #search1,
 #search2 {
     background: url(../images/Search.png);
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -1899,8 +1930,26 @@ li>a {
 #sortIconImageMobile,
 #sortIconImageDesktop {
     background: url(../images/sortSearch.png);
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+#sortIconImageDesktopC,
+#sortIconImageMobileC {
+    background: url(../images/sortSearchComment.png);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.shareButtonImg{
+    background: url(../images/share.png);
+    width: 23px;
+    height: 23px;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -1943,7 +1992,8 @@ li>a {
     background-repeat: no-repeat;
 }
 
-.FileLogo,.FileLogoSmall {
+.FileLogo,
+.FileLogoSmall {
     background: url(../images/REEDfile.png);
     background-size: contain;
     background-repeat: no-repeat;

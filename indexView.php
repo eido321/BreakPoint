@@ -158,7 +158,7 @@ if ($tmp) {
                                     <span id="search1"></span>
                                 </button>
                                 <button class="btn btn-outline-secondary" type="button">
-                                    <span id="sortIconImageMobile"></span>
+                                    <span id="sortIconImageMobileC"></span>
                                 </button>
                             </div>
                         </form>
@@ -207,26 +207,20 @@ if ($tmp) {
                         </div>
                         <div id="mobileNav">
                             <div class="navbar-nav " id="mobileNavContainer">
-                                <section class="nav-item">
-                                    <a href="" class="nav-link"><b>Home Page</b></a>
-                                </section>
-                                <section class="nav-item">
-                                    <a href="index.php" class="nav-link"><b>Projects</b></a>
-                                    <div></div>
-                                </section>
-                                <section class="nav-item">
-                                    <a href="" class="nav-link"><b>Contests</b></a>
-                                </section>
                                 <?php if ($_SESSION["user_type"] != "Guest") {
                                     echo '
+                                    <section class="nav-item">
+    <a class="nav-item sideLinks allProjectButton" href="index.php">
+        <b>All Projects</b>
+    </a>
 <section>
     <a class="indexViewButton sideLinks" id="selectedNav" href="indexView.php?projId=' . $projIdUser . ' ">
-        <b>View Personal Project</b>
+        <b>My Project</b>
     </a>
 </section>
 <section>
     <a href="indexForm.php" class="addProjectButton sideLinks">
-        <b>Add Personal Project</b>
+        <b>Add Project</b>
     </a>
 </section>
 <section>
@@ -302,7 +296,7 @@ if ($tmp) {
                     <div id="AdSection">
                         <a class="btn btn-primary shareButton" href="" role="button">Share</a>
                         <button type="button" class="btn btn-primary indecViewTitleButton"
-                            data-bs-toggle="button">Bookmark</button>
+                            data-bs-toggle="button">&#x2665;</button>
                     </div>
 
                 </div>
@@ -374,25 +368,31 @@ if ($tmp) {
         </div>
         <section class="body-con">
             <div class="breadCrumbs">
-                <span><a href="" class="breadCrumbsLinks">Home Page</a> > <a href="index.php"
-                        class="breadCrumbsLinks">Projects</a> > <a href="indexView.php"
+                <span><a href="index.php"
+                        class="breadCrumbsLinks">All Projects</a> > <a href="indexView.php"
                         class="breadCrumbsLinks selectedBreadCrumbs">Project
-                        View</a></span>
+                        <?php echo $row["title"]; ?></a></span>
             </div>
             <div class="sideBar">
                 <section class="choiseList">
                     <ul class="triangle-list">
                         <?php if ($_SESSION["user_type"] != "Guest") {
                             echo '
+                            <li>
+    <a class="sideLinks" href="index.php">
+        <b>All Projects</b>
+        <div class="allProjects"></div>
+    </a>
+</li>
 <li>
     <a class="indexViewButton sideLinks" href="indexView.php?projId=' . $projIdUser . '">
-        <b>View Personal Project</b>
+        <b>My Project</b>
         <div class="viewImageList"></div>
     </a>
 </li>
 <li>
     <a href="indexForm.php" class="addProjectButton sideLinks" >
-        <b>Add Personal Project</b>
+        <b>Add Project</b>
         <div class="addImage"></div>
     </a>
 </li>
@@ -434,11 +434,11 @@ if ($tmp) {
                         </h1>
                         <section class="bottns">
                             <section>
-                                <a class="btn btn-primary shareButton" href="" role="button">Share</a>
+                                <a class="btn btn-primary shareButton" href="" role="button"><div class="shareButtonImg"></div></a>
                             </section>
                             <section>
                                 <button type="button" class="btn btn-primary indecViewTitleButton"
-                                    data-bs-toggle="button">Bookmark</button>
+                                    data-bs-toggle="button">&#x2665;</button>
                             </section>
                         </section>
                     </section>
@@ -502,7 +502,7 @@ if ($tmp) {
                                 </section>
                                 <section>
                                     <span class="leftCommentSectionText2">Sort</span>
-                                    <span class="leftCommentSectionText2Icon" id="sortIconImageDesktop"></span>
+                                    <span class="leftCommentSectionText2Icon" id="sortIconImageDesktopC"></span>
                                 </section>
                             </section>
                             <section class="leftCommentSectionDown">
