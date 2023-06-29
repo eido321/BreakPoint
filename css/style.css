@@ -164,6 +164,23 @@ header {
     height: 100%;
 }
 
+#headerRight {
+    width: 100%;
+    padding-top: 6.5px;
+    padding-bottom: 6.5px;
+    position: relative;
+}
+
+#headerRight::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
 .formTitle {
     font-size: 24px;
     font-weight: bold;
@@ -195,6 +212,7 @@ nav {
 
 #navbar {
     height: 80px;
+    padding: 0;
 }
 
 #navbarLogin {
@@ -221,6 +239,10 @@ nav {
 #searchBar1,
 #searchBar2 {
     display: flex;
+}
+
+#searchBar2{
+    width: 60%;
 }
 
 .leftSearchBar {
@@ -269,7 +291,6 @@ nav {
 
 #shenkarLogoImage {
     width: 137px;
-    margin-left: 100px;
 }
 
 .rightHeaderLinks {
@@ -309,7 +330,11 @@ nav {
 .projectContainer {
     display: flex;
     flex-flow: column;
+    background-color: #eeeeee;
+    padding: 25px;
+    border-radius: 10px;
 }
+
 
 #desktopNav {
     display: flex;
@@ -329,6 +354,7 @@ nav {
     flex-flow: column;
     align-items: center;
     position: fixed;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 .indexViewButton,
@@ -447,7 +473,7 @@ li {
     min-height: 100vh;
     height: fit-content;
     width: 100%;
-    background-color: #eeeeee;
+    background-color: #f8f9fa;
 }
 
 .gridBody {
@@ -460,6 +486,7 @@ li {
     --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 10px;
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
@@ -478,6 +505,7 @@ li {
 }
 
 .projectName {
+    margin-top: 5px;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -516,6 +544,9 @@ span {
     flex: 1 0 0%;
     flex-direction: column;
     justify-content: center;
+}
+
+.col{
     align-items: center;
 }
 
@@ -1077,7 +1108,7 @@ form {
 }
 
 #signFormContainerBox {
-    height: 375px;
+    height: 425px;
 }
 
 #loginFormContainer>section>h1 {
@@ -1149,6 +1180,12 @@ form {
 #searchForm {
     width: 100%;
     margin-left: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#logoContainer{
+    margin-right: 0px;
 }
 
 .selectedNavDesktop {
@@ -1156,9 +1193,10 @@ form {
 }
 
 
-@media(max-width:1032px) {
+@media(max-width:1200px) {
     .projectImages {
-        width: 400px;
+        width: 450px;
+        height: 350px;
     }
 
     .col {
@@ -1211,11 +1249,12 @@ form {
 
     .projectImages {
         width: 250px;
+        height: 200px;
     }
 
     .mobileHeader {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         width: 100%;
     }
@@ -1336,7 +1375,7 @@ form {
 
     .mobileHeader {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         width: 100%;
     }
@@ -1391,6 +1430,7 @@ form {
 
     .fromSpan {
         font-size: 16px;
+        width: 280px;
     }
 
     #logoContainer,
@@ -1477,7 +1517,7 @@ form {
 
     .mobileHeader {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         width: 100%;
     }
@@ -1807,7 +1847,7 @@ li>a {
 #logoExpanded,
 #login {
     background: url(../images/logo.png);
-    width: 213px;
+    width: 209px;
     height: 49px;
     background-size: contain;
     background-repeat: no-repeat;

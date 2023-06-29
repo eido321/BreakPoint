@@ -11,8 +11,8 @@ if (mysqli_connect_errno()) {
 }
 
 if (!empty($_POST["loginMail"])) {
-    $query = "INSERT INTO `tbl_214_users` (`name`, `email`, `password`) VALUES ('".$_POST["firstName"]." " .$_POST["lastName"]."', '".$_POST["loginMail"]."', '".$_POST["loginPass"]."');";
-    
+    $query = "INSERT INTO `tbl_214_users` (`name`, `email`, `password`) VALUES ('" . $_POST["firstName"] . " " . $_POST["lastName"] . "', '" . $_POST["loginMail"] . "', '" . $_POST["loginPass"] . "');";
+
     $result = mysqli_query($connection, $query);
     header('Location: ' . URL . 'login.php');
 }
@@ -61,26 +61,29 @@ if (!empty($_POST["loginMail"])) {
                     <form action="#" method="post" class="needs-validation" novalidate id="loginForm">
                         <div class="rowS">
                             <div class="colS" id="leftColS">
+                            <label for="loginMail"><b>Full Name</b></label>
                                 <input type="text" class="form-control" name="firstName" placeholder="First name"
                                     aria-label="First name" required>
                             </div>
                             <div class="colS" id="rightColS">
+                            <label for="loginMail"><b>&nbsp;</b></label>
+
                                 <input type="text" class="form-control" name="lastName" placeholder="Last name"
                                     aria-label="Last name" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="loginMail"><b>Email: </b></label>
+                        <div class="form-group rowS">
+                            <label for="loginMail"><b>Email </b></label>
                             <input type="email" class="form-control" name="loginMail" id="loginMail"
                                 aria-describedby="emailHelp" placeholder="Enter email" required>
                         </div>
                         <div class="form-group">
-                            <label for="loginPass"><b>Password: </b></label>
+                            <label for="loginPass"><b>Password </b></label>
                             <input type="password" class="form-control" name="loginPass" id="loginPass"
                                 placeholder="Enter Password" required>
                         </div>
                         <div class="form-group">
-                            <button id="submitLoginSign" type="submit" class="btn btn-primary login"><b>Sign Me
+                            <button id="submitLoginSign" type="submit" class="btn btn-primary login"><b>Sign
                                     Up</b></button>
                         </div>
                         <div class="form-group" id="loginLink">

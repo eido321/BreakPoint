@@ -153,7 +153,7 @@ if ($tmp) {
                         <form action="index.php" id="searchFormMobile" method="GET">
                             <div id="searchBar1" class="input-group">
                                 <input type="text" class="form-control" id="inputSearch1" name="query"
-                                    placeholder="Search" aria-label="Search for...">
+                                    placeholder="Search Project" aria-label="Search for...">
                                 <button class="btn btn-outline-secondary" type="submit">
                                     <span id="search1"></span>
                                 </button>
@@ -174,7 +174,7 @@ if ($tmp) {
                             <form action="index.php" id="searchForm" method="GET">
                                 <div id="searchBar2" class="input-group">
                                     <input type="text" class="form-control" id="inputSearch2" name="query"
-                                        placeholder="Search" aria-label="Search for...">
+                                        placeholder="Search Project" aria-label="Search for...">
                                     <button class="btn btn-outline-secondary" type="submit">
                                         <span id="search2"></span>
                                     </button>
@@ -207,13 +207,14 @@ if ($tmp) {
                         </div>
                         <div id="mobileNav">
                             <div class="navbar-nav " id="mobileNavContainer">
-                                <?php if ($_SESSION["user_type"] != "Guest") {
-                                    echo '
-                                    <section class="nav-item">
-    <a class="nav-item sideLinks allProjectButton" href="index.php">
-        <b>All Projects</b>
-    </a>
-<section>
+                                <section class="nav-item">
+                                    <a class="nav-item sideLinks allProjectButton" href="index.php">
+                                        <b>All Projects</b>
+                                    </a>
+                                    <section>
+                                        <?php if ($_SESSION["user_type"] != "Guest") {
+                                            echo '
+                                    
     <a class="indexViewButton sideLinks" id="selectedNav" href="indexView.php?projId=' . $projIdUser . ' ">
         <b>My Project</b>
     </a>
@@ -236,14 +237,14 @@ if ($tmp) {
     <b>Delete Project</b>
     </a>
 </section>';
-                                }
-                                ?>
-                                <section class="nav-item">
-                                    <a href="" class="nav-link sideLinks"><b>Settings</b></a>
-                                </section>
-                                <section class="nav-item">
-                                    <a href="logout.php" class="nav-link sideLinks"><b>Log Out</b></a>
-                                </section>
+                                        }
+                                        ?>
+                                        <section class="nav-item">
+                                            <a href="" class="nav-link sideLinks"><b>Settings</b></a>
+                                        </section>
+                                        <section class="nav-item">
+                                            <a href="logout.php" class="nav-link sideLinks"><b>Log Out</b></a>
+                                        </section>
 
                             </div>
                         </div>
@@ -294,7 +295,9 @@ if ($tmp) {
                         </div>
                     </div>
                     <div id="AdSection">
-                        <a class="btn btn-primary shareButton" href="" role="button">Share</a>
+                        <a class="btn btn-primary shareButton" href="" role="button">
+                            <div class="shareButtonImg"></div>
+                        </a>
                         <button type="button" class="btn btn-primary indecViewTitleButton"
                             data-bs-toggle="button">&#x2665;</button>
                     </div>
@@ -368,22 +371,22 @@ if ($tmp) {
         </div>
         <section class="body-con">
             <div class="breadCrumbs">
-                <span><a href="index.php"
-                        class="breadCrumbsLinks">All Projects</a> > <a href="indexView.php"
+                <span><a href="index.php" class="breadCrumbsLinks">All Projects</a> > <a href="indexView.php"
                         class="breadCrumbsLinks selectedBreadCrumbs">Project
                         <?php echo $row["title"]; ?></a></span>
             </div>
             <div class="sideBar">
                 <section class="choiseList">
                     <ul class="triangle-list">
+                        <li>
+                            <a class="sideLinks" href="index.php">
+                                <b>All Projects</b>
+                                <div class="allProjects"></div>
+                            </a>
+                        </li>
                         <?php if ($_SESSION["user_type"] != "Guest") {
                             echo '
-                            <li>
-    <a class="sideLinks" href="index.php">
-        <b>All Projects</b>
-        <div class="allProjects"></div>
-    </a>
-</li>
+                        
 <li>
     <a class="indexViewButton sideLinks" href="indexView.php?projId=' . $projIdUser . '">
         <b>My Project</b>
@@ -424,7 +427,6 @@ if ($tmp) {
 
                     </ul>
                 </section>
-                <div class="underLineChoise"></div>
             </div>
             <div class="View-con">
                 <div class="LeftSide">
@@ -434,7 +436,9 @@ if ($tmp) {
                         </h1>
                         <section class="bottns">
                             <section>
-                                <a class="btn btn-primary shareButton" href="" role="button"><div class="shareButtonImg"></div></a>
+                                <a class="btn btn-primary shareButton" href="" role="button">
+                                    <div class="shareButtonImg"></div>
+                                </a>
                             </section>
                             <section>
                                 <button type="button" class="btn btn-primary indecViewTitleButton"

@@ -247,78 +247,81 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <a href="index.php" class="navbar-brand" id="logoContainer">
                         <div id="logo"></div>
                     </a>
-                    <div class="mobileHeader">
-                        <a href="index.php">
-                            <div id="logoExpanded"></div>
-                        </a>
-                        <div>
-                            <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
-                                    class="ranProfileImage"></a>
-                        </div>
-                        <form action="" id="searchFormMobile" method="GET">
-                            <div id="searchBar1" class="input-group">
-                                <input type="text" class="form-control" id="inputSearch1" name="query"
-                                    placeholder="Search" value="<?php echo $searchValue; ?>">
-                                <button class="btn btn-outline-secondary" type="submit">
-                                    <span id="search1"></span>
-                                </button>
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <span id="sortIconImageMobile"></span>
-                                </button>
+                    <section id="headerRight">
+                        <div class="mobileHeader">
+                            <a href="index.php">
+                                <div id="logoExpanded"></div>
+                            </a>
+                            <div>
+                                <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                        alt="ranProfile" class="ranProfileImage"></a>
                             </div>
-                        </form>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation" id="humburger">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <div id="desktopNav">
-                            <form action="" id="searchForm" method="GET">
-                                <div id="searchBar2" class="input-group">
-                                    <input type="text" class="form-control" id="inputSearch2" name="query"
-                                        placeholder="Search" value="<?php echo $searchValue; ?>">
+                            <form action="" id="searchFormMobile" method="GET">
+                                <div id="searchBar1" class="input-group">
+                                    <input type="text" class="form-control" id="inputSearch1" name="query"
+                                        placeholder="Search Project" value="<?php echo $searchValue; ?>">
                                     <button class="btn btn-outline-secondary" type="submit">
-                                        <span id="search2"></span>
+                                        <span id="search1"></span>
                                     </button>
                                     <button class="btn btn-outline-secondary" type="button">
-                                        <span id="sortIconImageDesktop"></span>
+                                        <span id="sortIconImageMobile"></span>
                                     </button>
                                 </div>
                             </form>
-
-                            <div class="navbar-nav ms-auto">
-                                <section id="shenkarLogo" class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <div id="shenkarLogoImage"></div>
-                                    </a>
-                                </section>
-                                <section id="notification" class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <div id="notificationImage"></div>
-                                    </a>
-                                </section>
-                                <section id="settings" class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <div id="settingsImage"></div>
-                                    </a>
-                                </section>
-                                <section id="ranProfile" class="nav-item">
-                                    <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
-                                            alt="ranProfile" class="ranProfileImage"></a>
-                                </section>
-                            </div>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation" id="humburger">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
                         </div>
-                        <div id="mobileNav">
-                            <div class="navbar-nav " id="mobileNavContainer">
-                                <?php if ($_SESSION["user_type"] != "Guest") {
-                                    echo '
-                                    <section class="nav-item" >
-    <a class="nav-item sideLinks allProjectButton" id="selectedNav" href="index.php">
-        <b>All Projects</b>
-    </a>
-</section>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <div id="desktopNav">
+                                <form action="" id="searchForm" method="GET">
+                                    <div id="searchBar2" class="input-group">
+                                        <input type="text" class="form-control" id="inputSearch2" name="query"
+                                            placeholder="Search Project" value="<?php echo $searchValue; ?>">
+                                        <button class="btn btn-outline-secondary" type="submit">
+                                            <span id="search2"></span>
+                                        </button>
+                                        <button class="btn btn-outline-secondary" type="button">
+                                            <span id="sortIconImageDesktop"></span>
+                                        </button>
+                                    </div>
+                                </form>
+
+                                <div class="navbar-nav ms-auto">
+                                    <section id="shenkarLogo" class="nav-item">
+                                        <a href="" class="nav-link">
+                                            <div id="shenkarLogoImage"></div>
+                                        </a>
+                                    </section>
+                                    <section id="notification" class="nav-item">
+                                        <a href="" class="nav-link">
+                                            <div id="notificationImage"></div>
+                                        </a>
+                                    </section>
+                                    <section id="settings" class="nav-item">
+                                        <a href="" class="nav-link">
+                                            <div id="settingsImage"></div>
+                                        </a>
+                                    </section>
+                                    <section id="ranProfile" class="nav-item">
+                                        <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                                alt="ranProfile" class="ranProfileImage"></a>
+                                    </section>
+                                </div>
+                            </div>
+                            <div id="mobileNav">
+                                <div class="navbar-nav " id="mobileNavContainer">
+                                    <section class="nav-item">
+                                        <a class="nav-item sideLinks allProjectButton" id="selectedNav"
+                                            href="index.php">
+                                            <b>All Projects</b>
+                                        </a>
+                                    </section>
+                                    <?php if ($_SESSION["user_type"] != "Guest") {
+                                        echo '
+                                
 <section class="nav-item">
     <a class="indexViewButton nav-item sideLinks" href="indexView.php?projId=' . $projId . '">
         <b>My Project</b>
@@ -342,17 +345,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <b>Delete Project</b>
     </a>
 </section>';
-                                }
-                                ?>
-                                <section class="nav-item sideLinks">
-                                    <a href="" class="nav-link"><b>Settings</b></a>
-                                </section>
-                                <section class="nav-item sideLinks">
-                                    <a href="logout.php" class="nav-link"><b>Log Out</b></a>
-                                </section>
+                                    }
+                                    ?>
+                                    <section class="nav-item sideLinks">
+                                        <a href="" class="nav-link"><b>Settings</b></a>
+                                    </section>
+                                    <section class="nav-item sideLinks">
+                                        <a href="logout.php" class="nav-link"><b>Log Out</b></a>
+                                    </section>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </nav>
                 <section id="navbar2">
                     <div class="container text-center" id="navbarContainer">
@@ -375,16 +379,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="breadCrumbs">
                 <span><a href="index.php" class="breadCrumbsLinks selectedBreadCrumbs">All Projects</a></span>
             </div>
+
             <div class="sideBar">
                 <section class="choiseList">
                     <ul class="triangle-list">
-                        <?php if ($_SESSION["user_type"] != "Guest") {
-                            echo '<li>
+                        <li>
                             <a class="sideLinks" href="index.php">
                                 <b>All Projects</b>
                                 <div class="allProjects"></div>
                             </a>
                         </li>
+                        <?php if ($_SESSION["user_type"] != "Guest") {
+                            echo '
 <li>
     <a class="indexViewButton sideLinks" href="indexView.php?projId=' . $projId . '">
         <b>My Project</b>
@@ -424,7 +430,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     </ul>
                 </section>
-                <div class="underLineChoise"></div>
             </div>
             <div class="projectsBody">
                 <div class="container text-center gridBody">

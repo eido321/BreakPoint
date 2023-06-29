@@ -85,7 +85,7 @@ if (!empty($_POST["loginMail"])) {
                                 placeholder="Enter Password" required>
                         </div>
                         <div class="form-group">
-                            <button id="submitLoginSign" type="submit" class="btn btn-primary login"><b>Log Me In</b></button>
+                            <button id="submitLoginSign" type="submit" class="btn btn-primary login"><b>Log In</b></button>
                         </div>
                         <div class="error-message">
                             <?php if (isset($message)) {
