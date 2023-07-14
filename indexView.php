@@ -496,7 +496,7 @@ if ($tmp) {
                         <section class="rightCommentSection">
                             <span>8</span>
                             <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranImage" class="ranProfileImage2">
-                            <span>Menachem Avshalom</span>
+                            <span>Avshalom</span>
                         </section>
                         <section class="leftCommentSection">
                             <section class="leftCommentSectionLine">
@@ -510,44 +510,20 @@ if ($tmp) {
                                 </section>
                             </section>
                             <section class="leftCommentSectionDown">
-                                <span>Add a comment...</span>
+                               <form method="post" action="" id="addComment">
+                                    <input type="text" name="commnetText" placeholder="Add a comment...">
+                                    <button type="submit" id="sendSubmit"><div id="sendIcon"></div></button>
+                                    <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"];?>">
+                                    <input type="hidden" name="proj_id" value="<?php echo $projId;?>">
+                               </form> 
                             </section>
                         </section>
                     </section>
                     <br>
+                    <div id="loading"></div>
                     <br>
                     <div id="coomentSection">
-                        <div class="comment">
-                            <section class="CommentName">
-                                <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
-                                    class="ranProfileImage2"><b>Dan Moalem</b>
-                            </section>
-                            <section class="coomentWhiteBox">
-                                <p class="commentsText">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </p>
-                            </section>
-                            <button class="ClappImage" data-is-active="true">
-                                <br>
-                                <span>3</span>
-                            </button>
-                        </div>
-                        <div class="comment">
-                            <section class="CommentName">
-                                <img src="images/Dana.png" alt="ranProfile" class="ranProfileImage2"><b>Dana Asayag</b>
-                            </section>
-                            <section class="coomentWhiteBox">
-                                <p class="commentsText">
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                    doloremque
-                                </p>
-                            </section>
-                            <button class="ClappImage" data-is-active="true">
-                                <br>
-                                <span>3</span>
-                            </button>
-                        </div>
-                        <div class="comment">
+                        <!-- <div class="comment">
                             <section class="CommentName">
                                 <img src="images/Amir.png" alt="ranProfile" class="ranProfileImage2"><b>Dana Asayag</b>
                             </section>
@@ -560,7 +536,7 @@ if ($tmp) {
                                 <br>
                                 <span>3</span>
                             </button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="RightSide">

@@ -237,3 +237,28 @@ Array.from(creativityElements).forEach((element) => {
         element.appendChild(div);
     }
 });
+const submit = document.querySelector('#sendSubmit');
+const form = document.querySelector('#addComment');
+const messageEl = document.querySelector('#loading');
+const posts = document.querySelector('#coomentSection');
+
+submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    messageEl.innerHTML = "<span class='loading'>Loading..</span>";
+    savePost();
+});
+
+const savePost = async () => {
+    try {
+        let response = await fetch('action.php', {
+            method: 'POST',
+            body: new FormData(form),
+        });
+        const result = await response.json();
+        console.log(result);
+        posts.innerHTML = result.retVal;
+        messageEl.style.display = "none";
+    } catch (error) {
+        console.log(error);
+    }
+};
