@@ -44,9 +44,26 @@ let goBack = function () {
     history.back();
 };
 
-$(document).ready(function () {
-    $('.leftCommentSectionText1Icon').click(function () {
-        var grayArrow = $('.leftCommentSectionText1Icon');
+
+
+// $(document).ready(function () {
+//     $('.leftCommentSectionText1Icon').click(function () {
+//         var grayArrow = $('.leftCommentSectionText1Icon');
+//         var comments = $('#coomentSection');
+
+//         grayArrow.css('transform', 'rotate(180deg)');
+
+//         if (comments.css('display') === 'none') {
+//             comments.css('display', 'block');
+//         } else {
+//             grayArrow.css('transform', 'rotate(360deg)');
+//             comments.css('display', 'none');
+//         }
+//     });
+// });
+
+function expanedComments(){
+    var grayArrow = $('.leftCommentSectionText1Icon');
         var comments = $('#coomentSection');
 
         grayArrow.css('transform', 'rotate(180deg)');
@@ -57,8 +74,7 @@ $(document).ready(function () {
             grayArrow.css('transform', 'rotate(360deg)');
             comments.css('display', 'none');
         }
-    });
-});
+}
 
 
 const $likes = $('.ClappImage');
@@ -237,15 +253,18 @@ Array.from(creativityElements).forEach((element) => {
         element.appendChild(div);
     }
 });
+
 const submit = document.querySelector('#sendSubmit');
 const form = document.querySelector('#addComment');
 const messageEl = document.querySelector('#loading');
 const posts = document.querySelector('#coomentSection');
+const sumComments = document.querySelector('#totalComments')
 
 submit.addEventListener('click', (e) => {
     e.preventDefault();
     messageEl.innerHTML = "<span class='loading'>Loading..</span>";
     savePost();
+    expanedComments();
 });
 
 const savePost = async () => {
@@ -257,8 +276,11 @@ const savePost = async () => {
         const result = await response.json();
         console.log(result);
         posts.innerHTML = result.retVal;
+        sumComments.innerHTML = result.sumVal;
         messageEl.style.display = "none";
     } catch (error) {
         console.log(error);
     }
 };
+
+savePost();

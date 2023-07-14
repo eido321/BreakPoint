@@ -20,9 +20,11 @@ if(isset($_POST['user_id'])) {
     $user  = mysqli_real_escape_string($connection, $_POST['user_id']);
     $proj  = mysqli_real_escape_string($connection, $_POST['proj_id']);
     
+    if(!empty($txt)){
     //SET: insert new data to DB
     $query2 = "insert into tbl_214_comments(p_id,u_id,comment) values ('$proj','$user','$txt')";
     $result = mysqli_query($connection, $query2);
+    }
 
     //GET: get data again
     $query3 = "SELECT * FROM tbl_214_users us
@@ -33,33 +35,38 @@ if(isset($_POST['user_id'])) {
 }
 
 // GET: get data again
-   $str  = "<ul>";
-   while($row = mysqli_fetch_assoc($result)) {//results are in an associative array. keys are cols names
-   //output data from each row
-//    $str .= '<li>
-//    <div class="comment">
-//    <section class="CommentName">
-//        <img src="'.$row["user_img"].'" alt="ranProfile" class="ranProfileImage2"><b>'.$row["name"].'</b>
-//    </section>
-//    <section class="coomentWhiteBox">
-//        <p class="commentsText">
-//        '.$row["comment"].'
-//        </p>
-//    </section>
-//    <button class="ClappImage" data-is-active="true">
-//        <br>
-//        <span>3</span>
-//    </button>
-// </div>
-//    </li>';
+$str = "<ul>";
+$sum = 0;
+while ($row = mysqli_fetch_assoc($result)) {
+   // Output data from each row
+   $sum += 1;
+   $str .= "<li>
+      <div class='comment'>
+         <section class='CommentName'>
+            <img src=" . $row["user_img"] . " alt='ranProfile' class='ranProfileImage2'><b>" . $row["name"] . "</b>
+         </section>
+         <section class='coomentWhiteBox'>
+            <p class='commentsText'>
+               " . $row["comment"] . "
+            </p>
+         </section>
+         <button class='ClappImage' data-is-active='true'>
+            <br>
+            <span>0</span>
+         </button>
+      </div>
+   </li>";
+}
+$str .= "</ul>";
 
-   }
-$str  .= "</ul>";
-// echo $str;
-echo '{"retVal":"' . $str . '"}';
+$response = array('retVal' => $str, 'sumVal' => $sum);
+
+echo json_encode($response);
+
+
 
 // //release returned data
-mysqli_free_result($result);
+mysqli_free_result($result);   
 
 // //close DB connection
 mysqli_close($connection);

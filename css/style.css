@@ -38,6 +38,11 @@ li>a {
     width: 100%;
     border: 0;
 }
+
+input:focus {
+    outline: none;
+  }
+  
 #addComment > button{
    background-color: white;
 }

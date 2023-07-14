@@ -494,15 +494,15 @@ if ($tmp) {
                     </section>
                     <section class="commentSection ">
                         <section class="rightCommentSection">
-                            <span>8</span>
+                            <span id="totalComments"></span>
                             <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranImage" class="ranProfileImage2">
-                            <span>Avshalom</span>
+                            <span><?php echo $tmpUser["name"]; ?></span>
                         </section>
                         <section class="leftCommentSection">
                             <section class="leftCommentSectionLine">
                                 <section>
                                     <span class="leftCommentSectionText1">Comments</span>
-                                    <button class="leftCommentSectionText1Icon"></button>
+                                    <button class="leftCommentSectionText1Icon" onclick="expanedComments()"></button>
                                 </section>
                                 <section>
                                     <span class="leftCommentSectionText2">Sort</span>
