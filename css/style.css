@@ -34,6 +34,44 @@ li>a {
     border: none;
     width: 100%;
 }
+
+.btn.btn-secondary.dropdown-toggle.commnetDropdown{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: #555555;
+    border: none;
+    font-size: 14px;
+}
+
+.btn.btn-secondary.dropdown-toggle.commnetDropdown::after {
+    background: url(../images/sortSearchComment.png);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 0;
+}
+
+.dropdown-menu.commentSortList{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border: 0;
+}
+
+.dropdown-item.commentItem:hover{
+    color: #bd362f;
+}
+
+.dropdown-item.commentItem:active{
+    background-color: #bd362f;
+    color: white;
+}
+
+.dropdown-menu.commentSortList > li{
+    margin: 0;
+}
+
 #addComment > input{
     width: 100%;
     border: 0;
@@ -48,6 +86,9 @@ input:focus {
 }
 #addComment{
     width: 100%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 
@@ -60,6 +101,7 @@ input:focus {
 .commentSection {
     display: flex;
     margin-top: 30px;
+    width: 100%;
 }
 
 .leftCommentSectionLine {
@@ -103,8 +145,6 @@ input:focus {
 .leftCommentSectionDown {
     display: flex;
     margin: 10px 0px 20px 0px;
-    height: 40%;
-    background-color: white;
     align-items: center;
 }
 
@@ -125,6 +165,10 @@ input:focus {
     text-align: center;
 }
 
+#formHeader{
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
 
 #navbar2 {
     display: none;
@@ -153,6 +197,10 @@ input:focus {
 .breadCrumbsLinks {
     text-decoration: none;
     color: #555555;
+}
+
+.breadCrumbsLinks:hover{
+    color:#bd362f;
 }
 
 .breadCrumbsLinks.selectedBreadCrumbs {
@@ -644,6 +692,7 @@ span {
     align-items: center;
     flex-flow: row;
     max-height: fit-content;
+    align-items: end;
     margin-top: 10px;
     gap: 10px;
 }
@@ -729,12 +778,20 @@ span {
 .PlayButtonImage {
     height: 30px;
     width: 30px;
-    margin-left: 10px;
+    margin: 10px;
+    margin-top: 0;
+}
+
+.FileLogoSrs{
+    height: 20px;
+    width: 20px;
 }
 
 .FileLogo {
     height: 20px;
     width: 20px;
+    margin: 10px;
+    margin-top: 0;
 }
 
 .FileLogoSmall {
@@ -1085,7 +1142,12 @@ form {
 }
 
 .commentsText {
-    margin: 5px;
+    padding: 5px;
+    background-color: white;
+    word-wrap: break-word;
+    white-space: normal;
+    width: 100%;
+    border-radius: 5px;
 }
 
 #navbar2Row {
@@ -2049,7 +2111,8 @@ li>a {
 }
 
 .FileLogo,
-.FileLogoSmall {
+.FileLogoSmall,
+.FileLogoSrs {
     background: url(../images/REEDfile.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -2066,8 +2129,8 @@ li>a {
 
 .ClappImage {
     background: url(../images/clapping-hands.png);
-    height: 23px;
-    width: 23px;
+    height: 20px;
+    width: 20px;
     margin-left: 10px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -2085,8 +2148,14 @@ li>a {
 
 #coomentSection {
     height: 100%;
+    width: 80%;
+    margin-bottom: 30px;
     background-color: #eeeeee;
     display: none;
+}
+
+#commentSecList{
+    width: 500px;
 }
 
 .CommentName {
@@ -2098,7 +2167,6 @@ li>a {
 }
 
 .comment {
-    height: 97px;
     width: 100%;
     display: flex;
     background-color: #eeeeee;
@@ -2107,9 +2175,7 @@ li>a {
 }
 
 .coomentWhiteBox {
-    background-color: white;
-    height: 75px;
-    width: 85%;
+    width: 80%;
     margin-left: 10px;
 
 }

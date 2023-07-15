@@ -77,25 +77,22 @@ function expanedComments(){
 }
 
 
-const $likes = $('.ClappImage');
-
-$likes.on('click', function () {
-    const $like = $(this);
-    const isActive = Boolean($like.attr('data-is-active') === 'true');
+function toggleLike(button) {
+    const isActive = button.getAttribute('data-is-active') === 'true';
+    const span = button.querySelector('span');
+    let count = parseInt(span.textContent);
+  
     if (isActive) {
-        $like.css('background-image', 'url(images/clapping-hands-red.png)');
-        const $span = $like.find('span');
-        let count = parseInt($span.text());
-        $span.text(count + 1);
-        $like.attr('data-is-active', 'false');
+      button.style.backgroundImage = 'url(images/clapping-hands-red.png)';
+      span.textContent = count + 1;
+      button.setAttribute('data-is-active', 'false');
     } else {
-        $like.css('background-image', 'url(images/clapping-hands.png)');
-        const $span = $like.find('span');
-        let count = parseInt($span.text());
-        $span.text(count - 1);
-        $like.attr('data-is-active', 'true');
+      button.style.backgroundImage = 'url(images/clapping-hands.png)';
+      span.textContent = count - 1;
+      button.setAttribute('data-is-active', 'true');
     }
-});
+  }
+  
 
 if (document.getElementById("formFunc")) {
 
@@ -254,33 +251,55 @@ Array.from(creativityElements).forEach((element) => {
     }
 });
 
+if (window.location.href.indexOf("indexView") !== -1) {
 const submit = document.querySelector('#sendSubmit');
 const form = document.querySelector('#addComment');
 const messageEl = document.querySelector('#loading');
 const posts = document.querySelector('#coomentSection');
-const sumComments = document.querySelector('#totalComments')
+const sumComments = document.querySelector('#totalComments');
+const commentInput = document.querySelector('#inputComment');
+
 
 submit.addEventListener('click', (e) => {
     e.preventDefault();
     messageEl.innerHTML = "<span class='loading'>Loading..</span>";
-    savePost();
+    savePost(form);
     expanedComments();
 });
 
-const savePost = async () => {
+const savePost = async (form) => {
     try {
         let response = await fetch('action.php', {
             method: 'POST',
             body: new FormData(form),
         });
         const result = await response.json();
-        console.log(result);
         posts.innerHTML = result.retVal;
         sumComments.innerHTML = result.sumVal;
+        commentInput.value = "";
         messageEl.style.display = "none";
+
     } catch (error) {
         console.log(error);
     }
 };
 
-savePost();
+const sortNew = document.querySelector('#newSort');
+const sortOld = document.querySelector('#oldSort');
+const newForm = document.querySelector('#newForm');
+const oldForm =document.querySelector('#oldForm');
+
+sortNew.addEventListener('click', (e) => {
+    e.preventDefault();
+    savePost(newForm);
+    expanedComments();
+});
+
+sortOld.addEventListener('click', (e) => {
+    e.preventDefault();
+    savePost(oldForm);
+    expanedComments();
+});
+
+savePost(form);
+}

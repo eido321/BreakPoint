@@ -136,21 +136,23 @@ if ($tmp) {
         </div>
     </div>
     <section class="screen">
+        
         <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
                     <a href="index.php" class="navbar-brand" id="logoContainer">
                         <div id="logo"></div>
                     </a>
-                    <div class="mobileHeader">
-                        <a href="index.php">
-                            <div id="logoExpanded"></div>
-                        </a>
-                        <div>
-                            <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
-                                    class="ranProfileImage"></a>
-                        </div>
-                        <form action="index.php" id="searchFormMobile" method="GET">
+                    <section id="headerRight">
+                        <div class="mobileHeader">
+                            <a href="index.php">
+                                <div id="logoExpanded"></div>
+                            </a>
+                            <div>
+                                <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                        alt="ranProfile" class="ranProfileImage"></a>
+                            </div>
+                            <form action="index.php" id="searchFormMobile" method="GET">
                             <div id="searchBar1" class="input-group">
                                 <input type="text" class="form-control" id="inputSearch1" name="query"
                                     placeholder="Search Project" aria-label="Search for...">
@@ -162,15 +164,14 @@ if ($tmp) {
                                 </button>
                             </div>
                         </form>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation" id="humburger">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <div id="desktopNav">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation" id="humburger">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <div id="desktopNav">
                             <form action="index.php" id="searchForm" method="GET">
                                 <div id="searchBar2" class="input-group">
                                     <input type="text" class="form-control" id="inputSearch2" name="query"
@@ -183,73 +184,91 @@ if ($tmp) {
                                     </button>
                                 </div>
                             </form>
-                            <div class="navbar-nav ms-auto">
-                                <section id="shenkarLogo" class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <div id="shenkarLogoImage"></div>
-                                    </a>
-                                </section>
-                                <section id="notification" class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <div id="notificationImage"></div>
-                                    </a>
-                                </section>
-                                <section id="settings" class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <div id="settingsImage"></div>
-                                    </a>
-                                </section>
-                                <section id="ranProfile" class="nav-item">
-                                    <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
-                                            alt="ranProfile" class="ranProfileImage"></a>
-                                </section>
+
+                                <div class="navbar-nav ms-auto">
+                                    <section id="shenkarLogo" class="nav-item">
+                                        <a href="" class="nav-link">
+                                            <div id="shenkarLogoImage"></div>
+                                        </a>
+                                    </section>
+                                    <section id="notification" class="nav-item">
+                                        <a href="" class="nav-link">
+                                            <div id="notificationImage"></div>
+                                        </a>
+                                    </section>
+                                    <section id="settings" class="nav-item">
+                                        <a href="" class="nav-link">
+                                            <div id="settingsImage"></div>
+                                        </a>
+                                    </section>
+                                    <section id="ranProfile" class="nav-item">
+                                        <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                                alt="ranProfile" class="ranProfileImage"></a>
+                                    </section>
+                                </div>
                             </div>
-                        </div>
-                        <div id="mobileNav">
-                            <div class="navbar-nav " id="mobileNavContainer">
-                                <section class="nav-item">
-                                    <a class="nav-item sideLinks allProjectButton" href="index.php">
-                                        <b>All Projects</b>
-                                    </a>
-                                    <section>
-                                        <?php if ($_SESSION["user_type"] != "Guest") {
-                                            echo '
-                                    
-    <a class="indexViewButton sideLinks" id="selectedNav" href="indexView.php?projId=' . $projIdUser . ' ">
+                            <div id="mobileNav">
+                                <div class="navbar-nav " id="mobileNavContainer">
+                                    <section class="nav-item">
+                                        <a class="nav-item sideLinks allProjectButton" id="selectedNav"
+                                            href="index.php">
+                                            <b>All Projects</b>
+                                        </a>
+                                    </section>
+                                    <?php if ($_SESSION["user_type"] != "Guest") {
+                                        echo '
+                                
+<section class="nav-item">
+    <a class="indexViewButton nav-item sideLinks" href="indexView.php?projId=' . $projId . '">
         <b>My Project</b>
     </a>
 </section>
-<section>
-    <a href="indexForm.php" class="addProjectButton sideLinks">
+<section class="nav-item sideLinks">
+    <a href="indexForm.php" class="addProjectButton nav-item">
         <b>Add Project</b>
     </a>
 </section>
-<section>
+<section class="nav-item sideLinks">
     <form method="POST" action="indexForm.php">
-        <input type="hidden" name="projId" value="' . $projIdUser . '">
-        <button type="submit" class="editButton sideLinks">
+        <input type="hidden" name="projId" value="' . $projId . '">
+        <button type="submit" class="editButton nav-item">
             <b>Edit Project</b>
         </button>
     </form>
 </section>
-<section class="nav-item sideLinks">
+    <section class="nav-item sideLinks">
         <a href="" class="deleteProjectButton nav-item">
     <b>Delete Project</b>
     </a>
 </section>';
-                                        }
-                                        ?>
-                                        <section class="nav-item">
-                                            <a href="" class="nav-link sideLinks"><b>Settings</b></a>
-                                        </section>
-                                        <section class="nav-item">
-                                            <a href="logout.php" class="nav-link sideLinks"><b>Log Out</b></a>
-                                        </section>
-
+                                    }
+                                    ?>
+                                    <section class="nav-item sideLinks">
+                                        <a href="" class="nav-link"><b>Settings</b></a>
+                                    </section>
+                                    <section class="nav-item sideLinks">
+                                        <a href="logout.php" class="nav-link"><b>Log Out</b></a>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </nav>
+                <section id="navbar2">
+                    <div class="container text-center" id="navbarContainer">
+                        <div class="row" id="navbar2Row">
+                            <div class="col projectBox" id="colNavbar1">
+                                Projects
+                            </div>
+                            <div class="col" id="colNavbar2">
+                                Favorites
+                            </div>
+                            <div class="col" id="colNavbar3">
+                                Recent
                             </div>
                         </div>
                     </div>
-                </nav>
+                </section>
             </header>
         </div>
         <div class="mobileBody">
@@ -465,7 +484,7 @@ if ($tmp) {
                     <section class="requirements">
                         <span>The project's software requirements specification </span>
                         <section class="Srs">
-                            srs<div class="FileLogo"></div>
+                            srs<div class="FileLogoSrs"></div>
                         </section>
                     </section>
                     <br>
@@ -494,28 +513,58 @@ if ($tmp) {
                     </section>
                     <section class="commentSection ">
                         <section class="rightCommentSection">
-                            <span id="totalComments"></span>
                             <img src="<?php echo $tmpUser["user_img"]; ?>" alt="ranImage" class="ranProfileImage2">
-                            <span><?php echo $tmpUser["name"]; ?></span>
+                            <span>
+                                <?php echo $tmpUser["name"]; ?>
+                            </span>
                         </section>
                         <section class="leftCommentSection">
                             <section class="leftCommentSectionLine">
                                 <section>
-                                    <span class="leftCommentSectionText1">Comments</span>
+                                    <span class="leftCommentSectionText1"><span
+                                            id="totalComments"></span>&nbsp;&nbsp;Comments</span>
                                     <button class="leftCommentSectionText1Icon" onclick="expanedComments()"></button>
                                 </section>
-                                <section>
-                                    <span class="leftCommentSectionText2">Sort</span>
-                                    <span class="leftCommentSectionText2Icon" id="sortIconImageDesktopC"></span>
-                                </section>
+
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle commnetDropdown" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <b>Sort</b>
+                                    </button>
+
+
+                                    <ul class="dropdown-menu commentSortList">
+                                        <form method="post" action="" id="oldForm">
+                                            <input type="hidden" name="asc" value="1">
+                                            <input type="hidden" name="user_id"
+                                                value="<?php echo $_SESSION["u_id"]; ?>">
+                                            <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
+                                            <li><button type="submit" class="dropdown-item commentItem" id="oldSort"
+                                                    href="">Latest</button>
+                                            </li>
+                                        </form>
+                                        <form method="post" action="" id="newForm">
+                                            <input type="hidden" name="des" value="1">
+                                            <input type="hidden" name="user_id"
+                                                value="<?php echo $_SESSION["u_id"]; ?>">
+                                            <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
+                                            <li><button type="submit" name="des" class="dropdown-item commentItem" id="newSort"
+                                                    href="">Newest</button>
+                                            </li>
+                                        </form>
+                                    </ul>
+                                </div>
                             </section>
                             <section class="leftCommentSectionDown">
-                               <form method="post" action="" id="addComment">
-                                    <input type="text" name="commnetText" placeholder="Add a comment...">
-                                    <button type="submit" id="sendSubmit"><div id="sendIcon"></div></button>
-                                    <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"];?>">
-                                    <input type="hidden" name="proj_id" value="<?php echo $projId;?>">
-                               </form> 
+                                <form method="post" action="" id="addComment">
+                                    <input type="text" name="commnetText" id="inputComment"
+                                        placeholder="Add a comment...">
+                                    <button type="submit" id="sendSubmit">
+                                        <div id="sendIcon"></div>
+                                    </button>
+                                    <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
+                                    <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
+                                </form>
                             </section>
                         </section>
                     </section>

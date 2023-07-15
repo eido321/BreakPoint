@@ -68,7 +68,7 @@ if (isset($_POST["projId"])) {
 <body>
     <section class="screen">
         <div id="headerContainer">
-            <header>
+            <header id="formHeader">
                 <nav class="navbar navbar-light bg-light" id="navbarLogin">
                     <a href="index.php" class="navbar-brand" id="logoContainer">
                         <div id="logo"></div>
