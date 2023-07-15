@@ -382,7 +382,9 @@ if ($tmp) {
                                 <input type="text" class="form-control commentInput" id="commentInputMobile"
                                     aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                                     placeholder="Add a comment...">
-                                <button type="submit" id="sendSubmit"><div id="sendIcon"></div></button>
+                                <button type="submit" id="sendSubmit">
+                                    <div id="sendIcon"></div>
+                                </button>
                             </div>
                             <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
                             <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
@@ -393,10 +395,13 @@ if ($tmp) {
                     </section>
                 </section>
             </section>
+            <section id="mobileCommentsTitle">
+                <span id="totalComments"></span>
+                <span>&nbsp;Comments</span>
+                <br>
+            </section>
             <section id="mobileComments">
-                <!-- <section id="mobileCommentsTitle">
 
-                </section> -->
                 <!-- <ul id='commentSecList'>
                     <li>
                         <div class='comment'>

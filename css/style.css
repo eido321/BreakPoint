@@ -586,7 +586,10 @@ li {
     font-size: 18px;
     font-weight: bold;
     color: #555555;
+}
 
+#mobileCommentsTitle{
+    margin-left: 30px;
 }
 
 .projectNameView {
