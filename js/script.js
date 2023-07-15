@@ -62,18 +62,18 @@ let goBack = function () {
 //     });
 // });
 
-function expanedComments(){
+function expanedComments() {
     var grayArrow = $('.leftCommentSectionText1Icon');
-        var comments = $('#coomentSection');
+    var comments = $('#coomentSection');
 
-        grayArrow.css('transform', 'rotate(180deg)');
+    grayArrow.css('transform', 'rotate(180deg)');
 
-        if (comments.css('display') === 'none') {
-            comments.css('display', 'block');
-        } else {
-            grayArrow.css('transform', 'rotate(360deg)');
-            comments.css('display', 'none');
-        }
+    if (comments.css('display') === 'none') {
+        comments.css('display', 'block');
+    } else {
+        grayArrow.css('transform', 'rotate(360deg)');
+        comments.css('display', 'none');
+    }
 }
 
 
@@ -81,18 +81,18 @@ function toggleLike(button) {
     const isActive = button.getAttribute('data-is-active') === 'true';
     const span = button.querySelector('span');
     let count = parseInt(span.textContent);
-  
+
     if (isActive) {
-      button.style.backgroundImage = 'url(images/clapping-hands-red.png)';
-      span.textContent = count + 1;
-      button.setAttribute('data-is-active', 'false');
+        button.style.backgroundImage = 'url(images/clapping-hands-red.png)';
+        span.textContent = count + 1;
+        button.setAttribute('data-is-active', 'false');
     } else {
-      button.style.backgroundImage = 'url(images/clapping-hands.png)';
-      span.textContent = count - 1;
-      button.setAttribute('data-is-active', 'true');
+        button.style.backgroundImage = 'url(images/clapping-hands.png)';
+        span.textContent = count - 1;
+        button.setAttribute('data-is-active', 'true');
     }
-  }
-  
+}
+
 
 if (document.getElementById("formFunc")) {
 
@@ -223,15 +223,15 @@ window.addEventListener("resize", function () {
 })();
 
 
-let=
-(() => {
-    if (window.location.href.endsWith("?success")) {
-        let successModal = new bootstrap.Modal(document.getElementById("successModal"));
-        if (successModal != null) {
-            successModal.show();
+let =
+    (() => {
+        if (window.location.href.endsWith("?success")) {
+            let successModal = new bootstrap.Modal(document.getElementById("successModal"));
+            if (successModal != null) {
+                successModal.show();
+            }
         }
-    }
-})();
+    })();
 
 let creativityElements = document.getElementsByClassName("StarCn");
 
@@ -252,54 +252,63 @@ Array.from(creativityElements).forEach((element) => {
 });
 
 if (window.location.href.indexOf("indexView") !== -1) {
-const submit = document.querySelector('#sendSubmit');
-const form = document.querySelector('#addComment');
-const messageEl = document.querySelector('#loading');
-const posts = document.querySelector('#coomentSection');
-const sumComments = document.querySelector('#totalComments');
-const commentInput = document.querySelector('#inputComment');
+    const submit = document.querySelector('#sendSubmit');
+    const form = document.querySelector('#addComment');
+    const messageEl = document.querySelector('#loading');
+    const posts = document.querySelector('#coomentSection');
+    const sumComments = document.querySelector('#totalComments');
+    const commentInput = document.querySelector('#inputComment');
 
 
-submit.addEventListener('click', (e) => {
-    e.preventDefault();
-    messageEl.innerHTML = "<span class='loading'>Loading..</span>";
+    submit.addEventListener('click', (e) => {
+        e.preventDefault();
+        messageEl.innerHTML = "<span class='loading'>Loading..</span>";
+        savePost(form);
+        expanedComments();
+        console.log("1");
+    });
+
+    const savePost = async (form) => {
+        try {
+            let response = await fetch('action.php', {
+                method: 'POST',
+                body: new FormData(form),
+            });
+            const result = await response.json();
+            posts.innerHTML = result.retVal;
+            sumComments.innerHTML = result.sumVal;
+            commentInput.value = "";
+            messageEl.style.display = "none";
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const sortNew = document.querySelector('#newSort');
+    const sortOld = document.querySelector('#oldSort');
+    const newForm = document.querySelector('#newForm');
+    const oldForm = document.querySelector('#oldForm');
+
+    sortNew.addEventListener('click', (e) => {
+        e.preventDefault();
+        savePost(newForm);
+        sortNew.style.color = 'white';
+        sortNew.style.backgroundColor = '#bd362f';
+        sortOld.style.color = '#555555';
+        sortOld.style.backgroundColor = 'white';
+        expanedComments();
+    });
+
+    sortOld.addEventListener('click', (e) => {
+        e.preventDefault();
+        savePost(oldForm);
+        sortOld.style.color = 'white';
+        sortOld.style.backgroundColor = '#bd362f';
+        sortNew.style.color = '#555555';
+        sortNew.style.backgroundColor = 'white';
+        expanedComments();
+    });
+
     savePost(form);
-    expanedComments();
-});
-
-const savePost = async (form) => {
-    try {
-        let response = await fetch('action.php', {
-            method: 'POST',
-            body: new FormData(form),
-        });
-        const result = await response.json();
-        posts.innerHTML = result.retVal;
-        sumComments.innerHTML = result.sumVal;
-        commentInput.value = "";
-        messageEl.style.display = "none";
-
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-const sortNew = document.querySelector('#newSort');
-const sortOld = document.querySelector('#oldSort');
-const newForm = document.querySelector('#newForm');
-const oldForm =document.querySelector('#oldForm');
-
-sortNew.addEventListener('click', (e) => {
-    e.preventDefault();
-    savePost(newForm);
-    expanedComments();
-});
-
-sortOld.addEventListener('click', (e) => {
-    e.preventDefault();
-    savePost(oldForm);
-    expanedComments();
-});
-
-savePost(form);
 }
