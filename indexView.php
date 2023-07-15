@@ -136,7 +136,7 @@ if ($tmp) {
         </div>
     </div>
     <section class="screen">
-        
+
         <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
@@ -153,17 +153,17 @@ if ($tmp) {
                                         alt="ranProfile" class="ranProfileImage"></a>
                             </div>
                             <form action="index.php" id="searchFormMobile" method="GET">
-                            <div id="searchBar1" class="input-group">
-                                <input type="text" class="form-control" id="inputSearch1" name="query"
-                                    placeholder="Search Project" aria-label="Search for...">
-                                <button class="btn btn-outline-secondary" type="submit">
-                                    <span id="search1"></span>
-                                </button>
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <span id="sortIconImageMobileC"></span>
-                                </button>
-                            </div>
-                        </form>
+                                <div id="searchBar1" class="input-group">
+                                    <input type="text" class="form-control" id="inputSearch1" name="query"
+                                        placeholder="Search Project" aria-label="Search for...">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <span id="search1"></span>
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <span id="sortIconImageMobileC"></span>
+                                    </button>
+                                </div>
+                            </form>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                                 aria-label="Toggle navigation" id="humburger">
@@ -172,18 +172,18 @@ if ($tmp) {
                         </div>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <div id="desktopNav">
-                            <form action="index.php" id="searchForm" method="GET">
-                                <div id="searchBar2" class="input-group">
-                                    <input type="text" class="form-control" id="inputSearch2" name="query"
-                                        placeholder="Search Project" aria-label="Search for...">
-                                    <button class="btn btn-outline-secondary" type="submit">
-                                        <span id="search2"></span>
-                                    </button>
-                                    <button class="btn btn-outline-secondary" type="button">
-                                        <span id="sortIconImageDesktop"></span>
-                                    </button>
-                                </div>
-                            </form>
+                                <form action="index.php" id="searchForm" method="GET">
+                                    <div id="searchBar2" class="input-group">
+                                        <input type="text" class="form-control" id="inputSearch2" name="query"
+                                            placeholder="Search Project" aria-label="Search for...">
+                                        <button class="btn btn-outline-secondary" type="submit">
+                                            <span id="search2"></span>
+                                        </button>
+                                        <button class="btn btn-outline-secondary" type="button">
+                                            <span id="sortIconImageDesktop"></span>
+                                        </button>
+                                    </div>
+                                </form>
 
                                 <div class="navbar-nav ms-auto">
                                     <section id="shenkarLogo" class="nav-item">
@@ -377,18 +377,48 @@ if ($tmp) {
                 </section>
                 <section id="mobileCommentsRight">
                     <section>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control commentInput" aria-label="Sizing example input"
-                                aria-describedby="inputGroup-sizing-default" placeholder="Add a comment...">
-                        </div>
-                        <section>
-                            <button class="commentMobileExpandButton"></button>
+                        <form method="post" action="" id="mobileCommentForm">
+                            <div class="input-group mb-3 commentInput">
+                                <input type="text" class="form-control commentInput" id="commentInputMobile"
+                                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                                    placeholder="Add a comment...">
+                                <button type="submit" id="sendSubmit"><div id="sendIcon"></div></button>
+                            </div>
+                            <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
+                            <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
+                        </form>
+                        <section id="dropCommentsMobile">
+                            <button id="commentMobileExpandButton" onclick="expanedCommentsMobile()"></button>
                         </section>
                     </section>
                 </section>
             </section>
+            <section id="mobileComments">
+                <!-- <section id="mobileCommentsTitle">
+
+                </section> -->
+                <!-- <ul id='commentSecList'>
+                    <li>
+                        <div class='comment'>
+                            <section class='CommentName'>
+                                <img src="images/ranProfile.png" alt='ranProfile' class='ranProfileImage2'><b>ran
+                                    lachmy</b>
+                            </section>
+                            <section class='coomentWhiteBox'>
+                                <p class='commentsText'>
+                                    ajsdn asd asda sdas d asd asd as dsadas dasda sdasd adsss
+                                </p>
+                            </section>
+                            <button class='ClappImage' data-is-active='true' onclick='toggleLike(this)'>
+                                <br>
+                                <span>0</span>
+                            </button>
+                        </div>
+                    </li>
+                </ul> -->
+            </section>
         </div>
-        <section class="body-con">
+        <section class=" body-con">
             <div class="breadCrumbs">
                 <span><a href="index.php" class="breadCrumbsLinks">All Projects</a> > <a href="indexView.php"
                         class="breadCrumbsLinks selectedBreadCrumbs">Project
@@ -548,8 +578,8 @@ if ($tmp) {
                                             <input type="hidden" name="user_id"
                                                 value="<?php echo $_SESSION["u_id"]; ?>">
                                             <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
-                                            <li><button type="submit" name="des" class="dropdown-item commentItem" id="newSort"
-                                                    href="">Newest</button>
+                                            <li><button type="submit" name="des" class="dropdown-item commentItem"
+                                                    id="newSort" href="">Newest</button>
                                             </li>
                                         </form>
                                     </ul>

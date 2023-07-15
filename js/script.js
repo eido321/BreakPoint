@@ -76,6 +76,20 @@ function expanedComments() {
     }
 }
 
+function expanedCommentsMobile() {
+    var grayArrow = $('#commentMobileExpandButton');
+    var comments = $('#mobileComments');
+
+    grayArrow.css('transform', 'rotate(180deg)');
+
+    if (comments.css('display') === 'none') {
+        comments.css('display', 'block');
+    } else {
+        grayArrow.css('transform', 'rotate(360deg)');
+        comments.css('display', 'none');
+    }
+}
+
 
 function toggleLike(button) {
     const isActive = button.getAttribute('data-is-active') === 'true';
@@ -262,11 +276,14 @@ if (window.location.href.indexOf("indexView") !== -1) {
     const sortOld = document.querySelector('#oldSort');
     const newForm = document.querySelector('#newForm');
     const oldForm = document.querySelector('#oldForm');
+    const submitMobile = document.querySelector('#sendSubmit');
+    const formMobile = document.querySelector('#mobileCommentForm');
+    const postsMobile = document.querySelector('#mobileComments');
 
     submit.addEventListener('click', (e) => {
         e.preventDefault();
         messageEl.innerHTML = "<span class='loading'>Loading..</span>";
-        savePost(form);
+        savePost(formMobile,posts);
         expanedComments();
         sortOld.style.color = '#555555';
         sortOld.style.backgroundColor = 'white';
@@ -274,7 +291,18 @@ if (window.location.href.indexOf("indexView") !== -1) {
         sortNew.style.backgroundColor = 'white';
     });
 
-    const savePost = async (form) => {
+    submitMobile.addEventListener('click', (e) => {
+        e.preventDefault();
+        messageEl.innerHTML = "<span class='loading'>Loading..</span>";
+        savePost(formMobile,postsMobile);
+        expanedComments();
+        sortOld.style.color = '#555555';
+        sortOld.style.backgroundColor = 'white';
+        sortNew.style.color = '#555555';
+        sortNew.style.backgroundColor = 'white';
+    });
+
+    const savePost = async (form,posts) => {
         try {
             let response = await fetch('action.php', {
                 method: 'POST',
@@ -291,10 +319,9 @@ if (window.location.href.indexOf("indexView") !== -1) {
         }
     };
 
-
     sortNew.addEventListener('click', (e) => {
         e.preventDefault();
-        savePost(newForm);
+        savePost(newForm,posts);
         sortNew.style.color = 'white';
         sortNew.style.backgroundColor = '#bd362f';
         sortOld.style.color = '#555555';
@@ -304,7 +331,7 @@ if (window.location.href.indexOf("indexView") !== -1) {
 
     sortOld.addEventListener('click', (e) => {
         e.preventDefault();
-        savePost(oldForm);
+        savePost(oldForm,posts);
         sortOld.style.color = 'white';
         sortOld.style.backgroundColor = '#bd362f';
         sortNew.style.color = '#555555';
@@ -312,5 +339,6 @@ if (window.location.href.indexOf("indexView") !== -1) {
         expanedComments();
     });
 
-    savePost(form);
+    savePost(form,posts);
+    savePost(formMobile,postsMobile);
 }

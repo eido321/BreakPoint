@@ -35,7 +35,7 @@ li>a {
     width: 100%;
 }
 
-.btn.btn-secondary.dropdown-toggle.commnetDropdown{
+.btn.btn-secondary.dropdown-toggle.commnetDropdown {
     display: flex;
     align-items: center;
     background-color: transparent;
@@ -53,43 +53,45 @@ li>a {
     border: 0;
 }
 
-.dropdown-menu.commentSortList{
+.dropdown-menu.commentSortList {
     padding-bottom: 5px;
     padding-top: 5px;
     border: 0;
 }
 
-.dropdown-item.commentItem:hover{
+.dropdown-item.commentItem:hover {
     color: #bd362f;
 }
 
-.dropdown-item.commentItem:active{
+.dropdown-item.commentItem:active {
     background-color: #bd362f;
     color: white;
 }
 
-#oldForm > li,#newForm > li{
+#oldForm>li,
+#newForm>li {
     width: 100%;
 }
 
 
-.dropdown-menu.commentSortList > li{
+.dropdown-menu.commentSortList>li {
     margin: 0;
 }
 
-#addComment > input{
+#addComment>input {
     width: 100%;
     border: 0;
 }
 
 input:focus {
     outline: none;
-  }
-  
-#addComment > button{
-   background-color: white;
 }
-#addComment{
+
+#addComment>button {
+    background-color: white;
+}
+
+#addComment {
     width: 100%;
     background-color: white;
     padding: 5px;
@@ -138,13 +140,18 @@ input:focus {
     border-top: 7px solid #bd362f;
 }
 
-.commentMobileExpandButton {
+#commentMobileExpandButton {
     margin-left: 3px;
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 14px solid #bd362f;
+}
+
+
+#dropCommentsMobile {
+    margin-left: 20px;
 }
 
 .leftCommentSectionDown {
@@ -170,7 +177,7 @@ input:focus {
     text-align: center;
 }
 
-#formHeader{
+#formHeader {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 
 }
@@ -204,8 +211,8 @@ input:focus {
     color: #555555;
 }
 
-.breadCrumbsLinks:hover{
-    color:#bd362f;
+.breadCrumbsLinks:hover {
+    color: #bd362f;
 }
 
 .breadCrumbsLinks.selectedBreadCrumbs {
@@ -248,7 +255,7 @@ header {
     width: 100%;
     height: 5px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-  }
+}
 
 .formTitle {
     font-size: 24px;
@@ -310,7 +317,7 @@ nav {
     display: flex;
 }
 
-#searchBar2{
+#searchBar2 {
     width: 60%;
 }
 
@@ -593,7 +600,7 @@ li {
     font-weight: bold;
     color: #555555;
     display: flex;
-
+    margin-top: 20px;
 }
 
 .ProjectRivew2 {
@@ -615,7 +622,7 @@ span {
     justify-content: center;
 }
 
-.col{
+.col {
     align-items: center;
 }
 
@@ -787,7 +794,7 @@ span {
     margin-top: 0;
 }
 
-.FileLogoSrs{
+.FileLogoSrs {
     height: 20px;
     width: 20px;
 }
@@ -803,6 +810,10 @@ span {
     height: 18px;
     width: 18px;
     margin-left: 40px;
+}
+
+#commentSecList {
+    width: 500px;
 }
 
 .stars {
@@ -846,15 +857,17 @@ section .btn.btn-primary.indecViewTitleButton.active,
 
 @keyframes glowing {
     0% {
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
     }
+
     50% {
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
     }
+
     100% {
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
     }
-  }
+}
 
 .Rating {
     width: 100%;
@@ -1267,12 +1280,29 @@ form {
     justify-content: center;
 }
 
-#logoContainer{
+#logoContainer {
     margin-right: 0px;
 }
 
 .selectedNavDesktop {
     color: #bd362f;
+}
+
+.input-group.mb-3.commentInput {
+    margin-left: 0;
+}
+
+#commentInputMobile {
+    border-radius: 5px;
+}
+
+.ClappImage {
+    background: url(../images/clapping-hands.png);
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 
@@ -1763,7 +1793,9 @@ form {
         margin-left: 0;
     }
 
-
+    #mobileComments {
+        display: none;
+    }
 
     .mobileComments {
         display: flex;
@@ -1781,12 +1813,17 @@ form {
         text-align: center;
     }
 
-
+    #sendSubmit {
+        position: absolute;
+        right: 5px;
+        top: 17px
+    }
 
     #mobileCommentsRight {
         width: 80%;
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     #mobileCommentsRight>section {
@@ -1912,6 +1949,24 @@ form {
 
     .commentSec {
         display: flex;
+        align-items: center;
+    }
+
+    #commentSecList {
+        width: 100%;
+        padding-right: 32px;
+    }
+
+    .comment {
+        align-items: center;
+    }
+
+    .ClappImage {
+        height: 65%;
+        display: flex;
+        flex-flow: column;
+        margin-right: 10px;
+        width: 25px;
         align-items: center;
     }
 
@@ -2069,7 +2124,7 @@ li>a {
     background-repeat: no-repeat;
 }
 
-.shareButtonImg{
+.shareButtonImg {
     background: url(../images/share.png);
     width: 23px;
     height: 23px;
@@ -2132,15 +2187,6 @@ li>a {
     background-repeat: no-repeat;
 }
 
-.ClappImage {
-    background: url(../images/clapping-hands.png);
-    height: 20px;
-    width: 20px;
-    margin-left: 10px;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
 #GrayArrow {
     background: url(../images/GrayArrow.png);
     height: 23px;
@@ -2157,10 +2203,6 @@ li>a {
     margin-bottom: 30px;
     background-color: #eeeeee;
     display: none;
-}
-
-#commentSecList{
-    width: 500px;
 }
 
 .CommentName {
@@ -2184,6 +2226,7 @@ li>a {
     margin-left: 10px;
 
 }
+
 #sendIcon {
     background: url(../images/Send.png);
     height: 15px;
