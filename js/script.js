@@ -258,14 +258,20 @@ if (window.location.href.indexOf("indexView") !== -1) {
     const posts = document.querySelector('#coomentSection');
     const sumComments = document.querySelector('#totalComments');
     const commentInput = document.querySelector('#inputComment');
-
+    const sortNew = document.querySelector('#newSort');
+    const sortOld = document.querySelector('#oldSort');
+    const newForm = document.querySelector('#newForm');
+    const oldForm = document.querySelector('#oldForm');
 
     submit.addEventListener('click', (e) => {
         e.preventDefault();
         messageEl.innerHTML = "<span class='loading'>Loading..</span>";
         savePost(form);
         expanedComments();
-        console.log("1");
+        sortOld.style.color = '#555555';
+        sortOld.style.backgroundColor = 'white';
+        sortNew.style.color = '#555555';
+        sortNew.style.backgroundColor = 'white';
     });
 
     const savePost = async (form) => {
@@ -285,10 +291,6 @@ if (window.location.href.indexOf("indexView") !== -1) {
         }
     };
 
-    const sortNew = document.querySelector('#newSort');
-    const sortOld = document.querySelector('#oldSort');
-    const newForm = document.querySelector('#newForm');
-    const oldForm = document.querySelector('#oldForm');
 
     sortNew.addEventListener('click', (e) => {
         e.preventDefault();
