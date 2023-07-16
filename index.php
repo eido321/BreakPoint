@@ -58,7 +58,7 @@ if (!$resultAll) {
 $searchValue = '';
 if (isset($_GET["query"]) && $_GET["query"] != '') {
     $searchValue = $_GET["query"];
-    $queryAll = "SELECT * FROM tbl_214_test WHERE title='" . $_GET["query"] . "'";
+    $queryAll = "SELECT * FROM tbl_214_test WHERE title Like '" . $_GET["query"] . "%'";
     $resultAll = mysqli_query($connection, $queryAll);
 
     if (!$resultAll) {

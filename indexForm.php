@@ -86,15 +86,14 @@ if (isset($_POST["projId"])) {
         </div>
         <section class="body-conForm">
             <div class="breadCrumbsNoneSideBar">
-                <span><a class="breadCrumbsLinks"
-                        href="index.php">All Projects</a> > <a class="breadCrumbsLinks selectedBreadCrumbs"
-                        href="indexForm.php">Project
+                <span><a class="breadCrumbsLinks" href="index.php">All Projects</a> > <a
+                        class="breadCrumbsLinks selectedBreadCrumbs" href="indexForm.php">Project
                         <?php echo $state; ?></a></span>
             </div>
             <section class="formTitle">
                 <p>&nbsp;
                     <?php
-                    if ($state == 'insert') {   
+                    if ($state == 'insert') {
                         echo "Project Creation";
                     } else {
                         echo "Edit Project";
@@ -115,14 +114,32 @@ if (isset($_POST["projId"])) {
                                         echo "value='" . htmlspecialchars($title, ENT_QUOTES) . "'";
                                     } ?>>
                             </div>
+                    
                             <div class="mb-3 formInfo">
-                                <label class="form-label"><b>Project
-                                        Type</b></label>
-                                <input type="text" class="form-control inputForm ProjectType" name="ProjectType"
-                                    placeholder="* Social" required <?php if ($state == 'Edit') {
-                                        echo "value=" . $row["proj_type"] . "";
-                                    } ?>>
+                                <label class="form-label"><b>Project Type</b></label>
+                                <select class="form-control inputForm ProjectType" name="ProjectType" required>
+                                    <option value="">* Select Project Type</option>
+                                    <option value="Social" <?php if ($state == 'Edit' && $row["proj_type"] == "1") {
+                                        echo " selected";
+                                    } ?>>Social</option>
+                                    <option value="Security" <?php if ($state == 'Edit' && $row["proj_type"] == "2") {
+                                        echo " selected";
+                                    } ?>>Security</option>
+                                    <option value="Health Care" <?php if ($state == 'Edit' && $row["proj_type"] == "3") {
+                                        echo " selected";
+                                    } ?>>Health Care</option>
+                                    <option value="Environmental" <?php if ($state == 'Edit' && $row["proj_type"] == "4") {
+                                        echo " selected";
+                                    } ?>>Environmental</option>
+                                    <option value="Cultural" <?php if ($state == 'Edit' && $row["proj_type"] == "5") {
+                                        echo " selected";
+                                    } ?>>Cultural</option>
+                                    <option value="Other" <?php if ($state == 'Edit' && $row["proj_type"] == "6") {
+                                        echo " selected";
+                                    } ?>>Other</option>
+                                </select>
                             </div>
+
                         </div>
                         <label>&nbsp;&nbsp;<b>Participant 1</b></label>
                         <div class="formInfo1Line2">

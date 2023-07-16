@@ -1,0 +1,28 @@
+{
+    "projectType": [
+        {
+            "id": "1",
+            "category": "Social"
+        },
+        {
+            "id": "2",
+            "category": "Security"
+        },
+        {
+            "id": "3",
+            "category": "Health Care"
+        },
+        {
+            "id": "4",
+            "category": "Environmental"
+        },
+        {
+            "id": "5",
+            "category": "Cultural"
+        },
+        {
+            "id": "6",
+            "category": "Other"
+        }
+    ]
+}
