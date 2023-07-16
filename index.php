@@ -282,9 +282,68 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                         <button class="btn btn-outline-secondary" type="submit">
                                             <span id="search2"></span>
                                         </button>
-                                        <button class="btn btn-outline-secondary" type="button">
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle searchSort" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <span id="sortIconImageDesktop"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <form method="get" action=""></form>
+                                                </li>
+                                                <li>
+                                                    <form method="post" action="" id="formType1">
+                                                        <input type="hidden" name="typeProj" value=""
+                                                            class="typeOption">
+                                                        <button type="submit" class="dropdown-item typeItem typeOption"
+                                                            id="formType1Submit"></button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form method="post" action="" id="formType2">
+                                                        <input type="hidden" name="typeProj" value=""
+                                                            class="typeOption">
+                                                        <button type="submit" class="dropdown-item typeItem typeOption"
+                                                            id="formType2Submit"></button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form method="post" action="" id="formType3">
+                                                        <input type="hidden" name="typeProj" value=""
+                                                            class="typeOption">
+                                                        <button type="submit" class="dropdown-item typeItem typeOption"
+                                                            id="formType3Submit"></button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form method="post" action="" id="formType4">
+                                                        <input type="hidden" name="typeProj" value=""
+                                                            class="typeOption">
+                                                        <button type="submit" class="dropdown-item typeItem typeOption"
+                                                            id="formType4Submit"></button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form method="post" action="" id="formType5">
+                                                        <input type="hidden" name="typeProj" value=""
+                                                            class="typeOption">
+                                                        <button type="submit" class="dropdown-item typeItem typeOption"
+                                                            id="formType5Submit"></button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form method="post" action="" id="formType6">
+                                                        <input type="hidden" name="typeProj" value=""
+                                                            class="typeOption">
+                                                        <button type="submit" class="dropdown-item typeItem typeOption"
+                                                            id="formType6Submit"></button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- <button class="btn btn-outline-secondary" type="button">
                                             <span id="sortIconImageDesktop"></span>
-                                        </button>
+                                        </button> -->
                                     </div>
                                 </form>
 
@@ -431,7 +490,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </section>
             </div>
             <div class="projectsBody">
-                <div class="container text-center gridBody">
+                <div class="container text-center gridBody" id="projectsMain">
                     <?php
                     $count = 0;
                     echo '<div class="row rowM">';
@@ -467,6 +526,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <div id="projIdElement" data-projId="<?php echo $projId; ?>"></div>
     <script src="js/script.js"></script>
+    <script src="js/getType.js"></script>
+
 </body>
 
 </html>

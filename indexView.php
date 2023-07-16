@@ -422,7 +422,7 @@ if ($tmp) {
                                 <input type="hidden" name="des" value="1">
                                 <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
                                 <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
-                                <li><button type="submit" name="des" class="dropdown-item commentItem"
+                                <li><button type="submit" class="dropdown-item commentItem"
                                         id="newSortMobile" href="">Newest</button>
                                 </li>
                             </form>

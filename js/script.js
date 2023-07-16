@@ -287,7 +287,7 @@ if (window.location.href.indexOf("indexView") !== -1) {
     submit.addEventListener('click', (e) => {
         e.preventDefault();
         messageEl.innerHTML = "<span class='loading'>Loading..</span>";
-        savePost(formDesktop,posts);
+        savePost(formDesktop, posts);
         expanedComments();
         sortOld.style.color = '#555555';
         sortOld.style.backgroundColor = 'white';
@@ -297,12 +297,12 @@ if (window.location.href.indexOf("indexView") !== -1) {
 
     submitMobile.addEventListener('click', (e) => {
         e.preventDefault();
-        savePost(formMobile,postsMobile);
+        savePost(formMobile, postsMobile);
         expanedCommentsMobile();
 
     });
 
-    const savePost = async (form,posts) => {
+    const savePost = async (form, posts) => {
         try {
             let response = await fetch('action.php', {
                 method: 'POST',
@@ -322,7 +322,7 @@ if (window.location.href.indexOf("indexView") !== -1) {
 
     sortNew.addEventListener('click', (e) => {
         e.preventDefault();
-        savePost(newForm,posts);
+        savePost(newForm, posts);
         sortNew.style.color = 'white';
         sortNew.style.backgroundColor = '#bd362f';
         sortOld.style.color = '#555555';
@@ -332,7 +332,7 @@ if (window.location.href.indexOf("indexView") !== -1) {
 
     sortOld.addEventListener('click', (e) => {
         e.preventDefault();
-        savePost(oldFormMobile,posts);
+        savePost(oldFormMobile, posts);
         sortOld.style.color = 'white';
         sortOld.style.backgroundColor = '#bd362f';
         sortNew.style.color = '#555555';
@@ -342,7 +342,7 @@ if (window.location.href.indexOf("indexView") !== -1) {
 
     sortNewMobile.addEventListener('click', (e) => {
         e.preventDefault();
-        savePost(newFormMobile,postsMobile);
+        savePost(newFormMobile, postsMobile);
         sortNewMobile.style.color = 'white';
         sortNewMobile.style.backgroundColor = '#bd362f';
         sortOldMobile.style.color = '#555555';
@@ -352,7 +352,7 @@ if (window.location.href.indexOf("indexView") !== -1) {
 
     sortOldMobile.addEventListener('click', (e) => {
         e.preventDefault();
-        savePost(oldFormMobile,postsMobile);
+        savePost(oldFormMobile, postsMobile);
         sortOldMobile.style.color = 'white';
         sortOldMobile.style.backgroundColor = '#bd362f';
         sortNewMobile.style.color = '#555555';
@@ -360,6 +360,64 @@ if (window.location.href.indexOf("indexView") !== -1) {
         expanedComments();
     });
 
-    savePost(formDesktop,posts);
-    savePost(formMobile,postsMobile);
+    savePost(formDesktop, posts);
+    savePost(formMobile, postsMobile);
 }
+
+
+const submitSearchSort1 = document.querySelector('#formType1Submit');
+const submitSearchSort2 = document.querySelector('#formType2Submit');
+const submitSearchSort3 = document.querySelector('#formType3Submit');
+const submitSearchSort4 = document.querySelector('#formType4Submit');
+const submitSearchSort5 = document.querySelector('#formType5Submit');
+const submitSearchSort6 = document.querySelector('#formType6Submit');
+const submitFormSort1 = document.querySelector('#formType1');
+const submitFormSort2 = document.querySelector('#formType2');
+const submitFormSort3 = document.querySelector('#formType3');
+const submitFormSort4 = document.querySelector('#formType4');
+const submitFormSort5 = document.querySelector('#formType5');
+const submitFormSort6 = document.querySelector('#formType6');
+
+const projectMain = document.querySelector('#projectsMain');
+
+submitSearchSort1.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort1);
+});
+submitSearchSort2.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort2);
+});
+submitSearchSort3.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort3);
+});
+submitSearchSort4.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort4);
+});
+submitSearchSort5.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort5);
+});
+submitSearchSort6.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort6);
+});
+
+
+const saveSort = async (form) => {
+    try {
+        let response = await fetch('actionSearchSort.php', {
+            method: 'POST',
+            body: new FormData(form),
+        });
+        const result = await response.json();
+        projectMain.innerHTML = result.retVal;
+        // commentInput.value = "";
+        // messageEl.style.display = "none";
+
+    } catch (error) {
+        console.log(error);
+    }
+};

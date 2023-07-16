@@ -322,6 +322,33 @@ nav {
     width: 60%;
 }
 
+.btn.dropdown-toggle.searchSort {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.btn.dropdown-toggle.searchSort:hover {
+    background-color: #bd362f;
+}
+
+.btn.dropdown-toggle.searchSort::after {
+    display: none;
+}
+
+.dropdown-item.typeItem:hover {
+    color: #bd362f;
+}
+
+.dropdown-item.typeItem:active
+{
+    background-color: #bd362f;
+    color: white;
+}
+
+.dropdown-menu>li>form {
+    width: 100%;
+}
+
 .leftSearchBar {
     width: 294px;
     height: 32px;
