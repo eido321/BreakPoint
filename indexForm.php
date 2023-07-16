@@ -117,24 +117,24 @@ if (isset($_POST["projId"])) {
                     
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>Project Type</b></label>
-                                <select class="form-control inputForm ProjectType" name="ProjectType" required>
+                                <select id="typeOptions" class="form-control inputForm ProjectType" name="ProjectType" required>
                                     <option value="">* Select Project Type</option>
-                                    <option value="Social" <?php if ($state == 'Edit' && $row["proj_type"] == "1") {
+                                    <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "1") {
                                         echo " selected";
                                     } ?>>Social</option>
-                                    <option value="Security" <?php if ($state == 'Edit' && $row["proj_type"] == "2") {
+                                    <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "2") {
                                         echo " selected";
                                     } ?>>Security</option>
-                                    <option value="Health Care" <?php if ($state == 'Edit' && $row["proj_type"] == "3") {
+                                    <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "3") {
                                         echo " selected";
                                     } ?>>Health Care</option>
-                                    <option value="Environmental" <?php if ($state == 'Edit' && $row["proj_type"] == "4") {
+                                    <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "4") {
                                         echo " selected";
                                     } ?>>Environmental</option>
-                                    <option value="Cultural" <?php if ($state == 'Edit' && $row["proj_type"] == "5") {
+                                    <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "5") {
                                         echo " selected";
                                     } ?>>Cultural</option>
-                                    <option value="Other" <?php if ($state == 'Edit' && $row["proj_type"] == "6") {
+                                    <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "6") {
                                         echo " selected";
                                     } ?>>Other</option>
                                 </select>

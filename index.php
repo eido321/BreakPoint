@@ -64,7 +64,6 @@ if (isset($_GET["query"]) && $_GET["query"] != '') {
     if (!$resultAll) {
         die("DB query failed.");
     }
-
 }
 ?>
 
