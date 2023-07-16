@@ -144,9 +144,10 @@ input:focus {
     margin-left: 3px;
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
+    border-left: 10px solid transparent;    
     border-right: 10px solid transparent;
     border-top: 14px solid #bd362f;
+    background-color: #f8f9fa;
 }
 
 
@@ -590,6 +591,7 @@ li {
 
 #mobileCommentsTitle{
     margin-left: 30px;
+    display: flex;
 }
 
 .projectNameView {
@@ -1633,7 +1635,7 @@ form {
 
     .mobileHeader {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
     }
@@ -1816,7 +1818,7 @@ form {
         text-align: center;
     }
 
-    #sendSubmit {
+    #sendSubmitMobile {
         position: absolute;
         right: 5px;
         top: 17px
@@ -1831,7 +1833,11 @@ form {
 
     #mobileCommentsRight>section {
         display: flex;
-        width: 90%;
+        width: 100%;
+    }
+
+    #mobileCommentForm{
+        width: 95%;
     }
 
     #mobileCommentsRight>section>section {

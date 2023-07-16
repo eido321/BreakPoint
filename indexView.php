@@ -378,26 +378,27 @@ if ($tmp) {
                 <section id="mobileCommentsRight">
                     <section>
                         <form method="post" action="" id="mobileCommentForm">
+                            <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
+                            <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
                             <div class="input-group mb-3 commentInput">
-                                <input type="text" class="form-control commentInput" id="commentInputMobile"
-                                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                                    placeholder="Add a comment...">
-                                <button type="submit" id="sendSubmit">
+                                <input type="text" class="form-control commentInput" name="commnetText"
+                                    id="commentInputMobile" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default" placeholder="Add a comment...">
+                                <button type="submit" id="sendSubmitMobile">
                                     <div id="sendIcon"></div>
                                 </button>
                             </div>
-                            <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
-                            <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
                         </form>
-                        <section id="dropCommentsMobile">
-                            <button id="commentMobileExpandButton" onclick="expanedCommentsMobile()"></button>
-                        </section>
+
                     </section>
                 </section>
             </section>
             <section id="mobileCommentsTitle">
-                <span id="totalComments"></span>
+                <span class="totalComments"></span>
                 <span>&nbsp;Comments</span>
+                <section id="dropCommentsMobile">
+                    <button id="commentMobileExpandButton" onclick="expanedCommentsMobile()"></button>
+                </section>
                 <br>
             </section>
             <section id="mobileComments">
@@ -557,7 +558,7 @@ if ($tmp) {
                             <section class="leftCommentSectionLine">
                                 <section>
                                     <span class="leftCommentSectionText1"><span
-                                            id="totalComments"></span>&nbsp;&nbsp;Comments</span>
+                                            class="totalComments"></span>&nbsp;&nbsp;Comments</span>
                                     <button class="leftCommentSectionText1Icon" onclick="expanedComments()"></button>
                                 </section>
 

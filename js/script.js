@@ -267,23 +267,23 @@ Array.from(creativityElements).forEach((element) => {
 
 if (window.location.href.indexOf("indexView") !== -1) {
     const submit = document.querySelector('#sendSubmit');
-    const form = document.querySelector('#addComment');
+    const formDesktop = document.querySelector('#addComment');
     const messageEl = document.querySelector('#loading');
     const posts = document.querySelector('#coomentSection');
-    const sumComments = document.querySelector('#totalComments');
+    const sumComments = document.querySelectorAll('.totalComments');
     const commentInput = document.querySelector('#inputComment');
     const sortNew = document.querySelector('#newSort');
     const sortOld = document.querySelector('#oldSort');
     const newForm = document.querySelector('#newForm');
     const oldForm = document.querySelector('#oldForm');
-    const submitMobile = document.querySelector('#sendSubmit');
+    const submitMobile = document.querySelector('#sendSubmitMobile');
     const formMobile = document.querySelector('#mobileCommentForm');
     const postsMobile = document.querySelector('#mobileComments');
 
     submit.addEventListener('click', (e) => {
         e.preventDefault();
         messageEl.innerHTML = "<span class='loading'>Loading..</span>";
-        savePost(formMobile,posts);
+        savePost(formDesktop,posts);
         expanedComments();
         sortOld.style.color = '#555555';
         sortOld.style.backgroundColor = 'white';
@@ -293,13 +293,9 @@ if (window.location.href.indexOf("indexView") !== -1) {
 
     submitMobile.addEventListener('click', (e) => {
         e.preventDefault();
-        messageEl.innerHTML = "<span class='loading'>Loading..</span>";
         savePost(formMobile,postsMobile);
-        expanedComments();
-        sortOld.style.color = '#555555';
-        sortOld.style.backgroundColor = 'white';
-        sortNew.style.color = '#555555';
-        sortNew.style.backgroundColor = 'white';
+        expanedCommentsMobile();
+
     });
 
     const savePost = async (form,posts) => {
@@ -310,7 +306,8 @@ if (window.location.href.indexOf("indexView") !== -1) {
             });
             const result = await response.json();
             posts.innerHTML = result.retVal;
-            sumComments.innerHTML = result.sumVal;
+            sumComments[0].innerHTML = result.sumVal;
+            sumComments[1].innerHTML = result.sumVal;
             commentInput.value = "";
             messageEl.style.display = "none";
 
@@ -339,6 +336,6 @@ if (window.location.href.indexOf("indexView") !== -1) {
         expanedComments();
     });
 
-    savePost(form,posts);
+    savePost(formDesktop,posts);
     savePost(formMobile,postsMobile);
 }
