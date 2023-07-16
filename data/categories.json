@@ -1,28 +1,28 @@
 {
-    "projectType": [
+    "projectTypes": [
         {
             "id": "1",
-            "category": "Social"
+            "projectType": "Social"
         },
         {
             "id": "2",
-            "category": "Security"
+            "projectType": "Security"
         },
         {
             "id": "3",
-            "category": "Health Care"
+            "projectType": "Health Care"
         },
         {
             "id": "4",
-            "category": "Environmental"
+            "projectType": "Environmental"
         },
         {
             "id": "5",
-            "category": "Cultural"
+            "projectType": "Cultural"
         },
         {
             "id": "6",
-            "category": "Other"
+            "projectType": "Other"
         }
     ]
 }

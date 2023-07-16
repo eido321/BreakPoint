@@ -3,8 +3,8 @@ function showData(data) {
         let options = document.querySelectorAll(".typeOption");
         let i = 0;
         for (const option of options) {
-            option.value = `${data.categories[i].category}`;
-            option.innerHTML = `${data.categories[i].category}`
+            option.value = `${data.projectTypes[i].projectType}`;
+            option.innerHTML = `${data.projectTypes[i].projectType}`;
             i++;
         }
     }

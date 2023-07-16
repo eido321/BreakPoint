@@ -121,22 +121,22 @@ if (isset($_POST["projId"])) {
                                     <option value="">* Select Project Type</option>
                                     <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "1") {
                                         echo " selected";
-                                    } ?>>Social</option>
+                                    } ?>></option>
                                     <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "2") {
                                         echo " selected";
-                                    } ?>>Security</option>
+                                    } ?>></option>
                                     <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "3") {
                                         echo " selected";
-                                    } ?>>Health Care</option>
+                                    } ?>></option>
                                     <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "4") {
                                         echo " selected";
-                                    } ?>>Environmental</option>
+                                    } ?>></option>
                                     <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "5") {
                                         echo " selected";
-                                    } ?>>Cultural</option>
+                                    } ?>></option>
                                     <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "6") {
                                         echo " selected";
-                                    } ?>>Other</option>
+                                    } ?>></option>
                                 </select>
                             </div>
 
@@ -261,6 +261,7 @@ if (isset($_POST["projId"])) {
     </section>
     <div id="formFunc"></div>
     <script src="js/script.js"></script>
+    <script src="js/getType.js"></script>
 </body>
 
 </html>
