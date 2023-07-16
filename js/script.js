@@ -276,6 +276,10 @@ if (window.location.href.indexOf("indexView") !== -1) {
     const sortOld = document.querySelector('#oldSort');
     const newForm = document.querySelector('#newForm');
     const oldForm = document.querySelector('#oldForm');
+    const sortNewMobile = document.querySelector('#newSortMobile');
+    const sortOldMobile = document.querySelector('#oldSortMobile');
+    const newFormMobile = document.querySelector('#newFormMobile');
+    const oldFormMobile = document.querySelector('#oldFormMobile');
     const submitMobile = document.querySelector('#sendSubmitMobile');
     const formMobile = document.querySelector('#mobileCommentForm');
     const postsMobile = document.querySelector('#mobileComments');
@@ -328,11 +332,31 @@ if (window.location.href.indexOf("indexView") !== -1) {
 
     sortOld.addEventListener('click', (e) => {
         e.preventDefault();
-        savePost(oldForm,posts);
+        savePost(oldFormMobile,posts);
         sortOld.style.color = 'white';
         sortOld.style.backgroundColor = '#bd362f';
         sortNew.style.color = '#555555';
         sortNew.style.backgroundColor = 'white';
+        expanedComments();
+    });
+
+    sortNewMobile.addEventListener('click', (e) => {
+        e.preventDefault();
+        savePost(newFormMobile,postsMobile);
+        sortNewMobile.style.color = 'white';
+        sortNewMobile.style.backgroundColor = '#bd362f';
+        sortOldMobile.style.color = '#555555';
+        sortOldMobile.style.backgroundColor = 'white';
+        expanedComments();
+    });
+
+    sortOldMobile.addEventListener('click', (e) => {
+        e.preventDefault();
+        savePost(oldFormMobile,postsMobile);
+        sortOldMobile.style.color = 'white';
+        sortOldMobile.style.backgroundColor = '#bd362f';
+        sortNewMobile.style.color = '#555555';
+        sortNewMobile.style.backgroundColor = 'white';
         expanedComments();
     });
 

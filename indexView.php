@@ -394,34 +394,44 @@ if ($tmp) {
                 </section>
             </section>
             <section id="mobileCommentsTitle">
-                <span class="totalComments"></span>
-                <span>&nbsp;Comments</span>
-                <section id="dropCommentsMobile">
-                    <button id="commentMobileExpandButton" onclick="expanedCommentsMobile()"></button>
+                <section>
+                    <span class="totalComments"></span>
+                    <span>&nbsp;Comments</span>
+                    <section id="dropCommentsMobile">
+                        <button id="commentMobileExpandButton" onclick="expanedCommentsMobile()"></button>
+                    </section>
+                </section>
+                <section>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle commnetDropdown" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <b>Sort</b>
+                        </button>
+
+
+                        <ul class="dropdown-menu commentSortList">
+                            <form method="post" action="" id="oldFormMobile">
+                                <input type="hidden" name="asc" value="1">
+                                <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
+                                <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
+                                <li><button type="submit" class="dropdown-item commentItem" id="oldSortMobile"
+                                        href="">Latest</button>
+                                </li>
+                            </form>
+                            <form method="post" action="" id="newFormMobile">
+                                <input type="hidden" name="des" value="1">
+                                <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
+                                <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
+                                <li><button type="submit" name="des" class="dropdown-item commentItem"
+                                        id="newSortMobile" href="">Newest</button>
+                                </li>
+                            </form>
+                        </ul>
+                    </div>
                 </section>
                 <br>
             </section>
             <section id="mobileComments">
-
-                <!-- <ul id='commentSecList'>
-                    <li>
-                        <div class='comment'>
-                            <section class='CommentName'>
-                                <img src="images/ranProfile.png" alt='ranProfile' class='ranProfileImage2'><b>ran
-                                    lachmy</b>
-                            </section>
-                            <section class='coomentWhiteBox'>
-                                <p class='commentsText'>
-                                    ajsdn asd asda sdas d asd asd as dsadas dasda sdasd adsss
-                                </p>
-                            </section>
-                            <button class='ClappImage' data-is-active='true' onclick='toggleLike(this)'>
-                                <br>
-                                <span>0</span>
-                            </button>
-                        </div>
-                    </li>
-                </ul> -->
             </section>
         </div>
         <section class=" body-con">

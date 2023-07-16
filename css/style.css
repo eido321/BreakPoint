@@ -592,6 +592,13 @@ li {
 #mobileCommentsTitle{
     margin-left: 30px;
     display: flex;
+    align-items: center;
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+#mobileCommentsTitle > section{
+    display: flex;
 }
 
 .projectNameView {
