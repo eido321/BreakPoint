@@ -81,7 +81,6 @@ while ($count % 3 != 0) {
 }
 if($check==0){
     $str.= '<section id="noProjMsg"><span>Sorry, but there are no projects of this type available at the moment.</span></section>';
-
 }
 $str .= '</div>';
 

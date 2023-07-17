@@ -557,9 +557,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="projectsBody">
                 <div class="container text-center gridBody" id="projectsMain">
                     <?php
+                    $check = 0;
                     $count = 0;
                     echo '<div class="row rowM">';
                     while ($row = mysqli_fetch_assoc($resultAll)) {
+                        $check++;
                         $img = $row["img_url"];
                         if (!$img)
                             $img = 'images/projectsImages/default.png';
@@ -583,6 +585,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         $count++;
                     }
                     echo '</div>';
+                    if($check==0){
+                        echo '<section id="noProjMsg"><span>Sorry, but there are no projects of this title available at the moment.</span></section>';
+                    }
                     ?>
                 </div>
             </div>
