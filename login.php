@@ -17,8 +17,6 @@ if (!empty($_POST["loginMail"])) {
     . $_POST["loginPass"]
     . "'";
 
-  // echo $query;
-
   $result = mysqli_query($connection, $query);
   $row = mysqli_fetch_array($result);
 

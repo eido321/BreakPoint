@@ -32,8 +32,8 @@ if ($tmp) {
     $projId = 0;
 }
 ?>
-
 <?php
+
 $queryUser = "SELECT * FROM tbl_214_users WHERE u_id='"
     . $_SESSION["u_id"]
     . "'";
@@ -46,101 +46,23 @@ $tmpUser = mysqli_fetch_assoc($resultUser);
 ?>
 
 <?php
-//get data from DB
-$queryAll = "SELECT * FROM tbl_214_test order by id";
-$resultAll = mysqli_query($connection, $queryAll);
-if (!$resultAll) {
-    die("DB query failed.");
-}
-?>
+if (isset($_POST['userMail'])) {
+    $userName = $_POST['userName'];
+    $userMail = $_POST['userMail'];
+    $userPass = $_POST['userPass'];
+    $userType = $_POST['userType'];
+    $queryUserAlter = "UPDATE tbl_214_users SET name='$userName',email='$userMail',password='$userPass',user_type='$userType' WHERE u_id='"
+        . $_SESSION["u_id"]
+        . "'";
+    $resultAlter = mysqli_query($connection, $queryUserAlter);
 
-<?php
-$searchValue = '';
-if (isset($_GET["query"]) && $_GET["query"] != '') {
-    $searchValue = $_GET["query"];
-    $queryAll = "SELECT * FROM tbl_214_test WHERE title Like '" . $_GET["query"] . "%'";
-    $resultAll = mysqli_query($connection, $queryAll);
-
-    if (!$resultAll) {
+    if (!$resultAlter) {
         die("DB query failed.");
     }
+    header('Location: ' . URL . 'indexProfile.php');
 }
 ?>
 
-<?php
-if (isset($_POST['deleteProject'])) {
-    $queryDel = "DELETE FROM `tbl_214_test` WHERE (`id` = '" . $projId . "');";
-    $resultDel = mysqli_query($connection, $queryDel);
-
-    if (!$resultDel) {
-        die("DB query failed.");
-    }
-    $queryDel = "    DELETE FROM `tbl_214_test_and_users` WHERE (`id` = '" . $projId . "');";
-    $resultDel = mysqli_query($connection, $queryDel);
-
-    if (!$resultDel) {
-        die("DB query failed.");
-    }
-    header("Location: index.php?success");
-
-
-}
-?>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $ProjectName = isset($_POST['ProjectName']) ? mysqli_real_escape_string($connection, $_POST['ProjectName']) : null;
-    $ProjectType = isset($_POST['ProjectType']) ? mysqli_real_escape_string($connection, $_POST['ProjectType']) : null;
-    $Participant1Name = isset($_POST['Participant1Name']) ? mysqli_real_escape_string($connection, $_POST['Participant1Name']) : null;
-    $Participant1NameSecond = isset($_POST['Participant1NameSecond']) ? mysqli_real_escape_string($connection, $_POST['Participant1NameSecond']) : null;
-    $Participant2Name = isset($_POST['Participant2Name']) ? mysqli_real_escape_string($connection, $_POST['Participant2Name']) : null;
-    $Participant2NameSecond = isset($_POST['Participant2NameSecond']) ? mysqli_real_escape_string($connection, $_POST['Participant2NameSecond']) : null;
-    $ProjectType = isset($_POST['ProjectType']) ? mysqli_real_escape_string($connection, $_POST['ProjectType']) : null;
-    $state = isset($_POST['state']) ? $_POST['state'] : null;
-    $projIdQ = isset($_POST['projId']) ? $_POST['projId'] : null;
-
-    if ($ProjectName !== null && $ProjectType !== null && $Participant1Name !== null && $Participant1NameSecond !== null && $Participant2Name !== null && $Participant2NameSecond !== null && $ProjectType !== null && $state !== null) {
-        if ($state == "Creation") {
-            $queryAdd = "INSERT INTO tbl_214_test (title,proj_type, p1_first_name, p1_last_name,p2_first_name,p2_last_name) VALUES ('$ProjectName', '$ProjectType' ,'$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond')";
-            $resultIns = mysqli_query($connection, $queryAdd);
-
-            if (!$resultIns) {
-                die("DB query failed insert.");
-            }
-            $queryProj = "SELECT * FROM tbl_214_test WHERE title='" . $ProjectName . "'";
-            $resultIns = mysqli_query($connection, $queryProj);
-
-            if (!$resultIns) {
-                die("DB query failed find proj.");
-            }
-
-            $tmpProj = mysqli_fetch_assoc($resultIns);
-            $queryAddProj = "INSERT INTO tbl_214_test_and_users (id, u_id) VALUES ('" . $tmpProj["id"] . "', '" . $_SESSION["u_id"] . "')";
-            $resultIns = mysqli_query($connection, $queryAddProj);
-
-            if (!$resultIns) {
-                die("DB query failed insert proj user.");
-            }
-
-
-        } else {
-            $queryAdd = "UPDATE tbl_214_test SET title='$ProjectName',proj_type='$ProjectType', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
-            $resultIns = mysqli_query($connection, $queryAdd);
-
-            if (!$resultIns) {
-                die("DB query failed.");
-            }
-        }
-
-    }
-
-
-    // Redirect the user to a new page
-    header("Location: index.php?success");
-}
-// Get data from query string and escape variables for security
-
-?>
 
 <!doctype html>
 <html lang="en">
@@ -252,8 +174,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <div id="logoExpanded"></div>
                             </a>
                             <div>
-                                <a href="indexProfile.php" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
-                                        alt="ranProfile" class="ranProfileImage"></a>
+                                <a href="indexProfile.php" class="nav-link"><img
+                                        src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
+                                        class="ranProfileImage"></a>
                             </div>
                             <!-- <form action="" id="searchFormMobile" method="GET">
                                 <div id="searchBar1" class="input-group">
@@ -267,10 +190,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     </button>
                                 </div>
                             </form> -->
-                            <form action="" class="searchForm" method="GET">
+                            <form action="index.php" class="searchForm" method="GET">
                                 <div id="searchBar1" class="input-group">
                                     <input type="text" class="form-control" id="inputSearch1" name="query"
-                                        placeholder="Search Project" value="<?php echo $searchValue; ?>">
+                                        placeholder="Search Project">
                                     <button class="btn btn-outline-secondary" type="submit">
                                         <span id="search1"></span>
                                     </button>
@@ -285,43 +208,55 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile1">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType1SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile2">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType2SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile3">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType3SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile4">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType4SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile5">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType5SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile6">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType6SubmitMobile"></button>
                                                 </form>
                                             </li>
@@ -340,10 +275,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </div>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <div id="desktopNav">
-                                <form action="" class="searchForm" method="GET">
+                                <form action="index.php" class="searchForm" method="GET">
                                     <div id="searchBar2" class="input-group">
                                         <input type="text" class="form-control" id="inputSearch2" name="query"
-                                            placeholder="Search Project" value="<?php echo $searchValue; ?>">
+                                            placeholder="Search Project">
                                         <button class="btn btn-outline-secondary" type="submit">
                                             <span id="search2"></span>
                                         </button>
@@ -429,8 +364,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                         </a>
                                     </section>
                                     <section id="ranProfile" class="nav-item">
-                                        <a href="indexProfile.php" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
-                                                alt="ranProfile" class="ranProfileImage"></a>
+                                        <a href="indexProfile.php" class="nav-link"><img
+                                                src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
+                                                class="ranProfileImage"></a>
                                     </section>
                                 </div>
                             </div>
@@ -500,7 +436,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         <section class="body-con">
             <div class="breadCrumbs">
-                <span><a href="index.php" class="breadCrumbsLinks selectedBreadCrumbs">All Projects</a></span>
+                <span><a href="index.php" class="breadCrumbsLinks selectedBreadCrumbs">My Profile</a></span>
             </div>
 
             <div class="sideBar">
@@ -555,41 +491,80 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </section>
             </div>
             <div class="projectsBody">
-                <div class="container text-center gridBody" id="projectsMain">
-                    <?php
-                    $check = 0;
-                    $count = 0;
-                    echo '<div class="row rowM">';
-                    while ($row = mysqli_fetch_assoc($resultAll)) {
-                        $check++;
-                        $img = $row["img_url"];
-                        if (!$img)
-                            $img = 'images/projectsImages/default.png';
-                        echo '
-            <div class="col">
-                <div class="projectContainer">
-                    <a href="indexView.php?projId=' . $row["id"] . '"><img src="' . $img . '" alt="projectImg" class="projectImages"></a>
-                    <a href="indexView.php?projId=' . $row["id"] . '" class="projectName">' . $row["title"] . '</a>
-                    <span class="fromSpan">By ' . $row["p1_first_name"] . ' ' . $row["p1_last_name"] . ' and ' . $row["p2_first_name"] . ' ' . $row["p2_last_name"] . '</span>
-                    <section class="underlineProject"></section>
+                <div class="container text-center profileMain" id="profileMain">
+                    <section class="staticInfo">
+                        <div id="staticInfoLeft">
+                            <a href="indexProfile.php" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                    alt="ranProfile" class="ranProfileImage" id="profileImgBig"></a>
+                        </div>
+                        <span>
+                            <?php echo $tmpUser["name"]; ?>
+                        </span>
+                        <span>
+                            <?php $datetimeString = $tmpUser["register_date"];
+                            $dateOnly = date("Y/m/d", strtotime($datetimeString));
+                            echo $dateOnly; ?>
+                        </span>
+
+                        <svg id="staticInfoSvg" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+                            <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none; fill:#eeeeee;">
+                            </path>
+                        </svg>
+                    </section>
+                    <section class="dynamicInfo">
+                        <button id="editProfile" onclick="enterEditModeProfile()">Edit</button>
+                        <span>Personal Information</span><br>
+
+                        <form method="post" action="indexProfile.php">
+                            <section>
+                                <div class="mb-3 formInfo profileForm">
+                                    <label class="form-label"><b>Full
+                                            Name</b></label>
+                                    <input type="text" class="form-control inputForm profileField" name="userName"
+                                        placeholder="* Jhon Smith" required disabled
+                                        value="<?php echo $tmpUser["name"]; ?>">
+                                </div>
+                                <div class="mb-3 formInfo profileForm">
+                                    <label class="form-label"><b>Mail
+                                        </b></label>
+                                    <input type="email" class="form-control inputForm profileField" name="userMail"
+                                        placeholder="* example@gmail.com" required disabled
+                                        value="<?php echo $tmpUser["email"]; ?>">
+                                </div>
+                            </section>
+                            <section>
+                                <div class="mb-3 formInfo profileForm">
+                                    <label class="form-label"><b>Password
+                                        </b></label>
+                                    <input type="password" class="form-control inputForm profileField" name="userPass"
+                                        placeholder="* goodpass" required disabled
+                                        value="<?php echo $tmpUser["password"]; ?>">
+                                </div>
+                                <div class="mb-3 formInfo profileForm">
+                                    <label class="form-label"><b>User Type</b></label>
+                                    <select class="form-control inputForm profileField" name="userType" required
+                                        disabled>
+                                        <option <?php if ($tmpUser["user_type"] == 'Guest') {
+                                            echo 'selected';
+                                        } ?>>Guest
+                                        </option>
+                                        <option <?php if ($tmpUser["user_type"] == 'User') {
+                                            echo 'selected';
+                                        } ?>>User
+                                        </option>
+                                    </select>
+                                </div>
+                                <section id="profileButtons">
+                                    <div id="cancelProfile" onclick="exitEditModeProfile()">Cancel</div>
+                                    <button type="submit" id="submitProfile">Submit</button>
+                                </section>
+
+                            </section>
+
+                        </form>
+                    </section>
                 </div>
-            </div>
-            ';
-                        $count++;
-                        if ($count % 3 == 0) {
-                            echo '</div><div class="row rowM">';
-                        }
-                    }
-                    while ($count % 3 != 0) {
-                        echo '<div class="col"></div>';
-                        $count++;
-                    }
-                    echo '</div>';
-                    if($check==0){
-                        echo '<section id="noProjMsg"><span>Sorry, but there are no projects of this title available at the moment.</span></section>';
-                    }
-                    ?>
-                </div>
+
             </div>
         </section>
     </section>

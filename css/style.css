@@ -327,6 +327,7 @@ nav {
     border-bottom-left-radius: 0;
     border: var(--bs-border-width) solid var(--bs-border-color);
 }
+
 .btn.dropdown-toggle.searchSort:hover {
     background-color: #bd362f;
 }
@@ -339,8 +340,7 @@ nav {
     color: #bd362f;
 }
 
-.dropdown-item.typeItem:active
-{
+.dropdown-item.typeItem:active {
     background-color: #bd362f;
     color: white;
 }
@@ -1344,6 +1344,184 @@ form {
     background-repeat: no-repeat;
 }
 
+/*------------------*/
+/*  Profile */
+
+/* #staticInfo{
+    margin-top: 100px;
+    height: 200px;
+    width: 80%;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    
+} */
+
+.staticInfo {
+    display: inline-block;
+    position: relative;
+    width: 85%;
+    padding-bottom: 10%;
+    vertical-align: middle;
+    overflow: hidden;
+    background-color: #55555555;
+    height: 186px;
+    margin-top: 100px;
+    border-radius: 15px;
+    z-index: 0;
+}
+
+#staticInfoLeft {
+    position: absolute;
+    top: 45px;
+    left: 20px;
+}
+
+.dynamicInfo {
+    background-color: #eeeeee;
+    width: 85%;
+    height: 300px;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    position: relative;
+}
+
+#editProfile {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    background-color: #bd362f;
+    padding: 3px;
+    width: 50px;
+    border-radius: 10px;
+    color: #f8f9fa;
+}
+
+#editProfile:hover {
+    color: #bd362f;
+    background-color: #f8f9fa;
+    border: 1px solid #bd362f;
+
+}
+
+.dynamicInfo>span {
+    font-size: 18px;
+}
+
+.dynamicInfo>form {
+    display: flex;
+    width: 100%;
+    color: #555555;
+}
+
+.mb-3.formInfo.profileForm {
+    width: 70%;
+}
+
+.dynamicInfo>form>section {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.dynamicInfo>form>section>div {
+    text-align: start;
+}
+
+#profileImgBig {
+    position: relative;
+    width: 100px;
+    background-color: white;
+    border-radius: 50px;
+}
+
+#profileButtons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#submitProfile {
+    background-color: #bd362f;
+    padding: 3px;
+    width: 50px;
+    border-radius: 10px;
+    color: #f8f9fa;
+    width: 80px;
+    display: none;
+}
+
+#submitProfile:hover {
+    background-color: #f8f9fa;
+    color: #bd362f;
+}
+
+#cancelProfile{
+    background-color: #f8f9fa;
+    padding: 5px;
+    width: 50px;
+    border-radius: 10px;
+    color: #bd362f;
+    width: 80px;
+    display: none;
+}
+
+#cancelProfile:hover{
+    background-color: #bd362f;
+    color: #f8f9fa;
+}
+
+.staticInfo>span {
+    font-size: 24px;
+    position: absolute;
+    left: 140px;
+    top: 50px;
+}
+
+.staticInfo>span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #bd362f;
+}
+
+.staticInfo>span+span::after {
+    display: none;
+}
+
+.staticInfo>span+span {
+    font-size: 18px;
+    position: absolute;
+    left: 140px;
+    top: 90px;
+}
+
+#staticInfoSvg {
+    display: inline-block;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    z-index: -1;
+}
+
+#projectsMain {
+    display: flex;
+    flex-flow: column;
+}
+
+#profileMain {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
 
 @media(max-width:1200px) {
     .projectImages {
@@ -1359,12 +1537,16 @@ form {
 
 @media(max-width:992px) {
 
-    #noProjMsg{
+    #staticInfoSvg{
+        top: 0px;
+    }
+
+    #noProjMsg {
         align-items: center;
         display: flex;
     }
 
-    .searchForm{
+    .searchForm {
         margin-left: 0;
     }
 

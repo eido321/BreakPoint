@@ -161,6 +161,7 @@ let gridOragnize = function () {
         colElements.forEach(function (colElement) {
             if (!colElement.hasChildNodes()) {
                 colElement.style.display = "initial";
+                colElement.style.width = "324px";
             }
         });
         rowElements.forEach(function (rowElement) {
@@ -520,10 +521,34 @@ const saveSort = async (form) => {
         });
         const result = await response.json();
         projectMain.innerHTML = result.retVal;
-        // commentInput.value = "";
-        // messageEl.style.display = "none";
-
     } catch (error) {
         console.log(error);
     }
 };
+
+if (window.location.href.indexOf("indexProfile") !== -1) {
+    const editProfileButton = document.querySelector("#editProfile");
+    const cancelProfileButton = document.querySelector("#cancelProfile");
+    const submitProfileButton = document.querySelector("#submitProfile");
+    const formProfileFields = document.querySelectorAll(".profileField");
+
+    cancelProfileButton.addEventListener("click", (event) => {
+        event.preventDefault();
+      });
+    function enterEditModeProfile() {
+        cancelProfileButton.style.display = 'block';
+        submitProfileButton.style.display = 'block';
+        editProfileButton.style.display = 'none'
+        for (const profileField of formProfileFields) {
+            profileField.removeAttribute("disabled");
+        }
+    }
+    function exitEditModeProfile() {
+        cancelProfileButton.style.display = 'none';
+        submitProfileButton.style.display = 'none';
+        editProfileButton.style.display = 'block'
+        for (const profileField of formProfileFields) {
+            profileField.setAttribute("disabled", "disabled");
+        }
+    }
+}

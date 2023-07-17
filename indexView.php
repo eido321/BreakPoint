@@ -149,7 +149,7 @@ if ($tmp) {
                                 <div id="logoExpanded"></div>
                             </a>
                             <div>
-                                <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                <a href="indexProfile.php" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
                                         alt="ranProfile" class="ranProfileImage"></a>
                             </div>
                             <form action="" class="searchForm" method="GET">
@@ -326,7 +326,7 @@ if ($tmp) {
                                         </a>
                                     </section>
                                     <section id="ranProfile" class="nav-item">
-                                        <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                        <a href="indexProfile.php" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
                                                 alt="ranProfile" class="ranProfileImage"></a>
                                     </section>
                                 </div>
@@ -746,20 +746,6 @@ if ($tmp) {
                     <div id="loading"></div>
                     <br>
                     <div id="coomentSection">
-                        <!-- <div class="comment">
-                            <section class="CommentName">
-                                <img src="images/Amir.png" alt="ranProfile" class="ranProfileImage2"><b>Dana Asayag</b>
-                            </section>
-                            <section class="coomentWhiteBox">
-                                <p class="commentsText">
-                                    At vero eos et accusamus et iusto odio dignissimos ducimus qu.
-                                </p>
-                            </section>
-                            <button class="ClappImage" data-is-active="true">
-                                <br>
-                                <span>3</span>
-                            </button>
-                        </div> -->
                     </div>
                 </div>
                 <div class="RightSide">
