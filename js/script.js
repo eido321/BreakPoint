@@ -364,7 +364,6 @@ if (window.location.href.indexOf("indexView") !== -1) {
     savePost(formMobile, postsMobile);
 }
 
-
 const submitSearchSort1 = document.querySelector('#formType1Submit');
 const submitSearchSort2 = document.querySelector('#formType2Submit');
 const submitSearchSort3 = document.querySelector('#formType3Submit');
@@ -380,29 +379,136 @@ const submitFormSort6 = document.querySelector('#formType6');
 
 const projectMain = document.querySelector('#projectsMain');
 
+function resetSortColors() {
+    submitSearchSort1.style.color = '#555555';
+    submitSearchSort1.style.backgroundColor = 'white';
+    submitSearchSort2.style.color = '#555555';
+    submitSearchSort2.style.backgroundColor = 'white';
+    submitSearchSort3.style.color = '#555555';
+    submitSearchSort3.style.backgroundColor = 'white';
+    submitSearchSort4.style.color = '#555555';
+    submitSearchSort4.style.backgroundColor = 'white';
+    submitSearchSort5.style.color = '#555555';
+    submitSearchSort5.style.backgroundColor = 'white';
+    submitSearchSort6.style.color = '#555555';
+    submitSearchSort6.style.backgroundColor = 'white';
+}
+
 submitSearchSort1.addEventListener('click', (e) => {
     e.preventDefault();
     saveSort(submitFormSort1);
+    resetSortColors();
+    submitSearchSort1.style.color = 'white';
+    submitSearchSort1.style.backgroundColor = '#bd362f';
 });
 submitSearchSort2.addEventListener('click', (e) => {
     e.preventDefault();
     saveSort(submitFormSort2);
+
+    resetSortColors();
+    submitSearchSort2.style.color = 'white';
+    submitSearchSort2.style.backgroundColor = '#bd362f';
 });
 submitSearchSort3.addEventListener('click', (e) => {
     e.preventDefault();
     saveSort(submitFormSort3);
+    resetSortColors();
+    submitSearchSort3.style.color = 'white';
+    submitSearchSort3.style.backgroundColor = '#bd362f';
 });
 submitSearchSort4.addEventListener('click', (e) => {
     e.preventDefault();
     saveSort(submitFormSort4);
+    resetSortColors();
+    submitSearchSort4.style.color = 'white';
+    submitSearchSort4.style.backgroundColor = '#bd362f';
 });
 submitSearchSort5.addEventListener('click', (e) => {
     e.preventDefault();
     saveSort(submitFormSort5);
+    resetSortColors();
+    submitSearchSort5.style.color = 'white';
+    submitSearchSort5.style.backgroundColor = '#bd362f';
 });
 submitSearchSort6.addEventListener('click', (e) => {
     e.preventDefault();
     saveSort(submitFormSort6);
+    resetSortColors();
+    submitSearchSort6.style.color = 'white';
+    submitSearchSort6.style.backgroundColor = '#bd362f';
+});
+
+
+const submitSearchSort1Mobile = document.querySelector('#formType1SubmitMobile');
+const submitSearchSort2Mobile = document.querySelector('#formType2SubmitMobile');
+const submitSearchSort3Mobile = document.querySelector('#formType3SubmitMobile');
+const submitSearchSort4Mobile = document.querySelector('#formType4SubmitMobile');
+const submitSearchSort5Mobile = document.querySelector('#formType5SubmitMobile');
+const submitSearchSort6Mobile = document.querySelector('#formType6SubmitMobile');
+const submitFormSort1Mobile = document.querySelector('#formTypeMobile1');
+const submitFormSort2Mobile = document.querySelector('#formTypeMobile2');
+const submitFormSort3Mobile = document.querySelector('#formTypeMobile3');
+const submitFormSort4Mobile = document.querySelector('#formTypeMobile4');
+const submitFormSort5Mobile = document.querySelector('#formTypeMobile5');
+const submitFormSort6Mobile = document.querySelector('#formTypeMobile6');
+
+
+function resetSortColorsMobile() {
+    submitSearchSort1Mobile.style.color = '#555555';
+    submitSearchSort1Mobile.style.backgroundColor = 'white';
+    submitSearchSort2Mobile.style.color = '#555555';
+    submitSearchSort2Mobile.style.backgroundColor = 'white';
+    submitSearchSort3Mobile.style.color = '#555555';
+    submitSearchSort3Mobile.style.backgroundColor = 'white';
+    submitSearchSort4Mobile.style.color = '#555555';
+    submitSearchSort4Mobile.style.backgroundColor = 'white';
+    submitSearchSort5Mobile.style.color = '#555555';
+    submitSearchSort5Mobile.style.backgroundColor = 'white';
+    submitSearchSort6Mobile.style.color = '#555555';
+    submitSearchSort6Mobile.style.backgroundColor = 'white';
+}
+
+submitSearchSort1Mobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort1Mobile);
+    resetSortColorsMobile();
+    submitSearchSort1Mobile.style.color = 'white';
+    submitSearchSort1Mobile.style.backgroundColor = '#bd362f';
+});
+submitSearchSort2Mobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort2Mobile);
+    resetSortColorsMobile();
+    submitSearchSort2Mobile.style.color = 'white';
+    submitSearchSort2Mobile.style.backgroundColor = '#bd362f';
+});
+submitSearchSort3Mobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort3Mobile);
+    resetSortColorsMobile();
+    submitSearchSort3Mobile.style.color = 'white';
+    submitSearchSort3Mobile.style.backgroundColor = '#bd362f';
+});
+submitSearchSort4Mobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort4Mobile);
+    resetSortColorsMobile();
+    submitSearchSort4Mobile.style.color = 'white';
+    submitSearchSort4Mobile.style.backgroundColor = '#bd362f';
+});
+submitSearchSort5Mobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort5Mobile);
+    resetSortColorsMobile();
+    submitSearchSort5Mobile.style.color = 'white';
+    submitSearchSort5Mobile.style.backgroundColor = '#bd362f';
+});
+submitSearchSort6Mobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveSort(submitFormSort6Mobile);
+    resetSortColorsMobile();
+    submitSearchSort6Mobile.style.color = 'white';
+    submitSearchSort6Mobile.style.backgroundColor = '#bd362f';
 });
 
 

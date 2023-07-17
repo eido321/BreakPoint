@@ -52,9 +52,11 @@ if (isset($_POST['typeProj'])) {
 // }
 // $str .= "</ul>";
 
+$check = 0;
 $count = 0;
 $str = '<div class="row rowM">';
 while ($row = mysqli_fetch_assoc($result)) {
+    $check++;
     $img = $row["img_url"];
     if (!$img)
         $img = 'images/projectsImages/default.png';
@@ -76,6 +78,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 while ($count % 3 != 0) {
     $str .= '<div class="col"></div>';
     $count++;
+}
+if($check==0){
+    $str.= '<section id="noProjMsg"><span>Sorry, but there are no projects of this type available at the moment.</span></section>';
+
 }
 $str .= '</div>';
 

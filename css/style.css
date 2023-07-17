@@ -1312,7 +1312,7 @@ form {
 }
 
 /* --searchBar-- */
-#searchForm {
+.searchForm {
     width: 100%;
     margin-left: 50px;
     display: flex;
@@ -1359,6 +1359,14 @@ form {
 
 @media(max-width:992px) {
 
+    #noProjMsg{
+        align-items: center;
+        display: flex;
+    }
+
+    .searchForm{
+        margin-left: 0;
+    }
 
     .breadCrumbsNoneSideBar,
     .breadCrumbs {

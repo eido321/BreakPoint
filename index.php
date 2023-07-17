@@ -255,7 +255,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <a href="" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
                                         alt="ranProfile" class="ranProfileImage"></a>
                             </div>
-                            <form action="" id="searchFormMobile" method="GET">
+                            <!-- <form action="" id="searchFormMobile" method="GET">
                                 <div id="searchBar1" class="input-group">
                                     <input type="text" class="form-control" id="inputSearch1" name="query"
                                         placeholder="Search Project" value="<?php echo $searchValue; ?>">
@@ -266,6 +266,71 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                         <span id="sortIconImageMobile"></span>
                                     </button>
                                 </div>
+                            </form> -->
+                            <form action="" class="searchForm" method="GET">
+                                <div id="searchBar1" class="input-group">
+                                    <input type="text" class="form-control" id="inputSearch1" name="query"
+                                        placeholder="Search Project" value="<?php echo $searchValue; ?>">
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <span id="search1"></span>
+                                    </button>
+                                    <div class="dropdown">
+                                        <button class="btn dropdown-toggle searchSort" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span id="sortIconImageDesktop"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <form method="get" action=""></form>
+                                            </li>
+                                            <li>
+                                                <form method="post" action="" id="formTypeMobile1">
+                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
+                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                        id="formType1SubmitMobile"></button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form method="post" action="" id="formTypeMobile2">
+                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
+                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                        id="formType2SubmitMobile"></button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form method="post" action="" id="formTypeMobile3">
+                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
+                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                        id="formType3SubmitMobile"></button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form method="post" action="" id="formTypeMobile4">
+                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
+                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                        id="formType4SubmitMobile"></button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form method="post" action="" id="formTypeMobile5">
+                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
+                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                        id="formType5SubmitMobile"></button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form method="post" action="" id="formTypeMobile6">
+                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
+                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                        id="formType6SubmitMobile"></button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- <button class="btn btn-outline-secondary" type="button">
+                                            <span id="sortIconImageDesktop"></span>
+                                        </button> -->
+                                </div>
                             </form>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -275,7 +340,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </div>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <div id="desktopNav">
-                                <form action="" id="searchForm" method="GET">
+                                <form action="" class="searchForm" method="GET">
                                     <div id="searchBar2" class="input-group">
                                         <input type="text" class="form-control" id="inputSearch2" name="query"
                                             placeholder="Search Project" value="<?php echo $searchValue; ?>">
