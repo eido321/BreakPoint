@@ -59,6 +59,7 @@ if (isset($_POST['userMail'])) {
     if (!$resultAlter) {
         die("DB query failed.");
     }
+    $_SESSION["user_type"] = $userType;
     header('Location: ' . URL . 'indexProfile.php');
 }
 ?>
@@ -113,7 +114,7 @@ if (isset($_POST['userMail'])) {
                 </div>
                 <div class="modal-body">
                     A personal project file does not exists, To create, edit or delete a project click the
-                    Add Project button to add a project.
+                    "Add Project" button to add a project.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -148,12 +149,12 @@ if (isset($_POST['userMail'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete your personal project.
+                    Are you sure you want to delete your personal project?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 
-                    <form method="post">
+                    <form method="post" action="index.php">
                         <input type="submit" class="btn btn-secondary" id="deletePostButton" name="deleteProject"
                             value="Delete">
                     </form>
@@ -349,7 +350,8 @@ if (isset($_POST['userMail'])) {
 
                                 <div class="navbar-nav ms-auto">
                                     <section id="shenkarLogo" class="nav-item">
-                                        <a href="" class="nav-link">
+                                        <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
+                                            class="nav-link">
                                             <div id="shenkarLogoImage"></div>
                                         </a>
                                     </section>
@@ -513,7 +515,7 @@ if (isset($_POST['userMail'])) {
                     </section>
                     <section class="dynamicInfo">
                         <button id="editProfile" onclick="enterEditModeProfile()">Edit</button>
-                        <span>Personal Information</span><br>
+                        <span>Personal Information</span>
 
                         <form method="post" action="indexProfile.php">
                             <section>
@@ -542,17 +544,25 @@ if (isset($_POST['userMail'])) {
                                 </div>
                                 <div class="mb-3 formInfo profileForm">
                                     <label class="form-label"><b>User Type</b></label>
-                                    <select class="form-control inputForm profileField" name="userType" required
-                                        disabled>
-                                        <option <?php if ($tmpUser["user_type"] == 'Guest') {
-                                            echo 'selected';
-                                        } ?>>Guest
-                                        </option>
-                                        <option <?php if ($tmpUser["user_type"] == 'User') {
-                                            echo 'selected';
-                                        } ?>>User
-                                        </option>
-                                    </select>
+
+                                    <section id="profileDropdownSec">
+                                        <select class="form-control inputForm profileField" name="userType" required
+                                            disabled>
+
+                                            <option <?php if ($tmpUser["user_type"] == 'Guest') {
+                                                echo 'selected';
+                                            } ?>>Guest
+                                            </option>
+                                            <option <?php if ($tmpUser["user_type"] == 'User') {
+                                                echo 'selected';
+                                            } ?>>User
+                                            </option>
+
+                                        </select>
+                                        <div class="dropdownProfileIcon"></div>
+                                    </section>
+
+
                                 </div>
                                 <section id="profileButtons">
                                     <div id="cancelProfile" onclick="exitEditModeProfile()">Cancel</div>
@@ -578,5 +588,8 @@ if (isset($_POST['userMail'])) {
 </html>
 
 <?php
+mysqli_free_result($resultAlter);
+mysqli_free_result($resultUser);
+mysqli_free_result($resultProj);
 mysqli_close($connection);
 ?>

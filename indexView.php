@@ -87,7 +87,7 @@ if ($tmp) {
                 </div>
                 <div class="modal-body">
                     A personal project file does not exists, To create, edit or delete a project click the
-                    Add Project button to add a project.
+                    "Add Project" button to add a project.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -122,12 +122,12 @@ if ($tmp) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete your personal project.
+                    Are you sure you want to delete your personal project?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 
-                    <form method="post">
+                    <form method="post" action="index.php">
                         <input type="submit" class="btn btn-secondary" id="deletePostButton" name="deleteProject"
                             value="Delete">
                     </form>
@@ -311,7 +311,7 @@ if ($tmp) {
 
                                 <div class="navbar-nav ms-auto">
                                     <section id="shenkarLogo" class="nav-item">
-                                        <a href="" class="nav-link">
+                                        <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department" class="nav-link">
                                             <div id="shenkarLogoImage"></div>
                                         </a>
                                     </section>
@@ -400,7 +400,7 @@ if ($tmp) {
             </header>
         </div>
         <div class="mobileBody">
-            <section id="navbar2">
+            <section >
                 <div class="MainTxtMobile">
                     <span>
                         <?php echo '' . $row["title"] . ' - by ' . $row["p1_first_name"] . ' ' . $row["p1_last_name"] . ' and ' . $row["p2_first_name"] . ' ' . $row["p2_last_name"] . '' ?>
@@ -465,7 +465,7 @@ if ($tmp) {
                         </div>
                         <div class="starRating">
                             <section class="starsListSec">
-                                <span>creativity:</span>
+                                <span>Creativity:</span>
                                 <section class="StarCn" <?php echo 'data-rating="' . $creativity . '"'; ?>>
                                 </section>
                             </section>
@@ -551,7 +551,7 @@ if ($tmp) {
                                 <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
                                 <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
                                 <li><button type="submit" class="dropdown-item commentItem" id="newSortMobile"
-                                        href="">Newest</button>
+                                        href="">Recent</button>
                                 </li>
                             </form>
                         </ul>
@@ -760,7 +760,7 @@ if ($tmp) {
                         &nbsp;&nbsp;<span class="redStar desktopRedStar"></span></span>
                     <div class="Rating">
                         <section class="starsListSec">
-                            <span>creativity:</span>
+                            <span>Creativity:</span>
                             <section class="StarCn" <?php echo 'data-rating="' . $creativity . '"'; ?>>
                             </section>
                         </section>
@@ -785,14 +785,14 @@ if ($tmp) {
                         <section class="participant1">
                             <div class="RedDot"></div>
                             <span class="firstname">
-                                <?php echo $row["p1_first_name"] ?>&nbsp;
+                                <?php echo $row["p1_first_name"] ?>
                                 <?php echo $row["p1_last_name"] ?>
                             </span>
                         </section>
                         <section class="participant2">
                             <div class="RedDot"></div>
                             <span class="firstname">
-                                <?php echo $row["p2_first_name"] ?>&nbsp;
+                                <?php echo $row["p2_first_name"] ?>
                                 <?php echo $row["p2_last_name"] ?>
                             </span>
                         </section>
@@ -810,5 +810,8 @@ if ($tmp) {
 </html>
 
 <?php
+mysqli_free_result($resultUser);
+mysqli_free_result($resultProj);
+mysqli_free_result($result);
 mysqli_close($connection);
 ?>

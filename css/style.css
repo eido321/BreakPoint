@@ -140,6 +140,24 @@ input:focus {
     border-top: 7px solid #bd362f;
 }
 
+.dropdownProfileIcon{
+    margin-left: 3px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #bd362f;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    pointer-events: none;
+}
+
+#projectTypeDropSection{
+    display: flex;
+    position: relative;
+}
+
 #commentMobileExpandButton {
     margin-left: 3px;
     width: 0;
@@ -744,7 +762,7 @@ span {
     flex-flow: row;
     max-height: fit-content;
     align-items: end;
-    margin-top: 10px;
+    margin-top: -15px;
     gap: 10px;
 }
 
@@ -1205,6 +1223,8 @@ form {
     white-space: normal;
     width: 100%;
     border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #navbar2Row {
@@ -1415,10 +1435,16 @@ form {
     display: flex;
     width: 100%;
     color: #555555;
+    margin-top:20px
 }
 
 .mb-3.formInfo.profileForm {
     width: 70%;
+}
+
+#profileDropdownSec{
+    display: flex;
+    position: relative;
 }
 
 .dynamicInfo>form>section {
@@ -1537,6 +1563,19 @@ form {
 
 @media(max-width:992px) {
 
+    .dynamicInfo{
+        height: 500px;
+    }
+    
+    .dynamicInfo>form{
+        display: block;
+        margin-top: 0;
+    }
+
+    .dynamicInfo>form>section {
+        width: 100%;
+    }
+    
     #staticInfoSvg{
         top: 0px;
     }
@@ -1927,6 +1966,8 @@ form {
         display: flex;
         align-items: center;
         color: #555555;
+        background-color: #eeeeee;
+        margin-top: 80px;
     }
 
     .ProjectD {
@@ -2201,6 +2242,7 @@ form {
         margin-right: 10px;
         width: 25px;
         align-items: center;
+        margin-top: 35px;
     }
 
 }
@@ -2452,6 +2494,8 @@ li>a {
     background-color: #eeeeee;
     margin-bottom: 10px;
     flex-flow: row;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .coomentWhiteBox {

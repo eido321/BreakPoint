@@ -45,9 +45,6 @@ if (isset($_POST["projId"])) {
     $projId = null;
     $state = "Creation";
 }
-// else die("DB query failed.");//i dont want it to fail. i want it to cont.
-
-
 ?>
 
 <!doctype html>
@@ -73,7 +70,7 @@ if (isset($_POST["projId"])) {
                     <a href="index.php" class="navbar-brand" id="logoContainer">
                         <div id="logo"></div>
                     </a>
-                    <a href="index.php" class="navbar-brand" id="logoContainer">
+                    <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department" class="navbar-brand" id="logoContainer">
                         <div id="shenkarLogoImage"></div>
                     </a>
                     <div class="mobileHeader">
@@ -117,6 +114,7 @@ if (isset($_POST["projId"])) {
                     
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>Project Type</b></label>
+                               <section id="projectTypeDropSection">
                                 <select id="typeOptions" class="form-control inputForm ProjectType" name="ProjectType" required>
                                     <option value="">* Select Project Type</option>
                                     <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "1") {
@@ -138,6 +136,9 @@ if (isset($_POST["projId"])) {
                                         echo " selected";
                                     } ?>></option>
                                 </select>
+                                <div class="dropdownProfileIcon"></div></section>
+
+
                             </div>
 
                         </div>
@@ -267,5 +268,7 @@ if (isset($_POST["projId"])) {
 </html>
 
 <?php
+mysqli_free_result($resultUser);
+mysqli_free_result($result);
 mysqli_close($connection);
 ?>

@@ -56,7 +56,7 @@ if (!empty($_POST["loginMail"])) {
                     <a href="index.php" class="navbar-brand" id="logoContainer">
                         <div id="logo"></div>
                     </a>
-                    <a href="index.php" class="navbar-brand" id="logoContainer">
+                    <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department" class="navbar-brand" id="logoContainer">
                         <div id="shenkarLogoImage"></div>
                     </a>
                     <div class="mobileHeader">
@@ -103,5 +103,6 @@ if (!empty($_POST["loginMail"])) {
 </html>
 
 <?php
+mysqli_free_result($result);
 mysqli_close($connection);
 ?>

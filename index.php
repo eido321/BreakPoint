@@ -191,7 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
                 <div class="modal-body">
                     A personal project file does not exists, To create, edit or delete a project click the
-                    Add Project button to add a project.
+                    "Add Project" button to add a project.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -226,10 +226,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete your personal project.
+                    Are you sure you want to delete your personal project?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 
                     <form method="post">
                         <input type="submit" class="btn btn-secondary" id="deletePostButton" name="deleteProject"
@@ -414,7 +414,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                                 <div class="navbar-nav ms-auto">
                                     <section id="shenkarLogo" class="nav-item">
-                                        <a href="" class="nav-link">
+                                        <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department" class="nav-link">
                                             <div id="shenkarLogoImage"></div>
                                         </a>
                                     </section>
@@ -603,5 +603,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </html>
 
 <?php
+mysqli_free_result($resultProj);
+mysqli_free_result($resultUser);
+mysqli_free_result($resultAll);
 mysqli_close($connection);
 ?>
