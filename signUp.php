@@ -64,13 +64,17 @@ if (!empty($_POST["loginMail"])) {
                             <div class="colS" id="leftColS">
                                 <label for="loginMail"><b>Full Name</b></label>
                                 <input type="text" class="form-control" name="firstName" placeholder="First name"
-                                    aria-label="First name" required>
+                                    pattern="[A-Za-z]+" title="Please enter letters only"
+                                    oninvalid="this.setCustomValidity('Please enter letters only')"
+                                    oninput="this.setCustomValidity('')" aria-label="First name" required>
                             </div>
                             <div class="colS" id="rightColS">
                                 <label for="loginMail"><b>&nbsp;</b></label>
 
                                 <input type="text" class="form-control" name="lastName" placeholder="Last name"
-                                    aria-label="Last name" required>
+                                    pattern="[A-Za-z]+" title="Please enter letters only"
+                                    oninvalid="this.setCustomValidity('Please enter letters only')"
+                                    oninput="this.setCustomValidity('')" aria-label="Last name" required>
                             </div>
                         </div>
                         <div class="form-group rowS">

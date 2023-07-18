@@ -8,7 +8,7 @@ function showData(data) {
             i++;
         }
     }
-    if (window.location.href.indexOf("index.php") !== -1 || window.location.href.indexOf("indexView") !== -1) {
+    if (window.location.href.indexOf("index.php") !== -1 || window.location.href.indexOf("View") !== -1) {
         let options = document.querySelectorAll(".typeOption");
         let i = 0;
         let count = 1

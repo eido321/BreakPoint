@@ -17,7 +17,7 @@ if (mysqli_connect_errno()) {
 }
 ?>
 <?php
-$queryProj = "SELECT * FROM tbl_214_test_and_users WHERE u_id='"
+$queryProj = "SELECT * FROM tbl_214_projects_and_users WHERE u_id='"
     . $_SESSION["u_id"]
     . "'";
 
@@ -46,8 +46,7 @@ $tmpUser = mysqli_fetch_assoc($resultUser);
 ?>
 
 <?php
-//get data from DB
-$queryAll = "SELECT * FROM tbl_214_test order by id";
+$queryAll = "SELECT * FROM tbl_214_projects order by id";
 $resultAll = mysqli_query($connection, $queryAll);
 if (!$resultAll) {
     die("DB query failed.");
@@ -58,7 +57,7 @@ if (!$resultAll) {
 $searchValue = '';
 if (isset($_GET["query"]) && $_GET["query"] != '') {
     $searchValue = $_GET["query"];
-    $queryAll = "SELECT * FROM tbl_214_test WHERE title Like '" . $_GET["query"] . "%'";
+    $queryAll = "SELECT * FROM tbl_214_projects WHERE title Like '" . $_GET["query"] . "%'";
     $resultAll = mysqli_query($connection, $queryAll);
 
     if (!$resultAll) {
@@ -69,13 +68,13 @@ if (isset($_GET["query"]) && $_GET["query"] != '') {
 
 <?php
 if (isset($_POST['deleteProject'])) {
-    $queryDel = "DELETE FROM `tbl_214_test` WHERE (`id` = '" . $projId . "');";
+    $queryDel = "DELETE FROM `tbl_214_projects` WHERE (`id` = '" . $projId . "');";
     $resultDel = mysqli_query($connection, $queryDel);
 
     if (!$resultDel) {
         die("DB query failed.");
     }
-    $queryDel = "    DELETE FROM `tbl_214_test_and_users` WHERE (`id` = '" . $projId . "');";
+    $queryDel = "    DELETE FROM `tbl_214_projects_and_users` WHERE (`id` = '" . $projId . "');";
     $resultDel = mysqli_query($connection, $queryDel);
 
     if (!$resultDel) {
@@ -96,18 +95,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $Participant2Name = isset($_POST['Participant2Name']) ? mysqli_real_escape_string($connection, $_POST['Participant2Name']) : null;
     $Participant2NameSecond = isset($_POST['Participant2NameSecond']) ? mysqli_real_escape_string($connection, $_POST['Participant2NameSecond']) : null;
     $ProjectType = isset($_POST['ProjectType']) ? mysqli_real_escape_string($connection, $_POST['ProjectType']) : null;
+    $linkPart1 = isset($_POST['linkPrefix']) ? mysqli_real_escape_string($connection, $_POST['linkPrefix']) : null;
+    $linkPart2 = isset($_POST['linktotheMoqupspage']) ? mysqli_real_escape_string($connection, $_POST['linktotheMoqupspage']) : null;
+    if ($linkPart2 == null) {
+        $combinedLink = "";
+    } else {
+        $combinedLink = $linkPart1 . $linkPart2;
+    }
     $state = isset($_POST['state']) ? $_POST['state'] : null;
     $projIdQ = isset($_POST['projId']) ? $_POST['projId'] : null;
-
     if ($ProjectName !== null && $ProjectType !== null && $Participant1Name !== null && $Participant1NameSecond !== null && $Participant2Name !== null && $Participant2NameSecond !== null && $ProjectType !== null && $state !== null) {
         if ($state == "Creation") {
-            $queryAdd = "INSERT INTO tbl_214_test (title,proj_type, p1_first_name, p1_last_name,p2_first_name,p2_last_name) VALUES ('$ProjectName', '$ProjectType' ,'$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond')";
+            $queryAdd = "INSERT INTO tbl_214_projects (title,proj_type, p1_first_name, p1_last_name,p2_first_name,p2_last_name,moqups_link) VALUES ('$ProjectName', '$ProjectType' ,'$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond','$combinedLink')";
             $resultIns = mysqli_query($connection, $queryAdd);
 
             if (!$resultIns) {
                 die("DB query failed insert.");
             }
-            $queryProj = "SELECT * FROM tbl_214_test WHERE title='" . $ProjectName . "'";
+            $queryProj = "SELECT * FROM tbl_214_projects WHERE title='" . $ProjectName . "'";
             $resultIns = mysqli_query($connection, $queryProj);
 
             if (!$resultIns) {
@@ -115,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
 
             $tmpProj = mysqli_fetch_assoc($resultIns);
-            $queryAddProj = "INSERT INTO tbl_214_test_and_users (id, u_id) VALUES ('" . $tmpProj["id"] . "', '" . $_SESSION["u_id"] . "')";
+            $queryAddProj = "INSERT INTO tbl_214_projects_and_users (id, u_id) VALUES ('" . $tmpProj["id"] . "', '" . $_SESSION["u_id"] . "')";
             $resultIns = mysqli_query($connection, $queryAddProj);
 
             if (!$resultIns) {
@@ -124,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
         } else {
-            $queryAdd = "UPDATE tbl_214_test SET title='$ProjectName',proj_type='$ProjectType', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
+            $queryAdd = "UPDATE tbl_214_projects SET title='$ProjectName',proj_type='$ProjectType', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
             $resultIns = mysqli_query($connection, $queryAdd);
 
             if (!$resultIns) {
@@ -252,8 +257,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <div id="logoExpanded"></div>
                             </a>
                             <div>
-                                <a href="indexProfile.php" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
-                                        alt="ranProfile" class="ranProfileImage"></a>
+                                <a href="Profile.php" class="nav-link"><img
+                                        src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
+                                        class="ranProfileImage"></a>
                             </div>
                             <!-- <form action="" id="searchFormMobile" method="GET">
                                 <div id="searchBar1" class="input-group">
@@ -285,43 +291,55 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile1">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType1SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile2">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType2SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile3">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType3SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile4">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType4SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile5">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType5SubmitMobile"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="" id="formTypeMobile6">
-                                                    <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                    <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                    <input type="hidden" name="typeProj" value=""
+                                                        class="typeOptionMobile">
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOptionMobile"
                                                         id="formType6SubmitMobile"></button>
                                                 </form>
                                             </li>
@@ -414,7 +432,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                                 <div class="navbar-nav ms-auto">
                                     <section id="shenkarLogo" class="nav-item">
-                                        <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department" class="nav-link">
+                                        <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
+                                            class="nav-link">
                                             <div id="shenkarLogoImage"></div>
                                         </a>
                                     </section>
@@ -429,8 +448,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                         </a>
                                     </section>
                                     <section id="ranProfile" class="nav-item">
-                                        <a href="indexProfile.php" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
-                                                alt="ranProfile" class="ranProfileImage"></a>
+                                        <a href="Profile.php" class="nav-link"><img
+                                                src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
+                                                class="ranProfileImage"></a>
                                     </section>
                                 </div>
                             </div>
@@ -446,17 +466,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                         echo '
                                 
 <section class="nav-item">
-    <a class="indexViewButton nav-item sideLinks" href="indexView.php?projId=' . $projId . '">
+    <a class="indexViewButton nav-item sideLinks" href="View.php?projId=' . $projId . '">
         <b>My Project</b>
     </a>
 </section>
 <section class="nav-item sideLinks">
-    <a href="indexForm.php" class="addProjectButton nav-item">
+    <a href="Creation.php" class="addProjectButton nav-item">
         <b>Add Project</b>
     </a>
 </section>
 <section class="nav-item sideLinks">
-    <form method="POST" action="indexForm.php">
+    <form method="POST" action="Creation.php">
         <input type="hidden" name="projId" value="' . $projId . '">
         <button type="submit" class="editButton nav-item">
             <b>Edit Project</b>
@@ -515,19 +535,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <?php if ($_SESSION["user_type"] != "Guest") {
                             echo '
 <li>
-    <a class="indexViewButton sideLinks" href="indexView.php?projId=' . $projId . '">
+    <a class="indexViewButton sideLinks" href="View.php?projId=' . $projId . '">
         <b>My Project</b>
         <div class="viewImageList"></div>
     </a>
 </li>
 <li>
-    <a href="indexForm.php" class="addProjectButton sideLinks" >
+    <a href="Creation.php" class="addProjectButton sideLinks" >
         <b>Add Project</b>
         <div class="addImage"></div>
     </a>
 </li>
 <li>
-    <form method="POST" action="indexForm.php">
+    <form method="POST" action="Creation.php">
         <input type="hidden" name="projId" value="' . $projId . '">
         <button type="submit" class="editButton sideLinks">
             <b>Edit Project</b>
@@ -568,8 +588,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         echo '
             <div class="col">
                 <div class="projectContainer">
-                    <a href="indexView.php?projId=' . $row["id"] . '"><img src="' . $img . '" alt="projectImg" class="projectImages"></a>
-                    <a href="indexView.php?projId=' . $row["id"] . '" class="projectName">' . $row["title"] . '</a>
+                    <a href="View.php?projId=' . $row["id"] . '"><img src="' . $img . '" alt="projectImg" class="projectImages"></a>
+                    <a href="View.php?projId=' . $row["id"] . '" class="projectName">' . $row["title"] . '</a>
                     <span class="fromSpan">By ' . $row["p1_first_name"] . ' ' . $row["p1_last_name"] . ' and ' . $row["p2_first_name"] . ' ' . $row["p2_last_name"] . '</span>
                     <section class="underlineProject"></section>
                 </div>
@@ -585,7 +605,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         $count++;
                     }
                     echo '</div>';
-                    if($check==0){
+                    if ($check == 0) {
                         echo '<section id="noProjMsg"><span>Sorry, but there are no projects of this title available at the moment.</span></section>';
                     }
                     ?>

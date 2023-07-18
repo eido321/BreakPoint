@@ -21,7 +21,7 @@ if (isset($_POST['typeProj'])) {
 
     //GET: get data again
 
-    $query = "SELECT * FROM tbl_214_test
+    $query = "SELECT * FROM tbl_214_projects
     WHERE proj_type = '" . $projType . "';";
     $result = mysqli_query($connection, $query);
 
@@ -63,8 +63,8 @@ while ($row = mysqli_fetch_assoc($result)) {
         $str .= '
             <div class="col">
                 <div class="projectContainer">
-                    <a href="indexView.php?projId=' . $row["id"] . '"><img src="' . $img . '" alt="projectImg" class="projectImages"></a>
-                    <a href="indexView.php?projId=' . $row["id"] . '" class="projectName">' . $row["title"] . '</a>
+                    <a href="View.php?projId=' . $row["id"] . '"><img src="' . $img . '" alt="projectImg" class="projectImages"></a>
+                    <a href="View.php?projId=' . $row["id"] . '" class="projectName">' . $row["title"] . '</a>
                     <span class="fromSpan">By ' . $row["p1_first_name"] . ' ' . $row["p1_last_name"] . ' and ' . $row["p2_first_name"] . ' ' . $row["p2_last_name"] . '</span>
                     <section class="underlineProject"></section>
                 </div>

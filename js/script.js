@@ -266,7 +266,7 @@ Array.from(creativityElements).forEach((element) => {
     }
 });
 
-if (window.location.href.indexOf("indexView") !== -1) {
+if (window.location.href.indexOf("View") !== -1) {
     const submit = document.querySelector('#sendSubmit');
     const formDesktop = document.querySelector('#addComment');
     const messageEl = document.querySelector('#loading');
@@ -526,7 +526,7 @@ const saveSort = async (form) => {
     }
 };
 
-if (window.location.href.indexOf("indexProfile") !== -1) {
+if (window.location.href.indexOf("Profile") !== -1) {
     const editProfileButton = document.querySelector("#editProfile");
     const cancelProfileButton = document.querySelector("#cancelProfile");
     const submitProfileButton = document.querySelector("#submitProfile");
