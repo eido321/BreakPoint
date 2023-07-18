@@ -1,5 +1,4 @@
 <?php
-//create a mySQL DB connection:
 include "config.php";
 
 session_start();
@@ -9,7 +8,6 @@ if (!$_SESSION["user_type"]) {
 
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-//testing connection success
 if (mysqli_connect_errno()) {
     die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
     );
@@ -29,13 +27,11 @@ $tmpUser = mysqli_fetch_assoc($resultUser);
 ?>
 
 <?php
-//get data from DB
 $projId = $_GET["projId"];
 $query = "SELECT * FROM tbl_214_projects where id=" . $projId;
-// echo $query;
 $result = mysqli_query($connection, $query);
 if ($result) {
-    $row = mysqli_fetch_assoc($result); //there is only 1 with id=X
+    $row = mysqli_fetch_assoc($result);
 } else
     die("DB query failed.");
 $img = $row["img_url"];
@@ -59,7 +55,6 @@ if ($tmp) {
     $projIdUser = 0;
 }
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -149,9 +144,8 @@ if ($tmp) {
                                 <div id="logoExpanded"></div>
                             </a>
                             <div>
-                                <a href="Profile.php" class="nav-link"><img
-                                        src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
-                                        class="ranProfileImage"></a>
+                                <a href="Profile.php" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                        alt="ranProfile" class="ranProfileImage"></a>
                             </div>
                             <form action="" class="searchForm" method="GET">
                                 <div id="searchBar1" class="input-group">
@@ -225,9 +219,6 @@ if ($tmp) {
                                             </li>
                                         </ul>
                                     </div>
-                                    <!-- <button class="btn btn-outline-secondary" type="button">
-                                            <span id="sortIconImageDesktop"></span>
-                                        </button> -->
                                 </div>
                             </form>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -304,9 +295,6 @@ if ($tmp) {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <!-- <button class="btn btn-outline-secondary" type="button">
-                                            <span id="sortIconImageDesktop"></span>
-                                        </button> -->
                                     </div>
                                 </form>
 
@@ -498,7 +486,9 @@ if ($tmp) {
                 </section>
                 <section class="right">
                     <span>Requirements:</span>
-                    <a href="<?php echo $row["srs_link"]; ?>" target="_blank"><div class="FileLogo"></div></a>
+                    <a href="<?php echo $row["srs_link"]; ?>" target="_blank">
+                        <div class="FileLogo"></div>
+                    </a>
                 </section>
             </div>
             <section class="mobileComments">
@@ -658,13 +648,16 @@ if ($tmp) {
 
                     <br>
                     <span class="ProjectRivew">
-                        <a class="linkProjectW" target="_blank" href="<?php echo $row["moqups_link"]; ?>"><span>Want to know more?</span>
-                            <div class="PlayButtonImage"></div></a>
+                        <a class="linkProjectW" target="_blank" href="<?php echo $row["moqups_link"]; ?>"><span>Want to
+                                know more?</span>
+                            <div class="PlayButtonImage"></div>
+                        </a>
                     </span>
                     <section class="requirements">
                         <span>The project's software requirements specification:</span>
                         <section class="Srs">
-                            <a target="_blank" href="<?php echo $row["srs_link"]; ?>">srs<div class="FileLogoSrs"></div></a>
+                            <a target="_blank" href="<?php echo $row["srs_link"]; ?>">srs<div class="FileLogoSrs"></div>
+                                </a>
                         </section>
                     </section>
                     <br>

@@ -1,5 +1,4 @@
 <?php
-//create a mySQL DB connection:
 include "config.php";
 
 session_start();
@@ -10,7 +9,6 @@ if (!$_SESSION["user_type"]) {
 
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-//testing connection success
 if (mysqli_connect_errno()) {
     die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
     );
@@ -138,13 +136,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
     }
-
-
-    // Redirect the user to a new page
     header("Location: index.php?success");
 }
-// Get data from query string and escape variables for security
-
 ?>
 
 <!doctype html>
@@ -257,22 +250,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <div id="logoExpanded"></div>
                             </a>
                             <div>
-                                <a href="Profile.php" class="nav-link"><img
-                                        src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
-                                        class="ranProfileImage"></a>
+                                <a href="Profile.php" class="nav-link"><img src="<?php echo $tmpUser["user_img"]; ?>"
+                                        alt="ranProfile" class="ranProfileImage"></a>
                             </div>
-                            <!-- <form action="" id="searchFormMobile" method="GET">
-                                <div id="searchBar1" class="input-group">
-                                    <input type="text" class="form-control" id="inputSearch1" name="query"
-                                        placeholder="Search Project" value="<?php echo $searchValue; ?>">
-                                    <button class="btn btn-outline-secondary" type="submit">
-                                        <span id="search1"></span>
-                                    </button>
-                                    <button class="btn btn-outline-secondary" type="button">
-                                        <span id="sortIconImageMobile"></span>
-                                    </button>
-                                </div>
-                            </form> -->
                             <form action="" class="searchForm" method="GET">
                                 <div id="searchBar1" class="input-group">
                                     <input type="text" class="form-control" id="inputSearch1" name="query"
@@ -345,9 +325,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                             </li>
                                         </ul>
                                     </div>
-                                    <!-- <button class="btn btn-outline-secondary" type="button">
-                                            <span id="sortIconImageDesktop"></span>
-                                        </button> -->
                                 </div>
                             </form>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -424,9 +401,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <!-- <button class="btn btn-outline-secondary" type="button">
-                                            <span id="sortIconImageDesktop"></span>
-                                        </button> -->
                                     </div>
                                 </form>
 

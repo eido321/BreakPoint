@@ -620,6 +620,7 @@ li {
 
 .projectImages {
     width: 250px;
+    padding:10px;
     height: 200px;
     border-radius: 5px;
     background-color: white;
@@ -1376,15 +1377,6 @@ form {
 
 /*------------------*/
 /*  Profile */
-
-/* #staticInfo{
-    margin-top: 100px;
-    height: 200px;
-    width: 80%;
-    background-color: #eeeeee;
-    border-radius: 10px;
-    
-} */
 
 .staticInfo {
     display: inline-block;

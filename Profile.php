@@ -1,5 +1,4 @@
 <?php
-//create a mySQL DB connection:
 include "config.php";
 
 session_start();
@@ -10,7 +9,6 @@ if (!$_SESSION["user_type"]) {
 
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-//testing connection success
 if (mysqli_connect_errno()) {
     die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
     );
@@ -64,7 +62,6 @@ if (isset($_POST['userMail'])) {
 }
 ?>
 
-
 <!doctype html>
 <html lang="en">
 
@@ -78,7 +75,6 @@ if (isset($_POST['userMail'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.js"
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -179,18 +175,6 @@ if (isset($_POST['userMail'])) {
                                         src="<?php echo $tmpUser["user_img"]; ?>" alt="ranProfile"
                                         class="ranProfileImage"></a>
                             </div>
-                            <!-- <form action="" id="searchFormMobile" method="GET">
-                                <div id="searchBar1" class="input-group">
-                                    <input type="text" class="form-control" id="inputSearch1" name="query"
-                                        placeholder="Search Project" value="<?php echo $searchValue; ?>">
-                                    <button class="btn btn-outline-secondary" type="submit">
-                                        <span id="search1"></span>
-                                    </button>
-                                    <button class="btn btn-outline-secondary" type="button">
-                                        <span id="sortIconImageMobile"></span>
-                                    </button>
-                                </div>
-                            </form> -->
                             <form action="index.php" class="searchForm" method="GET">
                                 <div id="searchBar1" class="input-group">
                                     <input type="text" class="form-control" id="inputSearch1" name="query"
@@ -263,9 +247,6 @@ if (isset($_POST['userMail'])) {
                                             </li>
                                         </ul>
                                     </div>
-                                    <!-- <button class="btn btn-outline-secondary" type="button">
-                                            <span id="sortIconImageDesktop"></span>
-                                        </button> -->
                                 </div>
                             </form>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -342,9 +323,6 @@ if (isset($_POST['userMail'])) {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <!-- <button class="btn btn-outline-secondary" type="button">
-                                            <span id="sortIconImageDesktop"></span>
-                                        </button> -->
                                     </div>
                                 </form>
 

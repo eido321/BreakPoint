@@ -1,5 +1,4 @@
 <?php
-//create a mySQL DB connection:
 include "config.php";
 
 session_start();
@@ -9,49 +8,17 @@ if (!$_SESSION["user_type"]) {
 
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-//testing connection success
 if (mysqli_connect_errno()) {
     die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
     );
 }
 if (isset($_POST['typeProj'])) {
-    // escape variables for security
     $projType = mysqli_real_escape_string($connection, $_POST['typeProj']);
-
-
-    //GET: get data again
-
     $query = "SELECT * FROM tbl_214_projects
     WHERE proj_type = '" . $projType . "';";
     $result = mysqli_query($connection, $query);
 
 }
-
-// // GET: get data again
-// $str = "<ul id='commentSecList'>";
-// $sum = 0;
-// while ($row = mysqli_fetch_assoc($result)) {
-//     // Output data from each row
-//     $sum += 1;
-//      "<li>
-//       <div class='comment'>
-//          <section class='CommentName'>
-//             <img src=" . $row["user_img"] . " alt='ranProfile' class='ranProfileImage2'><b>" . $row["name"] . "</b>
-//          </section>
-//          <section class='coomentWhiteBox'>
-//             <p class='commentsText'>
-//                " . $row["comment"] . "
-//             </p>
-//          </section>
-//          <button class='ClappImage' data-is-active='true' onclick='toggleLike(this)'>
-//             <br>
-//             <span>0</span>
-//          </button>
-//       </div>
-//    </li>";
-// }
-// $str .= "</ul>";
-
 $check = 0;
 $count = 0;
 $str = '<div class="row rowM">';
@@ -88,12 +55,7 @@ $response = array('retVal' => $str);
 
 echo json_encode($response);
 
-
-
-// //release returned data
 mysqli_free_result($result);
 
-// //close DB connection
 mysqli_close($connection);
-
 ?>
