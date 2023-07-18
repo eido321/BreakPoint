@@ -64,11 +64,11 @@ if (isset($_POST["projId"])) {
         <div id="headerContainer">
             <header id="formHeader">
                 <nav class="navbar navbar-light bg-light" id="navbarLogin">
-                    <a href="index.php" class="navbar-brand" id="logoContainer">
+                    <a href="index.php" class="navbar-brand">
                         <div id="logo"></div>
                     </a>
                     <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
-                        class="navbar-brand" id="logoContainer">
+                        class="navbar-brand">
                         <div id="shenkarLogoImage"></div>
                     </a>
                     <div class="mobileHeader">
@@ -104,8 +104,8 @@ if (isset($_POST["projId"])) {
                                 <label class="form-label"><b>Project
                                         Name
                                     </b></label>
-                                <input type="text" class="form-control inputForm validationServer01" pattern="[A-Za-z]+"
-                                    name="ProjectName" title="Please enter letters only"
+                                <input type="text" class="form-control inputForm validationServer01"
+                                    pattern="[A-Za-z ]+" name="ProjectName" title="Please enter letters only"
                                     oninvalid="this.setCustomValidity('Please enter letters only')"
                                     oninput="this.setCustomValidity('')" placeholder="* Microsoft" required <?php if ($state == 'Edit') {
                                         echo "value='" . htmlspecialchars($title, ENT_QUOTES) . "'";
@@ -119,37 +119,34 @@ if (isset($_POST["projId"])) {
                                         name="ProjectType" required>
                                         <option value="">* Select Project Type</option>
                                         <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "1") {
-                                            echo " selected";
-                                        } ?>></option>
+                                            echo "selected";
+                                        } ?>>Option 1</option>
                                         <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "2") {
-                                            echo " selected";
-                                        } ?>></option>
+                                            echo "selected";
+                                        } ?>>Option 2</option>
                                         <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "3") {
-                                            echo " selected";
-                                        } ?>></option>
+                                            echo "selected";
+                                        } ?>>Option 3</option>
                                         <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "4") {
-                                            echo " selected";
-                                        } ?>></option>
+                                            echo "selected";
+                                        } ?>>Option 4</option>
                                         <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "5") {
-                                            echo " selected";
-                                        } ?>></option>
+                                            echo "selected";
+                                        } ?>>Option 5</option>
                                         <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "6") {
-                                            echo " selected";
-                                        } ?>></option>
+                                            echo "selected";
+                                        } ?>>Option 6</option>
                                     </select>
                                     <div class="dropdownProfileIcon"></div>
                                 </section>
-
-
                             </div>
-
                         </div>
                         <label>&nbsp;&nbsp;<b>Participant 1</b></label>
                         <div class="formInfo1Line2">
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>First
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm ProjectName" pattern="[A-Za-z]+"
+                                <input type="text" class="form-control inputForm ProjectName" pattern="[A-Za-z ]+"
                                     title="Please enter letters only"
                                     oninvalid="this.setCustomValidity('Please enter letters only')"
                                     oninput="this.setCustomValidity('')" name="Participant1Name" placeholder="* Bill" required <?php if ($state == 'Edit') {
@@ -159,7 +156,7 @@ if (isset($_POST["projId"])) {
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>Last
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm ProjectType" pattern="[A-Za-z]+"
+                                <input type="text" class="form-control inputForm ProjectType" pattern="[A-Za-z ]+"
                                     title="Please enter letters only"
                                     oninvalid="this.setCustomValidity('Please enter letters only')"
                                     oninput="this.setCustomValidity('')" name="Participant1NameSecond"
@@ -173,7 +170,7 @@ if (isset($_POST["projId"])) {
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>First
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm ProjectName" pattern="[A-Za-z]+"
+                                <input type="text" class="form-control inputForm ProjectName" pattern="[A-Za-z ]+"
                                     title="Please enter letters only"
                                     oninvalid="this.setCustomValidity('Please enter letters only')"
                                     oninput="this.setCustomValidity('')" name="Participant2Name" placeholder="* John" required <?php if ($state == 'Edit') {
@@ -183,7 +180,7 @@ if (isset($_POST["projId"])) {
                             <div class="mb-3 formInfo">
                                 <label class="form-label"><b>Last
                                         Name</b></label>
-                                <input type="text" class="form-control inputForm ProjectType" pattern="[A-Za-z]+"
+                                <input type="text" class="form-control inputForm ProjectType" pattern="[A-Za-z ]+"
                                     title="Please enter letters only"
                                     oninvalid="this.setCustomValidity('Please enter letters only')"
                                     oninput="this.setCustomValidity('')" name="Participant2NameSecond"

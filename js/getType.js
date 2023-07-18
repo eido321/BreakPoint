@@ -1,5 +1,5 @@
 function showData(data) {
-    if (window.location.href.indexOf("indexForm") !== -1) {
+    if (window.location.href.indexOf("Creation") !== -1) {
         let options = document.querySelectorAll(".typeOption");
         let i = 0;
         for (const option of options) {

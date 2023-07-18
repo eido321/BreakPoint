@@ -39,11 +39,11 @@ if (!empty($_POST["loginMail"])) {
         <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-light bg-light" id="navbarLogin">
-                    <a href="index.php" class="navbar-brand" id="logoContainer">
+                    <a href="index.php" class="navbar-brand">
                         <div id="logo"></div>
                     </a>
                     <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
-                        class="navbar-brand" id="logoContainer">
+                        class="navbar-brand">
                         <div id="shenkarLogoImage"></div>
                     </a>
                     <div class="mobileHeader">
@@ -63,7 +63,7 @@ if (!empty($_POST["loginMail"])) {
                             <div class="colS" id="leftColS">
                                 <label for="loginMail"><b>Full Name</b></label>
                                 <input type="text" class="form-control" name="firstName" placeholder="First name"
-                                    pattern="[A-Za-z]+" title="Please enter letters only"
+                                    pattern="[A-Za-z ]+" title="Please enter letters only"
                                     oninvalid="this.setCustomValidity('Please enter letters only')"
                                     oninput="this.setCustomValidity('')" aria-label="First name" required>
                             </div>
@@ -71,7 +71,7 @@ if (!empty($_POST["loginMail"])) {
                                 <label for="loginMail"><b>&nbsp;</b></label>
 
                                 <input type="text" class="form-control" name="lastName" placeholder="Last name"
-                                    pattern="[A-Za-z]+" title="Please enter letters only"
+                                    pattern="[A-Za-z ]+" title="Please enter letters only"
                                     oninvalid="this.setCustomValidity('Please enter letters only')"
                                     oninput="this.setCustomValidity('')" aria-label="Last name" required>
                             </div>
@@ -79,7 +79,7 @@ if (!empty($_POST["loginMail"])) {
                         <div class="form-group rowS">
                             <label for="loginMail"><b>Email </b></label>
                             <input type="email" class="form-control" name="loginMail" id="loginMail"
-                                aria-describedby="emailHelp" placeholder="Enter email" required>
+                                placeholder="Enter email" required>
                         </div>
                         <div class="form-group">
                             <label for="loginPass"><b>Password </b></label>
@@ -98,11 +98,11 @@ if (!empty($_POST["loginMail"])) {
             </section>
         </section>
         <script src="js/script.js"></script>
+</section>
 </body>
 
 </html>
 
 <?php
-mysqli_free_result($result);
 mysqli_close($connection);
 ?>

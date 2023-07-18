@@ -5,28 +5,28 @@ $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 session_start();
 if (mysqli_connect_errno()) {
-  die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-  );
+    die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
+    );
 }
 
 if (!empty($_POST["loginMail"])) {
-  $query = "SELECT * FROM tbl_214_users WHERE email='"
-    . $_POST["loginMail"]
-    . "' and password = '"
-    . $_POST["loginPass"]
-    . "'";
+    $query = "SELECT * FROM tbl_214_users WHERE email='"
+        . $_POST["loginMail"]
+        . "' and password = '"
+        . $_POST["loginPass"]
+        . "'";
 
-  $result = mysqli_query($connection, $query);
-  $row = mysqli_fetch_array($result);
+    $result = mysqli_query($connection, $query);
+    $row = mysqli_fetch_array($result);
 
 
-  if (is_array($row)) {
-    $_SESSION["u_id"] = $row['u_id'];
-    $_SESSION["user_type"] = $row['user_type'];
-    header('Location: ' . URL . 'index.php');
-  } else {
-    $message = "Invalid Username or Password";
-  }
+    if (is_array($row)) {
+        $_SESSION["u_id"] = $row['u_id'];
+        $_SESSION["user_type"] = $row['user_type'];
+        header('Location: ' . URL . 'index.php');
+    } else {
+        $message = "Invalid Username or Password";
+    }
 }
 ?>
 
@@ -50,10 +50,11 @@ if (!empty($_POST["loginMail"])) {
         <div id="headerContainer">
             <header>
                 <nav class="navbar navbar-light bg-light" id="navbarLogin">
-                    <a href="index.php" class="navbar-brand" id="logoContainer">
+                    <a href="index.php" class="navbar-brand">
                         <div id="logo"></div>
                     </a>
-                    <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department" class="navbar-brand" id="logoContainer">
+                    <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
+                        class="navbar-brand">
                         <div id="shenkarLogoImage"></div>
                     </a>
                     <div class="mobileHeader">
@@ -72,7 +73,7 @@ if (!empty($_POST["loginMail"])) {
                         <div class="form-group">
                             <label for="loginMail"><b>Email: </b></label>
                             <input type="email" class="form-control" name="loginMail" id="loginMail"
-                                aria-describedby="emailHelp" placeholder="Enter email" required>
+                                placeholder="Enter email" required>
                         </div>
                         <div class="form-group">
                             <label for="loginPass"><b>Password: </b></label>
@@ -80,7 +81,8 @@ if (!empty($_POST["loginMail"])) {
                                 placeholder="Enter Password" required>
                         </div>
                         <div class="form-group">
-                            <button id="submitLoginSign" type="submit" class="btn btn-primary login"><b>Log In</b></button>
+                            <button id="submitLoginSign" type="submit" class="btn btn-primary login"><b>Log
+                                    In</b></button>
                         </div>
                         <div class="error-message">
                             <?php if (isset($message)) {
@@ -95,11 +97,11 @@ if (!empty($_POST["loginMail"])) {
             </section>
         </section>
         <script src="js/script.js"></script>
+    </section>
 </body>
 
 </html>
 
 <?php
-mysqli_free_result($result);
 mysqli_close($connection);
 ?>

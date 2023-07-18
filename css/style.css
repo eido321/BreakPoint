@@ -96,6 +96,7 @@ input:focus {
     background-color: white;
     padding: 5px;
     border-radius: 5px;
+    align-items:center;
 }
 
 
@@ -336,10 +337,6 @@ nav {
     display: flex;
 }
 
-#searchBar2 {
-    width: 60%;
-}
-
 .btn.dropdown-toggle.searchSort {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -404,7 +401,7 @@ nav {
 
 
 #sortIconImageMobile,
-#sortIconImageDesktop {
+.sortIconImageDesktop {
     width: 30px;
     display: block;
 }
@@ -650,6 +647,7 @@ li {
 .projectNameView {
     font-size: 42px;
     margin: 0;
+    font-weight: normal;
 }
 
 .ProjectRivew {
@@ -1344,9 +1342,21 @@ form {
 
 /* --searchBar-- */
 .searchForm {
-    width: 100%;
+    width: 50%;
     margin-left: 50px;
     display: flex;
+    justify-content: center;
+}
+
+.btn.btn-outline-secondary.searchBarSecSubmit{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.searchBarSecDrop{
+    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -1595,6 +1605,10 @@ form {
         margin-left: 0;
     }
 
+    .btn.dropdown-toggle.searchSort {
+        height: 37px;
+    }
+
     .breadCrumbsNoneSideBar,
     .breadCrumbs {
         display: none;
@@ -1654,12 +1668,6 @@ form {
         display: flex;
         justify-content: center;
     }
-
-    #searchBar1,
-    #searchBar2 {
-        width: 80%;
-    }
-
 
     #desktopNav {
         display: none;
@@ -1769,11 +1777,6 @@ form {
 
     .navbar-collapse {
         background-color: #f8f9fa;
-    }
-
-    #searchBar1,
-    #searchBar2 {
-        width: 90%;
     }
 
     #desktopNav {
@@ -2388,7 +2391,7 @@ li>a {
 }
 
 #sortIconImageMobile,
-#sortIconImageDesktop {
+.sortIconImageDesktop {
     background: url(../images/sortSearch.png);
     width: 20px;
     height: 20px;
@@ -2511,7 +2514,7 @@ li>a {
 
 }
 
-#sendIcon {
+.sendIcon {
     background: url(../images/Send.png);
     height: 15px;
     width: 15px;

@@ -365,6 +365,7 @@ if (window.location.href.indexOf("View") !== -1) {
     savePost(formMobile, postsMobile);
 }
 
+if(window.location.href.indexOf("View") !== -1 ||window.location.href.indexOf("index.php") !== -1||window.location.href.indexOf("profile") !== -1){
 const submitSearchSort1 = document.querySelector('#formType1Submit');
 const submitSearchSort2 = document.querySelector('#formType2Submit');
 const submitSearchSort3 = document.querySelector('#formType3Submit');
@@ -525,6 +526,7 @@ const saveSort = async (form) => {
         console.log(error);
     }
 };
+}
 
 if (window.location.href.indexOf("Profile") !== -1) {
     const editProfileButton = document.querySelector("#editProfile");
