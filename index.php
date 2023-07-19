@@ -93,6 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $Participant2Name = isset($_POST['Participant2Name']) ? mysqli_real_escape_string($connection, $_POST['Participant2Name']) : null;
     $Participant2NameSecond = isset($_POST['Participant2NameSecond']) ? mysqli_real_escape_string($connection, $_POST['Participant2NameSecond']) : null;
     $ProjectType = isset($_POST['ProjectType']) ? mysqli_real_escape_string($connection, $_POST['ProjectType']) : null;
+    $ProjectDes = isset($_POST['ProjectDescription']) ? mysqli_real_escape_string($connection, $_POST['ProjectDescription']) : null;
     $linkPart1 = isset($_POST['linkPrefix']) ? mysqli_real_escape_string($connection, $_POST['linkPrefix']) : null;
     $linkPart2 = isset($_POST['linktotheMoqupspage']) ? mysqli_real_escape_string($connection, $_POST['linktotheMoqupspage']) : null;
     if ($linkPart2 == null) {
@@ -104,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $projIdQ = isset($_POST['projId']) ? $_POST['projId'] : null;
     if ($ProjectName !== null && $ProjectType !== null && $Participant1Name !== null && $Participant1NameSecond !== null && $Participant2Name !== null && $Participant2NameSecond !== null && $ProjectType !== null && $state !== null) {
         if ($state == "Creation") {
-            $queryAdd = "INSERT INTO tbl_214_projects (title,proj_type, p1_first_name, p1_last_name,p2_first_name,p2_last_name,moqups_link) VALUES ('$ProjectName', '$ProjectType' ,'$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond','$combinedLink')";
+            $queryAdd = "INSERT INTO tbl_214_projects (title,proj_type,des_txt, p1_first_name, p1_last_name,p2_first_name,p2_last_name,moqups_link) VALUES ('$ProjectName', '$ProjectType' ,'$ProjectDes','$Participant1Name', '$Participant1NameSecond','$Participant2Name','$Participant2NameSecond','$combinedLink')";
             $resultIns = mysqli_query($connection, $queryAdd);
 
             if (!$resultIns) {
@@ -127,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
         } else {
-            $queryAdd = "UPDATE tbl_214_projects SET title='$ProjectName',proj_type='$ProjectType', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
+            $queryAdd = "UPDATE tbl_214_projects SET title='$ProjectName',proj_type='$ProjectType',des_txt='$ProjectDes', p1_first_name='$Participant1Name', p1_last_name='$Participant1NameSecond', p2_first_name='$Participant2Name',p2_last_name='$Participant2NameSecond' WHERE id='$projIdQ'";
             $resultIns = mysqli_query($connection, $queryAdd);
 
             if (!$resultIns) {
@@ -269,44 +270,50 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <form method="post" action="index.php" id="formTypeMobile1">
+                                            <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType1SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
-                                            <form method="post" action="index.php" id="formTypeMobile2">
+                                            <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType2SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
-                                            <form method="post" action="index.php" id="formTypeMobile3">
+                                            <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType3SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
-                                            <form method="post" action="index.php" id="formTypeMobile4">
+                                            <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType4SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
-                                            <form method="post" action="index.php" id="formTypeMobile5">
+                                            <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType5SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
-                                            <form method="post" action="index.php" id="formTypeMobile6">
+                                            <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType6SubmitMobile"></button>
                                             </form>
                                         </li>
@@ -338,44 +345,50 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <form method="post" action="index.php" id="formType1">
+                                                <form method="post" action="index.php" class="formType">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType1Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
-                                                <form method="post" action="index.php" id="formType2">
+                                                <form method="post" action="index.php" class="formType">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType2Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
-                                                <form method="post" action="index.php" id="formType3">
+                                                <form method="post" action="index.php" class="formType">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType3Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
-                                                <form method="post" action="index.php" id="formType4">
+                                                <form method="post" action="index.php" class="formType">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType4Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
-                                                <form method="post" action="index.php" id="formType5">
+                                                <form method="post" action="index.php" class="formType">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType5Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
-                                                <form method="post" action="index.php" id="formType6">
+                                                <form method="post" action="index.php" class="formType">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType6Submit"></button>
                                                 </form>
                                             </li>

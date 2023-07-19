@@ -100,7 +100,7 @@ if (isset($_POST["projId"])) {
                                         Name
                                     </b></label>
                                 <input type="text" class="form-control inputForm validationServer01"
-                                    pattern="[A-Za-z ]+" name="ProjectName" title="Please enter letters only"
+                                    pattern="[A-Za-z .]+" name="ProjectName" title="Please enter letters only"
                                     oninvalid="this.setCustomValidity('Please enter letters only')"
                                     oninput="this.setCustomValidity('')" placeholder="* Microsoft" required <?php if ($state == 'Edit') {
                                         echo "value='" . htmlspecialchars($title, ENT_QUOTES) . "'";
@@ -187,8 +187,9 @@ if (isset($_POST["projId"])) {
                         <div class="projectDes">
                             <div class="mb-3">
                                 <label class="form-label"><b>Project Description</b></label>
-                                <textarea class="form-control inputForm ProjectDes" name="ProjectDescription"
-                                    rows="5"></textarea>
+                                <textarea class="form-control inputForm ProjectDes" name="ProjectDescription" rows="5"><?php if ($state == 'Edit') {
+                                    echo "" . $row["des_txt"] . "";
+                                } ?></textarea>
                             </div>
                         </div>
                         <div class="formSec">
@@ -243,10 +244,14 @@ if (isset($_POST["projId"])) {
                                 <select class="form-select select-option" name="linkPrefix">
                                     <option value="https://app.moqups.com/">https://app.moqups.com/</option>
                                     <option value="https://www.figma.com/proto/">https://www.figma.com/proto/</option>
-                                    <option value="">Other</option>
+                                    <option value="" <?php if ($state == 'Edit') {
+                                        echo "selected";
+                                    } ?>>Other</option>
 
                                 </select>
-                                <input type="text" class="form-control inputForm basic-url" name="linktotheMoqupspage">
+                                <input type="text" class="form-control inputForm basic-url" name="linktotheMoqupspage" <?php if ($state == 'Edit') {
+                                    echo "value=" . $row["moqups_link"] . "";
+                                } ?>>
                             </div>
                         </div>
 
