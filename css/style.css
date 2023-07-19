@@ -283,6 +283,13 @@ header {
     padding: 60px 60px 0px 60px;
 }
 
+#emailError{
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+
 button {
     border: 0px;
 }

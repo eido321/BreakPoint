@@ -8,12 +8,16 @@ if (mysqli_connect_errno()) {
     die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
     );
 }
-
+$erroMsg='';
 if (!empty($_POST["loginMail"])) {
     $query = "INSERT INTO `tbl_214_users` (`name`, `email`, `password`) VALUES ('" . $_POST["firstName"] . " " . $_POST["lastName"] . "', '" . $_POST["loginMail"] . "', '" . $_POST["loginPass"] . "');";
 
     $result = mysqli_query($connection, $query);
+    if (!$result) {
+        $erroMsg= "This email is already used.";
+    }else{
     header('Location: ' . URL . 'login.php');
+    }
 }
 
 
@@ -88,6 +92,7 @@ if (!empty($_POST["loginMail"])) {
                         <div class="form-group" id="loginLink">
                             <a href="login.php">Log In</a>
                         </div>
+                        <span id="emailError"><?php echo $erroMsg; ?></span>
                     </form>
                 </section>
             </section>
