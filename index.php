@@ -227,12 +227,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     Are you sure you want to delete your personal project?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-
                     <form method="post">
                         <input type="submit" class="btn btn-secondary" id="deletePostButton" name="deleteProject"
                             value="Delete">
                     </form>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
@@ -386,7 +385,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                                 <div class="navbar-nav ms-auto">
                                     <section id="shenkarLogo" class="nav-item">
-                                        <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
+                                        <a target="_blank"
+                                            href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
                                             class="nav-link">
                                             <div id="shenkarLogoImage"></div>
                                         </a>
@@ -475,7 +475,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </div>
                 </section>
             </header>
-        
+
         </div>
         <section class="body-con">
             <div class="breadCrumbs">

@@ -67,15 +67,10 @@ if (isset($_POST["projId"])) {
                     <a href="index.php" class="navbar-brand">
                         <div id="logo"></div>
                     </a>
-                    <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
+                    <a target="_blank" href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
                         class="navbar-brand">
                         <div id="shenkarLogoImage"></div>
                     </a>
-                    <div class="mobileHeader">
-                        <a href="index.php">
-                            <div id="login"></div>
-                        </a>
-                    </div>
                 </nav>
             </header>
         </div>
@@ -117,7 +112,7 @@ if (isset($_POST["projId"])) {
                                 <section id="projectTypeDropSection">
                                     <select id="typeOptions" class="form-control inputForm ProjectType"
                                         name="ProjectType" required>
-                                        <option value="">* Select Project Type</option>
+                                        <option value="">* Select</option>
                                         <option class="typeOption" <?php if ($state == 'Edit' && $row["proj_type"] == "1") {
                                             echo "selected";
                                         } ?>>Option 1</option>
@@ -224,9 +219,11 @@ if (isset($_POST["projId"])) {
                                     </label>
                                 </div>
                             </div><br>
-                            <button type="submit" class="btn btn-primary formButton submit">Submit</button>
-                            <button class="btn btn-primary formButton was-validated" id="cancel"
-                                onclick="goBack()">Cancel</button>
+                            <section id="desktopCreationSubmit">
+                                <button type="submit" class="btn btn-primary formButton submit">Submit</button>
+                                <button class="btn btn-primary formButton was-validated cancel"
+                                    onclick="goBack()">Cancel</button>
+                            </section>
                         </div>
                     </div>
                     <div class="rightSide">
@@ -271,6 +268,12 @@ if (isset($_POST["projId"])) {
                     </div>
                     <input type="hidden" name="state" value="<?php echo $state; ?>">
                     <input type="hidden" name="projId" value="<?php echo $projId; ?>">
+                    <section id="MobileCreationSubmit">
+                        <br>
+                        <button type="submit" class="btn btn-primary formButton submit">Submit</button>
+                        <button class="btn btn-primary formButton was-validated cancel"
+                            onclick="goBack()">Cancel</button>
+                    </section>
                 </form>
             </section>
         </section>

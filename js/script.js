@@ -1,5 +1,6 @@
 var hamburgerButton = $('#humburger');
 var ranProfileImage = $('.ranProfileImage');
+var sortIcon = $('.dropdown');
 var searchBar = $('#searchBar1');
 var logo = $('#logoExpanded');
 
@@ -8,10 +9,12 @@ hamburgerButton.click(function () {
         logo.fadeOut(function () {
             ranProfileImage.fadeIn();
             searchBar.fadeIn();
+            sortIcon.fadeIn();
         });
     } else {
         ranProfileImage.fadeOut();
         searchBar.fadeOut(function () {
+            sortIcon.fadeOut();
             logo.fadeIn();
         });
     }
@@ -33,34 +36,18 @@ hamburgerButton.click(function () {
 })()
 
 
-const cancelButton = document.getElementById('cancel');
+const cancelButtons = document.getElementsByClassName('cancel');
 
-if (cancelButton) {
-    cancelButton.addEventListener('click', function (event) {
-        event.preventDefault();
+if (cancelButtons) {
+    Array.from(cancelButtons).forEach(function(cancelButton) {
+        cancelButton.addEventListener('click', function (event) {
+            event.preventDefault();
+        });
     });
 }
 let goBack = function () {
     history.back();
 };
-
-
-
-// $(document).ready(function () {
-//     $('.leftCommentSectionText1Icon').click(function () {
-//         var grayArrow = $('.leftCommentSectionText1Icon');
-//         var comments = $('#coomentSection');
-
-//         grayArrow.css('transform', 'rotate(180deg)');
-
-//         if (comments.css('display') === 'none') {
-//             comments.css('display', 'block');
-//         } else {
-//             grayArrow.css('transform', 'rotate(360deg)');
-//             comments.css('display', 'none');
-//         }
-//     });
-// });
 
 function expanedComments() {
     var grayArrow = $('.leftCommentSectionText1Icon');

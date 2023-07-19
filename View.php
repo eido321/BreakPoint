@@ -120,12 +120,11 @@ if ($tmp) {
                     Are you sure you want to delete your personal project?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-
                     <form method="post" action="index.php">
                         <input type="submit" class="btn btn-secondary" id="deletePostButton" name="deleteProject"
                             value="Delete">
                     </form>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
@@ -133,7 +132,7 @@ if ($tmp) {
     <section class="screen">
 
         <div id="headerContainer">
-        <header>
+            <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
                     <a href="index.php" class="navbar-brand" id="logoContainer">
                         <div id="logo"></div>
@@ -280,7 +279,8 @@ if ($tmp) {
 
                                 <div class="navbar-nav ms-auto">
                                     <section id="shenkarLogo" class="nav-item">
-                                        <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
+                                        <a target="_blank"
+                                            href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
                                             class="nav-link">
                                             <div id="shenkarLogoImage"></div>
                                         </a>
@@ -329,7 +329,7 @@ if ($tmp) {
 </section>
 <section class="nav-item sideLinks">
     <form method="POST" action="Creation.php">
-        <input type="hidden" name="projId" value="' . $projId . '">
+        <input type="hidden" name="projId" value="' . $projIdUser . '">
         <button type="submit" class="editButton nav-item">
             <b>Edit Project</b>
         </button>
@@ -486,7 +486,7 @@ if ($tmp) {
                             <div class="input-group mb-3 commentInput">
                                 <input type="text" class="form-control commentInput" name="commnetText"
                                     id="commentInputMobile" aria-label="Sizing example input"
-                                    placeholder="Add a comment...">
+                                    placeholder="Add a comment..." autocomplete="off">
                                 <button type="submit" class="sendIcon" id="sendSubmitMobile">
                                 </button>
                             </div>
@@ -509,8 +509,6 @@ if ($tmp) {
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <b>Sort</b>
                         </button>
-
-
                         <ul class="dropdown-menu commentSortList">
                             <li>
                                 <form method="post" action="View.php" id="oldFormMobile">
@@ -519,7 +517,7 @@ if ($tmp) {
                                     <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
 
                                     <button type="submit" class="dropdown-item commentItem"
-                                        id="oldSortMobile">Latest</button>
+                                        id="oldSortMobile">Oldest</button>
                                 </form>
                             </li>
                             <li>
@@ -528,7 +526,7 @@ if ($tmp) {
                                     <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
                                     <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
                                     <button type="submit" class="dropdown-item commentItem"
-                                        id="newSortMobile">Recent</button>
+                                        id="newSortMobile">Latest</button>
                                 </form>
                             </li>
 
@@ -604,7 +602,7 @@ if ($tmp) {
                     <section class="projectNameTitleView">
                         <span class="projectNameView">
                             <?php echo $row["title"] ?>
-                    </span>
+                        </span>
                         <section class="bottns">
                             <section>
                                 <a class="btn btn-primary shareButton" href="" role="button">
@@ -698,7 +696,7 @@ if ($tmp) {
                                                 <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
 
                                                 <button type="submit" class="dropdown-item commentItem"
-                                                    id="oldSort">Latest</button>
+                                                    id="oldSort">Oldest</button>
                                             </form>
                                         </li>
 
@@ -710,7 +708,7 @@ if ($tmp) {
                                                 <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
 
                                                 <button type="submit" name="des" class="dropdown-item commentItem"
-                                                    id="newSort">Newest</button>
+                                                    id="newSort">Latest</button>
                                             </form>
                                         </li>
 
@@ -720,9 +718,8 @@ if ($tmp) {
                             <section class="leftCommentSectionDown">
                                 <form method="post" action="View.php" id="addComment">
                                     <input type="text" name="commnetText" id="inputComment"
-                                        placeholder="Add a comment...">
+                                        placeholder="Add a comment..." autocomplete="off">
                                     <button type="submit" class="sendIcon" id="sendSubmit">
-                                        <!-- <div class="sendIcon"></div> -->
                                     </button>
                                     <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
                                     <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">

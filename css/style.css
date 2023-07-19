@@ -96,7 +96,7 @@ input:focus {
     background-color: white;
     padding: 5px;
     border-radius: 5px;
-    align-items:center;
+    align-items: center;
 }
 
 
@@ -617,7 +617,7 @@ li {
 
 .projectImages {
     width: 250px;
-    padding:10px;
+    padding: 10px;
     height: 200px;
     border-radius: 5px;
     background-color: white;
@@ -849,8 +849,8 @@ span {
 }
 
 .PlayButtonImage {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     margin: 10px;
     margin-top: 0;
 }
@@ -1348,12 +1348,12 @@ form {
     justify-content: center;
 }
 
-.btn.btn-outline-secondary.searchBarSecSubmit{
+.btn.btn-outline-secondary.searchBarSecSubmit {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.searchBarSecDrop{
+.searchBarSecDrop {
     width: 100%;
     display: flex;
     align-items: center;
@@ -1560,6 +1560,9 @@ form {
     align-items: center;
 }
 
+#MobileCreationSubmit{
+    display: none;
+}
 
 @media(max-width:1200px) {
     .projectImages {
@@ -1579,6 +1582,14 @@ form {
         align-items: center;
     }
 
+    #desktopCreationSubmit{
+        display: none;
+    }
+
+    #MobileCreationSubmit{
+        display: block;
+    }
+
     .dynamicInfo {
         height: 500px;
     }
@@ -1593,7 +1604,7 @@ form {
     }
 
     #staticInfoSvg {
-        top: 0px;
+        top: -15px;
     }
 
     #noProjMsg {
@@ -1603,6 +1614,7 @@ form {
 
     .searchForm {
         margin-left: 0;
+        width:60%;
     }
 
     .btn.dropdown-toggle.searchSort {
@@ -1645,7 +1657,9 @@ form {
     }
 
     .rightSide {
-        display: none;
+        display: block;
+        width: 100%;
+        margin-left: 0;
     }
 
     .projectImages {
@@ -1792,8 +1806,6 @@ form {
     .selectedNav {
         color: #bd362f;
         border-bottom: 3px solid #bd362f;
-
-
     }
 
     #mobileNavContainer {
@@ -1885,7 +1897,9 @@ form {
         height: 100%;
     }
 
-
+    #signFormContainerBox {
+        width: 325px;
+    }
 
     #colNavbar1,
     #colNavbar2,
@@ -1947,9 +1961,7 @@ form {
         display: none;
     }
 
-    #logo {
-        display: none;
-    }
+
 
     .navbar-toggler {
         width: 80px;
@@ -2215,6 +2227,10 @@ form {
 
     .View-con {
         display: none;
+    }
+
+    #loginFormContainerBox {
+        width: 325px;
     }
 
     .ratingTitle {

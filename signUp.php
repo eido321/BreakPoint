@@ -42,15 +42,10 @@ if (!empty($_POST["loginMail"])) {
                     <a href="index.php" class="navbar-brand">
                         <div id="logo"></div>
                     </a>
-                    <a href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
+                    <a target="_blank" href="https://www.shenkar.ac.il/he/departments/engineering-software-department"
                         class="navbar-brand">
                         <div id="shenkarLogoImage"></div>
                     </a>
-                    <div class="mobileHeader">
-                        <a href="index.php">
-                            <div id="login"></div>
-                        </a>
-                    </div>
                 </nav>
             </header>
         </div>
@@ -98,7 +93,7 @@ if (!empty($_POST["loginMail"])) {
             </section>
         </section>
         <script src="js/script.js"></script>
-</section>
+    </section>
 </body>
 
 </html>
