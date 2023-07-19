@@ -69,6 +69,10 @@ if ($tmp) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.js"
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -165,42 +169,48 @@ if ($tmp) {
                                         <li>
                                             <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType1SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
                                             <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType2SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
                                             <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType3SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
                                             <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType4SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
                                             <form method="post" action="index.php" class="formTypeMobile">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType5SubmitMobile"></button>
                                             </form>
                                         </li>
                                         <li>
                                             <form method="post" action="index.php" id="formTypeMobile6">
                                                 <input type="hidden" name="typeProj" value="" class="typeOptionMobile">
-                                                <button type="submit" class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
+                                                <button type="submit"
+                                                    class="dropdown-item typeItem typeOptionMobile formTypeSubmitMobile"
                                                     id="formType6SubmitMobile"></button>
                                             </form>
                                         </li>
@@ -234,42 +244,48 @@ if ($tmp) {
                                             <li>
                                                 <form method="post" action="index.php" class="formType1">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption formTypeSubmit"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType1Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="index.php" class="formType2">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption formTypeSubmit"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType2Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="index.php" class="formType3">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption formTypeSubmit"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType3Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="index.php" class="formType4">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption formTypeSubmit"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType4Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="index.php" class="formType5">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption formTypeSubmit"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType5Submit"></button>
                                                 </form>
                                             </li>
                                             <li>
                                                 <form method="post" action="index.php" class="formType6">
                                                     <input type="hidden" name="typeProj" value="" class="typeOption">
-                                                    <button type="submit" class="dropdown-item typeItem typeOption formTypeSubmit"
+                                                    <button type="submit"
+                                                        class="dropdown-item typeItem typeOption formTypeSubmit"
                                                         id="formType6Submit"></button>
                                                 </form>
                                             </li>
@@ -526,7 +542,7 @@ if ($tmp) {
                                     <input type="hidden" name="user_id" value="<?php echo $_SESSION["u_id"]; ?>">
                                     <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
                                     <button type="submit" class="dropdown-item commentItem"
-                                        id="newSortMobile">Latest</button>
+                                        id="newSortMobile">Newest</button>
                                 </form>
                             </li>
 
@@ -708,7 +724,7 @@ if ($tmp) {
                                                 <input type="hidden" name="proj_id" value="<?php echo $projId; ?>">
 
                                                 <button type="submit" name="des" class="dropdown-item commentItem"
-                                                    id="newSort">Latest</button>
+                                                    id="newSort">Newest</button>
                                             </form>
                                         </li>
 
@@ -729,7 +745,6 @@ if ($tmp) {
                     </section>
                     <br>
                     <div id="loading"></div>
-                    <br>
                     <div id="coomentSection">
                     </div>
                 </div>
@@ -739,7 +754,6 @@ if ($tmp) {
                             $avgRate = ($row["creativity"] + $row["refined"] + $row["stylish"]) / 3;
                             $avgRateRounded = number_format($avgRate, 1);
                             echo $avgRateRounded;
-
                             ?>
                         </span>
                         &nbsp;&nbsp;<span class="redStar desktopRedStar"></span></span>

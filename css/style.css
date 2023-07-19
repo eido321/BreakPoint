@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Heebo', sans-serif;
 }
 
 header,
@@ -2502,7 +2502,6 @@ li>a {
     margin-left: 10px;
     background-size: contain;
     background-repeat: no-repeat;
-
 }
 
 #coomentSection {
@@ -2534,7 +2533,6 @@ li>a {
 .coomentWhiteBox {
     width: 80%;
     margin-left: 10px;
-
 }
 
 .sendIcon {
@@ -2543,5 +2541,4 @@ li>a {
     width: 15px;
     background-size: contain;
     background-repeat: no-repeat;
-
 }

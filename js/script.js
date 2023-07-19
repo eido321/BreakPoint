@@ -286,8 +286,9 @@ if (window.location.href.indexOf("View") !== -1) {
     submitMobile.addEventListener('click', (e) => {
         e.preventDefault();
         savePost(formMobile, postsMobile);
-        expanedCommentsMobile();
-
+        if (posts.style.display != 'block') {
+            expanedComments();
+        }
     });
 
     const savePost = async (form, posts) => {
@@ -315,7 +316,9 @@ if (window.location.href.indexOf("View") !== -1) {
         sortNew.style.backgroundColor = '#bd362f';
         sortOld.style.color = '#555555';
         sortOld.style.backgroundColor = 'white';
-        expanedComments();
+        if (posts.style.display != 'block') {
+            expanedComments();
+        }
     });
 
     sortOld.addEventListener('click', (e) => {
@@ -325,7 +328,9 @@ if (window.location.href.indexOf("View") !== -1) {
         sortOld.style.backgroundColor = '#bd362f';
         sortNew.style.color = '#555555';
         sortNew.style.backgroundColor = 'white';
-        expanedComments();
+        if (posts.style.display != 'block') {
+            expanedComments();
+        }
     });
 
     sortNewMobile.addEventListener('click', (e) => {
@@ -335,7 +340,9 @@ if (window.location.href.indexOf("View") !== -1) {
         sortNewMobile.style.backgroundColor = '#bd362f';
         sortOldMobile.style.color = '#555555';
         sortOldMobile.style.backgroundColor = 'white';
-        expanedComments();
+        if (posts.style.display != 'block') {
+            expanedComments();
+        }
     });
 
     sortOldMobile.addEventListener('click', (e) => {
@@ -345,7 +352,9 @@ if (window.location.href.indexOf("View") !== -1) {
         sortOldMobile.style.backgroundColor = '#bd362f';
         sortNewMobile.style.color = '#555555';
         sortNewMobile.style.backgroundColor = 'white';
-        expanedComments();
+        if (posts.style.display != 'block') {
+            expanedComments();
+        }
     });
 
     savePost(formDesktop, posts);
