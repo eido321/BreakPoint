@@ -73,6 +73,8 @@ if ($tmp) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -744,7 +746,9 @@ if ($tmp) {
                         </section>
                     </section>
                     <br>
-                    <div id="loading"></div>
+                    <div id="loading">
+
+                    </div>
                     <div id="coomentSection">
                     </div>
                 </div>

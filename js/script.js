@@ -274,9 +274,9 @@ if (window.location.href.indexOf("View") !== -1) {
 
     submit.addEventListener('click', (e) => {
         e.preventDefault();
-        messageEl.innerHTML = "<span class='loading'>Loading..</span>";
+        messageEl.innerHTML = "<span class='loading'>Loading...</span>";
+        messageEl.style.display = "block";
         savePost(formDesktop, posts);
-        expanedComments();
         sortOld.style.color = '#555555';
         sortOld.style.backgroundColor = 'white';
         sortNew.style.color = '#555555';
@@ -303,7 +303,9 @@ if (window.location.href.indexOf("View") !== -1) {
             sumComments[1].innerHTML = result.sumVal;
             commentInput.value = "";
             messageEl.style.display = "none";
-
+            if (posts.style.display != 'block') {
+                expanedComments();
+            }
         } catch (error) {
             console.log(error);
         }
@@ -323,7 +325,7 @@ if (window.location.href.indexOf("View") !== -1) {
 
     sortOld.addEventListener('click', (e) => {
         e.preventDefault();
-        savePost(oldFormMobile, posts);
+        savePost(oldForm, posts);
         sortOld.style.color = 'white';
         sortOld.style.backgroundColor = '#bd362f';
         sortNew.style.color = '#555555';

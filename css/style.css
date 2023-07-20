@@ -1571,6 +1571,8 @@ form {
     display: none;
 }
 
+
+
 @media(max-width:1200px) {
     .projectImages {
         width: 450px;
@@ -2293,10 +2295,11 @@ li>a {
 #logoExpanded,
 #login {
     background: url(../images/logo.png);
-    width: 209px;
-    height: 49px;
+    width: 210px;
+    height: 30px;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 #login {
@@ -2542,3 +2545,4 @@ li>a {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
